@@ -1,4 +1,4 @@
-Django==1.4
+Django==1.3
 gondor==1.0b1.post9
 psycopg2==2.4.1
 django-social-auth
