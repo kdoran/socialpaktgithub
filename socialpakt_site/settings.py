@@ -127,8 +127,8 @@ INSTALLED_APPS = (
     'social_auth',
     'south',
     'cart',
-    'catalog',
     'partners',
+    'catalog',
     'customers',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
