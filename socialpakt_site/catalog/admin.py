@@ -8,7 +8,7 @@ class PhotoAdminInline(admin.StackedInline):
 
 class VariationAdminInline(admin.StackedInline):
     model = ProductVariation
-    extra = 3
+    extra = 8
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('slug', 'title', 'active','date_expires','price')
