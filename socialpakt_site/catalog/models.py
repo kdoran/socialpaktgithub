@@ -9,8 +9,8 @@ class Product(models.Model):
 	slug = models.SlugField(max_length=255, db_index=True)
 	title = models.CharField(max_length=255)
 	description = models.TextField()
-	active = models.BooleanField(default=False)
-	date_expires = models.DateTimeField()
+	active = models.BooleanField(default=False, db_index=True)
+	date_expires = models.DateTimeField(db_index=True)
 
 	artist = models.ForeignKey(Partner, related_name="artist_on_set")
 	benefits = models.ForeignKey(Partner, related_name="benefits_from_set")

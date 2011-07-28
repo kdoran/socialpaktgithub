@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div id="productblock">
+        <h2>{{ product.title }}</h2>
+        <ul class="photobrowser">
+        {% for photo in product.productphoto_set.all %}
+            <li class="photo">
+                <img src="{{photo.photo.url}}" alt="{{photo.description}}">
+            </li>
+        {% endfor %}
+        </ul>
+        <p>{{product.description}}</p>
+        <ul>
+            <li>Expires: {{product.date_expires}}</li>
+            <li>Artist: {{product.artist.name}}</li>
+            <li>Benefits: {{product.benefits.name}}</li>
+        </ul>
+
+        <p>{{product.}}
+    </div>
+{% endblock main %}
