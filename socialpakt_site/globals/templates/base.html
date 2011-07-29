@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
-<title>Social Pakt</title>
-<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <title>SocialPakt - Local Tees, Local Difference</title>
+  
+  {% block fbmetadata %}
+  {% endblock fbmetadata %}
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
 </head>
+
 <body>
     <div id="header">
         <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
@@ -20,6 +26,20 @@
 
     {% block localscripts %}        
     {% endblock localscripts %}
+
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({appId: '{{settings.FACEBOOK_APP_ID}}', status: true, cookie: true,
+                 xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+          '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
 
     <script type="text/javascript">
         var _gaq = _gaq || [];

@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:    
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),
+    url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
 )

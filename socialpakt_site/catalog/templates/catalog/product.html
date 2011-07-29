@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 
+{% block fbmetadata %}
+  <meta property="og:title" content="{{ product.title }}"/> 
+  <meta property="og:url" content="http://{{ request.get_host }}/shirt/{{ product.slug }}/"/> 
+  <meta property="og:image" content="{{ product.productphoto_set.all.0.photo.url }}"/> 
+  <meta property="og:site_name" content="SocialPakt - Local Tees, Local Difference"/> 
+  <meta property="og:type" content="article" /> 
+  <meta property="fb:app_id" content="{{ settings.FACEBOOK_APP_ID }}"> 
+  <meta property="og:description" content="{{ product.description }}"/> 
+  <meta property="og:author" content="SocialPakt.com" />
+{% endblock fbmetadata %}
+
 {% block main %}
     <div id="productblock">
         <h2>{{ product.title }}</h2>
+        <fb:like href="http://{{ request.get_host }}/shirt/{{product.slug}}/" send="true" width="450" show_faces="true" font=""></fb:like>
         <ul class="photobrowser">
         {% for photo in product.productphoto_set.all %}
             <li class="photo">
@@ -16,7 +28,6 @@
             <li>Artist: {{product.artist.name}}</li>
             <li>Benefits: {{product.benefits.name}}</li>
         </ul>
-
-        <p>{{product.}}
+        <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="500"></fb:comments>
     </div>
 {% endblock main %}
