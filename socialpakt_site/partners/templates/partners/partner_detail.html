@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block fbmetadata %}
+  <meta property="og:title" content="{{ partner.name }}"/> 
+  <meta property="og:url" content="http://{{ request.get_host }}{{ request.path }}"/> 
+  <!--<meta property="og:image" content=""/> -->
+  <meta property="og:site_name" content="SocialPakt - Local Tees, Local Difference"/> 
+  <meta property="og:type" content="article" /> 
+  <meta property="fb:app_id" content="{{ settings.FACEBOOK_APP_ID }}"> 
+  <meta property="og:description" content="{{ partner.description }}"/> 
+  <meta property="og:author" content="SocialPakt.com" />
+{% endblock fbmetadata %}
+
+{% block main %}
+    <div id="partnerblock">
+        <h2>{{ partner.name }}</h2>
+        {% if partner.partner_type == "ART" %}
+        	<fb:like href="http://{{ request.get_host }}{% url artist partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>	
+        {% else %}
+        	<fb:like href="http://{{ request.get_host }}{% url nonprofit partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>	
+        {% endif %}
+        
+        <div id="description">
+          <p>{{partner.about}}</p>
+        </div>
+
+        <div id="rightside">
+          <h3>Links</h3>
+          <ul class="partnerlinks">
+          	{% for link in partner.partnerlink_set.all %}
+          		<li><a href="{{link.link}}" class="{{link.link_class}}">{{link.link_text}}</a></li>
+          	{% endfor %}
+          </ul>
+
+          {% if partner.partner_type == "ART" %}
+          	<h3>Has Designed:</h3>
+          	<ul class = "tshirtlinks">
+          		{% for s in partner.artist_on_set.all %}
+          			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
+          		{% endfor %}
+          	</ul>
+          {% else %}
+          	<h3>Has been supported by:</h3>
+          	<ul class = "tshirtlinks">
+          		{% for s in partner.benefits_from_set.all %}
+          			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
+          		{% endfor %}
+          	</ul>
+          {% endif %}
+        </div>
+    </div>
+{% endblock main %}

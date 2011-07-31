@@ -123,6 +123,17 @@ GOOGLE_OAUTH2_CLIENT_SECRET  = ''
 FOURSQUARE_CONSUMER_KEY      = ''
 FOURSQUARE_CONSUMER_SECRET   = ''
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "globals.context_processors.settings",
+    "django.contrib.messages.context_processors.messages",
+)
+
 ROOT_URLCONF = 'socialpakt_site.urls'
 
 TEMPLATE_DIRS = (

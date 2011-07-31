@@ -11,23 +11,47 @@
   <meta property="og:author" content="SocialPakt.com" />
 {% endblock fbmetadata %}
 
+{% block localscripts %}
+      <script src="{{ STATIC_URL }}js/lib/countdown.js"></script>
+      <script src="{{ STATIC_URL }}js/catalog.js"></script>
+{% endblock localscripts %}
+
 {% block main %}
     <div id="productblock">
         <h2>{{ product.title }}</h2>
         <fb:like href="http://{{ request.get_host }}/shirt/{{product.slug}}/" send="true" width="450" show_faces="true" font=""></fb:like>
         <ul class="photobrowser">
         {% for photo in product.productphoto_set.all %}
-            <li class="photo">
+            <li class="photo {% if forloop.first %}big{% endif %}">
                 <img src="{{photo.photo.url}}" alt="{{photo.description}}">
             </li>
         {% endfor %}
         </ul>
-        <p>{{product.description}}</p>
-        <ul>
-            <li>Expires: {{product.date_expires}}</li>
-            <li>Artist: {{product.artist.name}}</li>
-            <li>Benefits: {{product.benefits.name}}</li>
-        </ul>
-        <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="500"></fb:comments>
+        <div class="clear"></div>
+        <div id="description">
+            <p>{{product.description}}</p>
+        </div>
+        <div id="rightside">
+          <div id="saleinfo">
+            <div id="numbersold">
+              <span class="label">Total Sold:</span> {{product.total_sold}}
+            </div>
+
+            <div id="timeleft">
+              <h3>Time Left:</h3>
+              <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+            </div>
+            
+          </div>
+          <div id="artistinfo">
+            <h3>About the Artist: <a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
+            <p>{{product.artist.about|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>
+          </div>
+          <div id="npoinfo">
+              <h3>Benefits: <a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
+              <p>{{product.benefits.about|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
+          </div>
+        </div>
+        <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="800"></fb:comments>
     </div>
 {% endblock main %}

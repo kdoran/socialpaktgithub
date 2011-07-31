@@ -17,8 +17,5 @@ class CatalogHomeView(TemplateView):
             product = product[0] if len(products) else None # need to refactor this
 
         return {
-            'request' : self.request,
             'product' : product,
-            'settings' : settings,
-            'params': kwargs,
         }

@@ -5,6 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 from catalog.views import *
+from partners.models import *
+from django.views.generic import DetailView
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,4 +20,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),
     url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
+    url(r'^artist/(?P<slug>\w+)/$', 
+    	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),
+    url(r'^nonprofit/(?P<slug>\w+)/$', 
+    	DetailView.as_view(queryset=Partner.objects.filter(partner_type="NPO"),context_object_name="partner"), name='nonprofit', ),
 )

@@ -14,17 +14,24 @@
         <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
     </div>
     <div id="content">
-        <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center" style="margin-bottom: 42px;">
+        <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span><br/>
+        <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center">
+
         {% block main %}
             
         {% endblock main %}
+
     </div>
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-    {% block localscripts %}        
+    <script src="{{ STATIC_URL }}js/globals.js"></script>
+    <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'adb4e700-db0e-4d1f-afaf-ede76d7144a1'});</script>
+
+    {% block localscripts %}
+        <!-- <script src="{{ STATIC_URL }}js/locals.js"></script>  -->
     {% endblock localscripts %}
 
     <div id="fb-root"></div>
