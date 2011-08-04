@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+	<div id="cartblock">
+		<div id="cartsummary">Total Items in Cart: {{cart.cart.items.all|length}}</div>
+		<table id="cartitems">
+			<tr><th>Item</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th>Action</th></tr>
+			{% for i in cart.cart.get_active_items %}
+				<tr class="item">
+					<form name="item_{{i.pk}}" method="POST" action="{% url change_quantity 'pk' 'quantity' %}">
+						<td class="item_description">{{i.content_object.product.title}} - {{i.content_object.description}}</td>
+						<td class="item_price">{{i.content_object.product.price}}</td>
+						<td class="item_quantity"><input type="text" size="4" value="{{i.quantity}}" name="quantity"><input name="pk" type="hidden" value="{{i.pk}}">{% csrf_token %}</td>
+						<td class="item_subtotal">${{i.get_amount}}</td>
+						<td class="action_links"><a href="javascript:item_{{i.pk}}.submit();">Update Quantity</a> - <a href="{% url remove_item i.pk %}">Remove Item</a></td>
+					</form>
+				</tr>
+			{% endfor %}
+		</table>
+		<div id="cartsubtotal">Subtotal: ${{cart.cart.get_amount}}</div>
+	</div>
+{% endblock main %}
