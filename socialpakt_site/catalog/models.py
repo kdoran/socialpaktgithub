@@ -25,6 +25,9 @@ class ProductVariation(models.Model):
 	description = models.CharField(max_length=255)
 	product = models.ForeignKey(Product)
 
+	def get_amount(self, quantity):
+		return self.product.price * quantity
+
 	def __str__(self):
 		return self.product.slug+" "+self.description
 

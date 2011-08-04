@@ -108,3 +108,13 @@ ul.photobrowser li img {
 ul.photobrowser li.big img {
     width: 800px;
 }
+
+table#cartitems{
+    border: 1px solid #666;
+    margin: 0 auto;
+}
+
+table#cartitems td, th {
+    border: 1px solid #666;
+    margin: 5px;
+}

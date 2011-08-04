@@ -41,6 +41,20 @@
               <h3>Time Left:</h3>
               <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
             </div>
+
+            {% if can_add_to_cart %}
+            <div id="addtocart">
+                Add to Cart:
+                <select id="variationselect">
+                    {% for v in product.productvariation_set.all %}
+                    <option value="{% url add_to_cart product_variation_contenttype.pk v.pk 1 %}">{{v.description}}</option>
+                    {% endfor %}
+                </select>
+                <label for="quantity">Quantity:</label> <input id="quantityinput" type="text" size="4" value="1">
+                <a id="addtocartlink" href="#">Add to cart</a>
+            </div>  
+            {% endif %}
+            
             
           </div>
           <div id="artistinfo">

@@ -12,6 +12,17 @@
 			cur_sel.html($(this).html());
 			$(this).html(cur_sel_img);
 		});
+
+		$("#addtocartlink").click(function(){
+			var add_to_cart_url = $("#variationselect").attr("value");
+			var quantity = $("#quantityinput").attr("value");
+			if (quantity.match(/\b\d+\b/)) {
+				add_to_cart_url = add_to_cart_url.replace(/\/1\/$/, "/"+quantity+"/");
+				window.location = add_to_cart_url;
+			} else {
+				window.alert("Quantity must be a number!");
+			}
+		});
 	});
 
 })(window, jQuery);

@@ -1,8 +1,10 @@
 from django.views.generic import TemplateView
 from models import *
 from django.conf import settings
+from datetime import datetime
 
 from django.shortcuts import get_object_or_404
+from django.contrib.contenttypes.models import ContentType
 
 class CatalogHomeView(TemplateView):
     template_name = "catalog/product.html"
@@ -18,4 +20,6 @@ class CatalogHomeView(TemplateView):
 
         return {
             'product' : product,
+            'can_add_to_cart' : product.date_expires >= datetime.now(),
+            'product_variation_contenttype' : ContentType.objects.get(model="productvariation"),
         }

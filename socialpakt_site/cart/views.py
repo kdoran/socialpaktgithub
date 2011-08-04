@@ -22,7 +22,6 @@ def show_cart(request, template_name, extra_context=None):
     
     context = {'cart': Cart(request),}
     apply_extra_context(extra_context or {}, context)
-    
     return direct_to_template(request, template=template_name, extra_context=context)
 
 def add_to_cart(request, content_type_pk, object_pk, quantity,
