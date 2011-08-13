@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     
     url(r'^$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage', ),
+    url(r'welcome_video/^$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage_video', ),
     url(r'^thankyou/$', TemplateView.as_view(template_name="splash/splash.html"), name='thankyou', ),
         
     url(r'^admin/', include(admin.site.urls)),
