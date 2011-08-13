@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block cartnav %}
+	
+{% endblock cartnav %}
+
+{% block main %}
+	 	<iframe width="425" height="349" src="http://www.youtube.com/embed/GqIGXC0c0aM" frameborder="0" allowfullscreen></iframe><br/>
+	 	<img id="upcomingimg" src="{{STATIC_URL}}images/upcoming-launch.png" class="homepage-center" />
+	 	<div id="splashcontainer">
+        	<a href="http://blog.socialpakt.com" target="_blank" class="homepage-wordpress"><img src="{{STATIC_URL}}images/wordpress_blog.png" border="0" /></a> 
+        	<a href="http://twitter.com/socialpakt" target="_blank" class="homepage-twitter"><img src="{{STATIC_URL}}images/twitter-icon.png" border="0" /></a> 
+        	<a href="http://facebook.com/socialpakt" target="_blank" class="homepage-facebook"><img src="{{STATIC_URL}}images/facebook-icon.png" border="0" /></a> 
+        	
+        	{% if form %}
+	        	<form id="emailform" method="post" action="."> 
+		        	{% csrf_token %}
+		        	<input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value=" " />
+		        	{{ form.email.errors }}
+		        </form>	
+		    {% else %}
+		    	<div id="thankyou">Thank You. We'll be in touch soon!</div>
+        	{% endif %}
+	        
+	    </div> 
+		<div class="clear"></div> 
+        <img src="{{STATIC_URL}}images/website-coming-soon.png" class="homepage-center" style="margin-top: 65px;"/> 
+{% endblock main %}

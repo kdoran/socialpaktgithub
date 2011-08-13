@@ -6,7 +6,9 @@ admin.autodiscover()
 
 from catalog.views import *
 from partners.models import *
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView, CreateView
+
+from splash.models import SignupForm
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,9 +17,13 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:    
+    # Uncomment the next line to enable the admin:
+    
+    url(r'^$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage', ),
+    url(r'^thankyou/$', TemplateView.as_view(template_name="splash/splash.html"), name='thankyou', ),
+        
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', CatalogHomeView.as_view(), name='home', ),
+    url(r'app/^$', CatalogHomeView.as_view(), name='home', ),
     url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
     url(r'^artist/(?P<slug>\w+)/$', 
     	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),

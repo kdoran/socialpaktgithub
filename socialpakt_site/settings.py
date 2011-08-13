@@ -110,8 +110,8 @@ AUTHENTICATION_BACKENDS = (
 
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
-FACEBOOK_APP_ID              = '300132445106'
-FACEBOOK_API_SECRET          = '1b557a1f7b88616ade8889c3ca65f856'
+FACEBOOK_APP_ID              = '150946388320139'
+FACEBOOK_API_SECRET          = '026492030049d8460ad548a7e29649bb'
 LINKEDIN_CONSUMER_KEY        = ''
 LINKEDIN_CONSUMER_SECRET     = ''
 ORKUT_CONSUMER_KEY           = ''
@@ -150,6 +150,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
+    'paypal.standard', 
+    'paypal.pro',
     'social_auth',
     'south',
     'cart',
@@ -157,11 +159,18 @@ INSTALLED_APPS = (
     'catalog',
     'customers',
     'globals',
+    'splash',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+PAYPAL_TEST = True           # Testing mode on
+PAYPAL_WPP_USER = "jonloy_1312669681_biz_api1.gmail.com"      # Get from PayPal
+PAYPAL_RECEIVER_EMAIL = "jonloy_1312669681_biz@gmail.com"
+PAYPAL_WPP_PASSWORD = "1312669733"
+PAYPAL_WPP_SIGNATURE = "AamqpsltJ37ivz.f9TQpoEQFWXzrATJshZ.CeDL9Y01xYbA9HOwQrtfr"
 
 try:
     from local_settings import *

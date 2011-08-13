@@ -45,7 +45,48 @@ img {
     font-size: 12px;
     color: white;
 }
+.homepage-wordpress {
+    float: left;    
+    position: relative;
+    margin: 0 12px 0 0;
+    top: 8px;
+}
 
+.homepage-twitter {
+    float: left;    
+    position: relative;
+    top: 8px;
+}
+
+.homepage-facebook {
+    float: left;
+    margin: 0 12px 0 13px;
+    position: relative;
+    top: 8px;
+}
+
+.homepage-email {
+    float: left;
+    background: url('../images/homepage-email.png');
+    width: 386px;
+    height: 40px;
+    font-family: "Myriad Pro", sans-serif;
+    font-size: 20px;
+    color: #959595;
+    padding: 0 22px;
+}
+
+.homepage-submit {
+    float: left;
+    width: 86px;
+    height: 28px;
+    background: url('../images/homepage-submit.png');
+    border: 0;
+    position: relative;
+    top: 9px;
+    left: 11px;
+    cursor: pointer;
+}
 #productblock, #partnerblock {
     text-align: left;
     width: 818px;
@@ -118,3 +159,20 @@ table#cartitems td, th {
     border: 1px solid #666;
     margin: 5px;
 }
+
+#emailform ul.errorlist {
+    clear:both;
+    font-weight:bold;
+    font-size: 16px;
+}
+
+#splashcontainer {
+    width: 650px;
+    margin: 15px auto 15px auto;
+}
+
+#thankyou {
+    text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 34px; color: #ffffff; padding-top: 4px;
+}
+
+#upcomingimg { padding-top: 15px; padding-left: 16px;}

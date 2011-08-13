@@ -6,6 +6,7 @@
   {% block fbmetadata %}
   {% endblock fbmetadata %}
 
+  <script src="{{ STATIC_URL }}js/lib/modernizr-2.0.6.js"></script>
   <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
 </head>
 
@@ -14,10 +15,15 @@
         <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
     </div>
     <div id="content">
-        <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span><br/>
+        {% block sharethis %}
+            <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span><br/>
+        {% endblock sharethis %}
         <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center"><br/>
-        <a href="{% url show_cart %}">Shopping Cart</a>
-
+        
+        {% block cartnav %}
+            <a href="{% url show_cart %}">Shopping Cart</a>  
+        {% endblock cartnav %}
+        
         {% block main %}
             
         {% endblock main %}
