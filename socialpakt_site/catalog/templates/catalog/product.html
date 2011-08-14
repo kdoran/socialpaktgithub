@@ -45,13 +45,17 @@
             {% if can_add_to_cart %}
             <div id="addtocart">
                 Add to Cart:
-                <select id="variationselect">
-                    {% for v in product.productvariation_set.all %}
-                    <option value="{% url add_to_cart product_variation_contenttype.pk v.pk 1 %}">{{v.description}}</option>
-                    {% endfor %}
-                </select>
-                <label for="quantity">Quantity:</label> <input id="quantityinput" type="text" size="4" value="1">
-                <a id="addtocartlink" href="#">Add to cart</a>
+                <form action="https://socialpakt.foxycart.com/cart" method="post">
+                  <input type="hidden" name="name" value="{{product.title}}" />
+                  <input type="hidden" name="price" value="{{product.price}}" />
+                  <select id="shirt_select" name="shirt">
+                      {% for v in product.productvariation_set.all %}
+                      <option value="{{v.description}}">{{v.description}}</option>
+                      {% endfor %}
+                  </select>
+                  <label for="quantity_input">Quantity:</label> <input id="quantity_input" name="quantity" type="text" size="4" value="1">
+                  <input type="submit" name="Add to Cart" value="Add to Cart" class="submit" />
+                </form>
             </div>  
             {% endif %}
             
