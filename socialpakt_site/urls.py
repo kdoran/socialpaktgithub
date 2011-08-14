@@ -19,17 +19,17 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     
-    url(r'^$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage', ),
+    # url(r'^$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage', ),
     url(r'^welcome_video/$', CreateView.as_view(form_class=SignupForm, template_name="splash/splash.html", success_url="/thankyou/"), name='spashpage_video', ),
     url(r'^thankyou/$', TemplateView.as_view(template_name="splash/splash.html"), name='thankyou', ),
         
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^app/$', CatalogHomeView.as_view(), name='home', ),
-    #url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
-    #url(r'^artist/(?P<slug>\w+)/$', 
-    #	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),
-    #url(r'^nonprofit/(?P<slug>\w+)/$', 
-    #	DetailView.as_view(queryset=Partner.objects.filter(partner_type="NPO"),context_object_name="partner"), name='nonprofit', ),
+    url(r'^$', CatalogHomeView.as_view(), name='home', ),
+    url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
+    url(r'^artist/(?P<slug>\w+)/$', 
+    	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),
+    url(r'^nonprofit/(?P<slug>\w+)/$', 
+    	DetailView.as_view(queryset=Partner.objects.filter(partner_type="NPO"),context_object_name="partner"), name='nonprofit', ),
 
-    #url(r'^cart/', include('cart.urls')),
+    url(r'^cart/', include('cart.urls')),
 )
