@@ -10,12 +10,16 @@
   {% block localcss %}
     
   {% endblock localcss %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+  {% block globalcss %}
+     <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+  {% endblock globalcss %}
 </head>
 
 <body>
     <div id="header">
-        <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
+        {% block header %}
+            <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
+        {% endblock header %}
     </div>
     <div id="content">
         {% block sharethis %}

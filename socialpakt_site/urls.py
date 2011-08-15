@@ -24,7 +24,9 @@ urlpatterns = patterns('',
     url(r'^thankyou/$', TemplateView.as_view(template_name="splash/splash.html"), name='thankyou', ),
 
     url(r'^cart/checkout/$', TemplateView.as_view(template_name="foxycart/checkout.html"), name='fc_checkout', ),
-        
+    url(r'^cart/details/$', TemplateView.as_view(template_name="foxycart/cart.html"), name='fc_cart', ),
+    url(r'^cart/receipt/$', TemplateView.as_view(template_name="foxycart/receipt.html"), name='fc_cart', ),
+
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),
     url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
