@@ -25,7 +25,10 @@
         {% block sharethis %}
             <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span><br/>
         {% endblock sharethis %}
-        <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center"><br/>
+
+        {% block sloganblock %}
+            <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center"><br/>  
+        {% endblock sloganblock %}
         
         {% block cartnav %}
             <a href="http://socialpakt.foxycart.com/cart?cart=view">Shopping Cart</a>  
