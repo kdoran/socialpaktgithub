@@ -14,7 +14,7 @@ def foxyfeed(request):
         try:
             data = FoxyData.from_crypted_str(urllib.unquote_plus(request.POST['FoxyData']), settings.FOXYCART_DATAFEED_KEY)	# IMPORTANT: unquote_plus is necessary for the non-ASCII binary that FoxyCart sends.
             for transaction in data.transactions:
-                order = Order(order_xml=str(data))
+                order = Order(order_xml=data.markup)
                 order.save()
             return HttpResponse('foxy')
 
