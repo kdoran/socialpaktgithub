@@ -40,7 +40,7 @@ class FoxyData:
     def __init__(self, node):
       def extract_kv_node(node, key_name):
         el = node.getElementsByTagName(key_name)
-        return len(el) > 0 and el[0].firstChild.data or ''
+        return len(el) > 0 and el[0].firstChild and el[0].firstChild.data or ''
  
       self.id = extract_kv_node(node, 'id')
       self.date = datetime.strptime(
@@ -96,8 +96,8 @@ class FoxyData:
   """
   @classmethod
   def from_crypted_str(self, data_str, crypt_key):
-    a = ARC4(crypt_key)
-    return FoxyData.from_str(a.crypt(data_str))
+    data = ARC4(crypt_key).crypt(data_str)
+    return FoxyData.from_str(data)
  
   def __len__(self):
     return len(self.transactions)

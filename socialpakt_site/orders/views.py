@@ -4,9 +4,11 @@ from django.http import *
  
 from globals.foxycart import FoxyData		# I put foxycart.py in a 'utils' module
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 from models import Order
- 
+
+@csrf_exempt 
 def foxyfeed(request):
     if request.POST and 'FoxyData' in request.POST:
         try:
@@ -14,7 +16,6 @@ def foxyfeed(request):
             for transaction in data.transactions:
                 order = Order(order_xml=str(data))
                 order.save()
-
             return HttpResponse('foxy')
 
         except Exception, e:
