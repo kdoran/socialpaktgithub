@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Order(object):
+class Order(models.Model):
 	"""An order received from FoxyCart"""
 
 	order_xml = models.TextField()
