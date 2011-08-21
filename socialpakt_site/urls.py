@@ -6,6 +6,7 @@ admin.autodiscover()
 
 from catalog.views import *
 from partners.models import *
+from orders.views import *
 from django.views.generic import DetailView, TemplateView, CreateView
 
 from splash.models import SignupForm
@@ -26,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^cart/checkout/$', TemplateView.as_view(template_name="foxycart/checkout.html"), name='fc_checkout', ),
     url(r'^cart/details/$', TemplateView.as_view(template_name="foxycart/cart.html"), name='fc_cart', ),
     url(r'^cart/receipt/$', TemplateView.as_view(template_name="foxycart/receipt.html"), name='fc_cart', ),
+
+    url(r'^order/$', foxyfeed, name="order"),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),

@@ -172,6 +172,8 @@ PAYPAL_RECEIVER_EMAIL = "jonloy_1312669681_biz@gmail.com"
 PAYPAL_WPP_PASSWORD = "1312669733"
 PAYPAL_WPP_SIGNATURE = "AamqpsltJ37ivz.f9TQpoEQFWXzrATJshZ.CeDL9Y01xYbA9HOwQrtfr"
 
+FOXYCART_DATAFEED_KEY = "tGvpu4ljy4eTpECt9jfvkKKN5kcbwLCTiX8CVjMpiV8xqAQpPWNZBtHwHKB8"
+
 try:
     from local_settings import *
 except ImportError:
