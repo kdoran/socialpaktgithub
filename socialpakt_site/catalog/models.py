@@ -16,13 +16,22 @@ class Product(models.Model):
 	benefits = models.ForeignKey(Partner, related_name="benefits_from_set")
 
 	price = models.FloatField()
+	donation_amount = models.FloatField(default=6.0)
+	goal = models.FloatField(default=1200.0)
 	total_sold = models.IntegerField(default=0)
+
+	def total_raised(self):
+		return self.total_sold*self.donation_amount
+
+	def distance_to_goal(self):
+		return self.total_raised() / self.goal * 100.0
 
 	def __str__(self):
 		return self.slug
 		
 class ProductVariation(models.Model):
 	description = models.CharField(max_length=255)
+	num_ordered = models.IntegerField(default=0)
 	product = models.ForeignKey(Product)
 
 	def get_amount(self, quantity):

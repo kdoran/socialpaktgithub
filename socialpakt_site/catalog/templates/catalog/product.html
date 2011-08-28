@@ -33,8 +33,16 @@
         </div>
         <div id="rightside">
           <div id="saleinfo">
-            <div id="numbersold">
-              <span class="label">Total Sold:</span> {{product.total_sold}}
+            <div id="totalraised">
+              <span class="label">Total Raised:</span> ${{product.total_raised}}
+            </div>
+
+            <div id="donationgoal">
+              <span class="label">Goal:</span> ${{product.goal}}
+            </div>
+
+            <div id="distance">
+              <span class="label">Distance to Goal:</span> {{product.distance_to_goal}}%
             </div>
 
             <div id="timeleft">

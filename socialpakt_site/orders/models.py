@@ -2,11 +2,59 @@ from django.db import models
 
 # Create your models here.
 class Order(models.Model):
-	"""An order received from FoxyCart"""
+    """An order received from FoxyCart"""
 
-	order_xml = models.TextField()
-	fulfilled = models.BooleanField(default=False)
+    order_xml = models.TextField()
+    fulfilled = models.BooleanField(default=False)
+   
+    order_id = models.CharField(max_length=255, null=True, blank=True)
+    transaction_date = models.DateField(null=True, blank=True)
+    processor_response = models.CharField(max_length=255, null=True, blank=True)
+    customer_id = models.CharField(max_length=255, null=True, blank=True)
+    is_anonymous = models.CharField(max_length=255, null=True, blank=True)
+    customer_first_name = models.CharField(max_length=255, null=True, blank=True)
+    customer_last_name = models.CharField(max_length=255, null=True, blank=True)
+    customer_company = models.CharField(max_length=255, null=True, blank=True)
+    customer_address1 = models.CharField(max_length=255, null=True, blank=True)
+    customer_address2 = models.CharField(max_length=255, null=True, blank=True)
+    customer_city = models.CharField(max_length=255, null=True, blank=True)
+    customer_state = models.CharField(max_length=255, null=True, blank=True)
+    customer_postal_code = models.CharField(max_length=255, null=True, blank=True)
+    customer_country = models.CharField(max_length=255, null=True, blank=True)
+    customer_phone = models.CharField(max_length=255, null=True, blank=True)
+    customer_email = models.CharField(max_length=255, null=True, blank=True)
+    customer_ip= models.CharField(max_length=255, null=True, blank=True)
+    shipping_first_name= models.CharField(max_length=255, null=True, blank=True)
+    shipping_last_name= models.CharField(max_length=255, null=True, blank=True)
+    shipping_company= models.CharField(max_length=255, null=True, blank=True)
+    shipping_address1= models.CharField(max_length=255, null=True, blank=True)
+    shipping_address2= models.CharField(max_length=255, null=True, blank=True)
+    shipping_city= models.CharField(max_length=255, null=True, blank=True)
+    shipping_state= models.CharField(max_length=255, null=True, blank=True)
+    shipping_postal_code= models.CharField(max_length=255, null=True, blank=True)
+    shipping_country= models.CharField(max_length=255, null=True, blank=True)
+    shipping_phone= models.CharField(max_length=255, null=True, blank=True)
+    shipto_shipping_service_description= models.CharField(max_length=255, null=True, blank=True)
+    purchase_order= models.CharField(max_length=255, null=True, blank=True)
+    cc_number_masked= models.CharField(max_length=255, null=True, blank=True)
+    cc_type= models.CharField(max_length=255, null=True, blank=True)
+    cc_exp_month= models.CharField(max_length=255, null=True, blank=True)
+    cc_exp_year= models.CharField(max_length=255, null=True, blank=True)
+    product_total= models.CharField(max_length=255, null=True, blank=True)
+    tax_total= models.CharField(max_length=255, null=True, blank=True)
+    shipping_total= models.CharField(max_length=255, null=True, blank=True)
+    order_total= models.CharField(max_length=255, null=True, blank=True)
+    payment_gateway_type= models.CharField(max_length=255, null=True, blank=True)
+    receipt_url= models.CharField(max_length=255, null=True, blank=True)
+    taxes= models.CharField(max_length=255, null=True, blank=True)
+    discounts= models.CharField(max_length=255, null=True, blank=True)
+    customer_password= models.CharField(max_length=255, null=True, blank=True)
+    customer_password_salt= models.CharField(max_length=255, null=True, blank=True)
+    customer_password_hash_type= models.CharField(max_length=255, null=True, blank=True)
+    customer_password_hash_config= models.CharField(max_length=255, null=True, blank=True)
+   
+    items_ordered = models.TextField(null=True, blank=True)
 
-	def __str__(self):
-		return self.order_xml
-		
+    def __str__(self):
+        return str(self.order_id)
+        
