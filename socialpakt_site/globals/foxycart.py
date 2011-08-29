@@ -120,7 +120,7 @@ class FoxyData:
       for details in node.getElementsByTagName('transaction_detail'):
         item = {}
         for k in FoxyData.item_fields:
-          item[k] = extract_kv_node(node, k)
+          item[k] = extract_kv_node(details, k)
 
         detail = item['detail'] = {}
         for detail_opt in details.getElementsByTagName('transaction_detail_option'):
