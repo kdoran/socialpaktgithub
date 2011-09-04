@@ -16,28 +16,97 @@
 </head>
 
 <body>
-    <div id="header">
-        {% block header %}
-            <a href="/"><img src="{{ STATIC_URL }}images/socialpakt_logo.png" width="366" height="135" alt=""></a>
-        {% endblock header %}
+    <!-- header bg gradient and texture - there has got to be a better way to do this! -->
+    <div class="backgroundgradient header">
+        <div class="texture"></div>
     </div>
-    <div id="content">
+
+    <header>
+            <div class="logo">
+                <h1>SocialPakt</h1>
+                <div class="tagline">Make a Pakt, Make a Difference</div>
+            </div>
+        
+            <div class="contestcallout">
+                <h2>Like us and win a $100 donation</h2>
+                <p>to the charity of your choice</p>
+                <div class="likebutton">LIKE</div>
+            </div>
+
+            {% block cartnav %}
+                <a href="http://socialpakt.foxycart.com/cart?cart=view">Shopping Cart</a>  
+            {% endblock cartnav %}
+    </header>
+
+    <div class="shareit">
         {% block sharethis %}
-            <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span><br/>
+            <span  class='st_facebook_vcount' displayText='Facebook'></span><span  class='st_twitter_vcount' displayText='Tweet'></span><span  class='st_email_vcount' displayText='Email'></span><span  class='st_plusone_vcount' ></span>
         {% endblock sharethis %}
+    </div>
 
-        {% block sloganblock %}
-            <img src="{{ STATIC_URL }}images/home-our-vision.png" class="homepage-center"><br/>  
-        {% endblock sloganblock %}
-        
-        {% block cartnav %}
-            <a href="http://socialpakt.foxycart.com/cart?cart=view">Shopping Cart</a>  
-        {% endblock cartnav %}
-        
-        {% block main %}
-            
-        {% endblock main %}
+    <div id="content">
+      {% block content %}
+        <div id="main">    
+            {% block main %}
+                
+            {% endblock main %}
+        </div>
 
+        <div id="comments">
+            {% block fbcomments %}
+              
+            {% endblock fbcomments %}
+        </div>
+
+        <div id="about">
+            {% block about %}
+              
+            {% endblock about %}
+        </div>
+      {% endblock content %}
+    </div>
+
+    <div class="backgroundgradient footer">
+      <div class="texture"></div>
+    </div>
+
+    <div id="bottom">
+        <div class="contest">
+            <h2>Like us and win a $100 donation</h2>
+            <p>
+                Like us on Facebook and you could win a $100 donation to the charity of your choice.
+            </p>
+            <div class="likebutton">LIKE</div>
+        </div>
+    
+        <div class="story">
+            <h4>Our Story</h4>
+            <div class="video">
+                <iframe width="420" height="345" src="http://www.youtube.com/embed/GqIGXC0c0aM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Lorizzle ipsum go to hizzle break it down amizzle, ma nizzle adipiscing things. Nullam sapizzle velizzle, bizzle volutpat, for sure quizzle, gravida vizzle, pizzle. Pellentesque shizzle my nizzle crocodizzle phat.</p>
+        </div>
+
+        <div id="footer">  
+            <div class="wrapper">
+                <ul class="nav">
+                    <li>Our Story</li>
+                    <li>Charities</li>
+                    <li>Artists</li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                    <li>FAQ</li>
+                </ul>  
+                <ul class="subnav">
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/conditions/">Terms &amp; Conditions</a></li>
+                </ul>  
+                <ul class="sociallinks">
+                    <li class="facebook"><a href="http://www.facebook.com/SocialPakt">Facebook</a></li>
+                    <li class="twitter"><a href="http://www.twitter.com/SocialPakt">Twitter</a></li>
+                    <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
+                </ul>  
+            </div>
+        </div>
     </div>
 
     {% block globaljs %}

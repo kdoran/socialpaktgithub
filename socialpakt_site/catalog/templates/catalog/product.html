@@ -18,67 +18,96 @@
 
 {% block main %}
     <div id="productblock">
-        <h2>{{ product.title }}</h2>
-        <fb:like href="http://{{ request.get_host }}/shirt/{{product.slug}}/" send="true" width="450" show_faces="true" font=""></fb:like>
-        <ul class="photobrowser">
-        {% for photo in product.productphoto_set.all %}
-            <li class="photo {% if forloop.first %}big{% endif %}">
-                <img src="{{photo.photo.url}}" alt="{{photo.description}}">
-            </li>
-        {% endfor %}
-        </ul>
-        <div class="clear"></div>
-        <div id="description">
-            <p>{{product.description}}</p>
+        <div id="shirt">
+            {% for photo in product.productphoto_set.all %}
+            <div class="shirtimage {% if forloop.first %}big{% endif %}">
+                <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
+            </div>
+            {% endfor %}
         </div>
-        <div id="rightside">
-          <div id="saleinfo">
-            <div id="totalraised">
-              <span class="label">Total Raised:</span> ${{product.total_raised}}
-            </div>
 
-            <div id="donationgoal">
-              <span class="label">Goal:</span> ${{product.goal}}
-            </div>
-
-            <div id="distance">
-              <span class="label">Distance to Goal:</span> {{product.distance_to_goal}}%
-            </div>
-
-            <div id="timeleft">
-              <h3>Time Left:</h3>
-              <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
-            </div>
-
-            {% if can_add_to_cart %}
-            <div id="addtocart">
-                Add to Cart:
-                <form action="https://socialpakt.foxycart.com/cart" method="post">
-                  <input type="hidden" name="name" value="{{product.title}}" />
-                  <input type="hidden" name="code" value="{{product.slug}}" />
-                  <input type="hidden" name="price" value="{{product.price}}" />
-                  <select id="shirt_select" name="shirt">
-                      {% for v in product.productvariation_set.all %}
-                      <option value="{{v.description}}">{{v.description}}</option>
-                      {% endfor %}
-                  </select>
-                  <label for="quantity_input">Quantity:</label> <input id="quantity_input" name="quantity" type="text" size="4" value="1">
-                  <input type="submit" name="Add to Cart" value="Add to Cart" class="submit" />
-                </form>
-            </div>  
-            {% endif %}
-            
-            
+        <div id="purchase">
+          <div class="charity">
+              <h2 class="donated">${{product.donation_amount|floatformat}} from every purchase is donated to</h2>
+              <a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a>
           </div>
-          <div id="artistinfo">
-            <h3>About the Artist: <a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
-            <p>{{product.artist.about|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>
+
+          <div id="donations">
+              <div class="donation">
+                  <h3>donated</h3>
+                  <p class="number"><span class="dollarsign">$</span>{{product.total_raised|floatformat}}</p>
+              </div>
+              <div class="goal">
+                  <h3>our goal</h3>
+                  <p class="number"><span class="dollarsign">$</span>{{product.goal|floatformat}}</p>
+              </div>
+              <div id="timeleft">
+                  <h3>time left:</h3>
+                  <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+              </div>
           </div>
-          <div id="npoinfo">
-              <h3>Benefits: <a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
-              <p>{{product.benefits.about|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
-          </div>
+          
+          {% if can_add_to_cart %}
+          <form action="https://socialpakt.foxycart.com/cart" method="post">
+              <input type="hidden" name="name" value="{{product.title}}" />
+              <input type="hidden" name="code" value="{{product.slug}}" />
+              <input type="hidden" name="price" value="{{product.price}}" />
+              <input type="hidden" name="quantity" value="1">
+              <select id="shirt_select" name="shirt">
+                  {% for v in product.productvariation_set.all %}
+                  <option value="{{v.description}}">{{v.description}}</option>
+                  {% endfor %}
+              </select>
+          
+              <div id="sizes">
+                  <div class="womens">
+                      <h3><span class="price">${{product.price|floatformat}}</span> Women's Tee</h3>
+                      <a class="sizeandfit">size and fit</a>
+                      <ul class="options">
+                          <li id="Women's S" class="size">s</li>
+                          <li id="Women's M" class="size">m</li>
+                          <li id="Women's L" class="size">l</li>
+                          <li id="Women's XL" class="size">xl</li>
+                      </ul>
+                  </div>
+                  <div class="mens">
+                      <h3><span class="price">${{product.price|floatformat}}</span> Men's Tee</h3>
+                      <a class="sizeandfit">size and fit</a>
+                      <ul class="options">
+                          <li id="Men's S" class="size">s</li>
+                          <li id="Men's M" class="size">m</li>
+                          <li id="Men's L" class="size">l</li>
+                          <li id="Men's XL" class="size">xl</li>
+                      </ul>
+                  </div>
+              </div>
+          
+              <div id="addtocart">
+                  <input type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
+              </div>
+
+          </form>
+
+          
+          {% endif %}
         </div>
-        <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="800"></fb:comments>
     </div>
 {% endblock main %}
+
+{% block fbcomments %}
+  <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
+{% endblock fbcomments %}
+
+{% block about %}
+  <div class="charity">
+      <span class="label">about the charity</span>
+      <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
+      <div class="logo"><a href="{% url nonprofit product.benefits.slug %}"><img width="100px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a></div>
+      <p>{{product.benefits.about|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
+  </div>
+  <div class="artist">
+      <span class="label">about the artist</span>
+      <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
+      <p>{{product.artist.about|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>
+  </div>
+{% endblock about %}

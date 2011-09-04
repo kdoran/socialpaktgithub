@@ -11,6 +11,8 @@ class Partner(models.Model):
     name = models.CharField(max_length=255)
     about = models.TextField()
 
+    image = models.ImageField(blank=True, null=True, upload_to="partner_photos/")
+
     def __str__(self):
         return self.slug
 

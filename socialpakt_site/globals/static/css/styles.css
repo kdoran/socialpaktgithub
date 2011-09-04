@@ -1,178 +1,118 @@
-@charset "utf-8";
-/* CSS Document */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-body {
-    background: #6fbfce url('../images/bg-repeat.png') repeat-x 0px 208px;
-}
-* {
-    margin: 0;
-    padding: 0;
-}
-.clear {
-    clear: both;
-    display: block;
-    height: 0px;
-    padding: 0;
-    margin: 0;
-    border: 0 none;
-}
-img { 
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-#header {
-    display: block;
-    height: 166px;
-    background: #ffffff;
-    padding: 43px 0px 0px 0px;
-    text-align: center;
-    min-width: 1146px;
-}
-#content {
-    width: 1146px;
-    height: 971px;
-    padding: 57px 0 0 0;
-    background: url('../images/content-bg.png') no-repeat;
-    margin: 0 auto; 
-    text-align: center;
-    font-family: Arial, Helvetica, Georgia, Sans-Serif;
-    font-size: 12px;
-    color: white;
-}
-.homepage-wordpress {
-    float: left;    
-    position: relative;
-    margin: 0 12px 0 0;
-    top: 8px;
-}
+body {background-color: #f9f9f9; color: #333; font-family: Proxima Nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} /* this should be webfonts replaced */
 
-.homepage-twitter {
-    float: left;    
-    position: relative;
-    top: 8px;
-}
+h1 {font-size: 72px;}
+h2 {font-size: 24px;}
+h3 {font-size: 20px;}
+    
+p {font-size: 14px; line-height: 2em;}
+    
+a {text-decoration: underline;}
+a:hover {text-decoration: underline;}
 
-.homepage-facebook {
-    float: left;
-    margin: 0 12px 0 13px;
-    position: relative;
-    top: 8px;
-}
 
-.homepage-email {
-    float: left;
-    background: url('../images/homepage-email.png');
-    width: 386px;
-    height: 40px;
-    font-family: "Myriad Pro", sans-serif;
-    font-size: 20px;
-    color: #959595;
-    padding: 0 22px;
-}
+    .texture {background: url(../images/texture.png) repeat-x 0 -5px; height: 208px;}
+    .backgroundgradient {height: 208px; width: 100%; position: absolute; z-index: -1;}
+            .backgroundgradient.header {top: 25px;
+                background-image: -webkit-gradient(linear, left 10, right bottom, color-stop(0.15, rgb(177,212,138)), color-stop(0.36, rgb(172,221,182)), color-stop(0.87, rgb(146,212,218)));
+        background-image: -moz-linear-gradient(left 10, rgb(177,212,138) 15%, rgb(172,221,182) 36%, rgb(146,212,218) 87%);}
+            .backgroundgradient.footer {
+                background-image: -webkit-gradient(linear, left 10, right bottom, color-stop(0.15, rgb(218,170,181)), color-stop(0.36, rgb(201,176,215)), color-stop(0.87, rgb(153,143,205)));
+                background-image: -moz-linear-gradient(left 10, rgb(218,170,181) 15%, rgb(201,176,215) 36%, rgb(153,143,205) 87%);}
 
-.homepage-submit {
-    float: left;
-    width: 86px;
-    height: 28px;
-    background: url('../images/homepage-submit.png');
-    border: 0;
-    position: relative;
-    top: 9px;
-    left: 11px;
-    cursor: pointer;
-}
-#productblock, #partnerblock {
-    text-align: left;
-    width: 818px;
-    margin: 0 auto;
-}
+        
+header {margin: 30px auto; width: 960px;}
+    header:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+    
+    .logo {float: left; width: 600px;}
+        .logo h1 {display: block; text-indent: -9999em; background: url(../images/logo.png) no-repeat; margin: 30px 0 0 0; height: 120px;}
+        .tagline {display: block; text-indent: -9999em; background: url(../images/tagline.png) no-repeat; height: 20px;} /* this should be webfonts replaced */
+            
+    .contestcallout {width: 350px; float: right; padding-top: 15px; /*background: url(../images/contest_texture.png) no-repeat;*/}
+        .contestcallout h2 {-webkit-transform: rotate(-10deg); text-transform: uppercase; color: #178a94; font-size: 36px; text-shadow: 1px 3px 2px #fff;}
+        .likebutton {}
+    
 
-ul {
-    list-style: none;
-}
+.shareit {float: left; width: 50px;}
+    
+#content {width: 960px; border: 1px solid red; margin: 0 auto;}
+    #content:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+    
+#main {}
+            
+    #shirt {width: 630px; float: left;}
+        .shirtimage {border: 8px solid #451c43; width: 580px; height: 400px;}
+            .shirtimage img {}
+        .design {}
+            .design a {}
+        
+    #purchase {width: 330px; float: right;}
 
-p {
-    line-height: 18px;
-}
+        .charity {}
+            .charity h2 {}
+            .charity img.logo {}
 
-h2 { 
-    font-size: 18px;
-    margin-bottom: 12px;
-}
+        #donations {background-color: #f2f6f6;}
+            .dollarsign {font-weight: bold;}
 
-a, a:visited {
-    font-weight: bold;
-    color: #328C9F;
-    text-decoration: none;
-}
+            .donation {float: left; width: 49%;}
+                .donation h3 {}
+                .donation .number {}
+            .goal {float: left; width: 49%;}
+                .goal h3 {}
+                .goal .number {}
 
-a:hover {
-    text-decoration: underline;
-}
+        #shirt_select {display:none;}
 
-div.clear { clear: both; }
+        #sizes {}
+            #sizes h3 {}
+            .price {}
+            .sizeandfit {}
+            
+            ul.options {}
+                .size {}
+                .size.selected { font-weight:bold; color: red;}
+                .size.unavailable {}
+            
+            .womens {}
+            .mens {}
+        
+        #addtocart {}
+            input#cartbutton {}
 
-div#description {
-    clear: both;
-    width: 600px;
-    float: left;
-    margin: 10px 10px 20px 0;
-}
 
-div#rightside {
-    float: right;
-    width: 200px;
-    margin: 10px 0px 20px 0;
-}
+#comments {clear: left; width: 630px; float: left;}
 
-div#rightside h3 {
-    margin-top: 10px;
-}
 
-ul.photobrowser li {
-    display: inline;
-    float: left;
-    margin: 10px 10px 0px 0;
-}
+#about {clear: right; width: 330px; float: right;}
+    #about .label {}
+    #about h3 {}
 
-ul.photobrowser li img {
-    width: 100px;
-    cursor: pointer;
-}
+    .charity {}
+        .charity .logo {}
 
-ul.photobrowser li.big img {
-    width: 800px;
-}
+    .artist {}
 
-table#cartitems{
-    border: 1px solid #666;
-    margin: 0 auto;
-}
 
-table#cartitems td, th {
-    border: 1px solid #666;
-    margin: 5px;
-}
+#bottom {margin-top: 50px;}
+    
+    .contest {float: left; width: 630px;}
+        
+    .story {width: 330px; float: right;}
+        .video {}
 
-#emailform ul.errorlist {
-    clear:both;
-    font-weight:bold;
-    font-size: 16px;
-}
 
-#splashcontainer {
-    width: 650px;
-    margin: 15px auto 15px auto;
-}
+#footer {background-color: #431c41;}
+    #footer:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-#thankyou {
-    text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 34px; color: #ffffff; padding-top: 4px;
-}
+    ul.nav {float: left;}
+        .nav li {}
 
-#upcomingimg { padding-top: 15px; padding-left: 16px;}
+    ul.subnav {float: left; clear: left;}
+        .subnav li {}
+            
+    ul.sociallinks {width: 330px; float: right;}
+        .sociallinks li {}
+        .sociallinks .facebook {}
+        .sociallinks .twitter {}
+        .sociallinks .youtube {}
+        .sociallinks .vimeo {}
