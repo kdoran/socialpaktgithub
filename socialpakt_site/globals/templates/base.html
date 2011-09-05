@@ -22,6 +22,7 @@
     </div>
 
     <header>
+        {% block header %}  
             <div class="logo">
                 <h1>SocialPakt</h1>
                 <div class="tagline">Make a Pakt, Make a Difference</div>
@@ -36,6 +37,7 @@
             {% block cartnav %}
                 <a href="http://socialpakt.foxycart.com/cart?cart=view">Shopping Cart</a>  
             {% endblock cartnav %}
+        {% endblock header %}
     </header>
 
     <div class="shareit">
