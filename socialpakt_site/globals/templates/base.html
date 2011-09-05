@@ -65,7 +65,7 @@
         </div>
       {% endblock content %}
     </div>
-
+    {% block bottom %}  
     <div class="backgroundgradient footer">
       <div class="texture"></div>
     </div>
@@ -108,6 +108,7 @@
             </div>
         </div>
     </div>
+    {% endblock bottom %}
 
     {% block globaljs %}
       <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
