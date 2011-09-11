@@ -17,8 +17,11 @@
 
 <body>
 
+
   {% block cartnav %}
-    <div id="shoppingcart"><a href="http://socialpakt.foxycart.com/cart?cart=view">Shopping Cart</a></div>
+  <div id="cartwrapper">
+    <div id="shoppingcart"><a href="http://socialpakt.foxycart.com/cart?cart=view">your cart</a></div>
+  </div>
   {% endblock cartnav %}
 
     <header class="backgroundgradient header">
@@ -71,7 +74,7 @@
     <div id="bottom" class="backgroundgradient footer">
       <div class="wrapper">
         <div class="contestinfo">
-            <h2>Like us and win a $100 donation</h2>
+            <h4>Like us and win a $100 donation</h4>
             <p>
                 Like us on Facebook and you could win a $100 donation to the charity of your choice.
             </p>
@@ -89,6 +92,11 @@
 
         <div id="footer">  
             <div class="wrapper">
+                <ul class="sociallinks">
+                    <li class="facebook"><a href="http://www.facebook.com/SocialPakt">Facebook</a></li>
+                    <li class="twitter"><a href="http://www.twitter.com/SocialPakt">Twitter</a></li>
+                    <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
+                </ul>  
                 <ul class="nav">
                     <li>Our Story</li>
                     <li>Charities</li>
@@ -99,12 +107,7 @@
                 <ul class="subnav">
                     <li><a href="/privacy/">Privacy Policy</a></li>
                     <li><a href="/conditions/">Terms &amp; Conditions</a></li>
-                </ul>  
-                <ul class="sociallinks">
-                    <li class="facebook"><a href="http://www.facebook.com/SocialPakt">Facebook</a></li>
-                    <li class="twitter"><a href="http://www.twitter.com/SocialPakt">Twitter</a></li>
-                    <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
-                </ul>  
+                </ul>
             </div>
         </div>
     </div>
