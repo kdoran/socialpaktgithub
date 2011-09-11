@@ -20,7 +20,7 @@
     <div id="productblock">
         <div id="shirt">
             {% for photo in product.productphoto_set.all %}
-            <div class="shirtimage {% if forloop.first %}big{% endif %}">
+            <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
                 <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
             </div>
             {% endfor %}
@@ -35,11 +35,11 @@
           <div id="donations">
               <div class="donation">
                   <h3>donated</h3>
-                  <p class="number"><span class="dollarsign">$</span>{{product.total_raised|floatformat}}</p>
+                  <div class="number"><span class="dollarsign">$</span>{{product.total_raised|floatformat}}</div>
               </div>
               <div class="goal">
                   <h3>our goal</h3>
-                  <p class="number"><span class="dollarsign">$</span>{{product.goal|floatformat}}</p>
+                  <div class="number"><span class="dollarsign">$</span>{{product.goal|floatformat}}</div>
               </div>
               <div id="timeleft">
                   <h3>time left:</h3>
@@ -99,7 +99,7 @@
 {% endblock fbcomments %}
 
 {% block about %}
-  <div class="charity">
+  <div class="aboutcharity">
       <span class="label">about the charity</span>
       <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
       <div class="logo"><a href="{% url nonprofit product.benefits.slug %}"><img width="100px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a></div>

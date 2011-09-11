@@ -6,8 +6,8 @@ h3 {font-size: 20px;}
     
 p {font-size: 14px; line-height: 1.8em;}
     
-a {text-decoration: none;}
-a:hover {text-decoration: underline;}
+a {color: #5A6A2B; text-decoration: none;}
+a:hover {color: #4B5B1A; text-decoration: underline;}
 
 
     /* TODO add browser fallbacks */
@@ -38,7 +38,7 @@ header {margin-top: 30px;}
         .tagline {display: block; text-indent: -9999em; background: url(../images/tagline.png) no-repeat; height: 20px; margin-top: -20px;}
             
     .contestcallout {width: 300px; float: right; padding-top: 55px;}
-        .contestcallout h2 {-webkit-transform: rotate(-5deg); text-transform: uppercase; color: #178a94; font-size: 36px; text-shadow: 1px 3px 2px #fff; margin: 0; padding: 0;}
+        .contestcallout h2 {-webkit-transform: rotate(-5deg); text-transform: uppercase; color: #178a94; font-size: 34px; text-shadow: 1px 3px 2px #fff; margin: 0; padding: 0;}
         .contestcallout p {margin: 0; padding: 0; color: #178a94; -webkit-transform: rotate(-5deg); text-align: right; margin-right: 16px; font-style: italic; font-weight: bold;}
         .likebutton {float: right; margin-right: 20px; border: 1px solid #fff; background-color: #eee; padding: 5px; border-radius: 5px;}
     
@@ -51,6 +51,7 @@ header {margin-top: 30px;}
     
 #main {}
             
+    /* TODO ask them for sizes of images and fix h/w */
     #shirt {width: 630px; float: left; background: url(../images/pictureframe.png) no-repeat;}
         .shirtimage.big {padding: 6px 15px;}
         .shirtimage.big img {border: 8px solid #451c43; width: 560px; height: 371px;}
