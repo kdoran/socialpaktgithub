@@ -1,4 +1,4 @@
-body {background-color: #f9f9f9; border: 1px solid #999; color: #333; font-family: Proxima Nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} /* this should be webfonts replaced */
+body {background-color: #f9f9f9; color: #333; font-family: Proxima Nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} /* this should be webfonts replaced */
 
 h1 {font-size: 72px;}
 h2 {font-size: 24px;}
@@ -27,8 +27,8 @@ a:hover {color: #4B5B1A; text-decoration: underline;}
 
             .wrapper {margin: 0 auto; width: 960px;}
 
-
-#shoppingcart {position: absolute; right: 0;}
+#cartwrapper {position: relative; width: 960px;}
+#shoppingcart {position: absolute; right: 0; top: 0;}
         
 header {margin-top: 30px;}
     header:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
@@ -151,7 +151,8 @@ header {margin-top: 30px;}
         .subnav li a {color: #7c5e7a;}
             
     .sociallinks {width: 330px; float: right; margin: 0; padding: 0;}
-        .sociallinks li {list-style-type: none; margin: 0 20px 0 0; padding: 0; display: block; float: left; text-indent: -9999em; height: 30px; width: 30px;}
+        .sociallinks li {list-style-type: none; margin: 0 20px 0 0; padding: 0; display: block; float: left; text-indent: -9999em; height: 35px; width: 30px; opacity: .75; cursor: pointer;}
+            .sociallinks li:hover {opacity: 1;}
         .sociallinks .facebook {background: url(../images/facebook.png) no-repeat;}
         .sociallinks .twitter {background: url(../images/twitter.png) no-repeat;}
         .sociallinks .youtube {background: url(../images/youtube.png) no-repeat;}
