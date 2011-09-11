@@ -130,7 +130,7 @@ header {margin-top: 30px;}
     #bottom h4 {color: #991148; text-transform: uppercase; font-size: 28px; margin: 0;}
 
     .contestinfo {float: left; width: 630px;}
-        .contestinfo .likebutton {float: none; display: inline;}
+        .contestinfo .likebutton {float: none; width:215px;}
         
     .story {width: 330px; float: right;}
         #bottom .story h4 {font-size: 36px;}
