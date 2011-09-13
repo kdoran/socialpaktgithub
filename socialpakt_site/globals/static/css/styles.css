@@ -11,9 +11,9 @@ a:hover {color: #4B5B1A; text-decoration: underline;}
 
 
     /* TODO add browser fallbacks */
-    .backgroundgradient {height: 218px;}
+    .backgroundgradient {}
 
-        .backgroundgradient.header {
+        .backgroundgradient.header {padding-bottom: 10px;
                 background-image: url(../images/texture_header.png), -webkit-gradient(linear, left 10, right bottom, color-stop(0.15, rgb(177,212,138)), color-stop(0.36, rgb(172,221,182)), color-stop(0.87, rgb(146,212,218)));
                 background-image: url(../images/texture_header.png), -moz-linear-gradient(left 10, rgb(177,212,138) 15%, rgb(172,221,182) 36%, rgb(146,212,218) 87%);
             }
@@ -27,14 +27,16 @@ a:hover {color: #4B5B1A; text-decoration: underline;}
 
             .wrapper {margin: 0 auto; width: 960px;}
 
-#shoppingcart {position: absolute; right: 18%; top: 0; font-size: 12px; font-weight: bold; padding: 10px; background-color: #eee;}
+#shoppingcart a {position: absolute; right: 8%; top: -8px; font-size: 12px; font-weight: bold; padding: 15px 15px; background-color: #ada0d6; box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,.2); opacity: .5;}
+    #shoppingcart a:hover, #shoppingcart a:active {opacity: 1;}
+    #shoppingcart a {color: #fff; text-decoration: none;}
         
-header {margin-top: 30px;}
+header {margin-top: -10px;}
     header:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
     
     .logo {float: left; width: 600px;}
-        .logo h1 {display: block; text-indent: -9999em; background: url(../images/logo.png) no-repeat; margin: 30px 0 0 0; height: 140px;}
-        .tagline {display: block; text-indent: -9999em; background: url(../images/tagline.png) no-repeat; height: 20px; margin-top: -20px;}
+        .logo h1 {display: block; text-indent: -9999em; background: url(../images/logo.png) no-repeat; margin: 40px 0 0 0; height: 140px;}
+        .tagline {display: block; text-indent: -9999em;}
             
     .contestcallout {width: 300px; float: right; padding-top: 35px;}
         .contestcallout h2 {-webkit-transform: rotate(-5deg); text-transform: uppercase; color: #178a94; font-size: 30px; text-shadow: 1px 3px 2px #fff; margin: 0; padding: 0;}
@@ -52,8 +54,8 @@ header {margin-top: 30px;}
             
     /* TODO ask them for sizes of images and fix h/w */
     #shirt {width: 630px; float: left; background: url(../images/pictureframe.png) no-repeat;}
-        .shirtimage.big {padding: 6px 15px;}
-        .shirtimage.big img {border: 8px solid #451c43; width: 560px; height: 371px;}
+        .shirtimage.big {padding: 10px 19px;}
+        .shirtimage.big img {width: 560px; height: 450px;}
 
         .shirtimage.thumbnail {display: inline-block; margin: 30px 0 0 25px; border: 3px solid #451c43; width: 85px; height: 85px; overflow: hidden;}
                 .shirtimage.thumbnail img {width: 130px; margin-left: -20px; border: 0;}
@@ -113,7 +115,7 @@ header {margin-top: 30px;}
 #comments {clear: left; width: 590px; float: left; margin: 50px 0 0 10px; border-top: 3px solid #451c43; padding-top: 30px;}
 
 
-#about {clear: right; width: 330px; float: right;}
+#about {clear: right; width: 310px; float: right;}
     #about .label {font-size: 18px; font-style: italic; font-weight: normal; color: #53a9b8;}
     #about h3 {font-size: 24px; margin: 5px 0 15px 0; padding: 0;}
         #about h3 a {color: #5a6a2b;}
@@ -127,14 +129,18 @@ header {margin-top: 30px;}
 
 #bottom {margin-top: 50px; padding-top: 60px;}
     #bottom:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-    #bottom h4 {color: #991148; text-transform: uppercase; font-size: 28px; margin: 0;}
+    #bottom h4, #bottom h4 a {color: #991148; text-transform: uppercase; font-size: 28px; margin: 0; font-weight: bold;}
+        #bottom h4 a:hover {color: #6e0c33;}
 
-    .contestinfo {float: left; width: 630px;}
+    .contestinfo {width: 310px; float: right;}
         .contestinfo .likebutton {float: none; width:215px;}
         
-    .story {width: 330px; float: right;}
+    .story {float: left; width: 600px;}
         #bottom .story h4 {font-size: 36px;}
         .video {margin-top: 30px;}
+
+    .aboutus {width: 310px; float: right;}
+        .aboutus p {color: #991148; font-size: 16px; margin: 0;}
 
 /* TODO make bigger img */
 #footer {background: url(../images/footer.png) repeat-x; clear: both; padding: 40px 0;}
@@ -149,7 +155,7 @@ header {margin-top: 30px;}
         .subnav li {display: block; float: left; color: #7c5e7a; text-transform: uppercase; font-size: 11px; font-style: italic; margin-right: 15px;}
         .subnav li a {color: #7c5e7a;}
             
-    .sociallinks {width: 330px; float: right; margin: 0; padding: 0;}
+    .sociallinks {width: 310px; float: right; margin: 0; padding: 0;}
         .sociallinks li {list-style-type: none; margin: 0 20px 0 0; padding: 0; display: block; float: left; text-indent: -9999em; height: 35px; width: 30px; opacity: .75; cursor: pointer;}
             .sociallinks li:hover {opacity: 1;}
         .sociallinks .facebook {background: url(../images/facebook.png) no-repeat;}
