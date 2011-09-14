@@ -27,10 +27,13 @@
         </div>
 
         <div id="purchase">
-          <div class="charity">
-              <h2 class="donated">${{product.donation_amount|floatformat}} from every purchase is donated to</h2>
-              <a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a>
+
+        <div class="charity">
+            <h2 class="donated">${{product.donation_amount|floatformat}} from every purchase is donated to:</h2>
+            <h3>This Week's Charity</h3>
+              <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
           </div>
+
 
           <div id="donations">
               <div class="donation">
@@ -41,11 +44,11 @@
                   <h3>our goal</h3>
                   <div class="number"><span class="dollarsign">$</span>{{product.goal|floatformat}}</div>
               </div>
-              <div id="timeleft">
-                  <h3>time left:</h3>
-                  <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
-              </div>
           </div>
+
+
+
+
           
           {% if can_add_to_cart %}
           <form action="https://socialpakt.foxycart.com/cart" method="post">
@@ -88,6 +91,12 @@
 
           </form>
 
+                      <div id="timeleft">
+                <h3>time left:</h3>
+                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+            </div>
+
+
           
           {% endif %}
         </div>
@@ -95,6 +104,7 @@
 {% endblock main %}
 
 {% block fbcomments %}
+<h3>What People Are Saying</h3>
   <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
 {% endblock fbcomments %}
 
