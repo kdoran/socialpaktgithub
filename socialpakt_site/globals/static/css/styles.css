@@ -51,7 +51,9 @@ header {margin-top: 10px;}
         /* can we animate these to slide L/R w jQuery? and make the images center or whatever? */
         .shirtimage {display: inline-block; overflow: hidden;}
             .shirtimage.big {width: 81%;}
+            .shirtimage.big.slide {width: 41%;}
             .shirtimage.thumbnail {width: 10%; margin-left: 2px; cursor: pointer; position: relative;}
+            .shirtimage.thumbnail.slide {width:50%;}
                 .shirtimage.thumbnail img {opacity: .7;}
                 .shirtimage.thumbnail:hover img {opacity: 1;}
 

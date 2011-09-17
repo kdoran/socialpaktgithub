@@ -35,7 +35,7 @@
         <div class="texture">
           <div class="wrapper">
             <div class="logo">
-                <h1>SocialPakt</h1>
+                <a href="/"><h1>SocialPakt</h1></a>
                 <div class="tagline">Make a Pakt, Make a Difference</div>
             </div>
         
@@ -43,7 +43,7 @@
                 <h2>Like us and win a $100 donation</h2>
                 <p>to the charity of your choice</p>
                 <div class="likebutton">
-                  <fb:like-box href="http://www.facebook.com/socialpakt" width="215" show_faces="false" stream="false" header="false"></fb:like-box>
+                  <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
                 </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ and non-profits in New York City.</a></p>
                 Like us on Facebook and you could win a $100 donation to the charity of your choice.
             </p>
             <div class="likebutton">
-              <fb:like-box href="http://www.facebook.com/socialpakt" width="215" show_faces="false" stream="false" header="false"></fb:like-box>
+              <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
             </div>
         </div>
 
@@ -120,10 +120,11 @@ and non-profits in New York City.</a></p>
                 </ul>  
                 <ul class="nav">
                     <li><a href="/aboutus/">Our Story</a></li>
-                    <li>Charities</li>
-                    <li>Artists</li>
+                    <li><a href="{% url npos %}">Nonprofits</a></li>
+                    <li><a href="{% url artists %}">Artists</a></li>
                     <li><a href="/contact/">Contact Us</a></li>
-                    <li>FAQ</li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="http://blog.socialpakt.com">BLOG</a></li>
                 </ul>  
                 <ul class="subnav">
                     <li><a href="/privacy/">Privacy Policy</a></li>

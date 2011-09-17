@@ -29,7 +29,7 @@
         <div id="purchase">
 
         <div class="charity">
-            <h2 class="donated">${{product.donation_amount|floatformat}} from every purchase is donated to:</h2>
+            <h2 class="donated">30% from every purchase is donated to:</h2>
             <h3>This Week's Charity</h3>
               <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
           </div>
@@ -86,7 +86,7 @@
               </div>
           
               <div id="addtocart">
-                  <input type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
+                  <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
               </div>
 
           </form>

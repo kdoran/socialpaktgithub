@@ -7,7 +7,7 @@ admin.autodiscover()
 from catalog.views import *
 from partners.models import *
 from orders.views import *
-from django.views.generic import DetailView, TemplateView, CreateView
+from django.views.generic import DetailView, TemplateView, CreateView, ListView
 
 from splash.models import SignupForm
 
@@ -37,6 +37,9 @@ urlpatterns = patterns('',
     	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),
     url(r'^nonprofit/(?P<slug>\w+)/$', 
     	DetailView.as_view(queryset=Partner.objects.filter(partner_type="NPO"),context_object_name="partner"), name='nonprofit', ),
+
+    url(r'^artists/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="ART"), template_name_suffix="_artistlist"), name='artists'),
+    url(r'^nonprofits/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="NPO"), template_name_suffix="_npolist"), name='npos'),
 
     url(r'^cart/', include('cart.urls')),
 )

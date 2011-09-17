@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block fbmetadata %}
+{% endblock fbmetadata %}
+
+{% block main %}
+    <div id="partnerblock">
+        <h2>SocialPakt Nonprofits</h2>
+        <ul id="partnerlist" class="nonprofit">
+          {% for partner in object_list %}
+            <li class="partner nonprofit">
+              <a href="{% url nonprofit partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a><br/>
+              <h3><a href="{% url nonprofit partner.slug %}">{{partner.name}}</a></h3>
+              <div id="description">
+                <p>{{partner.about|truncatewords_html:30}} <a href="{% url nonprofit partner.slug %}">more</a></p>
+              </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock main %}

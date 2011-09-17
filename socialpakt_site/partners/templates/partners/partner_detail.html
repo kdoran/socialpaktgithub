@@ -14,6 +14,8 @@
 {% block main %}
     <div id="partnerblock">
         <h2>{{ partner.name }}</h2>
+        <img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"><br/>
+
         {% if partner.partner_type == "ART" %}
         	<fb:like href="http://{{ request.get_host }}{% url artist partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>	
         {% else %}
