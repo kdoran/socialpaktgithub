@@ -1,0 +1,79 @@
+/* transitions */
+a {-webkit-transition: opacity .5s ease-in, color .5s ease-in;
+-moz-transition: opacity .5s ease-in, color .5s ease-in;
+-o-transition: opacity .5s ease-in, color .5s ease-in;
+transition: opacity .5s ease-in, color .5s ease-in;}
+
+
+
+
+.backgroundgradient.header {
+        background-image:  -webkit-gradient(linear, left 10, right bottom, color-stop(0.15, rgb(177,212,138)), color-stop(0.36, rgb(172,221,182)), color-stop(0.87, rgb(146,212,218)));
+        background-image: -moz-linear-gradient(left 10, rgb(177,212,138) 15%, rgb(172,221,182) 36%, rgb(146,212,218) 87%);
+    }
+
+
+.backgroundgradient.footer {
+        background-image: -webkit-gradient(linear, left 10, right bottom, color-stop(0.15, rgb(218,170,181)), color-stop(0.36, rgb(201,176,215)), color-stop(0.87, rgb(153,143,205)));
+        background-image: -moz-linear-gradient(left 10, rgb(218,170,181) 15%, rgb(201,176,215) 36%, rgb(153,143,205) 87%);
+        background-repeat: repeat-x;
+        background-position: 0 -27px;
+    }
+
+
+#shoppingcart a {box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,.2); opacity: .5;}
+	    #shoppingcart a:hover, #shoppingcart a:active {opacity: 1;}
+
+
+.contestcallout h2 {-webkit-transform: rotate(-5deg); text-shadow: 1px 3px 2px #fff;}
+.contestcallout p {-webkit-transform: rotate(-5deg); text-align: right;}
+
+
+.shirtimage.thumbnail:after {position: absolute; top: 40%; left: 30%; content: "+"; display: block; color: #fff; font-size: 72px; opacity: .6; font-weight: 600; text-shadow: 1px 1px 1px #333;}
+
+.shirtimage.thumbnail img {
+    -webkit-transition: opacity .2s ease-in;
+    -moz-transition: opacity .2s ease-in;
+    -o-transition: opacity .2s ease-in;
+    transition: opacity .2s ease-in;}
+
+
+.size {border-radius: 5px;}
+    .size:hover {box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.2);}
+.size.selected {box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.5);}
+
+    .size {-webkit-transition: all .1s ease-in;
+    -moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    transition: all .1s ease-in;}
+
+
+input#cartbutton {border-radius: 10px; box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5); background-image: url(../images/texture_button.png), -webkit-linear-gradient(top, rgba(255,255,255,0.15) 0%,rgba(0,0,0,0.15) 100%);}
+input#cartbutton:hover, input#cartbutton:focus {box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5);}
+
+input#cartbutton {-webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;}
+
+
+
+#comments h3 {-webkit-mask-image: url(../images/mask.png);
+-o-mask-image: url(../images/mask.png);
+-moz-mask-image: url(../images/mask.png);
+mask-image: url(../images/mask.png);
+}
+
+
+  .sociallinks li {-webkit-transition: opacity .2s ease-in;
+                    -moz-transition: opacity .2s ease-in;
+                    -o-transition: opacity .2s ease-in;
+                    transition: opacity .2s ease-in;}
+
+
+
+#partnerblock h2 {-webkit-mask-image: url(../images/mask.png);
+-o-mask-image: url(../images/mask.png);
+-moz-mask-image: url(../images/mask.png);
+mask-image: url(../images/mask.png);
+}

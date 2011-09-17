@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"> <!--<![endif]-->
 <head>
   <title>SocialPakt - Local Tees, Local Difference</title>
   
@@ -14,6 +20,7 @@
   {% endblock localcss %}
   {% block globalcss %}
      <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+     <link rel="stylesheet" href="{{ STATIC_URL }}css/css3.css">
   {% endblock globalcss %}
 </head>
 
@@ -25,6 +32,7 @@
 
     <header class="backgroundgradient header">
         {% block header %}
+        <div class="texture">
           <div class="wrapper">
             <div class="logo">
                 <h1>SocialPakt</h1>
@@ -38,6 +46,7 @@
                   <fb:like-box href="http://www.facebook.com/socialpakt" width="215" show_faces="false" stream="false" header="false"></fb:like-box>
                 </div>
             </div>
+          </div>
           </div>
         {% endblock header %}
     </header>
@@ -72,18 +81,20 @@
 
     {% block bottom %}  
     <div id="bottom" class="backgroundgradient footer">
+      <div class="texture">
       <div class="wrapper">
+    
 
       <div class="story">
             <h4><a href="/aboutus/">Our Vision</a></h4>
             <div class="video">
-                <iframe width="420" height="345" src="http://www.youtube.com/embed/GqIGXC0c0aM" frameborder="0" allowfullscreen></iframe>
+                <iframe width="600" height="430" src="http://www.youtube.com/embed/GqIGXC0c0aM" frameborder="0" allowfullscreen></iframe>
             </div>
-        </div>
+      </div>
 
         <div class="aboutus">
-        <p>Our vision is to build an online community that generates funds and awareness for local artists
-and non-profits in New York City. <a href="/aboutus/">more...</a></p>
+        <p><a href="/aboutus/">Our vision is to build an online community that generates funds and awareness for local artists
+and non-profits in New York City.</a></p>
         </div>
 
 
@@ -96,6 +107,10 @@ and non-profits in New York City. <a href="/aboutus/">more...</a></p>
               <fb:like-box href="http://www.facebook.com/socialpakt" width="215" show_faces="false" stream="false" header="false"></fb:like-box>
             </div>
         </div>
+
+      </div>
+      </div>
+  
 
         <div id="footer">  
             <div class="wrapper">
