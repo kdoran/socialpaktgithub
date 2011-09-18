@@ -12,9 +12,11 @@
 {% endblock fbmetadata %}
 
 {% block main %}
-    <div id="partnerblock">
+    <div id="partnerblock" class="partnerpage">
+        
+        <div class="partnerdetails">
         <h2>{{ partner.name }}</h2>
-        <img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"><br/>
+        <img class="partnerimage" src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}">
 
         {% if partner.partner_type == "ART" %}
         	<fb:like href="http://{{ request.get_host }}{% url artist partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>	
@@ -25,8 +27,9 @@
         <div id="description">
           <p>{{partner.about}}</p>
         </div>
+        </div>
 
-        <div id="rightside">
+        <div id="sidebar">
           <h3>Links</h3>
           <ul class="partnerlinks">
           	{% for link in partner.partnerlink_set.all %}

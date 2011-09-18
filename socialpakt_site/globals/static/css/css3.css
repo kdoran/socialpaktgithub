@@ -51,6 +51,8 @@ transition: opacity .5s ease-in, color .5s ease-in;}
 input#cartbutton {border-radius: 10px; box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5); background-image: url(../images/texture_button.png), -webkit-linear-gradient(top, rgba(255,255,255,0.15) 0%,rgba(0,0,0,0.15) 100%);}
 input#cartbutton:hover, input#cartbutton:focus {box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5);}
 
+input#cartbutton.disabled {box-shadow: inset 0px 0px 17px 2px rgba(0,0,0,.3);}
+
 input#cartbutton {-webkit-transition: all .5s ease-in;
     -moz-transition: all .5s ease-in;
     -o-transition: all .5s ease-in;

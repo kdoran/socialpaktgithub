@@ -29,7 +29,7 @@
         <div id="purchase">
 
         <div class="charity">
-            <h2 class="donated">30% from every purchase is donated to:</h2>
+            <h2 class="donated"><span class="number">30%</span> of your purchase is donated to:</h2>
             <h3>This Week's Charity</h3>
               <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
           </div>
@@ -115,7 +115,7 @@
       <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img width="100px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a></div>
       <p>{{product.benefits.about|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
   </div>
-  <div class="artist">
+  <div class="aboutartist">
       <span class="label">about the artist</span>
       <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
       <p>{{product.artist.about|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>

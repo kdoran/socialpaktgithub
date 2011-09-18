@@ -9,10 +9,10 @@
         <ul id="partnerlist" class="artist">
           {% for partner in object_list %}
             <li class="partner artist">
-              <a href="{% url artist partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a><br/>
-              <h3><a href="{% url artist partner.slug %}">{{partner.name}}</a></h3>
+              <a class="artistimage" href="{% url artist partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a>
               <div id="description">
-                <p>{{partner.about|truncatewords_html:30}} ... <a href="{% url artist partner.slug %}">more</a></p>
+                <h3><a href="{% url artist partner.slug %}">{{partner.name}}</a></h3>
+                <p>{{partner.about|truncatewords_html:30}} ... <a class="more" href="{% url artist partner.slug %}">Learn More</a></p>
               </div>
             </li>
         {% endfor %}
