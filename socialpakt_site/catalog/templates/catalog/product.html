@@ -104,8 +104,10 @@
 {% endblock main %}
 
 {% block fbcomments %}
-<h3>What People Are Saying</h3>
-  <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
+<div id="comments">
+  <h3>What People Are Saying</h3>
+    <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
+</div>
 {% endblock fbcomments %}
 
 {% block about %}
