@@ -182,10 +182,12 @@ header {margin-top: 10px;}
     .partnerpage .partnerimage {display: block; width: 650px; margin-bottom: 50px;}
     .partnerpage .partnerimage img {width: 100%;}
 
-    .partnerpage .partnerdetails {float: left; width: 500px;}
+    .partnerpage .partnerdetails {float: left; width: 650px;}
     
     .partnerpage #sidebar {float: right; width: 250px;}
         .partnerpage #sidebar ul {list-style-type: none; margin: 0; padding: 0;}
+        .partnerpage #sidebar h3 {color: #999; text-transform: uppercase; font-size: 12px; font-weight: normal;}
+        .partnerpage #sidebar .partnerlinks {margin-bottom: 30px;}
 
 
 /* PARTNER LIST */
