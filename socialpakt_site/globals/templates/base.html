@@ -7,7 +7,7 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"> <!--<![endif]-->
 <head>
-  <title>SocialPakt - Local Tees, Local Difference</title>
+  <title>Make a Pakt, Make a Difference</title>
   
   {% block fbmetadata %}
   {% endblock fbmetadata %}
@@ -84,9 +84,9 @@
     
 
       <div class="story">
-            <h4><a href="/aboutus/">Our Vision</a></h4>
+            <h4><a href="/aboutus/">How SocialPakt Works</a></h4>
             <div class="video">
-                <iframe width="600" height="430" src="http://www.youtube.com/embed/GqIGXC0c0aM" frameborder="0" allowfullscreen></iframe>
+                <iframe width="600" height="430" src="http://www.youtube.com/embed/2bwzdPBMg3s" frameborder="0" allowfullscreen></iframe>
             </div>
       </div>
 
@@ -109,10 +109,20 @@ and non-profits in New York City.</a></p>
   
         <div id="footer">  
             <div class="wrapper">
+                {% if form %}
+                <div id="mailinglist">
+                    <form id="emailform" method="post" action="."> 
+                      {% csrf_token %}
+                      <label for="home_email_address">Sign up for our mailing list to stay informed:&nbsp;&nbsp;</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Submit" />
+                      {{ form.email.errors }}
+                    </form> 
+                </div>
+                {% endif %}
+
                 <ul class="sociallinks">
-                    <li class="facebook"><a href="http://www.facebook.com/SocialPakt">Facebook</a></li>
-                    <li class="twitter"><a href="http://www.twitter.com/SocialPakt">Twitter</a></li>
-                    <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
+                    <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>
+                    <a href="http://www.twitter.com/SocialPakt"><li class="twitter">Twitter</li></a>
+                    <a href="http://www.youtube.com/user/SocialPakt"><li class="youtube">YouTube</li></a>
                 </ul>  
                 <ul class="nav">
                     <li><a href="/aboutus/">Our Story</a></li>

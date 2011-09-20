@@ -174,7 +174,27 @@ header {margin-top: 10px;}
         .sociallinks .vimeo {background: url(../images/vimeo.png) no-repeat;}
 
 
+input.homepage-email {
+    width: 155px;
+    border: 2px solid #178a94;
+    background: #fff;
+    padding: 5px;
+}
 
+input.homepage-submit {
+    text-transform: uppercase;
+    font-family: proxima-nova,arial,sans-serif;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #178a94;
+    background: #53a9b8;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+div#mailinglist {margin-bottom: 15px;}
+div#mailinglist label { color: white;}
 
 /* CHARITY/ARTIST PAGES */
 .partnerpage {}

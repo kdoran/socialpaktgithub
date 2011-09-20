@@ -25,7 +25,7 @@
         {% endif %}
         
         <div id="description">
-          <p>{{partner.about}}</p>
+          <p>{{partner.about|safe}}</p>
         </div>
         </div>
 
@@ -38,14 +38,14 @@
           </ul>
 
           {% if partner.partner_type == "ART" %}
-          	<h3>Has Designed:</h3>
+          	<h3>SocialPakt T-shirts:</h3>
           	<ul class = "tshirtlinks">
           		{% for s in partner.artist_on_set.all %}
           			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
           		{% endfor %}
           	</ul>
           {% else %}
-          	<h3>Has been supported by:</h3>
+          	<h3>SocialPakt T-shirts:</h3>
           	<ul class = "tshirtlinks">
           		{% for s in partner.benefits_from_set.all %}
           			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
