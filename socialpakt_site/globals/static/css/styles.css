@@ -1,4 +1,4 @@
-body {background-color: #f9f9f9; color: #333; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} 
+body {background-color: red; color: #333; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} 
 
 h1 {font-size: 72px;}
 h2 {font-size: 24px;}
@@ -174,27 +174,17 @@ header {margin-top: 10px;}
         .sociallinks .vimeo {background: url(../images/vimeo.png) no-repeat;}
 
 
-input.homepage-email {
-    width: 155px;
-    border: 2px solid #178a94;
-    background: #fff;
-    padding: 5px;
-}
 
-input.homepage-submit {
-    text-transform: uppercase;
-    font-family: proxima-nova,arial,sans-serif;
-    color: #fff;
-    font-weight: 600;
-    border: 1px solid #178a94;
-    background: #53a9b8;
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 14px;
-}
+/* NEWSLETTER SIGNUP */
+input.homepage-email {width: 155px; border: 2px solid #178a94;background: #fff; padding: 5px;}
+
+input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,arial,sans-serif; color: #fff; font-weight: 600; border: 1px solid #178a94; background: #53a9b8; padding: 5px 8px; border-radius: 5px; font-size: 14px;}
 
 div#mailinglist {margin-bottom: 15px;}
 div#mailinglist label { color: white;}
+
+
+
 
 /* CHARITY/ARTIST PAGES */
 .partnerpage {}
@@ -228,3 +218,13 @@ div#mailinglist label { color: white;}
     #partnerlist .artist .artistimage {display: block; width: 300px; float: left;}
         #partnerlist .artist .artistimage img {width: 100%;}
     #partnerlist .artist a.more {display: block; font-size: 18px; font-weight: bold;}
+
+
+
+
+/* ----------------- SUBMISSION ---------------- */
+/* --------------------------------------------- */
+
+
+/* CHECKOUT PAGE */
+input {width: 155px; border: 2px solid red;background: #fff; padding: 5px;}/*#178a94*/
