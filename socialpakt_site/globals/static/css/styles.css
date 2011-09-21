@@ -218,13 +218,3 @@ div#mailinglist label { color: white;}
     #partnerlist .artist .artistimage {display: block; width: 300px; float: left;}
         #partnerlist .artist .artistimage img {width: 100%;}
     #partnerlist .artist a.more {display: block; font-size: 18px; font-weight: bold;}
-
-
-
-
-/* ----------------- SUBMISSION ---------------- */
-/* --------------------------------------------- */
-
-
-/* CHECKOUT PAGE */
-input {width: 155px; border: 2px solid red;background: #fff; padding: 5px;}/*#178a94*/

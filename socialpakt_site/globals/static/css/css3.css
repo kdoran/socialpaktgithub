@@ -79,3 +79,10 @@ mask-image: url(../images/mask.png);
 -moz-mask-image: url(../images/mask.png);
 mask-image: url(../images/mask.png);
 }
+
+
+.fc_fieldset_container h2 {-webkit-mask-image: url(../images/mask.png);
+-o-mask-image: url(../images/mask.png);
+-moz-mask-image: url(../images/mask.png);
+mask-image: url(../images/mask.png);
+}

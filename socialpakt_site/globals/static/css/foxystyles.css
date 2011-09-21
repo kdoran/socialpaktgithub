@@ -1,1 +1,88 @@
-#fc_checkout_container input.fc_text {border: 2px solid #a8ddbe;}
+body {background-color: #f9f9f9;}
+
+
+/* GLOBAL STYLES */
+#fc_checkout_container input.fc_text {border: 2px solid #53a9b8;}
+#fc_cart_table td, #fc_cart_table th {padding: 15px 10px; border: none;}
+#fc_cart_container td, #fc_cart_container tr.fc_cart_item td {vertical-align: top;}
+input.fc_text {padding: 8px 10px; color: #3e8895; font-size: 14px; font-weight: normal;}
+#fc_login_register p {padding-left: 0; color: #999; font-size: 11px; font-style: italic;}
+li.fc_row::after {clear: none !important;}
+input {width: auto;}
+.fc_row_error input {border-color: red !important;}
+
+/* ITEM TABLE */
+#fc_cart_table {font-size: 14px !important; color: #333 !important;}
+
+/* Header */
+#fc_cart_table thead th {background: transparent; letter-spacing: normal; font-weight: bold; font-size: 16px; color: #6e356a; text-transform: uppercase; padding-bottom: 5px;}
+#fc_cart_table #fc_cart_head {border-bottom: 1px solid #ddd; margin-bottom: 10px;}
+
+/* Items */
+.fc_cart_item {}
+	.fc_cart_item td {font-size: 24px !important; font-weight: normal; color: #178a94 !important;}
+	.fc_cart_item .fc_cart_item_options {margin: 10px 0 !important; padding: 0 !important;}
+	.fc_cart_item li.fc_cart_item_option {font-size: 12px !important;}
+
+	.fc_cart_item .fc_cart_item_shirt {}
+		.fc_cart_item .fc_cart_item_shirt .fc_cart_item_option_name {display: none;}
+		.fc_cart_item .fc_cart_item_shirt .fc_cart_item_option_separator {display: none;}
+		.fc_cart_item .fc_cart_item_shirt .fc_cart_item_option_value {color: #999;}
+
+	.fc_cart_item .fc_cart_item_code {display: none;}
+
+	.fc_cart_item td.fc_cart_item_quantity {color: #999 !important;}
+
+	.fc_cart_item td.fc_cart_item_price {color: #999 !important;}
+		.fc_cart_item td.fc_cart_item_price .fc_cart_item_price_each {display: none !important;}
+
+
+	#fc_cart_table tfoot td {background-color: rgba(83, 169, 184, .05); border-bottom: 1px solid rgba(83, 169, 184, .3);}
+
+		#fc_cart_foot_subtotal td.fc_col2, #fc_cart_foot_shipping td.fc_col2, .fc_cart_foot_tax td.fc_col2, #fc_cart_foot_tax_tbd td.fc_col2 {font-size: 18px;}
+
+		#fc_cart_table tfoot td.fc_col1 {vertical-align: middle !important; letter-spacing: normal; font-style: italic;}
+
+	#fc_cart_foot_total {}
+		#fc_cart_table #fc_cart_foot_total td {background: rgba(83, 169, 184, 1); border-bottom: 1px solid #3e8895;}
+		#fc_cart_table #fc_cart_foot_total td.fc_col1 {color: #fff !important;}
+		#fc_cart_table #fc_cart_foot_total td.fc_col2 {font-size: 24px; font-weight: bold; color: #fff;}
+
+
+/* Cancel Link */
+#fc_cancel_continue_shopping a {color: #999; font-size: 11px; text-decoration: none;}
+
+
+
+/* FORM */
+.fc_fieldset_container {border-top: 2px solid #471F45; padding-top: 30px; margin-top: 30px;}
+	.fc_fieldset_container h2 {color: #471f45; text-transform: uppercase; font-size: 30px; font-weight: 600;}
+
+	.fc_fieldset_container .fc_pre {float: none !important; padding-bottom: 10px !important; display: block; font-size: 16px; text-align: left !important;}
+
+
+	/* Login or Register */
+	#fc_login_register_container {border: none; padding-top: 0;}
+		#fc_login_register_container h2 {display: none;}
+
+		#fc_login_register_container label.fc_pre,
+		#fc_login_register_container span.fc_pre,
+		#fc_login_register_container span.fc_pre {width: auto; padding: 0; text-align: left;}
+
+		#fc_checkout_container li.fc_row.fc_customer_email {width: 500px !important;}
+		.fc_customer_email .fc_pre {float: none !important; padding-bottom: 10px !important; display: block; font-size: 18px; font-weight: bold; text-transform: uppercase;}
+
+		#fc_checkout_container input#customer_email {width: 400px;}
+
+		#fc_checkout_container li.fc_row_radio, #fc_receipt_container li.fc_row_checkbox {float: right !important; width: 200px !important; margin-left: 0 !important; clear: none !important; margin-top: 40px;}
+
+		.fc_customer_password .fc_pre, .fc_customer_password2 .fc_pre {display: block; float: none !important; color: #666; padding-bottom: 5px !important;}
+		.fc_customer_password input#customer_password, .fc_customer_password2 input#customer_password2 {border-color: #999; padding: 3px;}
+
+		#fc_login_register_container #fc_continue {display: none !important;}
+	
+		
+
+
+/* REMOVE REMOVE REMOVE */
+header {height: 100px; overflow: hidden;}
