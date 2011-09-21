@@ -206,7 +206,7 @@ div#mailinglist label { color: white;}
     #partnerlist .partner h3 {font-size: 30px;}
     #partnerlist .partner .partnerimage {display: block; width: 500px;}
         #partnerlist .partner .partnerimage img {width: 100%;}
-    #partnerlist .partner a.more {display: block; font-size: 18px; font-weight: bold;}
+    #partnerlist .partner a.more {display: block; font-size: 18px; font-weight: 600;}
 
 
 /* ARTIST LIST */
@@ -217,4 +217,4 @@ div#mailinglist label { color: white;}
     #partnerlist .artist #description {width: 500px; margin-left: 30px; float: left;}
     #partnerlist .artist .artistimage {display: block; width: 300px; float: left;}
         #partnerlist .artist .artistimage img {width: 100%;}
-    #partnerlist .artist a.more {display: block; font-size: 18px; font-weight: bold;}
+    #partnerlist .artist a.more {display: block; font-size: 18px; font-weight: 600;}
