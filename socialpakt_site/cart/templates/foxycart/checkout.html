@@ -20,6 +20,31 @@
 	<link rel="stylesheet" href="https://^^store_domain^^/themes/text/styles.css" type="text/css" media="screen" charset="utf-8" />
 {% endblock localcss %}
 
+{% block localscripts %}
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		var countries = [], locations = [];
+		for (var i = 0; i < FC.locations.config.locations.length; i++) {
+			if (FC.locations.config.locations[ i ].cc2 == "US" || FC.locations.config.locations[ i ].cc2 == "CA") {
+				locations.push(FC.locations.config.locations[ i ]);
+				countries.push(FC.locations.config.countries[ i ]);
+			}
+		}
+
+		FC.locations.config.locations = locations;
+		FC.locations.config.countries = countries;
+		
+		FC.checkout.setAutoComplete("customer_country");
+		FC.checkout.setAutoComplete("customer_state");
+		FC.checkout.setAutoComplete("shipping_country");
+		FC.checkout.setAutoComplete("shipping_state");
+
+		$('#customer_country, #shipping_country').val('US');
+		$('#customer_country_name, #shipping_country_name').val('United States');
+	});
+</script>
+{% endblock localscripts %}
+
 {% block main %}
 	^^cart^^
 	^^checkout^^
