@@ -21,7 +21,47 @@
 {% endblock localcss %}
 
 {% block localscripts %}
-	<script type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
+	function updateMyShippingCost() {
+
+		// Create variable for total shipping cost
+		var totalShippingCost = 0;
+
+		// Choose the country to ship to
+		var country_code = (jQuery("#use_different_addresses").is(":checked") ? $("#shipping_country").val() : $("#customer_country").val());
+
+		// Set shipping costs for each category based on country
+		switch(country_code) {
+			case "US":
+			shippingCost = {
+				DEFAULT: 2,
+			};
+			break;
+			case "CA":
+			shippingCost = {
+				DEFAULT: 4,
+			};
+		}
+
+		// Check each category and calculate shipping cost
+		jQuery.each(fc_json.products, function(index, options) {
+
+			// Calculate the total shipping cost for this category based on the quantity
+			var shipping = options.quantity * shippingCost[options.category];
+
+			// Add the total shipping cost of this category to the grand total shipping cost
+			totalShippingCost += shipping;
+
+		});
+
+		// Set the final shipping cost
+		FC.checkout.config.orderFlatRateShipping = totalShippingCost;
+
+		// Return the shipping cost for initially selected country
+		return totalShippingCost;
+	}
+
 	$(document).ready(function(){
 		var countries = [], locations = [];
 		for (var i = 0; i < FC.locations.config.locations.length; i++) {
@@ -33,7 +73,8 @@
 
 		FC.locations.config.locations = locations;
 		FC.locations.config.countries = countries;
-		
+		FC.locations.countries = FC.locations.config.countries;
+
 		FC.checkout.setAutoComplete("customer_country");
 		FC.checkout.setAutoComplete("customer_state");
 		FC.checkout.setAutoComplete("shipping_country");
@@ -41,6 +82,13 @@
 
 		$('#customer_country, #shipping_country').val('US');
 		$('#customer_country_name, #shipping_country_name').val('United States');
+
+		// Set shipping cost for the initially selected country
+		FC.checkout.config.orderFlatRateShipping = updateMyShippingCost();
+		FC.checkout.updateShipping(-1);
+
+		// Update shipping cost based on categories and country when updating the price
+		FC.checkout.overload("updatePriceDisplay", "updateMyShippingCost", null);
 	});
 </script>
 {% endblock localscripts %}
