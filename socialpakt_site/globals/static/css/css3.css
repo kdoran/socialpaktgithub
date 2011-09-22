@@ -73,8 +73,18 @@ mask-image: url(../images/mask.png);
                     transition: opacity .2s ease-in;}
 
 
+input.homepage-submit {border-radius: 5px; -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;}
 
 #partnerblock h2 {-webkit-mask-image: url(../images/mask.png);
+-o-mask-image: url(../images/mask.png);
+-moz-mask-image: url(../images/mask.png);
+mask-image: url(../images/mask.png);
+}
+
+h1 {-webkit-mask-image: url(../images/mask.png);
 -o-mask-image: url(../images/mask.png);
 -moz-mask-image: url(../images/mask.png);
 mask-image: url(../images/mask.png);
