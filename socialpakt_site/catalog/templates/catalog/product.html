@@ -115,11 +115,11 @@
       <span class="label">about the charity</span>
       <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
       <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img width="100px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}" class="charity_logo"></a></div>
-      <p>{{product.benefits.about|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
+      <p>{{product.benefits.about|safe|truncatewords_html:30}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
   </div>
   <div class="aboutartist">
       <span class="label">about the artist</span>
       <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
-      <p>{{product.artist.about|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>
+      <p>{{product.artist.about|safe|truncatewords_html:30}} <a href="{% url artist product.artist.slug %}">more</a></p>
   </div>
 {% endblock about %}
