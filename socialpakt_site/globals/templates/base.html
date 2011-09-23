@@ -38,7 +38,7 @@
   {% endblock globalcss %}
 </head>
 
-<body>
+<body class="{% block bodyclass %}{% endblock bodyclass %}">
 
   {% block cartnav %}
     <div id="shoppingcart"><a href="http://socialpakt.foxycart.com/cart?cart=view">your cart</a></div>
