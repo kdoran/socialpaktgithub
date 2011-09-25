@@ -12,7 +12,7 @@
               <a class="artistimage" href="{% url artist partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a>
               <div id="description">
                 <h3><a href="{% url artist partner.slug %}">{{partner.name}}</a></h3>
-                <p>{{partner.about|safe|truncatewords_html:30}} ... <a class="more" href="{% url artist partner.slug %}">Learn More</a></p>
+                <p>{{partner.about|safe|truncatewords_html:30}} <a class="more" href="{% url artist partner.slug %}">Learn More</a></p>
               </div>
             </li>
         {% endfor %}

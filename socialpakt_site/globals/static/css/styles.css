@@ -6,6 +6,8 @@ h3 {font-size: 20px; color: rgb(36, 105, 117);}
     
 p {font-size: 14px; line-height: 1.8em;}
 strong {color: #fff;}
+
+p strong {color: #6E356A;}
     
 a {color: #5A6A2B; text-decoration: none;}
 a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
