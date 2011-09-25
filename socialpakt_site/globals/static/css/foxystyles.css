@@ -1,5 +1,8 @@
 /* GLOBAL STYLES */
 body.fcart.lbcart div#content { width: 625px; padding-top:0px;}
+#fc_checkout_container li.fc_row, #fc_receipt_container li.fc_row.fc_processor_response { display:none; }
+#fc_checkout_container li.fc_row, #fc_receipt_container li.fc_row.fc_store_name { display:none; }
+
 #fc_cart_table td, #fc_cart_table th {padding: 15px 10px; border: none;}
 #fc_cart_container td, #fc_cart_container tr.fc_cart_item td {vertical-align: top;}
 #fc_checkout_container input.fc_text {padding: 8px 10px; color: #3e8895; font-size: 14px; font-weight: normal; border: 1px solid #53a9b8;}
