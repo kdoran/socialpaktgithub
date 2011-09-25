@@ -89,9 +89,9 @@ header {margin-top: 10px;}
                 .goal h3 {color: #53a9b8;}
                 .goal .number {color: #246975;}
 
-            #timeleft {clear: both; padding-top: 10px; font-size: 11px; display: none;}
+            #timeleft {clear: both; padding-top: 10px; font-size: 11px;}
                 #timeleft h3 {display: inline;}
-                #expiresdate {display: inline;}
+                #expiresdate {font-size:20px;}
 
         #sizes {margin: 20px 0;}
             #shirt_select {display: none;} /* hide select box of sizes */

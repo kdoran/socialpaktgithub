@@ -51,6 +51,11 @@
 
           
           {% if can_add_to_cart %}
+            <div id="timeleft">
+                <h3>time left:</h3>
+                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+            </div>
+
           <form action="https://socialpakt.foxycart.com/cart" method="post">
               <input type="hidden" name="name" value="{{product.title}}" />
               <input type="hidden" name="code" value="{{product.slug}}" />
@@ -90,11 +95,6 @@
               </div>
 
           </form>
-
-                      <div id="timeleft">
-                <h3>time left:</h3>
-                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
-            </div>
 
 
           
