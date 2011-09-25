@@ -95,6 +95,8 @@
 
 		// Update shipping cost based on categories and country when updating the price
 		FC.checkout.overload("updatePriceDisplay", "updateMyShippingCost", null);
+		$("customer_country_name").blur(function(){FC.checkout.updateShipping(-1);});
+		$("shipping_country_name").blur(function(){FC.checkout.updateShipping(-1);});
 	});
 </script>
 {% endblock localscripts %}

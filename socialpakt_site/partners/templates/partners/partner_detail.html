@@ -16,7 +16,7 @@
         
         <div class="partnerdetails">
         <h2>{{ partner.name }}</h2>
-        <img class="partnerimage" src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}">
+        <img width="200px" class="partnerimage" src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}">
 
         {% if partner.partner_type == "ART" %}
         	<fb:like href="http://{{ request.get_host }}{% url artist partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>	
