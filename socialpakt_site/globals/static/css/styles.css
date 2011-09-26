@@ -228,3 +228,10 @@ div#mailinglist label {font-family: museo, Verdana, Arial, sans-serif; color: #f
 
 /* possible fix for popup cart pages width issue */
 #cboxLoadedContent #content {width: auto;}
+
+table.sizingchart {border:1px solid #6E356A; border-collapse:collapse;}
+    table.sizingchart tr {border:1px solid #6E356A;}
+    table.sizingchart td {border:1px solid #6E356A;}
+    table.sizingchart th {border:1px solid #6E356A; background-color: #6E356A;}
+    table.sizingchart th strong {color:white;}
+    table.sizingchart td p strong {margin-left: 5px;}

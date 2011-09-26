@@ -79,7 +79,7 @@
           
           {% if can_add_to_cart %}
             <div id="timeleft">
-                <h3>time left:</h3>
+                <h3>time left to buy:</h3>
                 <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
             </div>
 
@@ -97,7 +97,7 @@
               <div id="sizes">
                   <div class="womens">
                       <h3><span class="price">${{product.price|floatformat}}</span> Women's Tee</h3>
-                      <a class="sizeandfit">size and fit</a>
+                      <a class="sizeandfit" href="/sizingchart/">size and fit</a>
                       <ul class="options">
                           <li id="Women's S" class="size">s</li>
                           <li id="Women's M" class="size">m</li>
@@ -107,7 +107,7 @@
                   </div>
                   <div class="mens">
                       <h3><span class="price">${{product.price|floatformat}}</span> Men's Tee</h3>
-                      <a class="sizeandfit">size and fit</a>
+                      <a class="sizeandfit" href="/sizingchart/">size and fit</a>
                       <ul class="options">
                           <li id="Men's S" class="size">s</li>
                           <li id="Men's M" class="size">m</li>
