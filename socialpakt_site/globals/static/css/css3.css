@@ -25,9 +25,9 @@ transition: opacity .5s ease-in, color .5s ease-in;}
 	    #shoppingcart a:hover, #shoppingcart a:active {opacity: 1;}
 
 
-.contestcallout h2 {-webkit-transform: rotate(-5deg); text-shadow: 1px 3px 2px #fff;}
-.contestcallout p {-webkit-transform: rotate(-5deg); text-align: right;}
-
+.contestcallout h2 {-webkit-transform: rotate(-3deg); text-shadow: 1px 3px 2px #fff;}
+.contestcallout p {-webkit-transform: rotate(-3deg); text-align: right;}
+.contestinfo h4 {text-shadow: 0px 0px 5px #fff;}
 
 .shirtimage.thumbnail:after {position: absolute; top: 40%; left: 30%; content: "+"; display: block; color: #fff; font-size: 72px; opacity: .6; font-weight: 600; text-shadow: 1px 1px 1px #333;}
 

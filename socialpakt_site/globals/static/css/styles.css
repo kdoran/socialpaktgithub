@@ -18,7 +18,7 @@ a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
     .header .texture {background: url(../images/texture_header.png) repeat-x; height: 210px;}
 
 .backgroundgradient.footer {background: url(../images/footer_gradient.jpg) repeat-x;}
-    .footer .texture {background: url(../images/texture_footer.png) repeat-x 0 -25px; height: 500px; padding-top: 50px;}
+    .footer .texture {background: url(../images/texture_footer.png) 250px -25px; height: 530px; padding-top: 50px;}
 
 .wrapper {margin: 0 auto; width: 960px;}
 
@@ -34,9 +34,12 @@ header {margin-top: 10px;}
         .logo h1 {display: block; text-indent: -9999em; background: url(../images/logo.png) no-repeat; margin: 40px 0 0 0; height: 140px;}
         .tagline {display: block; text-indent: -9999em;}
             
-    .contestcallout {width: 335px; float: right; padding-top: 50px;}
-        .contestcallout h2 {text-transform: uppercase; color: #178a94; font-size: 28px; margin: 0; padding: 0; line-height: 28px;}
-        .contestcallout p {margin: 0 0 10px 0; padding: 0; color: #178a94; margin-right: 16px; font-style: italic; font-weight: 600;}
+    .contestcallout {width: 250px; float: right; padding-top: 28px;}
+        .contestcallout h2 {text-transform: uppercase; color: #178a94; font-size: 18px; margin: 0; padding: 0;  line-height: 18px; font-weight: 600; text-align: right;}
+            .contestcallout h2 .line1 {font-size: 18px;}
+            .contestcallout h2 .line2 {font-size: 21px; line-height: 25px;}
+            .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 38px;}
+        .contestcallout p {margin: 0; padding: 0; color: #178a94;}
         .likebutton {float: right;}
     
 
@@ -69,16 +72,16 @@ header {margin-top: 10px;}
                 .charity .charity_logo:hover {opacity: 1;}
                 .charity .charity_logo img {width: 100%;}
 
-            .charity .donated {color: #6e356a; font-family: museo, Verdana, Arial, sans-serif; font-size: 18px;font-weight: normal; line-height: 20px;}
-                .charity .donated .number {color: #451c43; font-weight: 600; display: block; float: left; line-height: 42px; font-size: 42px; margin-right: 10px;}
+            .charity .donated {color: #53a9b8; font-family: museo, Verdana, Arial, sans-serif; font-size: 14px;font-weight: normal; line-height: 20px;}
+                .charity .donated .number {color: #246975; font-weight: 600; display: block; float: left; line-height: 42px; font-size: 42px; margin-right: 10px;}
 
 
-        #donations {background: url(../images/donation_bg.png) no-repeat -30px -20px;margin-bottom: 10px;}
+        #donations {margin-bottom: 10px; padding-bottom: 30px; border-bottom: 1px solid #ccc;}
             #donations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
             .dollarsign {font-weight: normal;}
             #donations h3 {font-size: 11px; margin: 0; padding: 0 0 5px 0; text-transform: uppercase; font-weight: normal;}
-            #donations .number {font-size: 30px; font-weight: 600; text-shadow: 1px 1px 2px #fff; font-family: museo, Verdana, Arial, sans-serif;}
+            #donations .number {font-size: 38px; font-weight: 600; text-shadow: 1px 1px 2px #fff; font-family: museo, Verdana, Arial, sans-serif;}
 
 
             .donation {float: left; border-right: 1px solid #fff; padding-right: 10px;}
@@ -89,11 +92,20 @@ header {margin-top: 10px;}
                 .goal h3 {color: #53a9b8;}
                 .goal .number {color: #246975;}
 
-            #timeleft {clear: both; padding-top: 10px; font-size: 11px;}
-                #timeleft h3 {display: inline;}
-                #expiresdate {font-size:20px;}
+            #timeleft {clear: both;}
+                #timeleft h3 {font-weight: 600; font-size: 18px; margin-bottom: 0; color: #451C43; text-transform: uppercase;}
+                #expiresdate {font-size: 25px; color: #999; font-weight: 200;}
+                    #expiresdate .days,
+                    #expiresdate .hours,
+                    #expiresdate .minutes,
+                    #expiresdate .seconds {font-weight: 600; font-family: museo, Verdana, Arial, sans-serif; font-size: 35px;}
+                    #expiresdate .days {color: #451c43;}
+                    #expiresdate .hours {color: #6e356a;}
+                    #expiresdate .minutes {color: #8A4385;}
+                    #expiresdate .seconds {color: #B56BB0;}
 
-        #sizes {margin: 20px 0;}
+        #sizes {margin: 0 0 30px 0;}
+            #sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
             #shirt_select {display: none;} /* hide select box of sizes */
             #sizes h3 {font-weight: normal; color: #6e356a; display: inline-block; margin-bottom: 10px;}
                 .price {font-weight: 600; color: #451c43; font-family: museo, Verdana, Arial, sans-serif;}
@@ -135,13 +147,13 @@ header {margin-top: 10px;}
 
 
 #bottom {margin-top: 50px; padding-top: 0px;}
-    #bottom:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-    #bottom h4, #bottom h4 a {color: #991148; text-transform: uppercase; font-size: 28px; margin: 0; font-weight: 600;}
+    #bottom h4, #bottom h4 a {text-transform: uppercase; font-size: 28px; margin: 0;}
+        #bottom h4 a {color: #991148;}
         #bottom h4 a:hover {color: rgb(83, 169, 184);}
         
     .story {float: left; width: 600px;}
-        #bottom .story h4 {font-size: 36px;}
-        .video {}
+        #bottom .story h4 {font-size: 36px; margin-bottom: 10px;}
+        .video:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; margin-bottom: 40px;}
 
     .aboutus {width: 250px; float: right; margin-top: 30px; position: relative;}
         .aboutus p {text-transform: uppercase; font-weight: 600; line-height: 26px; font-size: 18px; margin: 0;}
@@ -149,10 +161,11 @@ header {margin-top: 10px;}
         .aboutus a:hover {color: #178a94; text-decoration: none;}
 
     .contestinfo {width: 250px; float: right; margin-top: 30px;}
+        .contestinfo h4 {color: #246975; font-size: 28px; line-height: 28px;}
         .contestinfo .likebutton {float: none; width:215px;}
+        .contestinfo p {padding: 5px 0 15px 0; margin: 0; font-size: 11px; color: #451c43;}
 
 
-/* TODO make bigger img */
 #footer {background: url(../images/footer.png) repeat-x; clear: both; padding: 40px 0;}
 
     #footer .wrapper:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
@@ -174,7 +187,7 @@ header {margin-top: 10px;}
         .sociallinks .youtube {background: url(../images/youtube.png) no-repeat;}
         .sociallinks .vimeo {background: url(../images/vimeo.png) no-repeat;}
 
-    .copyright { clear: both; padding-top: 40px; font-size: 10px; color: white; width: 100%; }
+    .copyright {float: right; padding-top: 16px; font-size: 10px; color: #fff; width: 250px; }
 
 
 /* NEWSLETTER SIGNUP */
@@ -184,9 +197,9 @@ input.homepage-email {width: 160px; border: 2px solid #178a94; background: #fff;
 input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,arial,sans-serif; color: #fff; font-weight: 600; border: 1px solid #178a94; background: #53a9b8; padding: 5px 8px; font-size: 14px;}
     input.homepage-submit:hover {border: 1px solid #0d565c; background: #178a94;}
 
-div#mailinglist {margin-bottom: 20px;}
-div#mailinglist label {font-family: museo, Verdana, Arial, sans-serif; color: #fff;  font-size: 14px;}
-
+#mailinglist {margin-bottom: 30px; float: left; width: 600px;}
+    #mailinglist label {font-family: museo, Verdana, Arial, sans-serif; color: #fff;  font-size: 14px;}
+    #mailinglist .errorlist {color: #fff; list-style-type: none; margin: 0; padding: 0; font-size: 11px; font-weight: bold;}
 
 
 

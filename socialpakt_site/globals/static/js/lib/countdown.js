@@ -186,7 +186,7 @@
                 }
             }
 
-            this.$elem.text(time_str);
+            this.$elem.html(time_str);
         },
 
         _elem_in_document: function(elem) {
