@@ -2,12 +2,12 @@ body {background-color: #f9f9f9; color: #333; font-family: proxima-nova, Verdana
 
 h1 {text-transform: uppercase; color: #178a94; font-size: 70px; margin: 0 0 20px 0; padding: 0;}
 h2 {font-size: 24px; color: rgb(23, 138, 148);}
-h3 {font-size: 20px; color: rgb(36, 105, 117);}
+h3 {font-size: 22px; color: rgb(36, 105, 117);}
+h4 {font-size: 16px; color: #6E356A;}
     
 p {font-size: 14px; line-height: 1.8em;}
 strong {color: #fff;}
 
-p strong {color: #6E356A;}
     
 a {color: #5A6A2B; text-decoration: none;}
 a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
@@ -205,16 +205,36 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
 
 /* CHARITY/ARTIST PAGES */
 .partnerpage {}
-.partnerpage h2 {margin-top: 0px; color: #471f45; text-transform: uppercase; font-size: 50px; font-weight: 600;}
-    .partnerpage .partnerimage {display: block; max-width: 650px; margin-bottom: 50px;}
+.partnerpage h2 {margin: 0px; color: #471f45; text-transform: uppercase; font-size: 60px; font-weight: 600;}
 
 
-    .partnerpage .partnerdetails {float: left; width: 650px;}
-    
-    .partnerpage #sidebar {float: right; width: 250px;}
+    .partnerpage #sidebar {float: left; width: 350px; padding-top: 30px;}
+        /* image */
+        .partnerpage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; border: 10px solid #53a9b8;}
+            .partnerpage .partnerimage img {margin-bottom: -5px; width: 100%;}
+
+        /* links */
         .partnerpage #sidebar ul {list-style-type: none; margin: 0; padding: 0;}
         .partnerpage #sidebar h3 {color: #999; text-transform: uppercase; font-size: 12px; font-weight: normal;}
-        .partnerpage #sidebar .partnerlinks {margin-bottom: 30px;}
+        .partnerpage #sidebar .partnerlinks {margin: 30px 0; font-size: 32px;}
+            .partnerpage #sidebar .partnerlinks li {text-transform: uppercase; font-weight: 200; display: inline-block; margin-left: -8px;}
+            .partnerpage #sidebar .partnerlinks li a {padding: 2px 22px 2px 5px; color: rgb(83, 169, 184);}
+            .partnerpage #sidebar .partnerlinks li a:hover {color: #fff; text-decoration: none; background-color: rgb(83, 169, 184);}
+            .partnerpage #sidebar .partnerlinks .divider {font-weight: 800; margin-left: -27px; color: rgb(36, 105, 117);}
+            
+        .partnerpage #sidebar .tshirtlinks {}
+            .partnerpage #sidebar .tshirtlinks li {font-size: 24px; font-weight: 600;}
+
+
+    /* about */
+    .partnerpage #description {float: right; width: 580px;}
+        .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117);}
+        .partnerpage #description p:first-child::first-line {font-weight: bold;}
+        .partnerpage #description h3 {clear: both; text-transform: uppercase; color: #471F45; font-size: 24px; margin-top: 40px;}
+
+        
+
+    
 
 
 /* PARTNER LIST */

@@ -1,9 +1,9 @@
 /* transitions */
-a {-webkit-transition: opacity .5s ease-in, color .5s ease-in;
+/*a {-webkit-transition: opacity .5s ease-in, color .5s ease-in;
 -moz-transition: opacity .5s ease-in, color .5s ease-in;
 -o-transition: opacity .5s ease-in, color .5s ease-in;
 transition: opacity .5s ease-in, color .5s ease-in;}
-
+*/
 
 
 
@@ -83,6 +83,19 @@ input.homepage-submit {border-radius: 5px; -webkit-transition: all .5s ease-in;
 -moz-mask-image: url(../images/mask.png);
 mask-image: url(../images/mask.png);
 }
+
+.partnerpage #sidebar .partnerlinks li a {background-image: url(../images/texture_button.png); background-position: center center;}
+
+.partnerpage .partnerimage {position: relative; border-radius: 10px;}
+.partnerpage .partnerimage .overlay {position: absolute; top:0; left: 0; width: 100%; height: 100%;}
+.partnerpage .partnerimage .overlay {
+    -moz-box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
+    -webkit-box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
+    background-image: -moz-radial-gradient( center, circle contain, rgba(71, 31, 69, 0) 125px, rgba(71, 31, 69, .2) 250px );
+    background-image: -webkit-gradient( radial, 50% 50%, 125, 50% 50%, 250, from(rgba(71, 31, 69, 0)), to(rgba(71, 31, 69, .2)) );
+    }
+
 
 h1 {-webkit-mask-image: url(../images/mask.png);
 -o-mask-image: url(../images/mask.png);
