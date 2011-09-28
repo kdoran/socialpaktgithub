@@ -4,7 +4,10 @@
 	$(document).ready(function(){
 		// Set up the countdown timer
 		var expiresdate = $("#expiresdate").text();
-		$('#expiresdate').countdown({ref_time: Date.parse(expiresdate), format: '%d Days %H:%M:%S'});
+		$('#expiresdate').countdown({
+			ref_time: Date.parse(expiresdate),
+			format: '<span class="days">%d</span>d <span class="hours">%H</span>h <span class="minutes">%M</span>m <span class="seconds">%S</span>s'
+		});
 
 		// Set up the photobrowser
 		$("div#shirt div.shirtimage.thumbnail").click(function(){
