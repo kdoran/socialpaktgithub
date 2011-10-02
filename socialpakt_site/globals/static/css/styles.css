@@ -7,7 +7,7 @@ h4 {font-size: 16px; color: #6E356A;}
     
 p {font-size: 14px; line-height: 1.8em;}
 strong {color: #fff;}
-
+p strong { color: #6E356A; }
     
 a {color: #5A6A2B; text-decoration: none;}
 a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
@@ -224,6 +224,8 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
             
         .partnerpage #sidebar .tshirtlinks {}
             .partnerpage #sidebar .tshirtlinks li {font-size: 24px; font-weight: 600;}
+                .partnerpage #sidebar .tshirtlinks li div.shirtlink {margin-left:110px;}
+                .partnerpage #sidebar .tshirtlinks li div.shirtpicture {float:left;}
 
 
     /* about */

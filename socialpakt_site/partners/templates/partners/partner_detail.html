@@ -12,7 +12,7 @@
 {% endblock fbmetadata %}
 
 {% block main %}
-    <div id="partnerblock" class="partnerpage">
+    <div id="partnerblock" class="partnerpage {% if partner.partner_type == "ART" %}artistpage{% else %}npopage{% endif %}">
         
         <h2>{{ partner.name }}</h2>
 
@@ -45,18 +45,23 @@
           </ul>
 
           {% if partner.partner_type == "ART" %}
-          	
-          	<ul class="tshirtlinks">
-            <h3>SocialPakt Shirts</h3>
-          		{% for s in partner.artist_on_set.all %}
-          			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
+          	<h3>SocialPakt Shirts</h3>
+            <ul class="tshirtlinks">
+            	{% for s in partner.artist_on_set.all %}
+          			<li>
+                  <div class="shirtpicture"><img width="100px" src="{{s.productphoto_set.all.0.photo.url}}" alt="{{s.productphoto_set.all.0.description}}"></div>
+                  <div class="shirtlink"><a href="{% url shirt s.slug %}">{{s.title}}</a></div>
+                </li>
           		{% endfor %}
           	</ul>
           {% else %}
           	<h3>SocialPakt Shirts:</h3>
           	<ul class="tshirtlinks">
           		{% for s in partner.benefits_from_set.all %}
-          			<li><a href="{% url shirt s.slug %}">{{s.title}}</a></li>
+          			<li>
+                  <div class="shirtpicture"><img width="100px" src="{{s.productphoto_set.all.0.photo.url}}" alt="{{s.productphoto_set.all.0.description}}"></div>
+                  <div class="shirtlink"><a href="{% url shirt s.slug %}">{{s.title}}</a></div>
+                </li>
           		{% endfor %}
           	</ul>
           {% endif %}
