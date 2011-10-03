@@ -1,9 +1,9 @@
 /* transitions */
-/*a {-webkit-transition: opacity .5s ease-in, color .5s ease-in;
+a {-webkit-transition: opacity .5s ease-in, color .5s ease-in;
 -moz-transition: opacity .5s ease-in, color .5s ease-in;
 -o-transition: opacity .5s ease-in, color .5s ease-in;
 transition: opacity .5s ease-in, color .5s ease-in;}
-*/
+
 
 
 
@@ -25,9 +25,9 @@ transition: opacity .5s ease-in, color .5s ease-in;}
 	    #shoppingcart a:hover, #shoppingcart a:active {opacity: 1;}
 
 
-.contestcallout h2 {-webkit-transform: rotate(-3deg); text-shadow: 1px 3px 2px #fff;}
-.contestcallout p {-webkit-transform: rotate(-3deg); text-align: right;}
-.contestinfo h4 {text-shadow: 0px 0px 5px #fff;}
+/* donations */
+.donated {-webkit-transform: rotate(-2deg);}
+
 
 .shirtimage.thumbnail:after {position: absolute; top: 40%; left: 30%; content: "+"; display: block; color: #fff; font-size: 72px; opacity: .6; font-weight: 600; text-shadow: 1px 1px 1px #333;}
 
@@ -71,6 +71,11 @@ mask-image: url(../images/mask.png);
                     -moz-transition: opacity .2s ease-in;
                     -o-transition: opacity .2s ease-in;
                     transition: opacity .2s ease-in;}
+
+
+.contestcallout h2 {-webkit-transform: rotate(-3deg); text-shadow: 1px 3px 2px rgba(255,255,255,.5);}
+.contestcallout p {-webkit-transform: rotate(-3deg); text-align: right;}
+.contestinfo h4 {text-shadow: 0px 0px 5px #fff;}
 
 
 input.homepage-submit {border-radius: 5px; -webkit-transition: all .5s ease-in;

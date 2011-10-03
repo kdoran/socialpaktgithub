@@ -29,6 +29,7 @@
   
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script src="{{ STATIC_URL }}js/lib/modernizr-2.0.6.js"></script>
+
   {% block localcss %}
     
   {% endblock localcss %}
@@ -53,16 +54,8 @@
                 <a href="/"><h1>SocialPakt</h1></a>
                 <div class="tagline">Make a Pakt, Make a Difference</div>
             </div>
-        
-            {% block contest %}
-            <div class="contestcallout">
-                <h2><span class="line1">Like us and each week</span> <span class="line2">you'll be entered to</span> <span class="line3">win a $100 donation</span></h2>
-                <p>to the charity of your choice</p>
-                <div class="likebutton">
-                  <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
-                </div>
-            </div>  
-            {% endblock contest %}
+
+            <div class="donated">We donate<br/>30%<br/>of all sales<br/> to this week's<br/> featured nonprofit!</div>
             
           </div>
           </div>
@@ -103,7 +96,8 @@
     <div id="bottom" class="backgroundgradient footer">
       <div class="texture">
       <div class="wrapper">
-    
+
+        <a href="/aboutus/" class="aboutus">Our vision is to<br/> build an online community that generates funds &amp;<br/>awareness for local artists and non-profits in New York City.</a>
 
       <div class="story">
             <h4><a href="/aboutus/">How SocialPakt Works</a></h4>
@@ -112,19 +106,17 @@
             </div>
       </div>
 
-        <div class="aboutus">
-        <p><a href="/aboutus/">Our vision is to build an online community that generates funds and awareness for local artists
-and non-profits in New York City.</a></p>
-        </div>
+          <div class="contestcallout">
+              <h2><span class="line1">Like us and each week</span> <span class="line2">you'll be entered to</span> <span class="line3">win a $100 donation</span></h2>
+              <p>to the charity of your choice</p>
+              <div class="likebutton">
+                <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
+              </div>
+          </div>  
 
 
-        <div class="contestinfo">
-            <h4>Like us and each week you'll be entered to win a $100 donation to the charity of your choice</h4>
-            <p><em>*terms and conditions apply</em></p>
-            <div class="likebutton">
-              <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
-            </div>
-        </div>
+
+
 
       </div>
       </div>
@@ -175,6 +167,16 @@ and non-profits in New York City.</a></p>
       <script src="{{ STATIC_URL }}js/lib/date.js"></script>
       <script src="{{ STATIC_URL }}js/globals.js"></script>
       <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'adb4e700-db0e-4d1f-afaf-ede76d7144a1'});</script>
+
+    <script src="{{ STATIC_URL }}js/lib/jquery.lettering-0.6.1.min.js"></script>
+
+    <script>
+    $(function() {
+      $(".aboutus").lettering('lines').children('span').lettering('words');
+      $(".donated").lettering('lines').children('span').lettering('words');
+    });
+    </script>
+
 
       {% block fbscripts %}
         <div id="fb-root"></div>

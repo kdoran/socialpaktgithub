@@ -8,6 +8,8 @@ h4 {font-size: 16px; color: #6E356A;}
 p {font-size: 14px; line-height: 1.8em;}
 strong {color: #fff;}
 p strong { color: #6E356A; }
+
+.market {font-family: ff-market-web;}
     
 a {color: #5A6A2B; text-decoration: none;}
 a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
@@ -33,14 +35,15 @@ header {margin-top: 10px;}
     .logo {float: left; width: 600px;}
         .logo h1 {display: block; text-indent: -9999em; background: url(../images/logo.png) no-repeat; margin: 40px 0 0 0; height: 140px;}
         .tagline {display: block; text-indent: -9999em;}
-            
-    .contestcallout {width: 250px; float: right; padding-top: 28px;}
-        .contestcallout h2 {text-transform: uppercase; color: #178a94; font-size: 18px; margin: 0; padding: 0;  line-height: 18px; font-weight: 600; text-align: right;}
-            .contestcallout h2 .line1 {font-size: 18px;}
-            .contestcallout h2 .line2 {font-size: 21px; line-height: 25px;}
-            .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 38px;}
-        .contestcallout p {margin: 0; padding: 0; color: #178a94;}
-        .likebutton {float: right;}
+
+
+    .donated {width: 245px; float: right; padding-top: 45px; color: #178a94;}
+        .donated .line1 {font-family: quimby-gubernatorial; font-size: 40px; text-transform: lowercase; line-height: 45px;}
+        .donated .line2 {color: #246975; font-weight: 600; display: block; float: left; line-height: 42px; font-size: 52px; margin-right: 10px; font-family: museo, Verdana, Arial, sans-serif;}
+        .donated .line3, .donated .line4 {font-size: 21px; line-height: 21px; display: block;}
+        .donated .line5 {font-size: 24px; display: block; font-family: museo; font-weight: 600; line-height: 35px;}
+
+
     
 
     
@@ -67,13 +70,10 @@ header {margin-top: 10px;}
     #purchase {width: 250px; float: right; overflow: hidden;}
 
         .charity {margin-bottom: 30px;}
-            .charity h3 {color: #991148; text-transform: uppercase; font-size: 28px; margin: 0 0 15px 0; display: none;}
+            .charity h3 {color: #991148; text-transform: uppercase; font-size: 14px; margin: 0 0 5px 0; font-weight: 400;}
             .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 20px;}
                 .charity .charity_logo:hover {opacity: 1;}
                 .charity .charity_logo img {width: 100%;}
-
-            .charity .donated {color: #53a9b8; font-family: museo, Verdana, Arial, sans-serif; font-size: 14px;font-weight: normal; line-height: 20px;}
-                .charity .donated .number {color: #246975; font-weight: 600; display: block; float: left; line-height: 42px; font-size: 42px; margin-right: 10px;}
 
 
         #donations {margin-bottom: 10px; padding-bottom: 30px; border-bottom: 1px solid #ccc;}
@@ -151,19 +151,26 @@ header {margin-top: 10px;}
         #bottom h4 a {color: #991148;}
         #bottom h4 a:hover {color: rgb(83, 169, 184);}
         
-    .story {float: left; width: 600px;}
-        #bottom .story h4 {font-size: 36px; margin-bottom: 10px;}
+    .story {float: left; width: 600px; clear: both;}
+        #bottom .story h4 {font-size: 36px; margin-bottom: 10px; display: none;}
         .video:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; margin-bottom: 40px;}
 
-    .aboutus {width: 250px; float: right; margin-top: 30px; position: relative;}
-        .aboutus p {text-transform: uppercase; font-weight: 600; line-height: 26px; font-size: 18px; margin: 0;}
-        .aboutus a {color: #991148;}
-        .aboutus a:hover {color: #178a94; text-decoration: none;}
+    .aboutus {display: block; width: 960px; font-family: museo; margin: 30px 0 70px 0; color: #991148;}
+        a.aboutus:hover {color: #178a94; text-decoration: none;}
 
-    .contestinfo {width: 250px; float: right; margin-top: 30px;}
-        .contestinfo h4 {color: #246975; font-size: 28px; line-height: 28px;}
-        .contestinfo .likebutton {float: none; width:215px;}
-        .contestinfo p {padding: 5px 0 15px 0; margin: 0; font-size: 11px; color: #451c43;}
+
+        .aboutus .line1 {font-size: 31px; font-style: italic; text-transform: lowercase; display: inline; font-weight: 200;}
+        .aboutus .line2 {font-size: 31px; display: inline;}
+        .aboutus .line3 {font-size: 34px; display: block;}
+            .aboutus .line3 .word8, .aboutus .line3 .word9, .aboutus .line3 .word10 {font-weight: 600;}
+
+    .contestcallout {width: 250px; float: right; padding-top: 28px;}
+        .contestcallout h2 {text-transform: uppercase; color: #246975; font-size: 18px; margin: 0; padding: 0;  line-height: 18px; font-weight: 600; text-align: right;}
+            .contestcallout h2 .line1 {font-size: 18px;}
+            .contestcallout h2 .line2 {font-size: 21px; line-height: 25px;}
+            .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 38px;}
+        .contestcallout p {margin: 0; padding: 0; color: #471F45;}
+        .likebutton {float: right;}
 
 
 #footer {background: url(../images/footer.png) repeat-x; clear: both; padding: 40px 0;}
