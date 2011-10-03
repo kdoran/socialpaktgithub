@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import get_template
 from django.template import Context, Template
 
+from django.contrib.auth.decorators import login_required
 
 from models import Order
 from catalog.models import *
@@ -102,3 +103,97 @@ def foxyfeed(request):
             raise
 
     return HttpResponseForbidden('Unauthorized request.')  # No FoxyData?  Not a POST?  We don't speak that.
+
+@login_required(login_url='/')
+def orderemails(request, product_code):
+    if request.user.is_staff:
+        emails = ""
+        orders = Order.objects.filter(items_ordered__contains=product_code)
+        for o in orders:
+            emails += o.customer_email + "<br/>"
+        return HttpResponse(emails)
+    else:
+        return HttpReponse("")
+
+
+@login_required(login_url='/')
+def orderlist(request, product_code):
+    if request.user.is_staff:
+        items = "PONumber,OrderDate,ConsigneeFullName,ConsigneeAddress1,ConsigneeAddress2,ConsigneeCity,ConsigneeState,ConsigneeZip,ConsigneeCountry,ConsigneePhone,ConsigneeEmail,ItemSKU,ItemQuantity,Carrier,ShippingLevel,Comments,ConfirmationNumber</br>"
+        orders = Order.objects.filter(items_ordered__contains=product_code)
+        for o in orders:
+            try:
+                data = FoxyData.from_str(urllib.unquote_plus(o.order_xml))
+                for transaction in data.transactions:
+                    for item in transaction.items:
+                        product_code = item["product_code"]
+                        product_variation = item["detail"]["shirt"]
+                        quantity = item["product_quantity"]
+                    
+                        order = o.order_id+","+str(o.transaction_date)+","
+
+                        if o.shipping_first_name and o.shipping_first_name != "" and o.shipping_last_name and o.shipping_last_name != "":
+                            consignee_fullname = o.shipping_first_name +" "+ o.shipping_last_name
+                        else:
+                            consignee_fullname = o.customer_first_name +" "+ o.customer_last_name
+
+                        order += '"'+consignee_fullname + '",'
+
+                        if o.shipping_address1 and o.shipping_address1 != "":
+                            consignee_address1 = o.shipping_address1
+                        else:
+                            consignee_address1 = o.customer_address1
+
+                        order += '"'+consignee_address1 + '",'
+
+                        if o.shipping_address2 and o.shipping_address2 != "":
+                            consignee_address2 = o.shipping_address2
+                        else:
+                            consignee_address2 = o.customer_address2
+
+                        order += '"'+consignee_address2 + '",'
+                        
+                        if o.shipping_city and o.shipping_city != "":
+                            consignee_city = o.shipping_city
+                        else:
+                            consignee_city = o.customer_city
+
+                        order += '"'+consignee_city + '",'    
+
+                        if o.shipping_state and o.shipping_state != "":
+                            consignee_state = o.shipping_state
+                        else:
+                            consignee_state = o.customer_state
+
+                        order += '"'+consignee_state + '",'
+                        
+                        if o.shipping_postal_code and o.shipping_postal_code != "":
+                            consignee_postal_code = o.shipping_postal_code
+                        else:
+                            consignee_postal_code = o.customer_postal_code
+
+                        order += '"'+consignee_postal_code + '",'
+
+                        if o.shipping_country and o.shipping_country != "":
+                            consignee_country = o.shipping_country
+                        else:
+                            consignee_country = o.customer_country
+
+                        order += '"' + consignee_country + '",'
+
+                        if o.shipping_phone and o.shipping_phone != "":
+                            consignee_phone = o.shipping_phone
+                        else:
+                            consignee_phone = o.customer_phone
+
+                        order += '"'+consignee_phone + '",'+o.customer_email+","+product_code+"-"+product_variation+","+quantity+",USPS"+",,,<br/>"
+                        items += order
+
+            except Exception, e:
+                # Something went wrong, handle the error...
+                raise
+
+        return HttpResponse(items)
+
+    else:
+        return HttpReponse("")

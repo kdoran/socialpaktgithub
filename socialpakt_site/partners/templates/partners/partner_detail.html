@@ -44,27 +44,18 @@
           	{% endfor %}
           </ul>
 
-          {% if partner.partner_type == "ART" %}
-          	<h3>SocialPakt Shirts</h3>
-            <ul class="tshirtlinks">
-            	{% for s in partner.artist_on_set.all %}
-          			<li>
+        	<h3>SocialPakt Shirts</h3>
+          <ul class="tshirtlinks">
+          	{% for s in partner.get_active_shirts %}
+        			<li>
+                <div class="shirtdetails">
                   <div class="shirtpicture"><img width="100px" src="{{s.productphoto_set.all.0.photo.url}}" alt="{{s.productphoto_set.all.0.description}}"></div>
                   <div class="shirtlink"><a href="{% url shirt s.slug %}">{{s.title}}</a></div>
-                </li>
-          		{% endfor %}
-          	</ul>
-          {% else %}
-          	<h3>SocialPakt Shirts:</h3>
-          	<ul class="tshirtlinks">
-          		{% for s in partner.benefits_from_set.all %}
-          			<li>
-                  <div class="shirtpicture"><img width="100px" src="{{s.productphoto_set.all.0.photo.url}}" alt="{{s.productphoto_set.all.0.description}}"></div>
-                  <div class="shirtlink"><a href="{% url shirt s.slug %}">{{s.title}}</a></div>
-                </li>
-          		{% endfor %}
-          	</ul>
-          {% endif %}
+                </div>
+              </li>
+        		{% endfor %}
+        	</ul>
+          
         </div>
     </div>
 {% endblock main %}

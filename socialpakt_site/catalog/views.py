@@ -15,8 +15,15 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
     success_url = "."
     object = None
 
+    def get(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        return self.render_to_response(self.get_context_data(form=form,**kwargs))
+
     def get_context_data(self, **kwargs):
         products = Product.objects.filter(active=True).order_by('-date_expires')
+
+        print kwargs
 
         if "slug" in kwargs:
             product = get_object_or_404(Product, slug=kwargs["slug"])
@@ -34,9 +41,5 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
 
         # call get context data for ModelFormMixin
         model_form_context = ModelFormMixin.get_context_data(self, **kwargs)
-
         kwargs.update(model_form_context)
-
-        print kwargs
-
         return kwargs

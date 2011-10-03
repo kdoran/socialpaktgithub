@@ -13,6 +13,14 @@ class Partner(models.Model):
 
     image = models.ImageField(blank=True, null=True, upload_to="partner_photos/")
 
+    def get_active_shirts(self):
+        if self.partner_type == "ART":
+            shirts = self.artist_on_set
+        else:
+            shirts = self.benefits_from_set
+
+        return shirts.filter(active=True)
+
     def __str__(self):
         return self.slug
 

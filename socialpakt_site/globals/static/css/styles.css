@@ -224,8 +224,9 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
             
         .partnerpage #sidebar .tshirtlinks {}
             .partnerpage #sidebar .tshirtlinks li {font-size: 24px; font-weight: 600;}
-                .partnerpage #sidebar .tshirtlinks li div.shirtlink {margin-left:110px;}
-                .partnerpage #sidebar .tshirtlinks li div.shirtpicture {float:left;}
+                .partnerpage #sidebar .tshirtlinks li div.shirtdetails{clear:both;}
+                    .partnerpage #sidebar .tshirtlinks li div.shirtlink {margin-left:110px;}
+                    .partnerpage #sidebar .tshirtlinks li div.shirtpicture {float:left;}
 
 
     /* about */
