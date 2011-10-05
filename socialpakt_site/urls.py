@@ -29,6 +29,9 @@ urlpatterns = patterns('',
     url(r'^cart/receipt/$', TemplateView.as_view(template_name="foxycart/receipt.html"), name='fc_cart', ),
 
     url(r'^order/$', foxyfeed, name="order"),
+    url(r'^order/emails/(?P<product_code>\w+)/$', orderemails),
+    url(r'^order/list/(?P<product_code>\w+)/$', orderlist),
+
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),
