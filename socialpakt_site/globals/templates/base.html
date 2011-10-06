@@ -55,7 +55,7 @@
                 <div class="tagline">Make a Pakt, Make a Difference</div>
             </div>
 
-            <div class="donated">We donate<br/>30%<br/>of all sales<br/> to this week's<br/> featured nonprofit!</div>
+            <div class="donated">For every shirt you buy,<br/>we donate<br/>$6<br/>to this week's<br/>featured nonprofit</div>
             
           </div>
           </div>
@@ -114,6 +114,18 @@
               </div>
           </div>  
 
+                          {% if form %}
+                <div id="mailinglist">
+                    <form id="emailform" method="post" action="."> 
+                      {% csrf_token %}
+                      <div class="newslettertitle">Stay Informed!</div>
+                      <label for="home_email_address">Sign up for our mailing list:</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Up!" />
+                      {{ form.email.errors }}
+                    </form> 
+                </div>
+                {% endif %}
+
+
 
 
 
@@ -123,15 +135,6 @@
   
         <div id="footer">  
             <div class="wrapper">
-                {% if form %}
-                <div id="mailinglist">
-                    <form id="emailform" method="post" action="."> 
-                      {% csrf_token %}
-                      <label for="home_email_address">Sign up for our mailing list to stay informed:&nbsp;&nbsp;</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Submit" />
-                      {{ form.email.errors }}
-                    </form> 
-                </div>
-                {% endif %}
 
                 <ul class="sociallinks">
                     <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>

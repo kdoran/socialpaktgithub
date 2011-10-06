@@ -7,7 +7,7 @@ h4 {font-size: 16px; color: #6E356A;}
     
 p {font-size: 14px; line-height: 1.8em;}
 strong {color: #fff;}
-p strong { color: #6E356A; }
+p strong {color: #6E356A;}
 
 .market {font-family: ff-market-web;}
     
@@ -37,12 +37,13 @@ header {margin-top: 10px;}
         .tagline {display: block; text-indent: -9999em;}
 
 
-    .donated {width: 245px; float: right; padding-top: 45px; color: #178a94;}
-        .donated .line1 {font-family: quimby-gubernatorial; font-size: 40px; text-transform: lowercase; line-height: 45px;}
-        .donated .line2 {color: #246975; font-weight: 600; display: block; float: left; line-height: 42px; font-size: 52px; margin-right: 10px; font-family: museo, Verdana, Arial, sans-serif;}
-        .donated .line3, .donated .line4 {font-size: 21px; line-height: 21px; display: block;}
-        .donated .line5 {font-size: 24px; display: block; font-family: museo; font-weight: 600; line-height: 35px;}
+    .donated {width: 245px; float: right; padding-top: 50px; color: #178a94;}
 
+        .donated .line1 {display: block; font-size: 18px; font-weight: 200; text-transform: uppercase; line-height: 12px;}
+        .donated .line2 {display: block; font-size: 40px; font-weight: 600; text-transform: uppercase; color: #246975;}
+        .donated .line3 {display: block; font-weight: 400; font-size: 65px; line-height: 56px; float: left; font-family: museo; margin-right: 10px; color: #246975;}
+        .donated .line4 {font-family: ff-market-web; text-transform: lowercase; line-height: 20px; font-size: 32px; padding-top: 5px;}
+        .donated .line5 {font-size: 18px; display: block; font-weight: 600; font-family: museo; padding-top: 5px;}
 
     
 
@@ -70,7 +71,7 @@ header {margin-top: 10px;}
     #purchase {width: 250px; float: right; overflow: hidden;}
 
         .charity {margin-bottom: 30px;}
-            .charity h3 {color: #991148; text-transform: uppercase; font-size: 14px; margin: 0 0 5px 0; font-weight: 400;}
+            .charity h3 {color: #991148; text-transform: uppercase; font-size: 16px; margin: 0 0 5px 0; font-weight: 400;}
             .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 20px;}
                 .charity .charity_logo:hover {opacity: 1;}
                 .charity .charity_logo img {width: 100%;}
@@ -135,10 +136,11 @@ header {margin-top: 10px;}
 
 
 #about {clear: right; width: 250px; float: right;}
-    #about .label {font-size: 18px; font-style: italic; font-weight: normal; color: #53a9b8;}
-    #about h3 {font-size: 28px; margin: 5px 0 15px 0; padding: 0; font-weight: 600; text-transform: uppercase;}
+    #about .label {font-size: 24px; color: #53a9b8; font-family: ff-market-web;}
+    #about h3 {font-size: 28px; margin: 5px 0 15px 0; padding: 0; font-weight: 600; font-family: museo;}
         #about h3 a {color: #5a6a2b;}
         #about h3 a:hover {color: rgb(83, 169, 184);}
+        #about a {font-family: museo;}
 
     .aboutcharity {border-top: 3px solid #53a9b8; margin-top: 50px; padding-top: 30px;}
         .aboutcharity .logo {margin-bottom: 15px;}
@@ -155,22 +157,36 @@ header {margin-top: 10px;}
         #bottom .story h4 {font-size: 36px; margin-bottom: 10px; display: none;}
         .video:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; margin-bottom: 40px;}
 
-    .aboutus {display: block; width: 960px; font-family: museo; margin: 30px 0 70px 0; color: #991148;}
+    .aboutus {display: block; width: 960px; margin: 30px 0 70px 0; color: #991148;}
         a.aboutus:hover {color: #178a94; text-decoration: none;}
 
 
-        .aboutus .line1 {font-size: 31px; font-style: italic; text-transform: lowercase; display: inline; font-weight: 200;}
-        .aboutus .line2 {font-size: 31px; display: inline;}
+        .aboutus .line1 {font-size: 31px; display: inline; font-family: ff-market-web;}
+        .aboutus .line2 {font-size: 34px; display: inline;}
         .aboutus .line3 {font-size: 34px; display: block;}
-            .aboutus .line3 .word8, .aboutus .line3 .word9, .aboutus .line3 .word10 {font-weight: 600;}
+            .aboutus .line3 .word8, .aboutus .line3 .word9, .aboutus .line3 .word10 {font-weight: 600; font-family: museo;}
 
-    .contestcallout {width: 250px; float: right; padding-top: 28px;}
-        .contestcallout h2 {text-transform: uppercase; color: #246975; font-size: 18px; margin: 0; padding: 0;  line-height: 18px; font-weight: 600; text-align: right;}
-            .contestcallout h2 .line1 {font-size: 18px;}
-            .contestcallout h2 .line2 {font-size: 21px; line-height: 25px;}
-            .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 38px;}
-        .contestcallout p {margin: 0; padding: 0; color: #471F45;}
-        .likebutton {float: right;}
+    .contestcallout {width: 250px; float: right;}
+        .contestcallout h2 {text-transform: uppercase; font-size: 18px; margin: 0; padding: 0;  line-height: 18px; font-weight: 600; color: #246975;}
+            .contestcallout h2 .line1 {font-size: 19px;}
+            .contestcallout h2 .line2 {font-size: 21px; line-height: 30px;}
+            .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 43px;}
+        .contestcallout p {margin: 0; padding: 0; font-size: 18px; color: #246975;}
+        .likebutton {float: left; padding-top: 10px;}
+
+
+/* NEWSLETTER SIGNUP */
+#mailinglist {width: 250px; float: right; margin-top: 30px; padding-top: 30px; border-top: 1px solid #451C43; color: #471F45;}
+    #mailinglist .newslettertitle {text-transform: lowercase; font-family: ff-market-web; font-size: 34px;}
+    #mailinglist label {font-size: 14px; text-transform: uppercase;}
+    #mailinglist .errorlist {color: #333; list-style-type: none; margin: 0; padding: 0; font-size: 11px; font-weight: bold;}
+
+input.homepage-email {width: 190px; border: 2px solid #178a94; background: #fff; color: #0d565c; padding: 5px; font-family: museo, Verdana, Arial, sans-serif; }
+    input.homepage-email:focus {outline: none; border-color: #0d565c; }
+
+input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,arial,sans-serif; color: #fff; font-weight: 600; border: 1px solid #178a94; background: #53a9b8; padding: 5px 8px; font-size: 18px;}
+    input.homepage-submit:hover {border: 1px solid #0d565c; background: #178a94;}
+
 
 
 #footer {background: url(../images/footer.png) repeat-x; clear: both; padding: 40px 0;}
@@ -194,19 +210,9 @@ header {margin-top: 10px;}
         .sociallinks .youtube {background: url(../images/youtube.png) no-repeat;}
         .sociallinks .vimeo {background: url(../images/vimeo.png) no-repeat;}
 
-    .copyright {float: right; padding-top: 16px; font-size: 10px; color: #fff; width: 250px; }
+    .copyright {float: left; padding-top: 16px; font-size: 10px; color: #fff; width: 156px; text-align: right;}
 
 
-/* NEWSLETTER SIGNUP */
-input.homepage-email {width: 160px; border: 2px solid #178a94; background: #fff; color: #0d565c; padding: 5px;}
-    input.homepage-email:focus {outline: none; border-color: #0d565c; }
-
-input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,arial,sans-serif; color: #fff; font-weight: 600; border: 1px solid #178a94; background: #53a9b8; padding: 5px 8px; font-size: 14px;}
-    input.homepage-submit:hover {border: 1px solid #0d565c; background: #178a94;}
-
-#mailinglist {margin-bottom: 30px; float: left; width: 600px;}
-    #mailinglist label {font-family: museo, Verdana, Arial, sans-serif; color: #fff;  font-size: 14px;}
-    #mailinglist .errorlist {color: #fff; list-style-type: none; margin: 0; padding: 0; font-size: 11px; font-weight: bold;}
 
 
 
@@ -214,13 +220,20 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
 .partnerpage {}
 .partnerpage h2 {margin: 0px; color: #471f45; text-transform: uppercase; font-size: 60px; font-weight: 600;}
 
-
-    .partnerpage #sidebar {float: left; width: 350px; padding-top: 30px;}
+    /* ARTIST PAGE IMAGES */
+    .artistpage #sidebar {float: left; width: 350px; padding-top: 30px;}
         /* image */
-        .partnerpage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; border: 10px solid #53a9b8;}
-            .partnerpage .partnerimage img {margin-bottom: -5px; width: 100%;}
+        .artistpage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; border: 10px solid #53a9b8;}
+            .artistpage .partnerimage img {margin-bottom: -5px; width: 100%;}
 
-        /* links */
+    /* CHARITY PAGE IMAGES */
+    .npopage #sidebar {float: left; width: 350px; padding-top: 30px;}
+        /* image */
+        .npopage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; }
+            .npopage .partnerimage img {margin-bottom: -5px; width: 100%;}
+
+
+        /* LINKS -- both pages */
         .partnerpage #sidebar ul {list-style-type: none; margin: 0; padding: 0;}
         .partnerpage #sidebar h3 {color: #999; text-transform: uppercase; font-size: 12px; font-weight: normal;}
         .partnerpage #sidebar .partnerlinks {margin: 30px 0; font-size: 32px;}
@@ -236,9 +249,9 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
                     .partnerpage #sidebar .tshirtlinks li div.shirtpicture {float:left;}
 
 
-    /* about */
+    /* ABOUT */
     .partnerpage #description {float: right; width: 580px;}
-        .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117);}
+        .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117); font-family: museo;}
         .partnerpage #description p:first-child::first-line {font-weight: bold;}
         .partnerpage #description h3 {clear: both; text-transform: uppercase; color: #471F45; font-size: 24px; margin-top: 40px;}
 
