@@ -18,7 +18,7 @@ a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
 .backgroundgradient.header {display: block; background-image: url(../images/header_gradient.jpg); background-repeat: repeat-x;}
     .header .texture {background: url(../images/texture_header.png) repeat-x; height: 210px;}
 
-.backgroundgradient.footer {display: block; background: url(../images/bottom_gradient.jpg) repeat;}
+.backgroundgradient.footer {display: block; background: url(../images/bottom_gradient.jpg) repeat-x;}
     .footer .texture {background: url(../images/texture_bottom.png) 250px -25px; padding-top: 50px;}
     .footer .texture:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
@@ -181,7 +181,7 @@ header {margin-top: 10px;}
     #mailinglist label {font-size: 14px; text-transform: uppercase;}
     #mailinglist .errorlist {color: #333; list-style-type: none; margin: 0; padding: 0; font-size: 11px; font-weight: bold;}
 
-input.homepage-email {width: 190px; border: 2px solid #178a94; background: #fff; color: #0d565c; padding: 5px; font-family: museo, Verdana, Arial, sans-serif; }
+input.homepage-email {width: 190px; border: 2px solid #178a94; background: #fff; color: #0d565c; padding: 5px; font-family: museo, Verdana, Arial, sans-serif; display: block; margin-bottom: 10px;}
     input.homepage-email:focus {outline: none; border-color: #0d565c; }
 
 input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,arial,sans-serif; color: #fff; font-weight: 600; border: 1px solid #178a94; background: #53a9b8; padding: 5px 8px; font-size: 18px;}
