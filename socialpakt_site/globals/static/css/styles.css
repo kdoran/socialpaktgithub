@@ -15,10 +15,10 @@ a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
 
 
 /* non-css3 fallbacks -- css3 in separate file */
-.backgroundgradient.header {background-image: url(../images/header_gradient.jpg); background-repeat: repeat-x;}
+.backgroundgradient.header {display: block; background-image: url(../images/header_gradient.jpg); background-repeat: repeat-x;}
     .header .texture {background: url(../images/texture_header.png) repeat-x; height: 210px;}
 
-.backgroundgradient.footer {background: url(../images/bottom_gradient.jpg) repeat;}
+.backgroundgradient.footer {display: block; background: url(../images/bottom_gradient.jpg) repeat;}
     .footer .texture {background: url(../images/texture_bottom.png) 250px -25px; padding-top: 50px;}
     .footer .texture:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
@@ -72,8 +72,8 @@ header {margin-top: 10px;}
 
         .charity {margin-bottom: 30px;}
             .charity h3 {color: #991148; text-transform: uppercase; font-size: 16px; margin: 0 0 5px 0; font-weight: 400;}
-            .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 20px;}
-                .charity .charity_logo:hover {opacity: 1;}
+            .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 20px; border: 0;}
+                .charity .charity_logo:hover {opacity: 1; border: 0;}
                 .charity .charity_logo img {width: 100%;}
 
 
