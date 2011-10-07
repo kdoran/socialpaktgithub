@@ -8,7 +8,10 @@ class Product(models.Model):
 
 	slug = models.SlugField(max_length=255, db_index=True)
 	title = models.CharField(max_length=255)
+	cart_title = models.CharField(max_length=255, default="This week's shirt")
 	description = models.TextField()
+	call_to_action = models.CharField(max_length=255, default="")
+
 	active = models.BooleanField(default=False, db_index=True)
 	date_expires = models.DateTimeField(db_index=True)
 
