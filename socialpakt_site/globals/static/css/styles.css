@@ -1,26 +1,26 @@
-body {background-color: #f9f9f9; color: #333; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif; margin: 0; padding: 0;} 
+body {background-color: #f9f9f9; color: #333; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif; font-weight: 200; margin: 0; padding: 0;} 
 
 h1 {text-transform: uppercase; color: #178a94; font-size: 70px; margin: 0 0 20px 0; padding: 0;}
 h2 {font-size: 24px; color: rgb(23, 138, 148);}
 h3 {font-size: 22px; color: rgb(36, 105, 117);}
 h4 {font-size: 16px; color: #6E356A;}
     
-p {font-size: 14px; line-height: 1.8em;}
+p {font-size: 14px; line-height: 1.8em; font-weight: 400;}
 strong {color: #fff;}
 p strong {color: #6E356A;}
-
-.market {font-family: ff-market-web;}
     
 a {color: #5A6A2B; text-decoration: none;}
 a:hover {color: rgb(83, 169, 184); text-decoration: underline;}
+
 
 
 /* non-css3 fallbacks -- css3 in separate file */
 .backgroundgradient.header {background: url(../images/header_gradient.jpg) repeat-x;}
     .header .texture {background: url(../images/texture_header.png) repeat-x; height: 210px;}
 
-.backgroundgradient.footer {background: url(../images/footer_gradient.jpg) repeat-x;}
-    .footer .texture {background: url(../images/texture_footer.png) 250px -25px; height: 530px; padding-top: 50px;}
+.backgroundgradient.footer {background: url(../images/bottom_gradient.jpg) repeat;}
+    .footer .texture {background: url(../images/texture_bottom.png) 250px -25px; padding-top: 50px;}
+    .footer .texture:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 .wrapper {margin: 0 auto; width: 960px;}
 
@@ -153,9 +153,9 @@ header {margin-top: 10px;}
         #bottom h4 a {color: #991148;}
         #bottom h4 a:hover {color: rgb(83, 169, 184);}
         
-    .story {float: left; width: 600px; clear: both;}
+    .story {float: left; width: 600px; clear: both; padding-bottom: 50px;}
         #bottom .story h4 {font-size: 36px; margin-bottom: 10px; display: none;}
-        .video:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; margin-bottom: 40px;}
+        .video:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
     .aboutus {display: block; width: 960px; margin: 30px 0 70px 0; color: #991148;}
         a.aboutus:hover {color: #178a94; text-decoration: none;}
@@ -171,7 +171,7 @@ header {margin-top: 10px;}
             .contestcallout h2 .line1 {font-size: 19px;}
             .contestcallout h2 .line2 {font-size: 21px; line-height: 30px;}
             .contestcallout h2 .line3 {font-weight: 800; display: block; font-size: 43px; line-height: 43px;}
-        .contestcallout p {margin: 0; padding: 0; font-size: 18px; color: #246975;}
+        .contestcallout p {margin: 0; padding: 0 0 0 3px; font-size: 18px; color: #246975;}
         .likebutton {float: left; padding-top: 10px;}
 
 
