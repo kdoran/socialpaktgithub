@@ -54,7 +54,9 @@ header {margin-top: 10px;}
 .shareit {position: absolute; left: -100px; top: 60px; width: 100px;}
     
 #main {}
-            
+
+    #shirtblock { float: left; width: 687px; }
+    #shirtblock h3 { float:left; width:670px; display: inline; margin: 0px; }
     #shirt {width: 670px; float: left; background: url(../images/pictureframe.png) no-repeat -20px 0; padding: 27px 0 10px 17px;}
 
         .shirtimage {display: block; overflow: hidden; float: left; height: 425px;}
@@ -93,7 +95,7 @@ header {margin-top: 10px;}
                 .goal h3 {color: #53a9b8;}
                 .goal .number {color: #246975;}
 
-            #timeleft {clear: both;}
+            #timeleft {clear: both; padding-bottom: 20px;}
                 #timeleft h3 {font-weight: 600; font-size: 18px; margin-bottom: 0; color: #451C43; text-transform: uppercase;}
                 #expiresdate {font-size: 25px; color: #999; font-weight: 200;}
                     #expiresdate .days,
@@ -122,7 +124,7 @@ header {margin-top: 10px;}
             .womens {clear: both;}
             .mens {clear: both;}
         
-        #addtocart {clear: both; padding-top: 40px;}
+        #addtocart {clear: both;}
             input#cartbutton {width: 240px; height: 90px; border-radius: 10px; background-color: #178a94; border: 1px solid #a8ddbe; background-image: url(../images/texture_button.png); background-position: center center; color: #fff; font-size: 30px; text-transform: uppercase; font-weight: 600; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif;}
                 input#cartbutton:hover, input#cartbutton:focus {outline: none; background-color: #ac9cd3; border-color: #d1aad5;}
 

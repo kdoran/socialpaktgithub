@@ -44,19 +44,29 @@
 
 {% block main %}
     <div id="productblock">
-        <div id="shirt">
-            {% for photo in product.productphoto_set.all %}
-            <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
-                <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
-            </div>
-            {% endfor %}
+        <div id="shirtblock">
+          <h3>{{product.call_to_action}}</h3>
+          <div id="shirt">
+              {% for photo in product.productphoto_set.all %}
+              <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
+                  <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
+              </div>
+              {% endfor %}
+          </div>
         </div>
 
         <div id="purchase">
 
+          {% if can_add_to_cart %}
+            <div id="timeleft">
+                <h3>time left to buy:</h3>
+                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+            </div>
+          {% endif %}
+
         <div class="charity">
             
-            <h3>{{product.call_to_action|default:"Featured Nonprofit"}}</h3>
+            <h3>Featured Nonprofit</h3>
               <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img width="250px" style="width:250px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
           </div>
 
@@ -111,12 +121,6 @@
                       </ul>
                   </div>
               </div>
-
-            
-            <div id="timeleft">
-                <h3>time left to buy:</h3>
-                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
-            </div>
 
           
               <div id="addtocart">
