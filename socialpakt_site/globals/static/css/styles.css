@@ -56,7 +56,9 @@ header {margin-top: 10px;}
 #main {}
 
     #shirtblock { float: left; width: 687px; }
-    #shirtblock h3 { float:left; width:670px; display: inline; margin: 0px; }
+        #shirtblock h3.explanation {margin: 0 20px 10px 10px; font-weight: 600; font-size: 18px; text-transform: uppercase; color: #451C43;}
+        #shirtblock h3.explanation .label {font-weight: 200; padding-right: 5px;}
+
     #shirt {width: 670px; float: left; background: url(../images/pictureframe.png) no-repeat -20px 0; padding: 27px 0 10px 17px;}
 
         .shirtimage {display: block; overflow: hidden; float: left; height: 425px;}
@@ -73,8 +75,8 @@ header {margin-top: 10px;}
     #purchase {width: 250px; float: right; overflow: hidden;}
 
         .charity {margin-bottom: 30px;}
-            .charity h3 {color: #991148; text-transform: uppercase; font-size: 16px; margin: 0 0 5px 0; font-weight: 400;}
-            .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 20px; border: 0;}
+            .charity h3 {font-family: ff-market-web; margin: 0; text-transform: lowercase; font-weight: normal;}
+            .charity .charity_logo {display: block; overflow: hidden; width: 280px; opacity: .8; margin-top: 5px; border: 0;}
                 .charity .charity_logo:hover {opacity: 1; border: 0;}
                 .charity .charity_logo img {width: 100%;}
 
@@ -96,8 +98,8 @@ header {margin-top: 10px;}
                 .goal .number {color: #246975;}
 
             #timeleft {clear: both; padding-bottom: 20px;}
-                #timeleft h3 {font-weight: 600; font-size: 18px; margin-bottom: 0; color: #451C43; text-transform: uppercase;}
-                #expiresdate {font-size: 25px; color: #999; font-weight: 200;}
+                #timeleft h3 {font-weight: 600; font-size: 18px; margin: 0; color: #451C43; text-transform: uppercase;}
+                #expiresdate {font-size: 22px; color: #999; font-weight: 200;}
                     #expiresdate .days,
                     #expiresdate .hours,
                     #expiresdate .minutes,
@@ -220,7 +222,8 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
 
 /* CHARITY/ARTIST PAGES */
 .partnerpage {}
-.partnerpage h2 {margin: 0px; color: #471f45; text-transform: uppercase; font-size: 60px; font-weight: 600;}
+#partnerblock h2 {margin: 0px; color: #471f45; text-transform: uppercase; font-size: 60px; font-weight: 600;}
+
 
     /* ARTIST PAGE IMAGES */
     .artistpage #sidebar {float: left; width: 350px; padding-top: 30px;}
@@ -252,7 +255,7 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
 
 
     /* ABOUT */
-    .partnerpage #description {float: right; width: 580px;}
+    .partnerpage #description {float: right; width: 580px; font-size: 14px; line-height: 1.8em; font-weight: 400;}
         .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117); font-family: museo;}
         .partnerpage #description p:first-child::first-line {font-weight: bold;}
         .partnerpage #description h3 {clear: both; text-transform: uppercase; color: #471F45; font-size: 24px; margin-top: 40px;}
@@ -265,17 +268,18 @@ input.homepage-submit {text-transform: uppercase; font-family: proxima-nova,aria
 /* PARTNER LIST */
 #partnerlist {list-style-type: none; margin: 0; padding: 0;}
     #partnerlist .partner {padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #451c43;}
-    #partnerlist .partner h3 {font-size: 30px;}
-    #partnerlist .partner .partnerimage {display: block; width: 500px;}
+    #partnerlist .partner h3 {font-size: 28px; margin: 5px 0 15px 0; padding: 0; font-weight: 600; font-family: museo;}
+    #partnerlist .partner .partnerimage {display: block; width: 300px; float: left; margin-right: 30px;}
         #partnerlist .partner .partnerimage img {width: 100%;}
-    #partnerlist .partner a.more {display: block; font-size: 18px; font-weight: 600;}
+    #partnerlist #description {}
+    #partnerlist .partner a.more {}
 
 
 /* ARTIST LIST */
 #partnerlist {list-style-type: none; margin: 0; padding: 0;}
     #partnerlist .artist {padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid #451c43;}
         #partnerlist .artist:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-    #partnerlist .artist h3 {font-size: 30px; margin-top: 0;}
+    #partnerlist .artist h3 {font-size: 28px; margin: 5px 0 15px 0; padding: 0; font-weight: 600; font-family: museo;}
     #partnerlist .artist #description {width: 500px; margin-left: 30px; float: left;}
     #partnerlist .artist .artistimage {display: block; width: 300px; float: left;}
         #partnerlist .artist .artistimage img {width: 100%;}

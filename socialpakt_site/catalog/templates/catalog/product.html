@@ -45,7 +45,7 @@
 {% block main %}
     <div id="productblock">
         <div id="shirtblock">
-          <h3>{{product.call_to_action}}</h3>
+          <h3 class="explanation"><span class="label">Each tee you buy</span>{{product.call_to_action}}</h3>
           <div id="shirt">
               {% for photo in product.productphoto_set.all %}
               <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
