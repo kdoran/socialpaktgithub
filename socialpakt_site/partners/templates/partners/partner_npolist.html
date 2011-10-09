@@ -12,10 +12,10 @@
         <ul id="partnerlist" class="nonprofit">
           {% for partner in object_list %}
             <li class="partner nonprofit">
-              <h3><a href="{% url nonprofit partner.slug %}">{{partner.name}}</a></h3>
-              <a class="partnerimage" href="{% url nonprofit partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a>
+              <a class="nonprofitimage" href="{% url nonprofit partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a>
               <div id="description">
-                <p>{{partner.about|safe|truncatewords_html:30}} <a class="more" href="{% url nonprofit partner.slug %}">Learn More</a></p>
+                <h3><a href="{% url nonprofit partner.slug %}">{{partner.name}}</a></h3>
+                <p>{{partner.about|safe|truncatewords_html:30|striptags}} <a class="more" href="{% url nonprofit partner.slug %}">Learn More</a></p>
               </div>
             </li>
         {% endfor %}
