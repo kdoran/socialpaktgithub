@@ -54,9 +54,14 @@
                 <a href="/"><h1>SocialPakt</h1></a>
                 <div class="tagline">Make a Pakt, Make a Difference</div>
             </div>
-
-            <div class="donated">For every shirt you buy,<br/>we donate<br/>$6<br/>to this week's<br/>featured nonprofit</div>
             
+            {% block contest %}
+            <div class="contestcallout">
+              <div class="donated">For every shirt you buy,<br/>we donate<br/>$6<br/>to this week's<br/>featured nonprofit</div>  
+              <fb:like href="http://www.facebook.com/socialpakt" layout="button_count" show_faces="true" width=100 action="like" colorscheme="light" height=21></fb:like>
+            </div>
+            {% endblock contest %}
+
           </div>
           </div>
         {% endblock header %}
