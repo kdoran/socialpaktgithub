@@ -1,6 +1,22 @@
 (function(globalscope, $){
 	var hovering = false;
 
+	var show_shirt_detail = function() {
+		var detail_link = $("div#shirt div.shirtimage.big a.photodetail");
+		if( detail_link.length > 0 ) {
+			var detail_href = $(detail_link).attr("href");
+			$.colorbox({href:detail_href});
+		}
+	}
+
+	var show_shirt_detail_link = function() {
+		if ( $("div#shirt div.shirtimage.big a.photodetail").length ) {
+			$("a#photodetaillink").show();
+		} else {
+			$("a#photodetaillink").hide();
+		}
+	}
+
 	$(document).ready(function(){
 		// Set up the countdown timer
 		var expiresdate = $("#expiresdate").text();
@@ -17,6 +33,17 @@
 			$(this).html(cur_sel_img);
 			$("div.shirtimage.thumbnail").animate({width:"10%"});
 			$("div.shirtimage.big").animate({width:"81%"});
+
+			show_shirt_detail_link();
+		});
+
+		$("div#shirt div.shirtimage.big").click(function(){
+			show_shirt_detail();
+		});
+
+		$("a#photodetaillink").click(function(){
+			show_shirt_detail();
+			return false;
 		});
 
 		$("div.thumbnail").hover(
@@ -34,7 +61,6 @@
 			}
 		);
 
-
 		// Set up the size selector
 		$("li.size").click(function(){
 			$("#shirt_select").attr("value", $(this).attr("id"));
@@ -43,6 +69,8 @@
 			$("#cartbutton").removeAttr("disabled").removeClass("disabled");
 
 		});
+
+		show_shirt_detail_link();
 	});
 
 })(window, jQuery);

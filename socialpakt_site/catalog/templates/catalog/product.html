@@ -50,9 +50,13 @@
               {% for photo in product.productphoto_set.all %}
               <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
                   <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
+                  {% if photo.photo_large %}
+                    <a class="photodetail" href="{{photo.photo_large.url}}" alt="Detail">Large</a>
+                  {% endif %}
               </div>
               {% endfor %}
           </div>
+          <a id="photodetaillink" href="#">Show Large</a>
         </div>
 
         <div id="purchase">

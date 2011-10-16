@@ -46,6 +46,8 @@ class ProductVariation(models.Model):
 class ProductPhoto(models.Model):
 	description = models.CharField(max_length=255)
 	photo = models.ImageField(upload_to="product_photos/")
+	photo_large = models.ImageField(upload_to="product_photos/", blank=True, null=True)
+
 	product = models.ForeignKey(Product)
 
 	def __str__(self):

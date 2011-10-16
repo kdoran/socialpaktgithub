@@ -62,13 +62,15 @@ header {margin-top: 10px;}
     #shirt {width: 670px; float: left; background: url(../images/pictureframe.png) no-repeat -20px 0; padding: 27px 0 10px 17px;}
 
         .shirtimage {display: block; overflow: hidden; float: left; height: 425px;}
-            .shirtimage.big {width: 81%; }
+            .shirtimage.big {width: 81%; cursor: pointer; }
             .shirtimage.big img {margin-left:-10px;}
             .shirtimage.big.slide {width: 41%;}
             .shirtimage.thumbnail {width: 10%; margin-left: 2px; cursor: pointer; position: relative;}
             .shirtimage.thumbnail.slide {width:50%;}
                 .shirtimage.thumbnail img {opacity: .7;}
                 .shirtimage.thumbnail:hover img {opacity: 1;}
+
+        a#photodetaillink { display: none; margin-left:15px; }
 
 
 
@@ -118,7 +120,7 @@ header {margin-top: 10px;}
                     .sizeandfit:hover {color: #666; text-decoration: none;}
             
             ul.options {list-style-type: none; margin: 0; padding: 0;}
-                .size {display: block; float: left; border: 1px solid #876e86; color: #876e86; height: 18px; width: 38px; text-align: center; padding-top: 6px; font-weight: 600; text-transform: uppercase; margin-right: 20px; font-size: 12px;}
+                .size {display: block; float: left; border: 1px solid #876e86; color: #876e86; height: 18px; width: 38px; text-align: center; padding-top: 6px; font-weight: 600; text-transform: uppercase; margin-right: 20px; font-size: 12px; cursor: pointer;}
                     .size:hover {background-color: #dbcdda; border-color: #7e457b; color: #7e457b;}
                 .size.selected {background-color: #7e457b; border-color: #361034; color: #fff;}
 
