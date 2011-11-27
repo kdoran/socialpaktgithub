@@ -15,6 +15,9 @@ class Product(models.Model):
 	active = models.BooleanField(default=False, db_index=True)
 	date_expires = models.DateTimeField(db_index=True)
 
+	for_sale = models.BooleanField(default=True)
+	has_inventory = models.BooleanField(default=False)
+
 	artist = models.ForeignKey(Partner, related_name="artist_on_set")
 	benefits = models.ForeignKey(Partner, related_name="benefits_from_set")
 
@@ -22,6 +25,8 @@ class Product(models.Model):
 	donation_amount = models.FloatField(default=6.0)
 	goal = models.FloatField(default=1200.0)
 	total_sold = models.IntegerField(default=0)
+
+	votes = models.IntegerField(default=0)
 
 	def total_raised(self):
 		return self.total_sold*self.donation_amount
@@ -37,8 +42,12 @@ class ProductVariation(models.Model):
 	num_ordered = models.IntegerField(default=0)
 	product = models.ForeignKey(Product)
 
+	inventory = models.IntegerField(default = -1)
+	price_override = models.FloatField(default = -1.0)
+
 	def get_amount(self, quantity):
-		return self.product.price * quantity
+		price = self.price_override if self.price_override >= 0.0 else self.product.price
+		return price * quantity
 
 	def __str__(self):
 		return self.product.slug+" "+self.description

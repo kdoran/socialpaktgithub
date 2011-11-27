@@ -123,6 +123,7 @@ header {margin-top: 10px;}
                 .size {display: block; float: left; border: 1px solid #876e86; color: #876e86; height: 18px; width: 38px; text-align: center; padding-top: 6px; font-weight: 600; text-transform: uppercase; margin-right: 20px; font-size: 12px; cursor: pointer;}
                     .size:hover {background-color: #dbcdda; border-color: #7e457b; color: #7e457b;}
                 .size.selected {background-color: #7e457b; border-color: #361034; color: #fff;}
+                .size.stock0 {display:none;}
 
             
             .womens {clear: both;}

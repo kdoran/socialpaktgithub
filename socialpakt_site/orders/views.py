@@ -81,10 +81,16 @@ def foxyfeed(request):
                     product = Product.objects.get(slug=product_code)
                     variation = product.productvariation_set.get(description=product_variation)
 
-                    product.total_sold += int(quantity)
+                    quantity_int = int(quantity)
+
+                    product.total_sold += quantity_int
                     product.save()
 
-                    variation.num_ordered += int(quantity)
+                    variation.num_ordered += quantity_int
+
+                    if product.has_inventory:
+                        variation.inventory = variation.inventory-quantity
+
                     variation.save()
 
                     items += "Product Name:" + item["product_name"] + "\n"

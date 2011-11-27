@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load producttags %}
+
 {% block fbmetadata %}
   <meta property="og:title" content="{{ product.title }}"/> 
   <meta property="og:url" content="http://{{ request.get_host }}/shirt/{{ product.slug }}/"/> 
@@ -61,7 +63,7 @@
 
         <div id="purchase">
 
-          {% if can_add_to_cart %}
+          {% if can_add_to_cart and not product.has_inventory %}
             <div id="timeleft">
                 <h3>time left to buy:</h3>
                 <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
@@ -99,7 +101,9 @@
               <input type="hidden" name="quantity" value="1">
               <select id="shirt_select" name="shirt">
                   {% for v in product.productvariation_set.all %}
-                  <option value="{{v.description}}">{{v.description}}</option>
+                    {% if v.inventory > 0 or not product.has_inventory %}
+                      <option value="{{v.description}}">{{v.description}}</option>
+                    {% endif %}
                   {% endfor %}
               </select>
           
@@ -108,20 +112,20 @@
                       <h3><span class="price">${{product.price|floatformat}}</span> Women's Tee</h3>
                       <a class="sizeandfit" href="/sizingchart/">size and fit</a>
                       <ul class="options">
-                          <li id="Women's S" class="size">s</li>
-                          <li id="Women's M" class="size">m</li>
-                          <li id="Women's L" class="size">l</li>
-                          <li id="Women's XL" class="size">xl</li>
+                          <li id="Women's S" class="size stock{% product_stock product.productvariation_set "Women's S" %}">s</li>
+                          <li id="Women's M" class="size stock{% product_stock product.productvariation_set "Women's M" %}">m</li>
+                          <li id="Women's L" class="size stock{% product_stock product.productvariation_set "Women's L" %}">l</li>
+                          <li id="Women's XL" class="size stock{% product_stock product.productvariation_set "Women's XL" %}">xl</li>
                       </ul>
                   </div>
                   <div class="mens">
                       <h3><span class="price">${{product.price|floatformat}}</span> Men's Tee</h3>
                       <a class="sizeandfit" href="/sizingchart/">size and fit</a>
                       <ul class="options">
-                          <li id="Men's S" class="size">s</li>
-                          <li id="Men's M" class="size">m</li>
-                          <li id="Men's L" class="size">l</li>
-                          <li id="Men's XL" class="size">xl</li>
+                          <li id="Men's S" class="size stock{% product_stock product.productvariation_set "Men's S" %}">s</li>
+                          <li id="Men's M" class="size stock{% product_stock product.productvariation_set "Men's M" %}">m</li>
+                          <li id="Men's L" class="size stock{% product_stock product.productvariation_set "Men's L" %}">l</li>
+                          <li id="Men's XL" class="size stock{% product_stock product.productvariation_set "Men's XL" %}">xl</li>
                       </ul>
                   </div>
               </div>

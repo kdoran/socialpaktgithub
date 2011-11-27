@@ -33,7 +33,7 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
 
         context = {
             'product' : product,
-            'can_add_to_cart' : product.date_expires >= datetime.now(),
+            'can_add_to_cart' : product.for_sale,
             'product_variation_contenttype' : ContentType.objects.get(model="productvariation"),
         }
 
