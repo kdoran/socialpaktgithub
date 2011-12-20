@@ -63,7 +63,7 @@
 
         <div id="purchase">
 
-          {% if can_add_to_cart and not product.has_inventory %}
+          {% if product.date_expires >= now %}
             <div id="timeleft">
                 <h3>time left to buy:</h3>
                 <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
@@ -156,7 +156,6 @@
 <div id="comments">
   <h3>What People Are Saying</h3>
     <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
-  <a href="http://www.WhiskersinWonderland.org" target="_blank"><img src="http://www.AnimalAllianceNYC.org/events/featured/whiskers/bannerwhiskersinwonderland2011-04-600.jpg" alt="Whiskers in Wonderland - December 17 &amp; 18, 2011" width="600" height="300" border="0" /></a>
 </div>
 {% endblock fbcomments %}
 

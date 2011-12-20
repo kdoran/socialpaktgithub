@@ -35,6 +35,7 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
             'product' : product,
             'can_add_to_cart' : product.for_sale,
             'product_variation_contenttype' : ContentType.objects.get(model="productvariation"),
+            'now' : datetime.now(),
         }
 
         kwargs.update(context)
