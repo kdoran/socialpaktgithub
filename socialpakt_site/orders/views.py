@@ -89,7 +89,7 @@ def foxyfeed(request):
                     variation.num_ordered += quantity_int
 
                     if product.has_inventory:
-                        variation.inventory = variation.inventory-quantity
+                        variation.inventory = variation.inventory-quantity_int
 
                     variation.save()
 
