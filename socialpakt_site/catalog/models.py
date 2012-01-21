@@ -2,6 +2,13 @@ from django.db import models
 
 from partners.models import Partner
 
+#class ProductCategory(models.Model):
+#
+#	
+#
+#	def __str__(self):
+#		pass
+
 # Create your models here.
 class Product(models.Model):
 	"""Model representing a tshirt for SocialPakt"""
