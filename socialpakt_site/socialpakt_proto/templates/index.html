@@ -1,7 +1,7 @@
 {% extends "proto_base.html" %}
 
 {% block localcss %}
-	<link rel="stylesheet" href="{{ STATIC_URL }}base.css" type="text/css" media="screen" charset="utf-8" />
+	
 {% endblock localcss %}
 
 {% block content %}
@@ -14,19 +14,49 @@
 		<!-- Shirt -->
 		<div id="shirt" class="[TODO shirtname]">
 
-			<!-- Shirt Image -->
 				<!-- Charity -->
+				<div id="charityflyout">
+					
 					<!-- Charity Seal and Logo -->
-					<!-- Charity Flyout -->
+					<div class="charitylogo"></div>
+
+					<!-- Charity Flyout - hidden til hover -->
+					<div class="charityflyout"></div>
+
+				</div>
+
 				<!-- Shirt Image -->
+				<div id="shirtimage"></div>
+
 					<!-- Toggle Links -->
-				<!-- Like buttons -->
+					<div id="toggle"></div>
+
+				<!-- Sharing buttons -->
+				<div id="sharing"></div>
+
+
 
 			<!-- Shirt Actions -->
+			<div id="shirtactions">
+
 				<!-- Price -->
+				<div class="price"></div>
+
 				<!-- Goals -->
+				<div class="goals"></div>
+
 				<!-- Sizes -->
+				<div class="sizes"></div>
+
 				<!-- Add to Cart -->
+				<div class="addtocart">
+
+					<!-- Cart -->
+					<div id="cart"></div>
+
+				</div>
+				
+			</div>
 
 
 		</div>
