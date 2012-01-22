@@ -33,14 +33,15 @@
 
 <body>
 
-    {% block headerel %}
-      <div class="backgroundgradient header">
-        {% block header %}
-        <div>
-        </div>
-        {% endblock header %}
-      </div>
-    {% endblock headerel %}
+    {% block header %}
+    {% endblock header %}
+
+
+{% block content %}
+    content goes here
+  
+{% endblock content %}
+
 
     {% block globaljs %}
       <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->

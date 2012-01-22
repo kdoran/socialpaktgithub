@@ -5,5 +5,75 @@
 {% endblock localcss %}
 
 {% block content %}
+
+	<!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
+	<div id="header" class="collapsed">
+
+		<div class="logo">
+			<span class="expandlink">+</span>
+			<h1>SocialPakt</h1>
+		</div>
+
+		<ul class="minornav">
+			<li>Past Causes</li>
+			<li>Charities</li>
+			<li>Artists</li>
+			<li>About SocialPakt</li>
+			<li>Blog</li>
+		</ul>
+		
+		<ul class="locationnav">
+			<li class="selected">
+				<h3>New York</h3>
+				<div class="minishirt">
+					<img src="images/minishirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+				</div>
+				<p class="charityname">Charity Name</p>
+			</li>
+			<li>Los Angeles</li>
+			<li>Canada</li>
+			<li>Everywhere</li>
+		</ul>
+
+		<div class="about"><!-- hide me when collapsed -->
+
+		<div class="howitworks">For every shirt you buy, we donate $6 to our featured nonprofit.</div>
+
+		<div class="contest">Like us &amp; each week you'll be entered to win a $100 donation to the charity of your choice.</div>
+
+		</div>
+
+	</div>
+
+	<!-- Shirt and Shirt Details -->
+	<div id="main">
+
+		<!-- Shirt -->
+		<div id="shirt" class="[TODO shirtname]"></div>
+
+		<!-- Shirt Details -->
+		<div id="shirtdetails">shirt details</div>
+
+	</div>
+
+	<!-- Locations -->
+	<div id="locations"></div>
+
+	<!-- SocialPakt sections -->
+	<div id="socialpakt">
+
+		<!-- Mission -->
+		<div id="mission"></div>
+
+		<!-- Past Shirts -->
+		<div id="pastshirts"></div>
+
+		<!-- Footer -->
+		<div id="footer"></div>
+
+	</div>
+
+
+
 	
 {% endblock content %}
