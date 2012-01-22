@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'globals',
     'splash',
     'orders',
+    'socialpakt_proto',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

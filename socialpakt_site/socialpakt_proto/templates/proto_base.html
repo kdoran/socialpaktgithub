@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"> <!--<![endif]-->
+<head>
+  <title>Make a Pakt, Make a Difference</title>
+  
+  <script src="{{ STATIC_URL }}js/lib/modernizr-2.0.6.js"></script>
+  <script type="text/javascript">
+      (function() {
+            var tk = document.createElement('script');
+            tk.type = 'text/javascript';
+            tk.async = true;
+            tk.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'use.typekit.com/txn8uhp.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tk, s);
+
+            tk.onload = function () {
+                try{Typekit.load();}catch(e){}
+            }
+      })(); 
+  </script>
+
+  {% block localcss %}
+
+  {% endblock localcss %}
+
+</head>
+
+<body>
+
+    {% block headerel %}
+      <div class="backgroundgradient header">
+        {% block header %}
+        <div>
+        </div>
+        {% endblock header %}
+      </div>
+    {% endblock headerel %}
+
+    {% block globaljs %}
+      <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+    {% endblock globaljs %}
+
+    {% block localscripts %}
+
+    {% endblock localscripts %}
+
+</body>
+</html>
