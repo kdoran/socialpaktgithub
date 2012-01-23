@@ -36,15 +36,16 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', CatalogHomeView.as_view(), name='home', ),
+    url(r'^city/(?P<category>\w+)/$', CatalogHomeView.as_view(), name='home_city' ),
     url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
     url(r'^artist/(?P<slug>\w+)/$', 
     	DetailView.as_view(queryset=Partner.objects.filter(partner_type="ART"),context_object_name="partner"), name='artist', ),
     url(r'^nonprofit/(?P<slug>\w+)/$', 
     	DetailView.as_view(queryset=Partner.objects.filter(partner_type="NPO"),context_object_name="partner"), name='nonprofit', ),
 
-    url(r'^artists/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="ART"), template_name_suffix="_artistlist"), name='artists'),
-    url(r'^nonprofits/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="NPO"), template_name_suffix="_npolist"), name='npos'),
-    url(r'^shirts/$', ListView.as_view(queryset=Product.objects.filter(active=True)), name='shirts'),
+    url(r'^artists/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="ART").order_by('name'), template_name_suffix="_artistlist"), name='artists'),
+    url(r'^nonprofits/$', ListView.as_view(queryset=Partner.objects.filter(partner_type="NPO").order_by('name'), template_name_suffix="_npolist"), name='npos'),
+    url(r'^shirts/$', ListView.as_view(queryset=Product.objects.filter(active=True).order_by('date_expires')), name='shirts'),
 
     url(r'^cart/', include('cart.urls')),
 )

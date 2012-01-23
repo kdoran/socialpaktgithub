@@ -21,19 +21,27 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
         return self.render_to_response(self.get_context_data(form=form,**kwargs))
 
     def get_context_data(self, **kwargs):
-        products = Product.objects.filter(active=True).order_by('-date_expires')
-
-        print kwargs
-
         if "slug" in kwargs:
             product = get_object_or_404(Product, slug=kwargs["slug"])
+            cat = product.category
         else:
+            # check for a category first
+            cat = None
+            if 'category' in kwargs:
+                cat = ProductCategory.objects.filter(slug=kwargs['category'])[0]
+            else:
+                cat = ProductCategory.objects.all().order_by('?')[0]
+                
+            # go find a product to display
+            products = Product.objects.filter(active=True, category=cat).order_by('-date_expires')
             product = products[:1]
             product = product[0] if len(products) else None # need to refactor this
 
         context = {
+            'category' : cat,
             'product' : product,
-            'can_add_to_cart' : product.for_sale,
+            'variations' : product.productvariation_set.all().order_by('display_order') if product else None,
+            'can_add_to_cart' : product.for_sale if product else False,
             'product_variation_contenttype' : ContentType.objects.get(model="productvariation"),
             'now' : datetime.now(),
         }
