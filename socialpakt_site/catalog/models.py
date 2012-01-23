@@ -2,16 +2,31 @@ from django.db import models
 
 from partners.models import Partner
 
-#class ProductCategory(models.Model):
-#
-#	
-#
-#	def __str__(self):
-#		pass
+class ProductCategory(models.Model):
 
-# Create your models here.
+	slug = models.SlugField(max_length=255, db_index=True)
+	display_text = models.CharField(max_length=255)
+	display_order = models.IntegerField(default=-1)
+
+	def __str__(self):
+		return self.slug
+
+class VariationCategory(models.Model):
+	
+	slug = models.SlugField(max_length=255, db_index=True)
+	display_text = models.CharField(max_length=255)
+	exception_text = models.CharField(max_length=255, blank=True)
+	display_order = models.IntegerField(default=-1)
+
+	def __str__(self):
+		return self.slug
+
 class Product(models.Model):
 	"""Model representing a tshirt for SocialPakt"""
+
+	category = models.ForeignKey(ProductCategory, null=True)
+	available_variations = models.ManyToManyField(VariationCategory, null=True)
+	background_photo = models.ImageField(upload_to="product_photos/", null=True, blank=True)
 
 	slug = models.SlugField(max_length=255, db_index=True)
 	title = models.CharField(max_length=255)
@@ -45,7 +60,10 @@ class Product(models.Model):
 		return self.slug
 		
 class ProductVariation(models.Model):
+	category = models.ForeignKey(VariationCategory, null=True)
 	description = models.CharField(max_length=255)
+	display_text = models.CharField(max_length=255, default="", blank=True)
+	display_order = models.IntegerField(default=-1)
 	num_ordered = models.IntegerField(default=0)
 	product = models.ForeignKey(Product)
 
@@ -61,6 +79,7 @@ class ProductVariation(models.Model):
 
 class ProductPhoto(models.Model):
 	description = models.CharField(max_length=255)
+	display_order = models.IntegerField(default=-1)
 	photo = models.ImageField(upload_to="product_photos/")
 	photo_large = models.ImageField(upload_to="product_photos/", blank=True, null=True)
 
@@ -68,3 +87,7 @@ class ProductPhoto(models.Model):
 
 	def __str__(self):
 		return self.product.slug+" "+self.description
+
+class CatalogGlobals(models.Model):
+	global_set = models.SlugField(max_length=255, db_index=True)
+	default_category = models.ForeignKey(ProductCategory)
