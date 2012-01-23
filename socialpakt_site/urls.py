@@ -48,4 +48,5 @@ urlpatterns = patterns('',
     url(r'^shirts/$', ListView.as_view(queryset=Product.objects.filter(active=True).order_by('date_expires')), name='shirts'),
 
     url(r'^cart/', include('cart.urls')),
+    url(r'^proto/', include('socialpakt_proto.urls')),
 )
