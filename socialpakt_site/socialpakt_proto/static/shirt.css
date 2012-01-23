@@ -1,0 +1,79 @@
+/* ---------- SHIRT SECTION ------------------------- */
+/* ------------------------------------------------- */
+
+#main {}
+	#main:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+
+#featuredshirt {padding-top: 55px; background-color: #053745;}
+	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+	#shirt {position: relative; max-width: 810px; float: left; margin-left: -80px;}
+
+		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
+			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: #fff; text-decoration: none;}
+			#toggle .selected {display: none;}
+
+		#charityflyout {}
+			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 170px; height: 170px; background-color: #fafafa; cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
+				.charitylogo .logoimage {width: 100%; text-align: center; padding-top: 22px;} /* TODO how do we force the spacing here? */
+			
+			#charityflyout .charityinfo {display: none;}
+				#charityflyout:hover .charityinfo {display: block;}
+			#charityflyout .charityinfo {position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; background-color: #fff; width: 545px; padding: 10px 0 10px 120px;}
+				#charityflyout .charityinfo h4 {margin: 0;}
+
+	#shirtactions {max-width: 450px; float: right; margin-left: 20px;}
+		.price, .goals, .sizes, .addtocart {margin-bottom: 20px; color: #fff;}
+
+		.price {}
+			.price .amount {display: block; width: 102px; height: 82px; float: left; margin-right: 14px; background: url(images/knockout/price.png) no-repeat; background-size: 100%; text-indent: -9999em;} /* TODO using background-size so this can change responsively depending on it's height/width, but without placing it in the HTML, see http://www.css3.info/preview/background-size/ for browser support */
+			.price .tagline {font-size: 20px;}
+			.price .daysremaining {clear: both;}
+
+		.goals {}
+			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
+				.goals .dollar {font-family: museo; font-size: 20px; vertical-align: top;}
+				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
+				.goals .helper {clear: both; color: #fff; opacity: 1;}
+
+			.goals .donated {float: left;}
+				.goals .donated .helper {margin-left: 18px;}
+
+			.goals .goal {float: right; margin-right: 20px; text-align: right; opacity: .5;}
+				.goals .goal:hover {opacity: 1;} /* hover states */
+
+			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
+				.goals #progressbar {width: 445px; height: 52px; background-color: #451c43;}
+					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background-color: #773374;}
+					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
+			
+			.goals .amountdonated {margin: 10px 0 0 18px;}
+				.goals .amountdonated .sharpie {text-transform: lowercase; opacity: .2;}
+					.goals .amountdonated:hover .sharpie {opacity: 1;}
+
+
+		.sizes {}
+			.sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+			.sizes h4 {margin: 0; line-height: 2;}
+
+			.sizes .womens, .sizes .mens {width: 50%; float: left;}
+
+			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: #d5d5d5; color: #000; text-transform: uppercase; text-align: center; line-height: 2; font-weight: bold; cursor: pointer;}
+                    .sizeselect:hover {background-color: #fff; color: #5cbcb9;}
+                .sizeselect.selected {background-color: #fff; color: #e11665;}
+                .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;}
+
+
+         .addtocart {}
+	         .addtocart input {width: 445px; background-color: #c9175d; border: 0; color: #fff; text-transform: uppercase; font-size: 35px; line-height: 2; font-weight: bold;}
+
+	         .addtocart #cart {text-align: center;}
+
+
+#shirtdetails {background-color: #ccc;}
+	#shirtdetails:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+	#shirtdetails .partners {max-width: 700px; float: left;}
+
+	#shirtdetails #comments {max-width: 450px; float: right; margin-left: 20px; padding-top: 20px;}

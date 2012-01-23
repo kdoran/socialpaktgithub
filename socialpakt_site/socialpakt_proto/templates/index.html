@@ -8,8 +8,11 @@
 
 
 
-	<!-- Shirt and Shirt Details -->
-	<div id="main">
+<!-- Shirt and Shirt Details -->
+<div id="main">
+
+	<div id="featuredshirt">
+		<div class="wrapper">
 
 		<!-- Shirt -->
 		<div id="shirt" class="[TODO shirtname]">
@@ -18,92 +21,212 @@
 				<div id="charityflyout">
 					
 					<!-- Charity Seal and Logo -->
-					<div class="charitylogo"></div>
+					<div class="charitylogo">
+						<div class="logoimage">
+							<img src="{{ STATIC_URL }}images/logo_mayorsalliance.png"> 
+						</div>
+					</div>
 
 					<!-- Charity Flyout - hidden til hover -->
-					<div class="charityflyout"></div>
+					<div class="charityinfo"> <!-- TODO wire this up to pull from db -->
+						<h4>Mayor's Alliance for NYC'S Animals</h4>
+						<p class="charitylink">
+				        	<span class="goto">go to</span>
+				        	Charity URL
+				        </p>
+				        <ul class="charitysociallinks">
+				        	<li class="facebook">facebook</li>
+				        	<li class="twitter">facebook</li>
+				        	<li class="youtube">facebook</li>
+				        </ul>
+					</div>
 
 				</div>
 
 				<!-- Shirt Image -->
-				<div id="shirtimage"></div>
+				<div id="shirtimage">
+					<div class="image selected">
+						<img src="{{ STATIC_URL }}images/mayors_mens_front.png"> 
+					</div>
+				</div>
 
 					<!-- Toggle Links -->
-					<div id="toggle"></div>
+					<div id="toggle">
+						<a href="" class="mens selected">See Men's</a>
+						<a href="" class="womens">See Women's</a>
+					</div>
 
 				<!-- Sharing buttons -->
 				<div id="sharing"></div>
+		</div>
 
+		<!-- Shirt Actions -->
+		<div id="shirtactions">
 
-
-			<!-- Shirt Actions -->
-			<div id="shirtactions">
-
-				<!-- Price -->
-				<div class="price"></div>
-
-				<!-- Goals -->
-				<div class="goals"></div>
-
-				<!-- Sizes -->
-				<div class="sizes"></div>
-
-				<!-- Add to Cart -->
-				<div class="addtocart">
-
-					<!-- Cart -->
-					<div id="cart"></div>
-
+			<!-- Price -->
+			<div class="price">
+				<div class="amount">
+					<span>$</span>
+					<span class="number">22</span>
 				</div>
+				<div class="tagline sharpie">
+					helps the Mayor’s Alliance for NYC’s Animals find a forever home for a little New Yorker.
+				</div>
+				<div class="daysremaining helper">
+					<span class="number">14</span> days remaining to purchase this shirt at its featured price.
+				</div>
+			</div>
+
+			<!-- Goals -->
+			<div class="goals">
+				<div class="donated">
+					<span class="dollar">$</span>
+					<span class="number">474</span> <!-- TODO wire this up! -->
+					<span class="helper">dollars donated</span>
+				</div>
+					<div class="goal">
+					<span class="dollar">$</span>
+					<span class="number">600</span> <!-- TODO wire this up! -->
+					<span class="helper">our donation goal</span>
+				</div>
+				<div class="progress">
+					<div id="progressbar">
+						<div class="percentage">
+							<span class="label sharpie">79%</span> <!-- TODO wire this up! -->
+						</div>
+					</div>
+				</div>
+				<div class="amountdonated helper">
+					<span class="number">6</span> donated per <span class="number">$22</span> shirt. <span class="sharpie">why?</span>
+				</div>
+			</div>
+
+			<!-- Sizes -->
+			<div class="sizes">
+				<div class="womens">
+					<h4>Women's</h4>
+					<div class="select">
+						<div class="sizeselect">s</div>
+						<div class="sizeselect selected">m</div>
+						<div class="sizeselect">l</div>
+						<div class="sizeselect">xl</div>
+					</div>
+				</div>
+				<div class="mens">
+					<h4>Men's</h4>
+					<div class="select">
+						<div class="sizeselect">s</div>
+						<div class="sizeselect">m</div>
+						<div class="sizeselect">l</div>
+						<div class="sizeselect">xl</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Add to Cart -->
+			<div class="addtocart">
+
+				<input type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
+
+				<!-- Cart -->
+				<div id="cart">2 items $44</div>
 
 			</div>
 
-
 		</div>
-
-		<!-- Shirt Details -->
-		<div id="shirtdetails">
-			
-			<!-- About this Shirt -->
-			<div class="partners">
-
-				<!-- Featured Charity -->
-				<div class="charity"></div>
-
-				<!-- Artist -->
-				<div class="artist"></div>
-
-			</div>
-
-			<!-- Comments -->
-			<div id="comments"></div>
-
 		</div>
-
 	</div>
+
+	<!-- Shirt Details -->
+	<div id="shirtdetails">
+		<div class="wrapper">
+		
+		<!-- About this Shirt -->
+		<div class="partners">
+
+			<!-- Featured Charity -->
+			<div class="charity">
+				<h2>Mayor's Alliance of NYC'S Animals</h2>
+				<p>Founded in 2002, the Mayor's Alliance for NYC's Animals is a coalition of more than 150 animalrescue groups and shelters in New York City. The organization’s primary goal is to transform NYC intoa no-kill community by 2015. In order to achieve this goal, the Alliance helps its Alliance Participating Organizations work to their highest potential to increase pet adoptions and spay/neuter rates.
+				<a href="">more...</a></p>
+			</div>
+
+			<!-- Artist -->
+			<div class="artist">
+				<h2>Liz Haywood</h2>
+				<p>Liz Haywood is a Brooklyn graphic designer and illustrator. Haywood studied art in Florence and also attended the Portfolio Center in Atlanta, Georgia where she graduated with a dual concentration in Design and Illustration.
+				<a href="">more...</a></p>
+
+			</div>
+
+		</div>
+
+		<!-- Comments -->
+		<div id="comments">
+			<img src="{{ STATIC_URL }}images/comments.png"> 
+		</div>
+
+		</div>
+	</div>
+
+	
+</div>
+
 
 	<!-- Locations -->
 	<div id="locations">
+	<div class="wrapper">
 
-      <div class="selected"> <!-- selected or hover state or both? -->
+      <div class="location newyork selected"> <!-- selected or hover state or both? -->
         <h3>New York</h3>
         <div class="smallshirt">
-          <img src="images/minishirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
         </div>
-        <p class="charityname">Charity Name</p>
-        <p class="charitylink">
-        	<span class="goto">go to</span>
-        	Charity URL
-        </p>
+        <h4 class="charityname">Mayor's Alliance for NYC'S Animals</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	animalalliancenyc.com
+        </a>
+        <p>Founded in 2002, the Mayor's Alliance for NYC's Animals is a coalition of more than 150 animal rescue groups and shelters in New York City.  more...</p>
       </div>
 
-      <div>Los Angeles</div>
-      
-      <div>Canada</div>
-      
-      <div>Everywhere</div>
+      <div class="location losangeles">
+        <h3>Los Angeles</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">Union Rescue Mission</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	URM.org
+        </a>
+      </div>
 
-
+      <div class="location canada">
+        <h3>Canada</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">Music Canada</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	musiccanada.org
+        </a>
+      </div>
+      
+      <div class="location everywhere">
+        <h3>Everywhere</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">It Gets Better Project</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	itgetsbetter.org
+        </a>
+      </div>
+      
+    </div>
 	</div>
 
 	<!-- SocialPakt sections -->
