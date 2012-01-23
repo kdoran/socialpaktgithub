@@ -1,0 +1,14 @@
+/* ---------- CSS3 & ENHANCEMENT ------------------- */
+/* ------------------------------------------------- */
+
+/* TEXT LINK TRANSITIONS */
+a {
+    -webkit-transition: opacity .5s ease-in, color .5s ease-in;
+    -moz-transition: opacity .5s ease-in, color .5s ease-in;
+    -o-transition: opacity .5s ease-in, color .5s ease-in;
+    transition: opacity .5s ease-in, color .5s ease-in;
+    }
+
+/* Circle on Charity logo in Shirt section */
+#charityflyout .charitylogo {border-radius: 50%;}
+	.charitylogo .logoimage {-webkit-transform: rotate(-8deg);} /* TODO add other browser prefixes */

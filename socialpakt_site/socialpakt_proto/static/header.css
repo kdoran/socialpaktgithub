@@ -1,0 +1,11 @@
+/* ---------- HEADER ------------------------------- */
+/* ------------------------------------------------- */
+
+#header {margin: 0; padding: 0; background: url("images/collapsedheader.png") no-repeat top center; padding-top: 85px;}
+
+	/* TODO REMOVE -- hide all the markup in the header so i can get to the shirt stuff */
+	#header h1 {margin: 0; padding: 0; display: none;}
+	#header .logo,
+	#header .minornav,
+	#header .locationnav,
+	#header .about {display: none;}

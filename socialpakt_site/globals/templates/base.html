@@ -53,6 +53,17 @@
                 <a href="/"><h1>SocialPakt</h1></a>
                 <div class="tagline">Make a Pakt, Make a Difference</div>
             </div>
+
+            {% block headercatnav %}
+                <ul>
+                {% for cat in product_categories %}
+                     <li><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></li>
+                {% endfor %}
+                {% if category %}
+                      <li>Current Category: {{ category.display_text }}
+                {% endif %}
+                </ul>
+            {% endblock headercatnav %}
             
             {% block contest %}
             <div class="contestcallout">

@@ -125,7 +125,7 @@ header {margin-top: 10px;}
                 .size.selected {background-color: #7e457b; border-color: #361034; color: #fff;}
                 .size.stock0 {display:none;}
 
-            
+            .variationcategory{clear: both;}
             .womens {clear: both;}
             .mens {clear: both;}
         

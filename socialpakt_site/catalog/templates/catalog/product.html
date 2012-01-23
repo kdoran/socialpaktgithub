@@ -71,9 +71,10 @@
           {% endif %}
 
         <div class="charity">
-            
-            <h3>Featured Nonprofit</h3>
+            {% if product %}
+              <h3>Featured Nonprofit</h3>
               <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img width="250px" style="width:250px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
+            {% endif %}
           </div>
 
 
@@ -108,26 +109,13 @@
               </select>
           
               <div id="sizes">
-                  <div class="womens">
-                      <h3><span class="price">${{product.price|floatformat}}</span> Women's Tee</h3>
-                      <a class="sizeandfit" href="/sizingchart/">size and fit</a>
-                      <ul class="options">
-                          <li id="Women's S" class="size stock{% product_stock product.productvariation_set "Women's S" %}">s</li>
-                          <li id="Women's M" class="size stock{% product_stock product.productvariation_set "Women's M" %}">m</li>
-                          <li id="Women's L" class="size stock{% product_stock product.productvariation_set "Women's L" %}">l</li>
-                          <li id="Women's XL" class="size stock{% product_stock product.productvariation_set "Women's XL" %}">xl</li>
-                      </ul>
-                  </div>
-                  <div class="mens">
-                      <h3><span class="price">${{product.price|floatformat}}</span> Men's Tee</h3>
-                      <a class="sizeandfit" href="/sizingchart/">size and fit</a>
-                      <ul class="options">
-                          <li id="Men's S" class="size stock{% product_stock product.productvariation_set "Men's S" %}">s</li>
-                          <li id="Men's M" class="size stock{% product_stock product.productvariation_set "Men's M" %}">m</li>
-                          <li id="Men's L" class="size stock{% product_stock product.productvariation_set "Men's L" %}">l</li>
-                          <li id="Men's XL" class="size stock{% product_stock product.productvariation_set "Men's XL" %}">xl</li>
-                      </ul>
-                  </div>
+                  {% for cat in product.available_variations.all %}
+                      <div class="variationcategory">
+                          <h3><span class="price">${{product.price|floatformat}}</span> {{ cat.display_text }}</h3>
+                          <a class="sizeandfit" href="/sizingchart/">size and fit</a>
+                          {% render_variations cat product %}
+                      </div>
+                  {% endfor %}
               </div>
 
           
@@ -160,14 +148,16 @@
 {% endblock fbcomments %}
 
 {% block about %}
-  <div class="aboutcharity">
-      <span class="label">about the charity</span>
-      <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
-      <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
-  </div>
-  <div class="aboutartist">
-      <span class="label">about the artist</span>
-      <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
-      <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
-  </div>
+  {% if product %}
+    <div class="aboutcharity">
+        <span class="label">about the charity</span>
+        <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
+        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
+    </div>
+    <div class="aboutartist">
+        <span class="label">about the artist</span>
+        <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
+        <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
+    </div>
+  {% endif %}
 {% endblock about %}

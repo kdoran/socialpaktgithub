@@ -132,6 +132,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.request",
     "globals.context_processors.settings",
+    "catalog.context_processors.categories",
     "django.contrib.messages.context_processors.messages",
 )
 

@@ -1,0 +1,41 @@
+/* ---------- IMPORTS ------------------------------ */
+/* ------------------------------------------------- */
+  @import url("header.css");
+  @import url("shirt.css");
+  @import url("locations.css");
+  @import url("socialpakt.css");
+  @import url("footer.css");
+  @import url("pages.css");
+  @import url("cart.css");
+  @import url("css3.css");
+  /* note, these files may not exist yet. we should remove the ones we don't create; this is a list of what i expect us to have. */
+
+
+/* ---------- GLOBAL TEXT AND LINK STYLES ---------- */
+/* ------------------------------------------------- */
+
+body {margin: 0; padding: 0; border-top: 3px solid #1d748a; background-color: #f7f7f7; font-family: proxima-nova, Verdana, Arial, Helvetica, sans-serif; color: #333;}
+
+
+h1 {}
+h2 {}
+h3 {}
+h4 {text-transform: uppercase; font-size: 22px;}
+    
+p {font-size: 14px; line-height: 1.8em;}
+    
+a {}
+a:hover {}
+
+.number {font-weight: bold;}
+.helper {text-transform: uppercase; opacity: .7;}
+	.helper:hover {opacity: 1;}
+
+
+
+/* ---------- THINGS WHAT ARE USEFUL --------------- */
+/* ------------------------------------------------- */
+
+.wrapper {max-width: 1200px; margin: 0 auto;} /* add a wrapper div this class to constrain width */
+
+.sharpie {font-family: ff-market-web;} /* TODO fake the sharpie font for now */
