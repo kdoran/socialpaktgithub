@@ -3,11 +3,85 @@
 
 #header {margin: 0; padding: 0;}
 
-	/* Fallback Gradient */
-	#header {background: url("images/header_gradient_fallback.png") repeat-y;}
+	/* Crazy Header BG multiple images!  */
+	/* First gradient is black overlay, second gradient is green-blue */
+	/* BG gradients supported by FF, Chrome, Safari, Opera, IE10 only
+	   Multiple backgrounds supported by FF, Chrome, Safari, Opera, IE9
+	   This should have correct fallbacks in all browsers. */
+	#header {
+		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
+		background: #91c779 url("images/header_gradient_fallback.png") repeat-y;
 
-	#header h1 {}
-	/*#header .logo,
-	#header .minornav,
-	#header .locationnav,
-	#header .about {display: none;}*/
+		/* Internet Explorer 6-9 Filters -- only one gradient and no texture */
+	    background:none\0/;
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+	   
+   		/* IE 10 */
+		background:
+			url("images/header_texture.png"),
+			-ms-linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%);
+
+
+	    /* Old Webkit syntax - Chrome, Safari4+ */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(15%,rgba(0,0,0,0))),
+	    	-webkit-gradient(linear,left top,right top,from(rgba(177,212,138,1)), to(rgba(146,212,218,1)));
+
+	    /* New Webkit Syntax - Chrome10+, Safari5.1+ */
+	    background:
+	    	url("images/header_texture.png"),
+	    	-webkit-linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%),
+	    	-webkit-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
+
+	    /* Moz -- FF3.6 + */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	-moz-linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%),
+	    	-moz-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
+
+	    /* Opera */
+	    background-image:
+	    	url("images/header_texture.png"),
+		    -o-linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%),
+	    	-o-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
+
+	    /* W3C Spec */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%),
+	    	linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
+	}
+
+
+
+	#header .logo {float: left;}
+		#header .logo h1 {display: block; height: 67px; width: 227px; text-indent: -9999em; background: url("images/socialpaktlogo.png") no-repeat;}
+
+
+	#header ul {list-style-type: none; margin: 0; padding: 0;}
+		#header li {display: inline-block; text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 600;}
+			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
+		#header li a {color: #fff; text-decoration: none;} /* TODO add hover states */
+
+	/* Minor Nav Links */
+	#header ul.minornav {float: left; padding-top: 35px; margin-left: 65px; color: #fff; font-size: 14px;}
+
+	/* Location Nav */
+	#header ul.locationnav {max-width: 450px; float: right;}
+		#header ul.locationnav li h3 {margin: 0; font-size: 18px;} /* TODO use knockout images? this size should be larger */
+		
+		#header ul.locationnav li {padding: 30px 20px;} /* TODO can this be a percentage? */
+
+		#header ul.locationnav li:first-child {background-color: #003a49;}
+
+
+
+/* ---------- HEADER STATES ------------------------ */
+/* ------------------------------------------------- */
+
+#header.collapsed {min-height: 85px;}
+	#header.collapsed ul.locationnav .minishirt {display: none;}
+	#header.collapsed .about {display: none;}
+
+#header.expanded {}
