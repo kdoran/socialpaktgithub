@@ -1,11 +1,13 @@
 /* ---------- HEADER ------------------------------- */
 /* ------------------------------------------------- */
 
-#header {margin: 0; padding: 0; background: url("images/collapsedheader.png") no-repeat top center; padding-top: 85px;}
+#header {margin: 0; padding: 0;}
 
-	/* TODO REMOVE -- hide all the markup in the header so i can get to the shirt stuff */
-	#header h1 {margin: 0; padding: 0; display: none;}
-	#header .logo,
+	/* Fallback Gradient */
+	#header {background: url("images/header_gradient_fallback.png") repeat-y;}
+
+	#header h1 {}
+	/*#header .logo,
 	#header .minornav,
 	#header .locationnav,
-	#header .about {display: none;}
+	#header .about {display: none;}*/
