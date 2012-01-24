@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"> <!--<![endif]-->
+<head>
+  <title>Make a Pakt, Make a Difference</title>
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}base.css" type="text/css" media="screen" charset="utf-8" />
+  
+  <script src="{{ STATIC_URL }}js/lib/modernizr-2.0.6.js"></script>
+  <script type="text/javascript">
+      (function() {
+            var tk = document.createElement('script');
+            tk.type = 'text/javascript';
+            tk.async = true;
+            tk.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'use.typekit.com/txn8uhp.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tk, s);
+
+            tk.onload = function () {
+                try{Typekit.load();}catch(e){}
+            }
+      })(); 
+</script>
+
+</head>
+
+<body>
+
+    {% block header %}
+  <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
+  <div id="header" class="collapsed">
+
+    <div class="logo">
+    <!-- <img src="{{ STATIC_URL }}images/expandedheader.png" alt="Design"/> -->
+      <h1>SocialPakt</h1>
+    </div>
+
+    <ul class="minornav">
+      <li>Past Causes</li>
+      <li>Charities</li>
+      <li>Artists</li>
+      <li>About SocialPakt</li>
+      <li>Blog</li>
+    </ul>
+
+    {% block headercatnav %}
+        <ul class="locationnav">
+        {% for cat in product_categories %}
+             <li>
+                <h3><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></h3>
+
+                <div class="minishirt"> <!-- needs to pull in thumbnail of t-shirt and charity name, and will be hidden when header is collapsed -->
+                  <img src="images/minishirt.png" alt="Shirt Thumbnail">
+                  <p class="charityname">Charity Name</p>
+                </div>
+              </li>
+        {% endfor %}
+        {% if category %}
+              <li>Current Category: {{ category.display_text }}
+        {% endif %}
+        </ul>
+    {% endblock headercatnav %}
+
+    <div class="about"><!-- hide me when collapsed -->
+
+    <div class="howitworks">For every shirt you buy, we donate $6 to our featured nonprofit.</div>
+
+    <div class="contest">Like us &amp; each week you'll be entered to win a $100 donation to the charity of your choice.</div>
+
+    </div>
+
+  </div>
+    {% endblock header %}
+
+
+{% block content %}
+
+<!-- Shirt and Shirt Details -->
+<div id="main">
+
+    {% block main %}
+        
+    {% endblock main %}
+
+	
+
+	<!-- Shirt Details -->
+	<div id="shirtdetails">
+		<div class="wrapper">
+		
+		<!-- About this Shirt -->
+		<div class="partners">
+
+			<!-- Featured Charity -->
+			<div class="charity">
+				<h2>Mayor's Alliance of NYC'S Animals</h2>
+				<p>Founded in 2002, the Mayor's Alliance for NYC's Animals is a coalition of more than 150 animalrescue groups and shelters in New York City. The organization’s primary goal is to transform NYC intoa no-kill community by 2015. In order to achieve this goal, the Alliance helps its Alliance Participating Organizations work to their highest potential to increase pet adoptions and spay/neuter rates.
+				<a href="">more...</a></p>
+			</div>
+
+			<!-- Artist -->
+			<div class="artist">
+				<h2>Liz Haywood</h2>
+				<p>Liz Haywood is a Brooklyn graphic designer and illustrator. Haywood studied art in Florence and also attended the Portfolio Center in Atlanta, Georgia where she graduated with a dual concentration in Design and Illustration.
+				<a href="">more...</a></p>
+
+			</div>
+
+		</div>
+
+		<!-- Comments -->
+		<div id="comments">
+			<img src="{{ STATIC_URL }}images/comments.png"> 
+		</div>
+
+		</div>
+	</div>
+
+	
+</div>
+
+
+	<!-- Locations -->
+	<div id="locations">
+	<div class="wrapper">
+
+      <div class="location newyork selected"> <!-- selected or hover state or both? -->
+        <h3>New York</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">Mayor's Alliance for NYC'S Animals</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	animalalliancenyc.com
+        </a>
+        <p>Founded in 2002, the Mayor's Alliance for NYC's Animals is a coalition of more than 150 animal rescue groups and shelters in New York City.  more...</p>
+      </div>
+
+      <div class="location losangeles">
+        <h3>Los Angeles</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">Union Rescue Mission</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	URM.org
+        </a>
+      </div>
+
+      <div class="location canada">
+        <h3>Canada</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">Music Canada</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	musiccanada.org
+        </a>
+      </div>
+      
+      <div class="location everywhere">
+        <h3>Everywhere</h3>
+        <div class="smallshirt">
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+        </div>
+        <h4 class="charityname">It Gets Better Project</h4>
+        <a class="charitylink">
+        	<span class="goto sharpie">go to</span>
+        	itgetsbetter.org
+        </a>
+      </div>
+      
+    </div>
+	</div>
+
+	<!-- SocialPakt sections -->
+	<div id="socialpakt">
+
+		<!-- Mission -->
+		<div id="mission"></div>
+
+		<!-- Past Shirts -->
+		<div id="pastshirts"></div>
+
+	</div>
+
+
+  
+{% endblock content %}
+
+{% block footer %}
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+{% endblock footer %}
+
+    {% block globaljs %}
+      <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+    {% endblock globaljs %}
+
+    {% block localscripts %}
+
+    {% endblock localscripts %}
+
+</body>
+</html>

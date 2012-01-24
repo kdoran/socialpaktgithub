@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% load producttags %}
+
+{% block fbmetadata %}
+  <meta property="og:title" content="{{ product.title }}"/> 
+  <meta property="og:url" content="http://{{ request.get_host }}/shirt/{{ product.slug }}/"/> 
+  <meta property="og:image" content="http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"/> 
+  <meta property="og:site_name" content="SocialPakt - Make a Pakt, Make a Difference"/> 
+  <meta property="og:type" content="product" /> 
+  <meta property="fb:app_id" content="{{ settings.FACEBOOK_APP_ID }}"> 
+  <meta property="og:description" content="{{ product.description }}"/> 
+{% endblock fbmetadata %}
+
+{% block sharethis %}
+  <span  class='st_facebook_vcount' displayText='Facebook'
+    st_title = "{{ product.title }}"
+    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+    st_summary = "{{ product.description }}"
+  ></span>
+  <span  class='st_twitter_vcount' displayText='Tweet'
+    st_title = "{{ product.title }}"
+    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+    st_summary = "{{ product.description }}"
+  ></span>
+  <span  class='st_email_vcount' displayText='Email'
+    st_title = "{{ product.title }}"
+    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+    st_summary = "{{ product.description }}"
+  ></span>
+  <span  class='st_plusone_vcount' 
+  st_title = "{{ product.title }}"
+    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+    st_summary = "{{ product.description }}"
+  ></span>
+{% endblock sharethis %}
+
+{% block localscripts %}
+      <script src="{{ STATIC_URL }}js/lib/countdown.js"></script>
+      <script src="{{ STATIC_URL }}js/catalog.js"></script>
+{% endblock localscripts %}
+
+{% block main %}
+    <div id="featuredshirt">
+      <div class="wrapper">
+
+      <!-- Shirt -->
+      <div id="shirt" class="{{product.slug}}">
+
+          <!-- Charity -->
+          <div id="charityflyout">
+            
+            <!-- Charity Seal and Logo -->
+            <div class="charitylogo">
+              <div class="logoimage">
+                <img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"/>
+              </div>
+            </div>
+
+            <!-- Charity Flyout - hidden til hover -->
+            <div class="charityinfo">
+              <h4>{{product.benefits.name}}</h4>
+              <p class="charitylink">
+                    <span class="goto">go to</span>
+                    <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo">{{product.benefits.name}}</a>
+              </p>
+                <!-- TODO are these the same links as those dynamically generated on the charity page? -->
+                  <ul class="charitysociallinks">
+                    <li class="facebook">facebook</li>
+                    <li class="twitter">facebook</li>
+                    <li class="youtube">facebook</li>
+                  </ul>
+            </div>
+
+          </div>
+
+          <!-- Shirt Image -->
+          <div id="shirtimage">
+            <div class="image selected">
+              {% for photo in product.productphoto_set.all %}
+                  {% if photo.photo_large %}
+                    <img src="{{photo.photo_large.url}}" alt="{{photo.description}}" />
+                  {% else %}
+                    <img src="{{photo.photo.url}}" alt="{{photo.description}}">
+                  {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+            <!-- Toggle Links -->
+            <div id="toggle">
+              <a href="" class="mens selected">See Men's</a>
+              <a href="" class="womens">See Women's</a>
+            </div>
+
+          <!-- Sharing buttons -->
+          <div id="sharing"></div>
+      </div>
+
+      <!-- Shirt Actions -->
+      <div id="shirtactions">
+
+        <!-- Price -->
+        <div class="price">
+          <div class="amount">
+            <span>$</span>
+            <span class="number">{{product.price|floatformat}}</span>
+          </div>
+          <div class="tagline sharpie">{{product.call_to_action}}</div>
+          
+          {% if product.date_expires >= now %}
+            <div class="daysremaining helper">
+              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> days remaining to purchase this shirt at its featured price.
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Goals -->
+        <div class="goals">
+          <div class="donated">
+            <span class="dollar">$</span>
+            <span class="number">{{product.total_raised|floatformat}}</span>
+            <span class="helper">dollars donated</span>
+          </div>
+            <div class="goal">
+            <span class="dollar">$</span>
+            <span class="number">{{product.goal|floatformat}}</span>
+            <span class="helper">our donation goal</span>
+          </div>
+          <div class="progress">
+            <div id="progressbar">
+              <div class="percentage">
+                <span class="label sharpie">79%</span> <!-- TODO wire this up! -->
+              </div>
+            </div>
+          </div>
+          <div class="amountdonated helper">
+            <span class="number">6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="sharpie">why?</span>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <!-- <div id="sizes">
+            {% for cat in product.available_variations.all %}
+                <div class="{{ cat.display_text }}">
+                  <h4>{{ cat.display_text }}</h4>
+                    <a class="sizeandfit" href="/sizingchart/">size and fit</a>
+                    {% render_variations cat product %}
+                </div>
+            {% endfor %}
+        </div> -->
+        <div class="sizes">
+          <div class="womens">
+            <h4>Women's</h4>
+            <div class="select">
+              <div class="sizeselect">s</div>
+              <div class="sizeselect selected">m</div>
+              <div class="sizeselect">l</div>
+              <div class="sizeselect">xl</div>
+            </div>
+          </div>
+          <div class="mens">
+            <h4>Men's</h4>
+            <div class="select">
+              <div class="sizeselect">s</div>
+              <div class="sizeselect">m</div>
+              <div class="sizeselect">l</div>
+              <div class="sizeselect">xl</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="addtocart">
+
+          <input type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
+
+          <!-- Cart -->
+          <div id="cart">2 items $44</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock main %}
+
+{% block fbcomments %}
+<div id="comments">
+  <h3>What People Are Saying</h3>
+    <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
+</div>
+{% endblock fbcomments %}
+
+{% block about %}
+  {% if product %}
+    <div class="aboutcharity">
+        <span class="label">about the charity</span>
+        <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
+        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
+    </div>
+    <div class="aboutartist">
+        <span class="label">about the artist</span>
+        <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
+        <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
+    </div>
+  {% endif %}
+{% endblock about %}
