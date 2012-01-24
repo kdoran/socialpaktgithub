@@ -3,10 +3,11 @@
 
 #header {margin: 0; padding: 0;}
 
-	/* Webkit and Moz CSS Gradient */
+	/* Crazy Header BG multiple images!  */
 	/* First gradient is black overlay, second gradient is green-blue */
 	/* BG gradients supported by FF, Chrome, Safari, Opera, IE10 only
-	   Multiple backgrounds supported by FF, Chrome, Safari, Opera, IE9 */
+	   Multiple backgrounds supported by FF, Chrome, Safari, Opera, IE9
+	   This should have correct fallbacks in all browsers. */
 	#header {
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background: #91c779 url("images/header_gradient_fallback.png") repeat-y;
@@ -54,8 +55,33 @@
 
 
 
-	#header h1 {}
-	/*#header .logo,
-	#header .minornav,
-	#header .locationnav,
-	#header .about {display: none;}*/
+	#header .logo {float: left;}
+		#header .logo h1 {display: block; height: 67px; width: 227px; text-indent: -9999em; background: url("images/socialpaktlogo.png") no-repeat;}
+
+
+	#header ul {list-style-type: none; margin: 0; padding: 0;}
+		#header li {display: inline-block; text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 600;}
+			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
+		#header li a {color: #fff; text-decoration: none;} /* TODO add hover states */
+
+	/* Minor Nav Links */
+	#header ul.minornav {float: left; padding-top: 35px; margin-left: 65px; color: #fff; font-size: 14px;}
+
+	/* Location Nav */
+	#header ul.locationnav {max-width: 450px; float: right;}
+		#header ul.locationnav li h3 {margin: 0; font-size: 18px;} /* TODO use knockout images? this size should be larger */
+		
+		#header ul.locationnav li {padding: 30px 20px;} /* TODO can this be a percentage? */
+
+		#header ul.locationnav li:first-child {background-color: #003a49;}
+
+
+
+/* ---------- HEADER STATES ------------------------ */
+/* ------------------------------------------------- */
+
+#header.collapsed {min-height: 85px;}
+	#header.collapsed ul.locationnav .minishirt {display: none;}
+	#header.collapsed .about {display: none;}
+
+#header.expanded {}
