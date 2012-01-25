@@ -3,3 +3,7 @@
 .project
 .pydevproject
 .DS_Store
+settings.py
+static/images/uploads
+upload_images
+socialpakt_proto/static/images/uploads/
