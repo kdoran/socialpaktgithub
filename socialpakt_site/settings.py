@@ -45,7 +45,11 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
+<<<<<<< Updated upstream
 MEDIA_ROOT = '/Users/elyse.holladay/Desktop/socialpakt/socialpakt_site/socialpakt_proto/static/images/uploads/'
+=======
+MEDIA_ROOT = '/Users/kevin.doran/software/socialpakt/socialpakt_site/socialpakt_proto/static/images/uploads/'
+>>>>>>> Stashed changes
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
