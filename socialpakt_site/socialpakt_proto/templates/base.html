@@ -52,7 +52,7 @@
     {% block headercatnav %}
         <ul class="locationnav">
         {% for cat in product_categories %}
-             <li>
+             <li class="{{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
                 <h3><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></h3>
 
                 <div class="minishirt"> <!-- needs to pull in thumbnail of t-shirt and charity name, and will be hidden when header is collapsed -->
