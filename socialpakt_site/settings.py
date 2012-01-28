@@ -45,12 +45,12 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/Users/elyse.holladay/Desktop/socialpakt/socialpakt_site/socialpakt_proto/static/images/uploads/'
+MEDIA_ROOT = '/gitwork/socialpakt/media_files/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/static/images/uploads/'
+MEDIA_URL = '/static/images/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -139,7 +139,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 ROOT_URLCONF = 'socialpakt_site.urls'
 
 TEMPLATE_DIRS = (
-    '/Users/elyse.holladay/Desktop/socialpakt/socialpakt_site/socialpakt_proto/templates/',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
