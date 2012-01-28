@@ -8,7 +8,7 @@
 #featuredshirt {padding-top: 55px; background-color: #053745;}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#shirt {position: relative; max-width: 810px; float: left; margin-left: -80px;}
+	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
 
 		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: #fff; text-decoration: none;}

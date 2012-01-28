@@ -34,6 +34,7 @@
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
   <div id="header" class="collapsed">
+    <div class="wrapper">
 
     <div class="logo">
     <!-- <img src="{{ STATIC_URL }}images/expandedheader.png" alt="Design"/> -->
@@ -61,7 +62,7 @@
               </li>
         {% endfor %}
         {% if category %}
-              <li>Current Category: {{ category.display_text }}
+              <li class="currentcatli">Current Category: {{ category.display_text }}
         {% endif %}
         </ul>
     {% endblock headercatnav %}
@@ -74,6 +75,7 @@
 
     </div>
 
+  </div>
   </div>
     {% endblock header %}
 

@@ -17,22 +17,20 @@
 body {margin: 0; padding: 0; border-top: 3px solid #1d748a; background-color: #f7f7f7; color: #333; font-family: "proxima-nova-soft"; font-size: 14px; line-height: 1.8em;}
 
 /* Typekit */
-/*font-family: "proxima-nova";
-font-family: "proxima-nova-soft";
-font-family: "museo";
-font-family: "ff-market-web";
-font-family: "gooddog-new";
-font-family: "proxima-nova-extra-condensed";*/
+/* font-family: "proxima-nova"; */
+/* font-family: "museo"; */
+/* font-family: "ff-market-web"; */ /* use sharpie instead */
+/* font-family: "proxima-nova-extra-condensed"; */ /* use as a replacement for knockout */
 
 
 /* Sharpie font by Gerren Lamson http://designmoo.com/4304/sharpie-letterkit/ */
 @font-face {
     font-family: 'sharpie';
-    src: url('sharpie.eot');
-    src: url('sharpie.eot?#iefix') format('embedded-opentype'),
-         url('sharpie.woff') format('woff'),
-         url('sharpie.ttf') format('truetype'),
-         url('sharpie.svg#sharpie') format('svg');
+    src: url('sharpie/sharpie.eot');
+    src: url('sharpie/sharpie.eot?#iefix') format('embedded-opentype'),
+         url('sharpie/sharpie.woff') format('woff'),
+         url('sharpie/sharpie.ttf') format('truetype'),
+         url('sharpie/sharpie.svg#sharpie') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -56,5 +54,5 @@ a:hover {}
 /* ------------------------------------------------- */
 
 .wrapper {max-width: 1200px; margin: 0 auto;} /* add a wrapper div this class to constrain width */
-
-.sharpie {font-family: ff-market-web;} /* TODO fake the sharpie font for now */
+  .wrapper:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.sharpie {font-family: sharpie;} /* TODO fake the sharpie font for now */

@@ -51,6 +51,8 @@
 	    	url("images/header_texture.png"),
 	    	linear-gradient(top, rgba(0,0,0,0.25) 0%, transparent 15%),
 	    	linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
+
+	    /* opacity: .5; */
 	}
 
 
@@ -60,7 +62,7 @@
 
 
 	#header ul {list-style-type: none; margin: 0; padding: 0;}
-		#header li {display: inline-block; text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 600;}
+		#header li {display: inline-block; text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 300;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
 		#header li a {color: #fff; text-decoration: none;} /* TODO add hover states */
 
@@ -68,12 +70,15 @@
 	#header ul.minornav {float: left; padding-top: 35px; margin-left: 65px; color: #fff; font-size: 14px;}
 
 	/* Location Nav */
-	#header ul.locationnav {max-width: 450px; float: right;}
-		#header ul.locationnav li h3 {margin: 0; font-size: 18px;} /* TODO use knockout images? this size should be larger */
-		
-		#header ul.locationnav li {padding: 30px 20px;} /* TODO can this be a percentage? */
+	#header ul.locationnav {max-width: 450px; float: right;}		
+		#header ul.locationnav li {padding: 30px 20px; cursor: pointer;} /* TODO can this be a percentage? */
+		#header ul.locationnav li.current {background-color: #003a49;} /* style for current category */
+		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
-		#header ul.locationnav li:first-child {background-color: #003a49;}
+		#header ul.locationnav li h3 {margin: 0; text-indent: -9999em; width: 80px; height: 40px; background: url("images/locationnav_newyork.png") no-repeat 0 0;}
+		#header ul.locationnav li:hover h3 {background-position: 0 -40px;}
+		#header ul.locationnav li.selected h3 {background-position: 0 -100px;}
+
 
 
 
