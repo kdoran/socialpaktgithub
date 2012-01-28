@@ -5,7 +5,7 @@
 	#main:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 
-#featuredshirt {background: #053745 url('images/shirt_fallback_texture.png');}
+#featuredshirt {/* background: #053745 url('images/shirt_fallback_texture.png'); */}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
@@ -66,6 +66,9 @@
                     .sizeselect:hover {background-color: #fff; color: #5cbcb9;}
                 .sizeselect.selected {background-color: #fff; color: #e11665;}
                 .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;}
+
+                #shirt_select {display: none;} /* hide select box of sizes */
+				#shirt_select {display: none;} /* hide select box of sizes */
 
 
          .addtocart {}

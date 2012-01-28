@@ -57,7 +57,7 @@
             {% block headercatnav %}
                 <ul>
                 {% for cat in product_categories %}
-                     <li class="cityname"><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></li>
+                     <li><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></li>
                 {% endfor %}
                 {% if category %}
                       <li>Current Category: {{ category.display_text }}
