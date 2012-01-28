@@ -1,11 +1,11 @@
-/* ---------- SHIRT SECTION ------------------------- */
+/* ---------- SHIRT SECTION ------------------------ */
 /* ------------------------------------------------- */
 
 #main {}
 	#main:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 
-#featuredshirt {padding-top: 55px; background-color: #053745;}
+#featuredshirt {background: #053745 url('images/shirt_fallback_texture.png');}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
@@ -23,11 +23,14 @@
 			#charityflyout .charityinfo {position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; background-color: #fff; width: 545px; padding: 10px 0 10px 120px;}
 				#charityflyout .charityinfo h4 {margin: 0;}
 
+
+	#featuredshirt .wrapper {background: url('images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 55px;} /* black underlay for shirtactions to be read more easily */
+
 	#shirtactions {max-width: 450px; float: right; margin-left: 20px;}
 		.price, .goals, .sizes, .addtocart {margin-bottom: 20px; color: #fff;}
 
 		.price {}
-			.price .amount {display: block; width: 102px; height: 82px; float: left; margin-right: 14px; background: url(images/knockout/price.png) no-repeat; background-size: 100%; text-indent: -9999em;} /* TODO using background-size so this can change responsively depending on it's height/width, but without placing it in the HTML, see http://www.css3.info/preview/background-size/ for browser support */
+			.price .amount {text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 300; font-size: 24px;}
 			.price .tagline {font-size: 20px;}
 			.price .daysremaining {clear: both;}
 
@@ -77,3 +80,10 @@
 	#shirtdetails .partners {max-width: 700px; float: left;}
 
 	#shirtdetails #comments {max-width: 450px; float: right; margin-left: 20px; padding-top: 20px;}
+
+
+
+/* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
+/* ------------------------------------------------- */
+
+#featuredshirt.mayorsalliance {background-position: -390px -110px;}

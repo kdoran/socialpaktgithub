@@ -45,7 +45,7 @@
 {% endblock localscripts %}
 
 {% block main %}
-    <div id="featuredshirt" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %} >
+    <div id="featuredshirt" class="{{product.slug}}" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %} >
       <div class="wrapper">
 
       <!-- Shirt -->

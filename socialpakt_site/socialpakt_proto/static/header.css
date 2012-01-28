@@ -75,7 +75,8 @@
 		#header ul.locationnav li.current {background-color: #003a49;} /* style for current category */
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
-		#header ul.locationnav li h3 a {margin: 0; text-indent: -9999em; width: 80px; height: 40px; background: url("images/locationnav_newyork.png") no-repeat 0 0;}
+		#header ul.locationnav li h3 {margin: 0;}
+		#header ul.locationnav li h3 a {display: block; text-indent: -9999em; width: 80px; height: 40px; background: url("images/locationnav_newyork.png") no-repeat 0 0;}
 		#header ul.locationnav li:hover h3 a {background-position: 0 -40px;}
 		#header ul.locationnav li.selected h3 a {background-position: 0 -100px;}
 
