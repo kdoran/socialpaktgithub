@@ -66,7 +66,7 @@
               <h4>{{product.benefits.name}}</h4>
               <p class="charitylink">
                     <span class="goto">go to</span>
-                    <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo">{{product.benefits.name}}</a>
+                    <a href="{% if product.benefits.slug %}{% url nonprofit product.benefits.slug %}{% endif %}" class="charity_logo">{{product.benefits.name}}</a>
               </p>
                 <!-- TODO are these the same links as those dynamically generated on the charity page? -->
                   <ul class="charitysociallinks">
@@ -143,17 +143,32 @@
           </div>
         </div>
 
+        {% if can_add_to_cart %}
+        
+
+        <form action="https://socialpakt.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="{{product.cart_title}}" />
+            <input type="hidden" name="code" value="{{product.slug}}" />
+            <input type="hidden" name="price" value="{{product.price}}" />
+            <input type="hidden" name="quantity" value="1">
+            <select id="shirt_select" name="shirt">
+                {% for v in product.productvariation_set.all %}
+                  {% if v.inventory > 0 or not product.has_inventory %}
+                    <option value="{{v.description}}">{{v.description}}</option>
+                  {% endif %}
+                {% endfor %}
+            </select>
+        
         <!-- Sizes -->
-        <!-- <div id="sizes">
+        <div class="sizes">
             {% for cat in product.available_variations.all %}
-                <div class="{{ cat.display_text }}">
+                <div class="category_size {{ cat.display_text }}">
                   <h4>{{ cat.display_text }}</h4>
-                    <a class="sizeandfit" href="/sizingchart/">size and fit</a>
                     {% render_variations cat product %}
                 </div>
             {% endfor %}
-        </div> -->
-        <div class="sizes">
+        </div>
+        <!-- <div class="sizes">
           <div class="womens">
             <h4>Women's</h4>
             <div class="select">
@@ -172,17 +187,17 @@
               <div class="sizeselect">xl</div>
             </div>
           </div>
-        </div>
+        </div>    -->         
 
-        <!-- Add to Cart -->
+        
         <div class="addtocart">
-
-          <input type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
-
-          <!-- Cart -->
+          <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
           <div id="cart">2 items $44</div>
-
         </div>
+
+        </form>
+
+        {% endif %}  <!-- can_add_to_cart end  -->
 
       </div>
     </div>
