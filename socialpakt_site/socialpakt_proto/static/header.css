@@ -11,7 +11,7 @@
 	#header .bgimage {
 		position: absolute; top: 0; left: 0; z-index: -1;
 		height: 85px; width: 100%;
-		opacity: .5;
+		opacity: .9;
 
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background: #91c779 url("images/header_gradient_fallback.png") repeat-y;
@@ -60,7 +60,8 @@
 
 
 	#header .logo {float: left;}
-		#header .logo h1 {display: block; height: 67px; width: 227px; text-indent: -9999em; background: url("images/socialpaktlogo.png") no-repeat;}
+		#header .logo h1 {margin: 0;}
+		#header .logo h1 a {display: block; height: 67px; width: 227px; margin: 15px 0 0 0; text-indent: -9999em; background: url("images/socialpaktlogo.png") no-repeat;}
 
 
 	#header ul {list-style-type: none; margin: 0; padding: 0;}
@@ -72,15 +73,22 @@
 	#header ul.minornav {float: left; padding-top: 35px; margin-left: 65px; color: #fff; font-size: 14px;}
 
 	/* Location Nav */
-	#header ul.locationnav {max-width: 450px; float: right;}		
-		#header ul.locationnav li {padding: 30px 20px; cursor: pointer;} /* TODO can this be a percentage? */
-		#header ul.locationnav li.current {background-color: #003a49;} /* style for current category */
+	#header ul.locationnav {max-width: 465px; float: right;}		
+		#header ul.locationnav li {padding: 35px 13px 10px 13px; cursor: pointer;}
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
 		#header ul.locationnav li h3 {margin: 0;}
-		#header ul.locationnav li h3 a {display: block; text-indent: -9999em; width: 80px; height: 40px; background: url("images/locationnav_newyork.png") no-repeat 0 0;}
-		#header ul.locationnav li:hover h3 a {background-position: 0 -40px;}
-		#header ul.locationnav li.selected h3 a {background-position: 0 -100px;}
+		#header ul.locationnav li h3 a {display: block; text-indent: -9999em; height: 40px; background-repeat: no-repeat; background-position: 0 0;}
+			#header ul.locationnav li:hover h3 a {background-position: 0 -40px;}
+
+				#header ul.locationnav li.newyork a {background-image: url("images/locationnav_newyork.png"); width: 80px;}
+				#header ul.locationnav li.losangeles a {background-image: url("images/locationnav_losangeles.png"); width: 100px;}
+				#header ul.locationnav li.canada a {background-image: url("images/locationnav_canada.png"); width: 65px;}
+				#header ul.locationnav li.everywhere a {background-image: url("images/locationnav_everywhere.png"); width: 100px;}
+
+			#header ul.locationnav li.selected {background-color: #003a49; cursor: default;} /* style for current category */
+					#header ul.locationnav li.selected h3 a {background-position: 0 -100px; cursor: default;}
+
 
 
 
