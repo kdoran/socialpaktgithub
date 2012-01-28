@@ -162,33 +162,12 @@
         <!-- Sizes -->
         <div class="sizes">
             {% for cat in product.available_variations.all %}
-                <div class="category_size {{ cat.display_text }}">
+                <div class="category_size {{ cat.display_text|slugify }}">
                   <h4>{{ cat.display_text }}</h4>
                     {% render_variations cat product %}
                 </div>
             {% endfor %}
         </div>
-        <!-- <div class="sizes">
-          <div class="womens">
-            <h4>Women's</h4>
-            <div class="select">
-              <div class="sizeselect">s</div>
-              <div class="sizeselect selected">m</div>
-              <div class="sizeselect">l</div>
-              <div class="sizeselect">xl</div>
-            </div>
-          </div>
-          <div class="mens">
-            <h4>Men's</h4>
-            <div class="select">
-              <div class="sizeselect">s</div>
-              <div class="sizeselect">m</div>
-              <div class="sizeselect">l</div>
-              <div class="sizeselect">xl</div>
-            </div>
-          </div>
-        </div>    -->         
-
         
         <div class="addtocart">
           <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
