@@ -13,7 +13,7 @@
 
 	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
 
-		#shirtimage {max-height: 775px; overflow: hidden;} /* TODO test and scale */
+		#shirtimage {max-height: 755px; overflow: hidden;} /* TODO test and scale */
 
 		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: rgb(255, 255, 255); text-decoration: none;}
@@ -87,7 +87,7 @@
 				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
 
 			.sizes select {}
-			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 2.5; font-weight: bold; cursor: pointer;}
+			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 2.5; font-weight: 900; cursor: pointer;}
                     .sizeselect:hover {background-color: rgb(225, 225, 225); color: rgb(39, 101, 111);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
                 .sizeselect.selected {background-color: rgb(255, 255, 255); color: rgb(225, 22, 101);}
@@ -97,10 +97,10 @@
 
 
          .addtocart {margin-top: 60px;}
-	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; line-height: 2;}
+	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; line-height: 2; background-image: url(images/addtocart_texture.png);}
 
-	         .addtocart input.disabled {background-color: rgba(228, 228, 228, .5); color: rgb(218, 218, 218);} /* disabled/no size selected state */
-	         .addtocart input {background-color: rgb(201, 23, 93);}
+	         .addtocart input.disabled {background-color: rgba(228, 228, 228, .5); background-position: center top; color: rgb(218, 218, 218);} /* disabled/no size selected state */
+	         .addtocart input {background-color: rgb(201, 23, 93); background-position: center bottom;}
 
 	         .addtocart #cart {text-align: center;}
 
