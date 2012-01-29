@@ -37,4 +37,20 @@ body {
 
 /* Circle on Charity logo in Shirt section */
 #charityflyout .charitylogo {border-radius: 50%;}
-	.charitylogo .logoimage {-webkit-transform: rotate(-8deg);} /* TODO add other browser prefixes */
+	.charitylogo .logoimage {
+		-moz-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		-o-transform: rotate(-4deg);
+		-ms-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+
+
+/* Donation amount Why link rotation */
+.goals .amountdonated .why {
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}

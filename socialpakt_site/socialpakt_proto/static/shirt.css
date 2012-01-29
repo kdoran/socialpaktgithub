@@ -16,7 +16,8 @@
 
 		#charityflyout {}
 			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 170px; height: 170px; background-color: #fafafa; cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
-				.charitylogo .logoimage {width: 100%; text-align: center; padding-top: 22px;} /* TODO how do we force the spacing here? */
+				.charitylogo .logoimage {width: 110px; height: 122px; margin: 22px 0 0 27px; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
+				.charitylogo .logoimage img {width: 100%;}
 			
 			#charityflyout .charityinfo {display: none;}
 				#charityflyout:hover .charityinfo {display: block;}
@@ -32,22 +33,25 @@
 		.price {}
 			.price .amount {float: left;}
 				.price .amount .dollar {}
-				.price .amount .number {float: left; font-size: 100px; padding-top: 23px;}
+				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
 			.price .tagline {float: left; width: 330px; margin-left: 10px; font-size: 18px;}
-			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so i can use Knockout bg image?? */
-				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO this needs to stay as text */
+			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. and/or use Knockout bg image? also make this clickable to display a little lightbox explaining how it works */
+				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 
 		.goals {}
 			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
-				.goals .dollar {}
 				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
-				.goals .helper {clear: both; color: #fff; opacity: 1;}
+				.goals .dollar {font-size: 20px;}
 
 			.goals .donated {float: left;}
-				.goals .donated .helper {margin-left: 18px;}
+				.goals .donated .helper {display: block; margin-left: 18px;}
+				.goals .donated .helper, .goals .donated .helper:hover {color: rgba(255,255,255,1);} /* in this section keep full color */
 
-			.goals .goal {float: right; margin-right: 20px; text-align: right; opacity: .5;}
-				.goals .goal:hover {opacity: 1;} /* hover states */
+
+			.goals .goal {float: right; margin-right: 20px; text-align: right; color: rgba(255,255,255,.75);}
+				.goals .goal:hover, .goals .goal:hover .helper {color: rgba(255,255,255,1);} /* hover states */
+				.goals .goal .helper {display: block; margin-left: 18px;}
+
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: #451c43;}
@@ -55,8 +59,8 @@
 					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
 			
 			.goals .amountdonated {margin: 10px 0 0 18px;}
-				.goals .amountdonated .sharpie {text-transform: lowercase; opacity: .2;}
-					.goals .amountdonated:hover .sharpie {opacity: 1;}
+				.goals .amountdonated .why {display: inline-block; vertical-align: top; font-size: 9px; text-transform: lowercase; color: rgba(255,255,255,.75);}
+					.goals .amountdonated:hover .why {color: rgba(255,255,255,1);}
 
 
 		.sizes {}
