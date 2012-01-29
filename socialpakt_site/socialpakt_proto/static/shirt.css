@@ -71,7 +71,7 @@
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: rgb(69, 28, 67);}
-					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/percentage_pattern.png');}
+					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/diagonal_pattern.png');}
 					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
 			
 			.goals .amountdonated {margin: 10px 0 0 18px;}
@@ -117,4 +117,4 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.mayorsalliance {background-position: -320px 0;}
+body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat;}
