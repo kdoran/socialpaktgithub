@@ -183,24 +183,38 @@
   </div>
 {% endblock main %}
 
-{% block fbcomments %}
-<div id="comments">
-  <h3>What People Are Saying</h3>
-    <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
-</div>
-{% endblock fbcomments %}
-
 {% block about %}
   {% if product %}
-    <div class="aboutcharity">
-        <span class="label">about the charity</span>
-        <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
-        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
-    </div>
-    <div class="aboutartist">
-        <span class="label">about the artist</span>
-        <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
+  <!-- Shirt Details -->
+  <div id="shirtdetails">
+    <div class="wrapper">
+    
+    <!-- About this Shirt -->
+    <div class="partners">
+
+      <!-- Featured Charity -->
+      <div class="charity">
+        <h2>{{product.benefits.name}}</h2>
+        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more...</a></p>
+      </div>
+
+      <!-- Artist -->
+      <div class="artist">
+        <h2>{{product.artist.name}}</h2>
         <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
+      </div>
+
     </div>
+
+    <!-- Comments -->
+    {% block fbcomments %}
+    <div id="comments">
+      <img src="{{ STATIC_URL }}images/comments.png">
+      <!-- <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments> -->
+    </div>
+    {% endblock fbcomments %}
+
+    </div>
+  </div>
   {% endif %}
 {% endblock about %}
