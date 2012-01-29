@@ -54,7 +54,7 @@
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. and/or use Knockout bg image? also make this clickable to display a little lightbox explaining how it works */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 
-		.goals {}
+		.goals {margin-top: 40px;} /* TODO this section makes this seem really bulky. tone down? */
 			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
 				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
 				.goals .dollar {font-size: 20px;}
@@ -79,22 +79,24 @@
 					.goals .amountdonated:hover .why {color: rgba(255,255,255,1);}
 
 
-		.sizes {}
+		.sizes {margin-top: 60px;}
 			.sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 			.sizes h4 {margin: 0; line-height: 2;}
 
-			.sizes .womens, .sizes .mens {width: 50%; float: left;}
+			.sizes .category_size {float: left;}
+				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
 
-			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: #d5d5d5; color: #000; text-transform: uppercase; text-align: center; line-height: 2; font-weight: bold; cursor: pointer;}
-                    .sizeselect:hover {background-color: #fff; color: #5cbcb9;}
-                .sizeselect.selected {background-color: #fff; color: #e11665;}
-                .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;}
+			.sizes select {}
+			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .9); color: rgb(0,0,0); text-transform: uppercase; text-align: center; line-height: 2.5; font-weight: bold; cursor: pointer;}
+                    .sizeselect:hover {background-color: rgba(228, 228, 228, 1); color: rgb(0, 58, 73);}
+                .sizeselect.sizeselect:last-child {margin-right: 0;}
+                .sizeselect.selected {background-color: rgb(255,255,255); color: rgb(225, 22, 101);}
+                .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;} /* TODO add hover saying "out of stock" */
 
                 #shirt_select {display: none;} /* hide select box of sizes */
-				#shirt_select {display: none;} /* hide select box of sizes */
 
 
-         .addtocart {}
+         .addtocart {margin-top: 60px;}
 	         .addtocart input {width: 445px; background-color: #c9175d; border: 0; color: #fff; text-transform: uppercase; font-size: 35px; line-height: 2; font-weight: bold;}
 
 	         .addtocart #cart {text-align: center;}
