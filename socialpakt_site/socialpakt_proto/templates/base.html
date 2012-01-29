@@ -102,13 +102,32 @@
 
 
 	<!-- Locations -->
+  {% load thumbnail %}
 	<div id="locations">
 	<div class="wrapper">
+      {% for cat in product_categories %}
+      <div class="location {{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
+        <h3>{{ cat.display_text }}</h3>
+        {% for prod in cat.product_set.all %}
+          <div class="smallshirt">
+            {% for photo in prod.productphoto_set.all %}
+              {% thumbnail photo.photo "245" format="PNG" as im %}
+                  <img src="{{ im.url }}" >
+              {% endthumbnail %}
+            {% endfor %}
+          </div>
+          <h4 class="charityname">{{ prod.benefits.name }}</h4>
+            <span class="goto sharpie">go to</span>
+            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}>{{ prod.title }}</a>
+            <p>{{ prod.benefits.about }}</p>
+         {% endfor %}
+      </div>
+      {% endfor %}
 
-      <div class="location newyork selected"> <!-- selected or hover state or both? -->
+      <!-- <div class="location newyork selected">
         <h3>New York</h3>
         <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
         </div>
         <h4 class="charityname">Mayor's Alliance for NYC'S Animals</h4>
         <a class="charitylink">
@@ -121,7 +140,7 @@
       <div class="location losangeles">
         <h3>Los Angeles</h3>
         <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
         </div>
         <h4 class="charityname">Union Rescue Mission</h4>
         <a class="charitylink">
@@ -133,7 +152,7 @@
       <div class="location canada">
         <h3>Canada</h3>
         <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
         </div>
         <h4 class="charityname">Music Canada</h4>
         <a class="charitylink">
@@ -145,14 +164,14 @@
       <div class="location everywhere">
         <h3>Everywhere</h3>
         <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> <!-- needs to pull in thumbnail of t-shirt -->
+          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
         </div>
         <h4 class="charityname">It Gets Better Project</h4>
         <a class="charitylink">
         	<span class="goto sharpie">go to</span>
         	itgetsbetter.org
         </a>
-      </div>
+      </div> -->
       
     </div>
 	</div>
