@@ -30,16 +30,16 @@
 		.price, .goals, .sizes, .addtocart {margin-bottom: 20px; color: #fff;}
 
 		.price {}
-			.price .amount {float: left; padding-top: 5px;}
-				.price .amount span {font-family: "museo"; font-weight: 100; font-size: 30px; float: left;}
-				.price .amount .number {font-family: "proxima-nova-extra-condensed"; font-weight: 600; font-size: 100px; padding-top: 20px;}
+			.price .amount {float: left;}
+				.price .amount .dollar {}
+				.price .amount .number {float: left; font-size: 100px; padding-top: 23px;}
 			.price .tagline {float: left; width: 330px; margin-left: 10px; font-size: 18px;}
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so i can use Knockout bg image?? */
-				.price .daysremaining #expiresdate {font-weight: 600;} /* TODO this needs to stay as text */
+				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO this needs to stay as text */
 
 		.goals {}
 			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
-				.goals .dollar {font-family: museo; font-size: 20px; vertical-align: top;}
+				.goals .dollar {}
 				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
 				.goals .helper {clear: both; color: #fff; opacity: 1;}
 
@@ -51,7 +51,7 @@
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: #451c43;}
-					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background-color: #773374;}
+					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: #773374 url('images/percentage_pattern.png');}
 					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
 			
 			.goals .amountdonated {margin: 10px 0 0 18px;}

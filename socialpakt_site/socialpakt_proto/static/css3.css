@@ -9,6 +9,18 @@ a {
     transition: opacity .5s ease-in, color .5s ease-in;
     }
 
+/* dollar sign text shadow */
+.dollar {
+	text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);
+	filter: dropshadow(color=#000000, offx=1, offy=0);
+}
+
+/* all text has super-light textshadow */
+body {
+	text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);
+}
+
+
 
 /* Header links text shadow */
 #header li {text-shadow: 1px 1px 0 rgba(0,0,0,.4);}
@@ -26,21 +38,3 @@ a {
 /* Circle on Charity logo in Shirt section */
 #charityflyout .charitylogo {border-radius: 50%;}
 	.charitylogo .logoimage {-webkit-transform: rotate(-8deg);} /* TODO add other browser prefixes */
-
-/* Price dollar sign text shadow */
-.price .amount span {
-	text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);
-	filter: dropshadow(color=#000000, offx=1, offy=0);
-}
-
-/* Price text shadow */
-.price .amount .number {
-	text-shadow: 2px 2px 4px rgba(0, 58, 73, .5);
-	filter: dropshadow(color=#003a49, offx=2, offy=2);
-}
-
-/* price tagline */
-.price .tagline {
-	text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);
-	filter: dropshadow(color=#000000, offx=1, offy=0);
-}
