@@ -1,7 +1,7 @@
 /* ---------- LOCATIONS ---------------------------- */
 /* ------------------------------------------------- */
 
-#locations {background-color: #451c43; padding: 50px 0; color: #fff;}
+#locations {background-color: rgb(69, 28, 67); padding: 50px 0; color: rgb(255, 255, 255);}
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#locations .location {width: 270px; float: left; margin-right: 20px;}
@@ -11,5 +11,5 @@
 
 		.location h4 {font-size: 18px; text-transform: uppercase;}
 
-		.location .charitylink {color: #e11665; text-transform: uppercase;}
-			.location .charitylink .goto {text-transform: lowercase; color: #fff;}
+		.location .charitylink {color: rgb(201, 23, 93); text-transform: uppercase;}
+			.location .charitylink .goto {text-transform: lowercase; color: rgb(255, 255, 255);}
