@@ -45,7 +45,7 @@ a {}
 a:hover {}
 
 .number {font-weight: bold;}
-.helper {text-transform: uppercase; opacity: .7;}
+.helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 200; font-size: 21px; opacity: .7;}
 	.helper:hover {opacity: 1;}
 
 
