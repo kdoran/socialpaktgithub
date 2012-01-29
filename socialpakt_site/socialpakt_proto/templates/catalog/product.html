@@ -63,17 +63,17 @@
 
             <!-- Charity Flyout - hidden til hover -->
             <div class="charityinfo">
-              <h4>{{product.benefits.name}}</h4>
-              <p class="charitylink">
-                    <span class="goto">go to</span>
-                    <a href="{% if product.benefits.slug %}{% url nonprofit product.benefits.slug %}{% endif %}" class="charity_logo">{{product.benefits.name}}</a>
-              </p>
-                <!-- TODO are these the same links as those dynamically generated on the charity page? -->
-                  <ul class="charitysociallinks">
-                    <li class="facebook">facebook</li>
-                    <li class="twitter">facebook</li>
-                    <li class="youtube">facebook</li>
-                  </ul>
+              <div class="charitylink">
+                <h4>{{product.benefits.name}}</h4>
+                <span class="goto sharpie">go to</span>
+                <a href="{% if product.benefits.slug %}{% url nonprofit product.benefits.slug %}{% endif %}" class="charity_logo">{{product.benefits.name}}</a> <!-- TODO change the display name to the URL here -->
+              </div>
+              <!-- TODO kevin please make these work~ are these the same links as those dynamically generated on the charity page? -->
+              <ul class="charitysociallinks">
+                <li class="facebook">facebook</li>
+                <li class="twitter">facebook</li>
+                <li class="youtube">facebook</li>
+              </ul>
             </div>
 
           </div>
@@ -163,7 +163,7 @@
         <div class="sizes">
             {% for cat in product.available_variations.all %}
                 <div class="category_size {{ cat.display_text|slugify }}">
-                  <h4>{{ cat.display_text }}</h4>
+                  <h5>{{ cat.display_text }}</h5>
                     {% render_variations cat product %}
                 </div>
             {% endfor %}

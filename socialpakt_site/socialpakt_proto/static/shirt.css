@@ -8,26 +8,42 @@
 #featuredshirt {/* background: #053745 url('images/shirt_fallback_texture.png'); */}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
+	#featuredshirt .wrapper {background: url('images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 45px;} /* black underlay for shirtactions to be read more easily */
+
+
 	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
+
+		#shirtimage {max-height: 775px; overflow: hidden;} /* TODO test and scale */
 
 		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: #fff; text-decoration: none;}
 			#toggle .selected {display: none;}
 
 		#charityflyout {}
-			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 170px; height: 170px; background-color: #fafafa; cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
+			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 170px; height: 170px; background-color: #fafafa; border: 1px solid #ddd; cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
 				.charitylogo .logoimage {width: 110px; height: 122px; margin: 22px 0 0 27px; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
 				.charitylogo .logoimage img {width: 100%;}
 			
-			#charityflyout .charityinfo {display: none;}
+			#charityflyout .charityinfo {display: none;} /* TODO add jquery slide/fade */
 				#charityflyout:hover .charityinfo {display: block;}
-			#charityflyout .charityinfo {position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; background-color: #fff; width: 545px; padding: 10px 0 10px 120px;}
-				#charityflyout .charityinfo h4 {margin: 0;}
+			#charityflyout .charityinfo {position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; width: 545px;  overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255,255,255,.9);}
+				#charityflyout .charityinfo .charitylink {margin: 0; float: left;}
+					#charityflyout .charityinfo h4 {margin: 8px 0 0 0;}
+					#charityflyout .charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85,85,85);}
+
+				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0;}
+					ul.charitysociallinks li {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('images/sociallinks.png') no-repeat;}
+						ul.charitysociallinks li.facebook {background-position: 0 0;}
+							ul.charitysociallinks li.facebook:hover {background-position: 0 -40px;}
+						ul.charitysociallinks li.twitter {background-position: -48px 0;}
+							ul.charitysociallinks li.twitter:hover {background-position: -48px -40px;}
+						ul.charitysociallinks li.youtube {background-position: -97px 0;}
+							ul.charitysociallinks li.youtube:hover {background-position: -97px -40px;}
+						/* TODO add more */
+				
 
 
-	#featuredshirt .wrapper {background: url('images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 55px;} /* black underlay for shirtactions to be read more easily */
-
-	#shirtactions {max-width: 450px; float: right; margin-left: 20px;}
+	#shirtactions {max-width: 450px; float: right; margin: 40px 0 0 20px;}
 		.price, .goals, .sizes, .addtocart {margin-bottom: 20px; color: #fff;}
 
 		.price {}
@@ -96,4 +112,4 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.mayorsalliance {background-position: -390px 0;}
+body.mayorsalliance {background-position: -320px 0;}
