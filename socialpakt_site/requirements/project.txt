@@ -4,3 +4,4 @@ psycopg2==2.4.1
 django-social-auth
 south
 PIL
+sorl-thumbnails (Note, my PIL install on a mac had issues with a jpeg library that didn't emerge until using sorl-thumbnails. See http://jetfar.com/libjpeg-and-python-imaging-pil-on-snow-leopard/ )
