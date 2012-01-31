@@ -5,13 +5,13 @@
 	#main:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 
-#featuredshirt {/* background: #053745 url('images/shirt_fallback_texture.png'); */}
+#featuredshirt {}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#featuredshirt .wrapper {background: url('images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 45px;} /* black underlay for shirtactions to be read more easily */
 
 
-	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px;}
+	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px; overflow: hidden;}
 
 		#shirtimage {max-height: 755px; overflow: hidden;} /* TODO test and scale */
 
@@ -39,7 +39,7 @@
 							ul.charitysociallinks li.twitter:hover {background-position: -48px -40px;}
 						ul.charitysociallinks li.youtube {background-position: -97px 0;}
 							ul.charitysociallinks li.youtube:hover {background-position: -97px -40px;}
-						/* TODO add more */
+						/* TODO add more + these may not be able to be sprited? check */
 				
 
 
@@ -50,23 +50,26 @@
 			.price .amount {float: left;}
 				.price .amount .dollar {}
 				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
-			.price .tagline {float: left; width: 330px; margin-left: 10px; font-size: 18px;}
+			.price .tagline {float: left; width: 330px; margin-left: 10px; font-size: 18px; line-height: 1.5;}
+				/* lettering.js fixes */
+				.price .tagline .char16,
+				.price .tagline .char35,
+				.price .tagline .char81 {font-size: 14px; padding: 0 1px;} /* punctuation */ /* TODO this will never work for the future. */
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. and/or use Knockout bg image? also make this clickable to display a little lightbox explaining how it works */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 
 		.goals {margin-top: 40px;} /* TODO this section makes this seem really bulky. tone down? */
 			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
 				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
+				.goals .helper {display: block; margin-left: 18px; margin-top: -4px;}
 				.goals .dollar {font-size: 20px;}
 
 			.goals .donated {float: left;}
-				.goals .donated .helper {display: block; margin-left: 18px;}
 				.goals .donated .helper, .goals .donated .helper:hover {color: rgba(255, 255, 255, 1);} /* in this section keep full color */
 
 
 			.goals .goal {float: right; margin-right: 20px; text-align: right; color: rgba(255, 255, 255, .75);}
 				.goals .goal:hover, .goals .goal:hover .helper {color: rgba(255, 255, 255, 1);} /* hover states */
-				.goals .goal .helper {display: block; margin-left: 18px;}
 
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
@@ -87,7 +90,7 @@
 				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
 
 			.sizes select {}
-			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 2.5; font-weight: 900; cursor: pointer;}
+			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; font-weight: 900; cursor: pointer;}
                     .sizeselect:hover {background-color: rgb(225, 225, 225); color: rgb(39, 101, 111);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
                 .sizeselect.selected {background-color: rgb(255, 255, 255); color: rgb(225, 22, 101);}
@@ -105,10 +108,22 @@
 	         .addtocart #cart {text-align: center;}
 
 
-#shirtdetails {background-color: rgb(204, 204, 204);}
+#shirtdetails {background: rgb(204, 204, 204) url(images/details_texture.png); padding: 60px 0;}
 	#shirtdetails:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#shirtdetails .partners {max-width: 700px; float: left;}
+		
+		.partners .label {color: rgb(255, 138, 52); font-size: 11px; text-transform: lowercase;}
+		.partners h2 {margin-top: 5px;}
+		.partners a.morelink {font-size: 14px;}
+
+		.partners .charity {border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 40px; margin-bottom: 40px;}
+			.partners .charity h2 {display: none;}
+			.partners .charity .charitylogo {}
+
+		.partners .artist {}
+			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
+				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
 	#shirtdetails #comments {max-width: 450px; float: right; margin-left: 20px; padding-top: 20px;}
 

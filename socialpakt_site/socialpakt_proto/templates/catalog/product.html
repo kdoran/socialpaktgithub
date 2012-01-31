@@ -194,14 +194,22 @@
 
       <!-- Featured Charity -->
       <div class="charity">
-        <h2>{{product.benefits.name}}</h2>
-        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more...</a></p>
+        <span class="label sharpie">featured nonprofit</span>
+        <h2><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h2>
+        
+        <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a></div>
+        <!-- TODO kevin can we make this the alternate logo image if there is one? also, if there isn't a logo can we revert back to the h2 somehow? add an if to the .charity div so it knows if there's an image? -->
+
+        <p>{{product.benefits.about|safe|truncatewords_html:50|striptags}} <a href="{% url nonprofit product.benefits.slug %}" class="sharpie morelink">more&#8230;</a></p> 
+        <!-- TODO kevin can we more the ellipsis in the truncated text -->
       </div>
 
       <!-- Artist -->
       <div class="artist">
-        <h2>{{product.artist.name}}</h2>
-        <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
+        <span class="label sharpie">about the artist</span>
+        <h2><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h2>
+        <div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{% if product.artist.image %}{{product.artist.image.url}}{% endif %}" alt="{{product.artist.name}}"></a></div>
+        <p>{{product.artist.about|safe|truncatewords_html:50|striptags}} <a href="{% url artist product.artist.slug %}" class="sharpie morelink">more&#8230;</a></p>
       </div>
 
     </div>
