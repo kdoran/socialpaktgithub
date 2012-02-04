@@ -2,8 +2,6 @@
 /* ------------------------------------------------- */
 
 #socialpakt {
-		padding: 100px 0;
-
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background: rgb(145, 199, 121) url("images/header_gradient_fallback.png") repeat-y;
 
@@ -49,7 +47,8 @@
 	}
 
 
-	#mission {}
+	#mission {background: url(images/mission.png) no-repeat center -75px; min-height: 900px;}
+		#mission h1 {display: none;}
 
 
 
