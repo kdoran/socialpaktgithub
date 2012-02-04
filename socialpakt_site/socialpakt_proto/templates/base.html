@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="{{product.slug}}" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %} >
+<body class="blank {{product.slug}}" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %} >
 
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
@@ -118,72 +118,26 @@
           </div>
           <h4 class="charityname">{{ prod.benefits.name }}</h4>
             <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto sharpie">go to</span> {{ prod.title }}</a> <!-- TODO make this a URL -->
-            <p>{{ prod.benefits.about }}</p>
+            <p>{{product.benefits.about|safe|truncatewords_html:28|striptags}}</p>
          {% endfor %}
       </div>
       {% endfor %}
-
-      <!-- <div class="location newyork selected">
-        <h3>New York</h3>
-        <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
-        </div>
-        <h4 class="charityname">Mayor's Alliance for NYC'S Animals</h4>
-        <a class="charitylink">
-        	<span class="goto sharpie">go to</span>
-        	animalalliancenyc.com
-        </a>
-        <p>Founded in 2002, the Mayor's Alliance for NYC's Animals is a coalition of more than 150 animal rescue groups and shelters in New York City.  more...</p>
-      </div>
-
-      <div class="location losangeles">
-        <h3>Los Angeles</h3>
-        <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
-        </div>
-        <h4 class="charityname">Union Rescue Mission</h4>
-        <a class="charitylink">
-        	<span class="goto sharpie">go to</span>
-        	URM.org
-        </a>
-      </div>
-
-      <div class="location canada">
-        <h3>Canada</h3>
-        <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
-        </div>
-        <h4 class="charityname">Music Canada</h4>
-        <a class="charitylink">
-        	<span class="goto sharpie">go to</span>
-        	musiccanada.org
-        </a>
-      </div>
-      
-      <div class="location everywhere">
-        <h3>Everywhere</h3>
-        <div class="smallshirt">
-          <img src="{{ STATIC_URL }}images/smallshirt.png" alt="Shirt Thumbnail"> 
-        </div>
-        <h4 class="charityname">It Gets Better Project</h4>
-        <a class="charitylink">
-        	<span class="goto sharpie">go to</span>
-        	itgetsbetter.org
-        </a>
-      </div> -->
       
     </div>
 	</div>
 
 	<!-- SocialPakt sections -->
 	<div id="socialpakt">
-
+    <div class="wrapper">
 		<!-- Mission -->
-		<div id="mission"></div>
+		<div id="mission">
+      <h1>we are building a community to generate funds & awareness for local non-profits</h1>
+    </div>
 
 		<!-- Past Shirts -->
 		<div id="pastshirts"></div>
-
+    
+  </div>
 	</div>
 
 
@@ -201,6 +155,16 @@
       <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+      <!-- Lettering.js -->
+      <script src="{{ STATIC_URL }}js/jquery.lettering-0.6.1.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          $(".price .tagline").lettering();
+        });
+      </script>
+
+
     {% endblock globaljs %}
 
     {% block localscripts %}
