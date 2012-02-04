@@ -128,14 +128,17 @@
 
 	<!-- SocialPakt sections -->
 	<div id="socialpakt">
-    <div class="wrapper">
 		<!-- Mission -->
 		<div id="mission">
-      <h1>we are building a community to generate funds & awareness for local non-profits</h1>
+      <h1>we are building a community to generate funds &amp; awareness for local nonprofits</h1>
     </div>
 
-		<!-- Past Shirts -->
-		<div id="pastshirts"></div>
+    <div class="wrapper">
+  		<!-- Past Shirts -->
+  		<div id="pastshirts">
+        <!-- KEVIN can you add some past shirts stuff here? -->
+      </div>
+    </div>
     
   </div>
 	</div>
@@ -147,7 +150,43 @@
 {% block footer %}
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer">
+    <div class="wrapper">
+
+          {% if form %}
+          <div id="mailinglist">
+              <form id="emailform" method="post" action="."> 
+                {% csrf_token %}
+                <div class="newslettertitle">Be the first to know about our new shirts!</div>
+                <label for="home_email_address">Sign up for our mailing list:</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Up!" />
+                {{ form.email.errors }}
+              </form> 
+          </div>
+          {% endif %}
+
+
+
+                <ul class="sociallinks">
+                    <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>
+                    <a href="http://www.twitter.com/SocialPakt"><li class="twitter">Twitter</li></a>
+                    <a href="http://www.youtube.com/user/SocialPakt"><li class="youtube">YouTube</li></a>
+                </ul>  
+                <ul class="subnav">
+                    <li><a href="/sizingchart">Sizing Chart</a></li>
+                    <li><a href="/press/">Press</a></li>
+                    <li><a href="http://blog.socialpakt.com">Blog</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/conditions/">Terms of Use</a></li>
+                    <li><a href="/warranty-returns/">Warranty &amp; Returns</a></li>
+                </ul>
+                <div class="copyright">
+                  &copy; 2012 SocialPakt LLC
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
 
 {% endblock footer %}
 
