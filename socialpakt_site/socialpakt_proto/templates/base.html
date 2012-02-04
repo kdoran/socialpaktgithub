@@ -117,8 +117,14 @@
             {% endfor %}
           </div>
           <h4 class="charityname">{{ prod.benefits.name }}</h4>
-            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto sharpie">go to</span> {{ prod.title }}</a> <!-- TODO make this a URL -->
-            <p>{{product.benefits.about|safe|truncatewords_html:28|striptags}}</p>
+            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto sharpie">go to</span>
+            {% for link in prod.benefits.partnerlink_set.all %}
+              {% if link.link_class == "homepage" %}
+                <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
+              {% endif %}
+            {% endfor %}
+            </a>
+            <p><span class="truncate_28">{{prod.benefits.about|safe|striptags}}</span> <a href="{% if prod.benefits.slug %}{% url nonprofit prod.benefits.slug %} {% endif %}" class="sharpie morelink">more&#8230;</a></p>
          {% endfor %}
       </div>
       {% endfor %}
@@ -142,8 +148,6 @@
     
   </div>
 	</div>
-
-
   
 {% endblock content %}
 
@@ -153,37 +157,35 @@
     <div id="footer">
     <div class="wrapper">
 
-          {% if form %}
-          <div id="mailinglist">
-              <form id="emailform" method="post" action="."> 
-                {% csrf_token %}
-                <div class="newslettertitle">Be the first to know about our new shirts!</div>
-                <label for="home_email_address">Sign up for our mailing list:</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Up!" />
-                {{ form.email.errors }}
-              </form> 
-          </div>
-          {% endif %}
+      {% if form %}
+      <div id="mailinglist">
+          <form id="emailform" method="post" action="."> 
+            {% csrf_token %}
+            <div class="newslettertitle">Be the first to know about our new shirts!</div>
+            <label for="home_email_address">Sign up for our mailing list:</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Up!" />
+            {{ form.email.errors }}
+          </form> 
+      </div>
+      {% endif %}
 
-
-
-                <ul class="sociallinks">
-                    <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>
-                    <a href="http://www.twitter.com/SocialPakt"><li class="twitter">Twitter</li></a>
-                    <a href="http://www.youtube.com/user/SocialPakt"><li class="youtube">YouTube</li></a>
-                </ul>  
-                <ul class="subnav">
-                    <li><a href="/sizingchart">Sizing Chart</a></li>
-                    <li><a href="/press/">Press</a></li>
-                    <li><a href="http://blog.socialpakt.com">Blog</a></li>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/conditions/">Terms of Use</a></li>
-                    <li><a href="/warranty-returns/">Warranty &amp; Returns</a></li>
-                </ul>
-                <div class="copyright">
-                  &copy; 2012 SocialPakt LLC
-                </div>
-            </div>
+        <ul class="sociallinks">
+            <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>
+            <a href="http://www.twitter.com/SocialPakt"><li class="twitter">Twitter</li></a>
+            <a href="http://www.youtube.com/user/SocialPakt"><li class="youtube">YouTube</li></a>
+        </ul>  
+        <ul class="subnav">
+            <li><a href="/sizingchart">Sizing Chart</a></li>
+            <li><a href="/press/">Press</a></li>
+            <li><a href="http://blog.socialpakt.com">Blog</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/conditions/">Terms of Use</a></li>
+            <li><a href="/warranty-returns/">Warranty &amp; Returns</a></li>
+        </ul>
+        <div class="copyright">
+          &copy; 2012 SocialPakt LLC
         </div>
+      </div>
+    </div>
     </div>
 
     </div>
@@ -197,6 +199,7 @@
 
       <!-- Lettering.js -->
       <script src="{{ STATIC_URL }}js/jquery.lettering-0.6.1.min.js"></script>
+      <script src="{{ STATIC_URL }}js/globals.js"></script>
       <script>
         $(document).ready(function() {
           $(".price .tagline").lettering();
