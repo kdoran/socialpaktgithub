@@ -47,7 +47,7 @@
 	}
 
 
-	#mission {background: url(images/mission.png) no-repeat center -75px; min-height: 900px;}
+	#mission {/* background: url(images/mission.png) no-repeat center -75px; min-height: 900px; */}
 		#mission h1 {display: none;}
 
 
