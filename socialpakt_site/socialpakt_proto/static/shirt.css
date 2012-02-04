@@ -84,7 +84,7 @@
 
 		.sizes {margin-top: 60px;}
 			.sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-			.sizes h4 {margin: 0; line-height: 2;}
+			.sizes h5 {margin: 0; line-height: 2; text-transform: uppercase;}
 
 			.sizes .category_size {float: left;}
 				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
