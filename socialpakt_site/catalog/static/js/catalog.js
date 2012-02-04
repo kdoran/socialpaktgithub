@@ -24,7 +24,13 @@
 			ref_time: Date.parse(expiresdate),
 			format: '%d'
 		});
-
+		// calculate percentage goal
+		var goal = $("#donated_container").text() / $("#goal_container").text();
+		$("#percentage_container").text(Math.round(goal*100));
+		// truncate text (no ellipsis)
+		$(".truncate_50").each(function(){
+			$(this).text(($(this).text().trim().split(" ").slice(0,50).join(" ")));
+		});
 		// Set up the photobrowser
 		$("div#shirt div.shirtimage.thumbnail").click(function(){
 			var cur_sel = $("div#shirt div.shirtimage.big");
