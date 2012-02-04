@@ -66,13 +66,20 @@
               <div class="charitylink">
                 <h4>{{product.benefits.name}}</h4>
                 <span class="goto sharpie">go to</span>
-                <a href="{% if product.benefits.slug %}{% url nonprofit product.benefits.slug %}{% endif %}" class="charity_logo">{{product.benefits.name}}</a> <!-- TODO change the display name to the URL here -->
+                <a href="{{ product.benefits.partnerlink.link_class }}" class="charity_logo">
+                {% for link in product.benefits.partnerlink_set.all %}
+                  {% if link.link_class == "facebook" %}
+                    
+                  {% endif %}
+                {% endfor %}
+                </a>
               </div>
-              <!-- TODO kevin please make these work~ are these the same links as those dynamically generated on the charity page? -->
               <ul class="charitysociallinks">
-                <li class="facebook">facebook</li>
-                <li class="twitter">facebook</li>
-                <li class="youtube">facebook</li>
+                {% for link in product.benefits.partnerlink_set.all %}
+                  {% if link.link_class == "facebook" or link.link_class == "twitter" or link.link_class == "youtube" %}
+                    <li class="{{link.link_class}}"><a href="{{link.link}}">{{link.link_text}}</a></li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             </div>
 
