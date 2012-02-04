@@ -1,0 +1,56 @@
+/* ---------- SOCIALPAKT SECTION ------------------- */
+/* ------------------------------------------------- */
+
+#socialpakt {
+		padding: 100px 0;
+
+		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
+		background: rgb(145, 199, 121) url("images/header_gradient_fallback.png") repeat-y;
+
+		/* Internet Explorer 6-9 Filters -- only one gradient and no texture */
+	    background:none\0/;
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+	   
+   		/* IE 10 */
+		background:
+			url("images/header_texture.png"),
+			-ms-linear-gradient(top, rgba(0, 0, 0, .25) 0%, transparent 15%);
+			/* TODO make sure the texture graphic here can tile vertically, right now it has lines */
+
+	    /* Old Webkit syntax - Chrome, Safari4+ */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, .25)), color-stop(15%,rgba(0, 0, 0, 0))),
+	    	-webkit-gradient(linear,left top,right top,from(rgba(177, 212, 138, 1)), to(rgba(146, 212, 218, 1)));
+
+	    /* New Webkit Syntax - Chrome10+, Safari5.1+ */
+	    background:
+	    	url("images/header_texture.png"),
+	    	-webkit-linear-gradient(top, rgba(0, 0, 0, .25) 0%, transparent 15%),
+	    	-webkit-linear-gradient(left, rgba(177, 212, 138, 1), rgba(146, 212, 218, 1));
+
+	    /* Moz -- FF3.6 + */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	-moz-linear-gradient(top, rgba(0, 0, 0, .25) 0%, transparent 15%),
+	    	-moz-linear-gradient(left, rgba(177, 212, 138, 1), rgba(146, 212, 218, 1));
+
+	    /* Opera */
+	    background-image:
+	    	url("images/header_texture.png"),
+		    -o-linear-gradient(top, rgba(0, 0, 0, .25) 0%, transparent 15%),
+	    	-o-linear-gradient(left, rgba(177, 212, 138, 1), rgba(146, 212, 218, 1));
+
+	    /* W3C Spec */
+	    background-image:
+	    	url("images/header_texture.png"),
+	    	linear-gradient(top, rgba(0, 0, 0, .25) 0%, transparent 15%),
+	    	linear-gradient(left, rgba(177, 212, 138, 1), rgba(146, 212, 218, 1));
+	}
+
+
+	#mission {}
+
+
+
+	#pastshirts {}
