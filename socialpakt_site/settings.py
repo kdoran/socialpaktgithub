@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'socialpakt_prod',                      # Or path to database file if using sqlite3.
+        'NAME': 'socialpakt_prod0204',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': 'password',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -50,7 +50,7 @@ MEDIA_ROOT = '/gitwork/socialpakt/media_files/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/static/images/'
+MEDIA_URL = 'http://localhost/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -142,6 +142,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+
+    'gitwork/socialpakt/socialpakt_site/socialpakt_proto/templates',
 )
 
 INSTALLED_APPS = (
@@ -154,6 +156,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'paypal.standard', 
     'paypal.pro',
+    'socialpakt_proto',
     'social_auth',
     'south',
     'cart',
@@ -163,7 +166,7 @@ INSTALLED_APPS = (
     'globals',
     'splash',
     'orders',
-    'socialpakt_proto',
+    'sorl.thumbnail',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
