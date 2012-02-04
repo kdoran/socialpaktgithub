@@ -66,13 +66,11 @@
               <div class="charitylink">
                 <h4>{{product.benefits.name}}</h4>
                 <span class="goto sharpie">go to</span>
-                <a href="{{ product.benefits.partnerlink.link_class }}" class="charity_logo">
                 {% for link in product.benefits.partnerlink_set.all %}
-                  {% if link.link_class == "facebook" %}
-                    
+                  {% if link.link_class == "homepage" %}
+                    <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
                   {% endif %}
                 {% endfor %}
-                </a>
               </div>
               <ul class="charitysociallinks">
                 {% for link in product.benefits.partnerlink_set.all %}
@@ -130,18 +128,18 @@
         <div class="goals">
           <div class="donated">
             <span class="dollar">$</span>
-            <span class="number">{{product.total_raised|floatformat}}</span>
+            <span id="donated_container" class="number">{{product.total_raised|floatformat}}</span>
             <span class="helper">dollars donated</span>
           </div>
             <div class="goal">
             <span class="dollar">$</span>
-            <span class="number">{{product.goal|floatformat}}</span>
+            <span id="goal_container" class="number">{{product.goal|floatformat}}</span>
             <span class="helper">our donation goal</span>
           </div>
           <div class="progress">
             <div id="progressbar">
               <div class="percentage">
-                <span class="label sharpie">79%</span> <!-- TODO wire this up! -->
+                <span class="label sharpie"><span id="percentage_container"></span>%</span>
               </div>
             </div>
           </div>
@@ -207,8 +205,7 @@
         <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a></div>
         <!-- TODO kevin can we make this the alternate logo image if there is one? also, if there isn't a logo can we revert back to the h2 somehow? add an if to the .charity div so it knows if there's an image? -->
 
-        <p>{{product.benefits.about|safe|truncatewords_html:50|striptags}} <a href="{% url nonprofit product.benefits.slug %}" class="sharpie morelink">more&#8230;</a></p> 
-        <!-- TODO kevin can we more the ellipsis in the truncated text -->
+        <p><span class="truncate_50">{{product.benefits.about|safe|striptags}}</span> <a href="{% url nonprofit product.benefits.slug %}" class="sharpie morelink">more&#8230;</a></p> 
       </div>
 
       <!-- Artist -->
@@ -216,7 +213,7 @@
         <span class="label sharpie">about the artist</span>
         <h2><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h2>
         <div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{% if product.artist.image %}{{product.artist.image.url}}{% endif %}" alt="{{product.artist.name}}"></a></div>
-        <p>{{product.artist.about|safe|truncatewords_html:50|striptags}} <a href="{% url artist product.artist.slug %}" class="sharpie morelink">more&#8230;</a></p>
+        <p><span class="truncate_50">{{product.artist.about|safe|striptags}}</span> <a href="{% url artist product.artist.slug %}" class="sharpie morelink">more&#8230;</a></p>
       </div>
 
     </div>
@@ -224,8 +221,7 @@
     <!-- Comments -->
     {% block fbcomments %}
     <div id="comments">
-      <img src="{{ STATIC_URL }}images/comments.png">
-      <!-- <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments> -->
+      <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
     </div>
     {% endblock fbcomments %}
 
