@@ -37,7 +37,7 @@ a {color: rgb(255,108,0); text-decoration: none;}
 a:hover {color: rgb(201,23,93); text-decoration: none;}
 
 
-.number {font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
+.number {font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
 .dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
 .helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: bold; font-size: 14px; color: rgba(255, 255, 255, .75);}
   .wf-active .helper {font-weight: 300; font-size: 20px;}

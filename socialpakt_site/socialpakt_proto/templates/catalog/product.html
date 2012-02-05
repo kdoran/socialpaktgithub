@@ -156,10 +156,15 @@
               </div>
             </div>
           </div>
-          <div id="amountdonated" class="amountdonated helper">
-            <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why">why?</span>
+          <div id="amountdonated" class="amountdonated">
+            <span class="helper">
+              <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why">why?</span>
+            </span>
+            <div id="amountdonated_helper" style="display:none;">
+              <p><span class="helper">Why only $6?</span>
+              $6 is the most we can give away and still afford to keep the lights on! We'd love to give away more, but to do so we'd have to compromise the quality of our shirts...and nobody wants a shirt with holes in it!</p>
+            </div>
           </div>
-          <div id="amountdonated_helper" style="display:none;">blah blah blah stuff etc</div>
         </div>
 
         {% if can_add_to_cart %}

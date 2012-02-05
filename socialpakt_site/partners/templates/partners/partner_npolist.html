@@ -7,8 +7,9 @@
 {% endblock sharethis %}
 
 {% block main %}
+<div class="wrapper">
     <div id="partnerblock">
-        <h2>SocialPakt Nonprofits</h2>
+        <h2>Our Nonprofits</h2>
         <ul id="partnerlist" class="nonprofit">
           {% for partner in object_list %}
             <li class="partner nonprofit">
@@ -21,4 +22,5 @@
         {% endfor %}
         </ul>
     </div>
+</div>
 {% endblock main %}

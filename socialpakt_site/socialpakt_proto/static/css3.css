@@ -31,6 +31,13 @@ a {
 	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
 }
 
+#header ul.locationnav li a {
+	-webkit-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    -moz-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    -o-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    transition: box-shadow .2s ease-in, background-color .2s ease-in;
+}
+
 
 /* Shirt */
 
@@ -74,6 +81,14 @@ a {
 	-o-transform: rotate(-4deg);
 	-ms-transform: rotate(-4deg);
 	transform: rotate(-4deg);
+}
+
+
+/* why link tooltip */
+#amountdonated_helper p {
+	-webkit-box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
+	box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
 }
 
 /* Add to Cart text shadow */
@@ -153,4 +168,5 @@ a {
 	-webkit-transition: opacity .5s linear;
 	-moz-transition: opacity .5s linear;
 	-o-transition: opacity .5s linear;
-	transition: opacity .5s linear;}
+	transition: opacity .5s linear;
+}

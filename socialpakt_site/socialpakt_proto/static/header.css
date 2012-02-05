@@ -73,6 +73,7 @@
 	#header ul.minornav {float: left; padding-top: 33px; margin-left: 35px; color: rgb(255, 255, 255); font-size: 14px;}
 		#header ul.minornav li {margin-right: 3%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
+		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
 
 	/* Location Nav */
 	#header ul.locationnav {max-width: 465px; float: right;}		

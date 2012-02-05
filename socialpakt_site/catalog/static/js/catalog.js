@@ -29,11 +29,12 @@
 			$("#days").text("day");
 		}
 		$("#amountdonated").hover(
-			function(){$("#amountdonated_helper").toggle('fast');}
+			function(){$("#amountdonated_helper").fadeToggle();}
 		);
 		$("#charityflyout").hover(
-			function(){$("#charityinfo").show().animate({width: "545px"}, 200);},
-			function(){$("#charityinfo").animate({width: "0"}, 200, function(){$(this).hide();});}
+			function(){$("#charityinfo").fadeToggle();}
+			//function(){$("#charityinfo").show().animate({width: "545px"}, 200);},
+			//function(){$("#charityinfo").animate({width: "0"}, 200, function(){$(this).hide();});}
 		);
 		// Set up the photobrowser
 		$("div#shirt div.shirtimage.thumbnail").click(function(){

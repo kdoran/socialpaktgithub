@@ -24,7 +24,7 @@
 				.charitylogo .logoimage {width: 110px; height: 122px; margin: 22px 0 0 27px; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
 				.charitylogo .logoimage img {width: 100%;}
 			
-			#charityflyout #charityinfo {display: none; width: 0; position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
+			#charityflyout #charityinfo {display: none; width: 550px; position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
 				#charityflyout #charityinfo .charitylink {margin: 0; float: left;}
 					#charityflyout #charityinfo h4 {margin: 8px 0 0 0;}
 					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
@@ -68,11 +68,15 @@
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: rgb(69, 28, 67);}
 					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/diagonal_pattern.png');}
-					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
+					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
-			.goals .amountdonated {margin: 10px 0 0 18px;}
-				.goals .amountdonated .why {display: inline-block; vertical-align: top; font-size: 9px; text-transform: lowercase; color: rgba(255, 255, 255, .75);}
-					.goals .amountdonated:hover .why {color: rgba(255, 255, 255, 1);}
+			.goals .amountdonated {margin: 10px 0 0 0; position: relative;}
+				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(images/why.png) no-repeat; text-indent: -9999em;}
+					.goals .amountdonated:hover .why {opacity: 1;}
+
+				#amountdonated_helper {width: 429px; background: url(images/tooltip_arrow.png) no-repeat right center; position: absolute; left: -423px; top: -91px; z-index: 10;}
+				#amountdonated_helper p {width: 375px; background: rgba(255, 255, 255, .9); color: rgb(0, 43, 57); padding: 20px;}
+					#amountdonated_helper .helper {color: rgb(0, 43, 57); margin: 0;}
 
 
 		.sizes {margin-top: 60px;}
@@ -113,17 +117,19 @@
 		
 		.partners .label {color: rgb(255, 138, 52); font-size: 11px; text-transform: lowercase;}
 		.partners h2 {margin-top: 5px;}
-		.partners a.morelink {font-size: 14px;}
 
 		.partners .charity {border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 40px; margin-bottom: 40px;}
+			.partners .charity .label {display: block; text-indent: -9999em; background: url(images/featurednonprofit.png) no-repeat;}
 			.partners .charity h2 {display: none;}
 			.partners .charity .charitylogo {}
 
 		.partners .artist {}
+			.partners .artist .label {display: block; text-indent: -9999em; background: url(images/abouttheartist.png) no-repeat;}
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
-	#shirtdetails #comments {width: 450px; float: right; margin-left: 20px; padding-top: 20px;}
+	/* #shirtdetails #comments {width: 450px; float: right; margin-left: 20px; padding-top: 20px;} */
+	#shirtdetails #comments {display: none;}
 
 
 
