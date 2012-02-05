@@ -40,6 +40,7 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
         context = {
             'category' : cat,
             'product' : product,
+            'previous_products' : Product.objects.filter(active=True).order_by('date_expires'),
             'variations' : product.productvariation_set.all().order_by('display_order') if product else None,
             'can_add_to_cart' : product.for_sale if product else False,
             'product_variation_contenttype' : ContentType.objects.get(model="productvariation"),
