@@ -7,8 +7,9 @@
 {% endblock sharethis %}
 
 {% block main %}
+  <div class="wrapper">
     <div id="partnerblock">
-        <h2>SocialPakt Shirts</h2>
+        <h2>Past Causes</h2>
         <ul id="partnerlist" class="artist">
           {% for shirt in object_list %}
             <li class="partner artist">
@@ -21,4 +22,7 @@
         {% endfor %}
         </ul>
     </div>
+  </div>
+
+  <!-- TODO kevin can we take the locations off on list view? -->
 {% endblock main %}
