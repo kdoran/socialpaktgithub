@@ -24,7 +24,7 @@
 				.charitylogo .logoimage {width: 110px; height: 122px; margin: 22px 0 0 27px; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
 				.charitylogo .logoimage img {width: 100%;}
 			
-			#charityflyout #charityinfo {display: none; width: 0; position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
+			#charityflyout #charityinfo {display: none; width: 550px; position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
 				#charityflyout #charityinfo .charitylink {margin: 0; float: left;}
 					#charityflyout #charityinfo h4 {margin: 8px 0 0 0;}
 					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
@@ -70,9 +70,13 @@
 					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/diagonal_pattern.png');}
 					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
-			.goals .amountdonated {margin: 10px 0 0 18px;}
+			.goals .amountdonated {margin: 10px 0 0 0; position: relative;}
 				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(images/why.png) no-repeat; text-indent: -9999em;}
 					.goals .amountdonated:hover .why {opacity: 1;}
+
+				#amountdonated_helper {width: 429px; background: url(images/tooltip_arrow.png) no-repeat right center; position: absolute; left: -423px; top: -91px; z-index: 10;}
+				#amountdonated_helper p {width: 375px; background: rgba(255, 255, 255, .9); color: rgb(0, 43, 57); padding: 20px;}
+					#amountdonated_helper .helper {color: rgb(0, 43, 57); margin: 0;}
 
 
 		.sizes {margin-top: 60px;}
