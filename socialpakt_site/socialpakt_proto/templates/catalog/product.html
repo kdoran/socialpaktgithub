@@ -47,6 +47,9 @@
 {% block main %}
     <div id="featuredshirt" class="{{product.slug}}">
       <div class="wrapper">
+      {% if not product %}
+        <div id="product_coming">Product coming soon</div>
+      {% else %}
 
       <!-- Shirt -->
       <div id="shirt" class="{{product.slug}}">
@@ -187,6 +190,8 @@
       </div>
     </div>
   </div>
+
+  {% endif %}
 {% endblock main %}
 
 {% block about %}
