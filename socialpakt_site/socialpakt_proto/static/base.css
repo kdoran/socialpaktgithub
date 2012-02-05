@@ -14,7 +14,9 @@
 /* ---------- GLOBAL TEXT AND LINK STYLES ---------- */
 /* ------------------------------------------------- */
 
-body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); background-color: rgb(247, 247, 247); color: rgb(51, 51, 51); font-family: "proxima-nova"; font-size: 16px; line-height: 1.8em;}
+body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); background-color: rgb(247, 247, 247); color: rgb(51, 51, 51); font-family: Geneva, Verdana, Arial, sans-serif; font-size: 16px; line-height: 1.8em;}
+  .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif;}
+  .wf-active body {font-family: "proxima-nova", Proxima Nova, Geneva, Verdana, Arial, sans-serif;}
 
 
 /* Typekit */
@@ -48,9 +50,10 @@ a {color: rgb(255,108,0); text-decoration: none;}
 a:hover {color: rgb(201,23,93); text-decoration: none;}
 
 
-.number {font-family: "nimbus-sans-condensed"; font-weight: 700;}
-.dollar {font-family: "museo-slab"; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
-.helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 300; font-size: 20px; color: rgba(255, 255, 255, .75);}
+.number {font-family: "nimbus-sans-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
+.dollar {font-family: "museo-slab", ; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
+.helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: bold; font-size: 14px; color: rgba(255, 255, 255, .75);}
+  .wf-active .helper {font-weight: 300; font-size: 20px;}
   .helper:hover {color: rgba(255, 255, 255, 1);}
 
   /* TODO IE8 doesn't support rgba, specify fallback */
@@ -60,4 +63,4 @@ a:hover {color: rgb(201,23,93); text-decoration: none;}
 
 .wrapper {max-width: 1200px; margin: 0 auto;} /* add a wrapper div with this class to constrain width */
   .wrapper:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-.sharpie {font-family: sharpie;}
+.sharpie {font-family: sharpie, Marker Felt, Geneva, Trebuchet MS, Arial, sans-serif;}

@@ -3,6 +3,6 @@
 /* what happens if no shirt is defined? if product or bg images are missing? */
 
 /* if no bg photo or color is defined */
-/* body.blank {background: #053745 url('images/shirt_fallback_texture.png');} */
+body.blank {background-color: #053745; background-image: url('images/shirt_fallback_texture.png');}
 
 /* TODO make different template or something? will this no-product state ever happen?? */

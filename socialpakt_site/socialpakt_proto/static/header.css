@@ -64,31 +64,30 @@
 		#header .logo h1 a {display: block; height: 67px; width: 227px; margin: 15px 0 0 0; text-indent: -9999em; background: url("images/socialpaktlogo.png") no-repeat;}
 
 
-	#header ul {list-style-type: none; margin: 0; padding: 0;}
-		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed"; font-weight: 300;}
+	#header ul {list-style-type: none; margin: 0; padding: 0; width: 450px; overflow: hidden;}
+		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
+			.wf-active #header li {font-weight: 400; font-size: 16px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
-		#header li a {color: #fff; text-decoration: none;} /* TODO add hover states */
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 35px; margin-left: 65px; color: rgb(255, 255, 255); font-size: 14px;}
+	#header ul.minornav {float: left; padding-top: 33px; margin-left: 35px; color: rgb(255, 255, 255); font-size: 14px;}
+		#header ul.minornav li {margin-right: 3%;}
+		#header ul.minornav li a {color: rgb(26, 106, 127);}
 
 	/* Location Nav */
 	#header ul.locationnav {max-width: 465px; float: right;}		
-		#header ul.locationnav li {padding: 35px 13px 10px 13px; cursor: pointer;}
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
 		#header ul.locationnav li h3 {margin: 0;}
-		#header ul.locationnav li h3 a {display: block; text-indent: -9999em; height: 40px; background-repeat: no-repeat; background-position: 0 0;}
-			#header ul.locationnav li:hover {background-color: rgba(0, 58, 73, .2);} /* TODO fallback color */
-			#header ul.locationnav li:hover h3 a {background-position: 0 -40px;}
+		#header ul.locationnav li a {display: block; padding: 35px 13px 10px 13px; text-indent: -9999em; height: 40px; background-repeat: no-repeat; background-position: 0 0;}
+			#header ul.locationnav li a:hover {background-color: rgba(0, 58, 73, .2); background-position: 0 -85px;}
 
 				#header ul.locationnav li.newyork a {background-image: url("images/locationnav_newyork.png"); width: 80px;}
-				#header ul.locationnav li.losangeles a {background-image: url("images/locationnav_losangeles.png"); width: 100px;}
+				#header ul.locationnav li.california a {background-image: url("images/locationnav_california.png"); width: 100px;}
 				#header ul.locationnav li.canada a {background-image: url("images/locationnav_canada.png"); width: 65px;}
 				#header ul.locationnav li.everywhere a {background-image: url("images/locationnav_everywhere.png"); width: 100px;}
 
-			#header ul.locationnav li.selected {background-color: rgb(0, 58, 73); cursor: default;} /* style for current category */
-					#header ul.locationnav li.selected h3 a {background-position: 0 -100px; cursor: default;}
+			#header ul.locationnav li.selected a {background-color: rgb(0, 58, 73); background-position: 0 -170px; cursor: default;} /* style for current category */
 
 
 

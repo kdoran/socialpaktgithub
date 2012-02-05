@@ -13,9 +13,9 @@
 				.location.newyork.selected h3,
 				.location.newyork:hover h3 {background-position: 0 -40px;}
 			
-			.location.losangeles h3 {background-position: -200px 0; width: 200px;}
-				.location.losangeles.selected h3,
-				.location.losangeles:hover h3 {background-position: -200px -40px;}
+			.location.california h3 {background-position: -200px 0; width: 200px;}
+				.location.california.selected h3,
+				.location.california:hover h3 {background-position: -200px -40px;}
 			
 			.location.canada h3 {background-position: -452px 0; width: 130px;}
 				.location.canada.selected h3,

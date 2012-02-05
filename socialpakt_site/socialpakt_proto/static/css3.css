@@ -19,14 +19,13 @@ a {
 /* text-shadow: 1px 0px 0px rgba(0, 0, 0, .3); */
 .helper,
 .price .tagline,
-#header .minornav li,
 .sizes h5,
 .location h3 {text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);}
 
 
 
 /* Header location nav hover inset shadow */
-#header ul.locationnav li:hover {
+#header ul.locationnav li a:hover {
 	-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
 	-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
 	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
@@ -100,7 +99,7 @@ a {
 	transform: rotate(4deg);
 }
 			
-.location.losangeles .smallshirt {
+.location.california .smallshirt {
 	/* no rotation here */
 }
 			
