@@ -2,6 +2,8 @@
 /* ------------------------------------------------- */
 
 #socialpakt {
+		padding-bottom: 100px;
+
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background: rgb(145, 199, 121) url("images/header_gradient_fallback.png") repeat-y;
 
@@ -47,8 +49,24 @@
 	}
 
 
-	#mission {/* background: url(images/mission.png) no-repeat center -75px; min-height: 900px; */}
+	#mission {text-align: center; margin-left: -63px;}
 		#mission h1 {display: none;}
+
+	#socialpakt .aboutus {padding: 0 20px; margin-top: -10px;}
+		#socialpakt .aboutus h2 {margin-top: 0;}
+
+		#socialpakt .aboutus .buyashirt {width: 25%; float: left; margin-right: 11%;}
+		#socialpakt .aboutus .shareashirt {width: 25%; float: left;}
+		#socialpakt .aboutus .wearyourshirt {width: 25%; float: right; margin-right: 4%;}
+
+		#socialpakt .aboutus h4 {margin-bottom: 0;}
+		#socialpakt .aboutus p {margin-top: 0;}
+
+		#socialpakt .aboutus .buyashirt h4 {display: block; text-indent: -9999em; background: url(images/mission_buyashirt.png) no-repeat; width: 205px; height: 50px;}
+
+		#socialpakt .aboutus .shareashirt h4 {display: block; text-indent: -9999em; background: url(images/mission_shareashirt.png) no-repeat; width: 232px; height: 50px;}
+
+		#socialpakt .aboutus .wearyourshirt h4 {display: block; text-indent: -9999em; background: url(images/mission_wearyourshirt.png) no-repeat; width: 285px; height: 50px;}
 
 
 
