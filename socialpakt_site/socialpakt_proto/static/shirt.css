@@ -24,12 +24,10 @@
 				.charitylogo .logoimage {width: 110px; height: 122px; margin: 22px 0 0 27px; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
 				.charitylogo .logoimage img {width: 100%;}
 			
-			#charityflyout .charityinfo {display: none;} /* TODO add jquery slide/fade */
-				#charityflyout:hover .charityinfo {display: block;}
-			#charityflyout .charityinfo {position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; width: 545px;  overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
-				#charityflyout .charityinfo .charitylink {margin: 0; float: left;}
-					#charityflyout .charityinfo h4 {margin: 8px 0 0 0;}
-					#charityflyout .charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
+			#charityflyout #charityinfo {display: none; width: 0; position: absolute; top: 375px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 120px; background-color: rgba(255, 255, 255, .9);}
+				#charityflyout #charityinfo .charitylink {margin: 0; float: left;}
+					#charityflyout #charityinfo h4 {margin: 8px 0 0 0;}
+					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
 
 				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0;}
 					ul.charitysociallinks li {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('images/sociallinks.png') no-repeat;}
