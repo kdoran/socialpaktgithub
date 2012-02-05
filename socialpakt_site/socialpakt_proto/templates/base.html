@@ -164,7 +164,18 @@
 
       <!-- Past Shirts -->
       <div id="pastshirts">
-        <!-- KEVIN can you add some past shirts stuff here? -->
+        {% for prod in previous_products %}
+          <li class="past_shirt">
+            <div class="smallshirt">
+              {% for photo in prod.productphoto_set.all %}
+                {% thumbnail photo.photo "245" format="PNG" as im %}
+                    <img src="{{ im.url }}" >
+                {% endthumbnail %}
+              {% endfor %}
+            </div>
+            <h3><a href="{% url shirt prod.slug %}">{{prod.title}}</a></h3>
+          </li>
+      {% endfor %}
       </div>
     </div>
     

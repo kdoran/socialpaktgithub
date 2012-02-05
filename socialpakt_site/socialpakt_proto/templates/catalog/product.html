@@ -47,6 +47,9 @@
 {% block main %}
     <div id="featuredshirt" class="{{product.slug}}">
       <div class="wrapper">
+      {% if not product %}
+        <div id="product_coming">Product coming soon</div>
+      {% else %}
 
       <!-- Shirt -->
       <div id="shirt" class="{{product.slug}}">
@@ -119,7 +122,7 @@
           
           {% if product.date_expires >= now %}
             <div class="daysremaining helper">
-              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> days remaining to purchase this shirt at its featured price.
+              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> <span id="days">days</span> remaining to purchase this shirt at its featured price.
             </div>
           {% endif %}
         </div>
@@ -143,9 +146,10 @@
               </div>
             </div>
           </div>
-          <div class="amountdonated helper">
+          <div id="amountdonated" class="amountdonated helper">
             <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why sharpie">why?</span>
           </div>
+          <div id="amountdonated_helper" style="display:none;">blah blah blah stuff etc</div>
         </div>
 
         {% if can_add_to_cart %}
@@ -186,6 +190,8 @@
       </div>
     </div>
   </div>
+
+  {% endif %}
 {% endblock main %}
 
 {% block about %}
