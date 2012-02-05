@@ -96,10 +96,13 @@
             <div class="image selected">
               {% for photo in product.productphoto_set.all %}
                   {% if photo.photo_large %}
-                    <img src="{{photo.photo_large.url}}" alt="{{photo.description}}" />
+                    <img src="{{photo.photo_large.url}}" class="photo_large photo_{{ photo.id }}" {% if forloop.first %}{% else %}style="display:none;"{% endif %} alt="{{photo.description}}" />
                   {% else %}
-                    <img src="{{photo.photo.url}}" alt="{{photo.description}}">
+                    <img src="{{photo.photo.url}}" class="photo_large photo_{{ photo.id }}" {% if forloop.first %}{% else %}style="display:none;"{% endif %} alt="{{photo.description}}">
                   {% endif %}
+              {% endfor %}
+              {% for photo in product.productphoto_set.all %}
+                <a href="javascript:void();"><img src="{{photo.photo.url}}" class="photo_{{ photo.id }} photo_thumbnail" style="width:50px;" alt="{{photo.description}}"></a>
               {% endfor %}
             </div>
           </div>
