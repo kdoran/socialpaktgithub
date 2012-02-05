@@ -24,6 +24,10 @@
 			ref_time: Date.parse(expiresdate),
 			format: '%d'
 		});
+		$("#charityflyout").hover(
+			function(){$("#charityinfo").show().animate({width: "545px"}, 200);},
+			function(){$("#charityinfo").animate({width: "0"}, 200, function(){$(this).hide();});}
+		);
 		// Set up the photobrowser
 		$("div#shirt div.shirtimage.thumbnail").click(function(){
 			var cur_sel = $("div#shirt div.shirtimage.big");
