@@ -73,7 +73,7 @@
             <div id="charityinfo">
               <div class="charitylink">
                 <h4>{{product.benefits.name}}</h4>
-                <span class="goto sharpie">go to</span>
+                <span class="goto">go to</span>
                 {% for link in product.benefits.partnerlink_set.all %}
                   {% if link.link_class == "homepage" %}
                     <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
@@ -125,7 +125,7 @@
             <span class="dollar">$</span>
             <span class="number">{{product.price|floatformat}}</span>
           </div>
-          <div class="tagline sharpie">{{product.call_to_action}}</div>
+          <div class="tagline">{{product.call_to_action}}</div>
           
           {% if product.date_expires >= now %}
             <div class="daysremaining helper">
@@ -149,12 +149,12 @@
           <div class="progress">
             <div id="progressbar">
               <div class="percentage">
-                <span class="label sharpie"><span id="percentage_container"></span>%</span>
+                <span class="label"><span id="percentage_container"></span>%</span>
               </div>
             </div>
           </div>
           <div id="amountdonated" class="amountdonated helper">
-            <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why sharpie">why?</span>
+            <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why">why?</span>
           </div>
           <div id="amountdonated_helper" style="display:none;">blah blah blah stuff etc</div>
         </div>
@@ -212,21 +212,21 @@
 
       <!-- Featured Charity -->
       <div class="charity">
-        <span class="label sharpie">featured nonprofit</span>
+        <span class="label">featured nonprofit</span>
         <h2><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h2>
         
         <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a></div>
         <!-- TODO kevin can we make this the alternate logo image if there is one? also, if there isn't a logo can we revert back to the h2 somehow? add an if to the .charity div so it knows if there's an image? -->
 
-        <p><span class="truncate_50">{{product.benefits.about|safe|striptags}}</span> <a href="{% url nonprofit product.benefits.slug %}" class="sharpie morelink">more&#8230;</a></p> 
+        <p><span class="truncate_50">{{product.benefits.about|safe|striptags}}</span> <a href="{% url nonprofit product.benefits.slug %}" class="morelink">more&#8230;</a></p> 
       </div>
 
       <!-- Artist -->
       <div class="artist">
-        <span class="label sharpie">about the artist</span>
+        <span class="label">about the artist</span>
         <h2><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h2>
         <div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{% if product.artist.image %}{{product.artist.image.url}}{% endif %}" alt="{{product.artist.name}}"></a></div>
-        <p><span class="truncate_50">{{product.artist.about|safe|striptags}}</span> <a href="{% url artist product.artist.slug %}" class="sharpie morelink">more&#8230;</a></p>
+        <p><span class="truncate_50">{{product.artist.about|safe|striptags}}</span> <a href="{% url artist product.artist.slug %}" class="morelink">more&#8230;</a></p>
       </div>
 
     </div>
