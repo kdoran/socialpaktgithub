@@ -68,11 +68,11 @@
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: rgb(69, 28, 67);}
 					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/diagonal_pattern.png');}
-					.goals #progressbar .percentage .label {position: absolute; top: 35%; right: 8px; opacity: .2;}
+					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
 			.goals .amountdonated {margin: 10px 0 0 18px;}
-				.goals .amountdonated .why {display: inline-block; vertical-align: top; font-size: 9px; text-transform: lowercase; color: rgba(255, 255, 255, .75);}
-					.goals .amountdonated:hover .why {color: rgba(255, 255, 255, 1);}
+				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(images/why.png) no-repeat; text-indent: -9999em;}
+					.goals .amountdonated:hover .why {opacity: 1;}
 
 
 		.sizes {margin-top: 60px;}
@@ -113,13 +113,14 @@
 		
 		.partners .label {color: rgb(255, 138, 52); font-size: 11px; text-transform: lowercase;}
 		.partners h2 {margin-top: 5px;}
-		.partners a.morelink {font-size: 14px;}
 
 		.partners .charity {border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 40px; margin-bottom: 40px;}
+			.partners .charity .label {display: block; text-indent: -9999em; background: url(images/featurednonprofit.png) no-repeat;}
 			.partners .charity h2 {display: none;}
 			.partners .charity .charitylogo {}
 
 		.partners .artist {}
+			.partners .artist .label {display: block; text-indent: -9999em; background: url(images/abouttheartist.png) no-repeat;}
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
