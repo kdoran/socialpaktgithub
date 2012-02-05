@@ -29,15 +29,14 @@
 					#charityflyout #charityinfo h4 {margin: 8px 0 0 0;}
 					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
 
-				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0;}
-					ul.charitysociallinks li {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('images/sociallinks.png') no-repeat;}
-						ul.charitysociallinks li.facebook {background-position: 0 0;}
-							ul.charitysociallinks li.facebook:hover {background-position: 0 -40px;}
-						ul.charitysociallinks li.twitter {background-position: -48px 0;}
-							ul.charitysociallinks li.twitter:hover {background-position: -48px -40px;}
-						ul.charitysociallinks li.youtube {background-position: -97px 0;}
-							ul.charitysociallinks li.youtube:hover {background-position: -97px -40px;}
-						/* TODO add more + these may not be able to be sprited? check */
+				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0; width: 150px;}
+					ul.charitysociallinks li a {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('images/sociallinks.png') no-repeat;}
+						ul.charitysociallinks li.facebook a {background-position: 0 0;}
+							ul.charitysociallinks li.facebook a:hover {background-position: 0 -40px;}
+						ul.charitysociallinks li.twitter a {background-position: -48px 0;}
+							ul.charitysociallinks li.twitter a:hover {background-position: -48px -40px;}
+						ul.charitysociallinks li.youtube a {background-position: -97px 0;}
+							ul.charitysociallinks li.youtube a:hover {background-position: -97px -40px;}
 				
 
 
@@ -48,7 +47,7 @@
 			.price .amount {float: left;}
 				.price .amount .dollar {}
 				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
-			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 16px; line-height: 1.4;}
+			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 18px; line-height: 1.4;}
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 
