@@ -24,6 +24,9 @@
 			ref_time: Date.parse(expiresdate),
 			format: '%d'
 		});
+		$("#amountdonated").hover(
+			function(){$("#amountdonated_helper").toggle('fast');}
+		);
 		$("#charityflyout").hover(
 			function(){$("#charityinfo").show().animate({width: "545px"}, 200);},
 			function(){$("#charityinfo").animate({width: "0"}, 200, function(){$(this).hide();});}
