@@ -137,3 +137,21 @@ a {
 	-moz-transition: opacity .5s linear;
 	-o-transition: opacity .5s linear;
 	transition: opacity .5s linear;}
+
+
+/* Footer */
+
+
+/* mailinglist input focus */
+#mailinglist input:focus {
+	-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+}
+
+
+.sociallinks li {
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	transition: opacity .5s linear;}

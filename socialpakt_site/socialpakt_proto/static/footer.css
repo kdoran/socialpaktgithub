@@ -1,10 +1,42 @@
 /* ---------- SITE FOOTER -------------------------- */
 /* ------------------------------------------------- */
 
-#footer {background-color: rgb(255, 108, 0); padding: 50px 0; border: 1px solid #fff;}
+#footer {/* background-color: rgb(255, 150, 0); */ background-color: rgb(26, 106, 127); padding: 75px 0;}
 
-	h3.newslettertitle {color: rgb(255, 255, 255);}
-	#mailinglist label {display: none;}
+	#pastshirts {display: none;} /* TODO hiding them for now, i think there's too many things going on & there are lots of other ways to get into other old shirts. plus on launch we won't have old shirts up. */
+	#pastshirts {clear: both; list-style-type: none; margin: 0; padding: 0;}
+		#pastshirts:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+		#pastshirts li {width: 290px; float: left;}
+		#pastshirts li:last-child {margin-right: 0;}
 
-	#mailinglist input {display: inline-block; width: 979px; border: 0; padding: 10px; font-size: 24px;}
-	#mailinglist .homepage-submit {display: inline-block; width: 200px; margin-left: -5px; background-color: blue; border: 0; color: #fff;}
+			#pastshirts li .smallshirt {}
+			#pastshirts li h3 {}
+			#pastshirts li h3 a {color: rgba(255, 255, 255, .5);}
+			#pastshirts li h3 a:hover {color: rgba(255, 255, 255, 1);}
+
+
+	#mailinglist {clear: both; margin-top: 75px;}
+		h3.newslettertitle {text-indent: -9999em; background: url(images/mailinglist.png) no-repeat; padding-bottom: 10px; float: left; width: 670px;}
+		#mailinglist label {display: block; float: left; color: rgb(255, 255, 255); padding-top: 33px; text-transform: uppercase; font-size: 20px; font-weight: 600;}
+
+		#mailinglist input {display: inline-block; width: 940px; border: 0; padding: 25px 15px; font-size: 32px; font-weight: normal; font-family: "proxima-nova"; color: rgb(0, 43, 57);}
+			#mailinglist input:focus {outline: none;}
+		#mailinglist .homepage-submit {display: inline-block; width: 230px; margin-left: -5px; background-color: rgb(231, 42, 117); border: 0; color: rgb(255, 255, 255); text-transform: uppercase;}
+
+		#mailinglist .errorlist {display: none;}
+		#mailinglist p {clear: both; margin: 0; color: rgba(255, 255, 255, .5); font-style: italic;}
+
+	.socialpaktlinks {clear: both; padding-top: 20px;}
+		.sociallinks, .footernav {list-style-type: none; padding: 0; margin: 0;}
+		.sociallinks li, .footernav li {display: block; float: left; margin-right: 10px;}
+
+		.socialpaktlinks .logo_large {float: left;}
+		.sociallinks {float: left; margin-left: 25px; padding-top: 30px;}
+			.sociallinks li {opacity: .75;}
+			.sociallinks li a {display: block; width: 57px; height: 55px; text-indent: -9999em;}
+				.sociallinks li:hover {opacity: 1;}
+			.sociallinks li.facebook {background: url(images/sharing_facebook.png) no-repeat;}
+			.sociallinks li.twitter {background: url(images/sharing_twitter.png) no-repeat;}
+			.sociallinks li.youtube {background: url(images/sharing_youtube.png) no-repeat;}
+
+		.footernav {clear: both;}

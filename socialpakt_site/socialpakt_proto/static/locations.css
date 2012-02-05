@@ -5,7 +5,6 @@
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#locations .location {width: 290px; float: left;} /* TODO browser test */
-		#locations .location:last-child {margin-right: 0;}
 
 		/* Location Titles */
 		.location h3 {text-transform: uppercase; font-size: 40px; text-indent: -9999em; background: url('images/locations_sprite.png') no-repeat; height: 30px;} /* TODO better image or this is OK? */

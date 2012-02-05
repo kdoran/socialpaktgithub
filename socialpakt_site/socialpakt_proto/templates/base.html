@@ -161,22 +161,6 @@
             <p>Each time you sport a SocialPakt shirt, you are sharing your support with the world. Don’t be shy!</p>
           </div>
       </div>
-
-      <!-- Past Shirts -->
-      <div id="pastshirts">
-        {% for prod in previous_products %}
-          <li class="past_shirt">
-            <div class="smallshirt">
-              {% for photo in prod.productphoto_set.all %}
-                {% thumbnail photo.photo "245" format="PNG" as im %}
-                    <img src="{{ im.url }}" >
-                {% endthumbnail %}
-              {% endfor %}
-            </div>
-            <h3><a href="{% url shirt prod.slug %}">{{prod.title}}</a></h3>
-          </li>
-      {% endfor %}
-      </div>
     </div>
     
   </div>
@@ -190,13 +174,32 @@
     <div id="footer">
     <div class="wrapper">
 
+      <!-- Past Shirts -->
+      <ul id="pastshirts">
+        {% for prod in previous_products %}
+          <li class="past_shirt">
+            <div class="smallshirt">
+              {% for photo in prod.productphoto_set.all %}
+                {% thumbnail photo.photo "245" format="PNG" as im %}
+                    <img src="{{ im.url }}" >
+                {% endthumbnail %}
+              {% endfor %}
+            </div>
+            <h3><a href="{% url shirt prod.slug %}">{{prod.title}}</a></h3>
+            <!-- TODO can we add how much the shirt sold? -->
+          </li>
+      {% endfor %}
+      </ul>
+
       {% if form %}
       <div id="mailinglist">
           <form id="emailform" method="post" action="."> 
             {% csrf_token %}
-            <h3 class="newslettertitle">Be the first to know about our new shirts!</h3>
-            <label for="home_email_address">Sign up for our mailing list:</label> <input class="homepage-email" type="email" id="home_email_address" placeholder="Email Address" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Up!" />
+            <h3 class="newslettertitle sharpie">Be the first to know about our new shirts!</h3>
+            <label for="home_email_address">Sign up for our mailing list!</label>
+            <input class="homepage-email" type="email" id="home_email_address" placeholder="type your email address in here!" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Me Up!" />
             {{ form.email.errors }}
+            <p>We promise never to sell your email, spam you, or otherwise be shady! We'll only email you about cool new shirts and events.</p>
           </form> 
       </div>
       {% endif %}
@@ -204,15 +207,15 @@
 
       <div class="socialpaktlinks">
 
-        <img src="{{ STATIC_URL }}images/socialpaktlogo_large.png" alt="SocialPakt">
+        <img src="{{ STATIC_URL }}images/socialpaktlogo_large.png" alt="SocialPakt" class="logo_large">
 
         <ul class="sociallinks">
-            <a href="http://www.facebook.com/SocialPakt"><li class="facebook">Facebook</li></a>
-            <a href="http://www.twitter.com/SocialPakt"><li class="twitter">Twitter</li></a>
-            <a href="http://www.youtube.com/user/SocialPakt"><li class="youtube">YouTube</li></a>
+            <li class="facebook"><a href="http://www.facebook.com/SocialPakt">Facebook</a></li>
+            <li class="twitter"><a href="http://www.twitter.com/SocialPakt">Twitter</a></li>
+            <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
         </ul>
 
-        <ul class="subnav">
+        <ul class="footernav">
             <li><a href="/sizingchart">Sizing Chart</a></li>
             <li><a href="/press/">Press</a></li>
             <li><a href="http://blog.socialpakt.com">Blog</a></li>
