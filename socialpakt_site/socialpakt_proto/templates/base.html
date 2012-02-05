@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="blank {{product.slug}}" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %} >
+<body class="blank {{product.slug}}" {% if product.background_photo %}style="background-image:url({{ product.background_photo.url }})"{% else %} {% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %} {% endif %}>
 
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
@@ -241,11 +241,8 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-      <!-- Lettering.js -->
-      <!-- <script src="{{ STATIC_URL }}js/jquery.lettering-0.6.1.min.js"></script> -->
 
-
-      <script src="{{ STATIC_URL }}js/globals.js"></script>
+    <script src="{{ STATIC_URL }}js/globals.js"></script>
 
 
     {% endblock globaljs %}
