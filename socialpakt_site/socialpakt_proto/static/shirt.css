@@ -48,8 +48,8 @@
 			.price .amount {float: left;}
 				.price .amount .dollar {}
 				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
-			.price .tagline {float: left; width: 65%; margin-left: 10px; font-size: 18px; line-height: 1.5;}
-			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. and/or use Knockout bg image? also make this clickable to display a little lightbox explaining how it works */
+			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 16px; line-height: 1.4;}
+			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 
 		.goals {clear: both; padding-top: 40px;}

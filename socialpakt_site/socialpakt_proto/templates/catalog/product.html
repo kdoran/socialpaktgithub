@@ -47,8 +47,13 @@
 {% block main %}
     <div id="featuredshirt" class="{{product.slug}}">
       <div class="wrapper">
+
       {% if not product %}
-        <div id="product_coming">Product coming soon</div>
+        <div id="product_coming">
+          <h1>Sorry!</h1>
+          <h3>There's no shirt here right now!</h3>
+          <p>Check back soon for a new one, and in the meantime, see what our other locations have to offer.</p>
+        </div>
       {% else %}
 
       <!-- Shirt -->
