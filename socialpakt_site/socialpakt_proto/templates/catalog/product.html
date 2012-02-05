@@ -119,7 +119,7 @@
           
           {% if product.date_expires >= now %}
             <div class="daysremaining helper">
-              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> days remaining to purchase this shirt at its featured price.
+              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> <span id="days">days</span> remaining to purchase this shirt at its featured price.
             </div>
           {% endif %}
         </div>

@@ -24,6 +24,10 @@
 			ref_time: Date.parse(expiresdate),
 			format: '%d'
 		});
+		var daysleft = $('#expiresdate').text();
+		if (daysleft == 1){
+			$("#days").text("day");
+		}
 		$("#amountdonated").hover(
 			function(){$("#amountdonated_helper").toggle('fast');}
 		);
