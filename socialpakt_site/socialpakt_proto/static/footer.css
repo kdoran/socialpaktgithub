@@ -1,4 +1,10 @@
 /* ---------- SITE FOOTER -------------------------- */
 /* ------------------------------------------------- */
 
-#footer {background-color: #ff6c00; height: 500px;}
+#footer {background-color: rgb(255, 108, 0); padding: 50px 0; border: 1px solid #fff;}
+
+	h3.newslettertitle {color: rgb(255, 255, 255);}
+	#mailinglist label {display: none;}
+
+	#mailinglist input {display: inline-block; width: 979px; border: 0; padding: 10px; font-size: 24px;}
+	#mailinglist .homepage-submit {display: inline-block; width: 200px; margin-left: -5px; background-color: blue; border: 0; color: #fff;}

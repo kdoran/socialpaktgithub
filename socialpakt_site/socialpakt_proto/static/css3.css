@@ -129,3 +129,11 @@ a {
 	-ms-transform: rotate(4deg);
 	transform: rotate(4deg);
 }
+
+
+/* Mission */
+#mission a img {
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	transition: opacity .5s linear;}

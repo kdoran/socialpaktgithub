@@ -49,8 +49,10 @@
 	}
 
 
-	#mission {text-align: center; margin-left: -63px;}
-		#mission h1 {display: none;}
+	#mission {text-align: center; margin-left: -63px; cursor: pointer;}
+		#mission h1 {display: block; text-indent: -9999em; margin: 0;}
+		#mission a img {opacity: .75;}
+		#mission a:hover img {opacity: 1;}
 
 	#socialpakt .aboutus {padding: 0 20px; margin-top: -10px;}
 		#socialpakt .aboutus h2 {margin-top: 0;}
@@ -60,7 +62,7 @@
 		#socialpakt .aboutus .wearyourshirt {width: 25%; float: right; margin-right: 4%;}
 
 		#socialpakt .aboutus h4 {margin-bottom: 0;}
-		#socialpakt .aboutus p {margin-top: 0;}
+		#socialpakt .aboutus p {margin-top: 0; color: rgb(0, 43, 57);}
 
 		#socialpakt .aboutus .buyashirt h4 {display: block; text-indent: -9999em; background: url(images/mission_buyashirt.png) no-repeat; width: 205px; height: 50px;}
 
