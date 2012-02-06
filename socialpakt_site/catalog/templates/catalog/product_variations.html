@@ -1,7 +1,9 @@
-<ul class="options">
+<div class="select">
 	{% for variation in variations %}
 		{% if not product.has_inventory %}
-			<li id="{{ variation.description }}" class="size stock-1">{{ variation.display_text }}</li>
+			<div id="{{ variation.description }}" class="size stock-1 sizeselect">{{ variation.display_text }}</div>
 		{% endif %}
 	{% endfor %}
-</ul>
+</div>
+
+

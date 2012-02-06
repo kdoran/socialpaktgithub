@@ -102,7 +102,7 @@
                   {% endif %}
               {% endfor %}
               {% for photo in product.productphoto_set.all %}
-                <a href="javascript:void();"><img src="{{photo.photo.url}}" class="photo_{{ photo.id }} photo_thumbnail" style="width:50px;" alt="{{photo.description}}"></a>
+                <a href="javascript:void(0);"><img src="{{photo.photo.url}}" class="photo_{{ photo.id }} photo_thumbnail" style="width:50px;" alt="{{photo.description}}"></a>
               {% endfor %}
             </div>
           </div>

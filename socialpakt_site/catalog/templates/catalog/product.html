@@ -45,119 +45,209 @@
 {% endblock localscripts %}
 
 {% block main %}
-    <div id="productblock">
-        <div id="shirtblock">
-          <h3 class="explanation"><span class="label">Each tee you buy</span>{{product.call_to_action}}</h3>
-          <div id="shirt">
-              {% for photo in product.productphoto_set.all %}
-              <div class="shirtimage {% if forloop.first %}big{% else %}thumbnail{% endif %}">
-                  <img width="580px" src="{{photo.photo.url}}" alt="{{photo.description}}">
-                  {% if photo.photo_large %}
-                    <a class="photodetail" href="{{photo.photo_large.url}}" alt="Detail">Large</a>
-                  {% endif %}
-              </div>
-              {% endfor %}
-          </div>
-          <a id="photodetaillink" href="#">Show Large</a>
+    <div id="featuredshirt" class="{{product.slug}}">
+      <div class="wrapper">
+
+      {% if not product %}
+        <div id="product_coming">
+          <h1>Sorry!</h1>
+          <h3>There's no shirt here right now!</h3>
+          <p>Check back soon for a new one, and in the meantime, see what our other locations have to offer.</p>
         </div>
+      {% else %}
 
-        <div id="purchase">
+      <!-- Shirt -->
+      <div id="shirt" class="{{product.slug}}">
 
+          <!-- Charity -->
+          <div id="charityflyout">
+            
+            <!-- Charity Seal and Logo -->
+            <div class="charitylogo">
+              <div class="logoimage">
+                <img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"/>
+              </div>
+            </div>
+
+            <!-- Charity Flyout - hidden til hover -->
+            <div id="charityinfo">
+              <div class="charitylink">
+                <h4>{{product.benefits.name}}</h4>
+                <span class="goto">go to</span>
+                {% for link in product.benefits.partnerlink_set.all %}
+                  {% if link.link_class == "homepage" %}
+                    <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <ul class="charitysociallinks">
+                {% for link in product.benefits.partnerlink_set.all %}
+                  {% if link.link_class == "facebook" or link.link_class == "twitter" or link.link_class == "youtube" %}
+                    <li class="{{link.link_class}}"><a href="{{link.link}}">{{link.link_text}}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Shirt Image -->
+          <div id="shirtimage">
+            <div class="image selected">
+              {% for photo in product.productphoto_set.all %}
+                  {% if photo.photo_large %}
+                    <img src="{{photo.photo_large.url}}" class="photo_large photo_{{ photo.id }}" {% if forloop.first %}{% else %}style="display:none;"{% endif %} alt="{{photo.description}}" />
+                  {% else %}
+                    <img src="{{photo.photo.url}}" class="photo_large photo_{{ photo.id }}" {% if forloop.first %}{% else %}style="display:none;"{% endif %} alt="{{photo.description}}">
+                  {% endif %}
+              {% endfor %}
+              {% for photo in product.productphoto_set.all %}
+                <a href="javascript:void(0);"><img src="{{photo.photo.url}}" class="photo_{{ photo.id }} photo_thumbnail" style="width:50px;" alt="{{photo.description}}"></a>
+              {% endfor %}
+            </div>
+          </div>
+
+            <!-- Toggle Links -->
+            <!-- <div id="toggle">
+              <a href="" class="mens selected">See Men's</a>
+              <a href="" class="womens">See Women's</a>
+            </div> -->
+
+          <!-- Sharing buttons -->
+          <div id="sharing">
+            <!-- TODO Kevin we need to pull these in. you can copy the stuff from the old file but I want to change the Share It setup. not sure how best to do this. -->
+          </div>
+      </div>
+
+      <!-- Shirt Actions -->
+      <div id="shirtactions">
+
+        <!-- Price -->
+        <div class="price">
+          <div class="amount">
+            <span class="dollar">$</span>
+            <span class="number">{{product.price|floatformat}}</span>
+          </div>
+          <div class="tagline">{{product.call_to_action}}</div>
+          
           {% if product.date_expires >= now %}
-            <div id="timeleft">
-                <h3>time left to buy:</h3>
-                <div id='expiresdate'>{{product.date_expires|date:"Y-m-d H:i:s"}}</div>
+            <div class="daysremaining helper">
+              <span id="expiresdate">{{product.date_expires|date:"Y-m-d H:i:s"}}</span> <span id="days">days</span> remaining to purchase this shirt at its featured price.
             </div>
           {% endif %}
-
-        <div class="charity">
-            {% if product %}
-              <h3>Featured Nonprofit</h3>
-              <a href="{% url nonprofit product.benefits.slug %}" class="charity_logo"><img width="250px" style="width:250px" src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a>
-            {% endif %}
-          </div>
-
-
-          <div id="donations">
-              <div class="donation">
-                  <h3>donated</h3>
-                  <div class="number"><span class="dollarsign">$</span>{{product.total_raised|floatformat}}</div>
-              </div>
-              <div class="goal">
-                  <h3>our goal</h3>
-                  <div class="number"><span class="dollarsign">$</span>{{product.goal|floatformat}}</div>
-              </div>
-          </div>
-
-
-
-
-          {% if can_add_to_cart %}
-          
-
-          <form action="https://socialpakt.foxycart.com/cart" method="post">
-              <input type="hidden" name="name" value="{{product.cart_title}}" />
-              <input type="hidden" name="code" value="{{product.slug}}" />
-              <input type="hidden" name="price" value="{{product.price}}" />
-              <input type="hidden" name="quantity" value="1">
-              <select id="shirt_select" name="shirt">
-                  {% for v in product.productvariation_set.all %}
-                    {% if v.inventory > 0 or not product.has_inventory %}
-                      <option value="{{v.description}}">{{v.description}}</option>
-                    {% endif %}
-                  {% endfor %}
-              </select>
-          
-              <div id="sizes">
-                  {% for cat in product.available_variations.all %}
-                      <div class="variationcategory">
-                          <h3><span class="price">${{product.price|floatformat}}</span> {{ cat.display_text }}</h3>
-                          <a class="sizeandfit" href="/sizingchart/">size and fit</a>
-                          {% render_variations cat product %}
-                      </div>
-                  {% endfor %}
-              </div>
-
-          
-              <div id="addtocart">
-                  <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
-              </div>
-
-          </form>
-
-          <!--<form action="https://socialpakt.foxycart.com/cart" method="post">
-              <input type="text" name="coupon" value="{{product.cart_title}}" />         
-              <div id="addtocart">
-                  <input type="submit" name="addcoupon" value="Add Coupon">
-              </div>
-
-          </form>-->
-
-
-          
-          {% endif %}
         </div>
-    </div>
-{% endblock main %}
 
-{% block fbcomments %}
-<div id="comments">
-  <h3>What People Are Saying</h3>
-    <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
-</div>
-{% endblock fbcomments %}
+        <!-- Goals -->
+        <div class="goals">
+          <div class="donated">
+            <span class="dollar">$</span>
+            <span id="donated_container" class="number">{{product.total_raised|floatformat}}</span>
+            <span class="helper">dollars donated</span>
+          </div>
+            <div class="goal">
+            <span class="dollar">$</span>
+            <span id="goal_container" class="number">{{product.goal|floatformat}}</span>
+            <span class="helper">our donation goal</span>
+          </div>
+          <div class="progress">
+            <div id="progressbar">
+              <div class="percentage">
+                <span class="label"><span id="percentage_container"></span>%</span>
+              </div>
+            </div>
+          </div>
+          <div id="amountdonated" class="amountdonated">
+            <span class="helper">
+              <span class="number">$6</span> donated per <span class="number">${{product.price|floatformat}}</span> shirt. <span class="why">why?</span>
+            </span>
+            <div id="amountdonated_helper" style="display:none;">
+              <p><span class="helper">Why only $6?</span>
+              $6 is the most we can give away and still afford to keep the lights on! We'd love to give away more, but to do so we'd have to compromise the quality of our shirts...and nobody wants a shirt with holes in it!</p>
+            </div>
+          </div>
+        </div>
+
+        {% if can_add_to_cart %}
+        
+
+        <form action="https://socialpakt.foxycart.com/cart" method="post">
+            <input type="hidden" name="name" value="{{product.cart_title}}" />
+            <input type="hidden" name="code" value="{{product.slug}}" />
+            <input type="hidden" name="price" value="{{product.price}}" />
+            <input type="hidden" name="quantity" value="1">
+            <select id="shirt_select" name="shirt">
+                {% for v in product.productvariation_set.all %}
+                  {% if v.inventory > 0 or not product.has_inventory %}
+                    <option value="{{v.description}}">{{v.description}}</option>
+                  {% endif %}
+                {% endfor %}
+            </select>
+        
+        <!-- Sizes -->
+        <div class="sizes">
+            {% for cat in product.available_variations.all %}
+                <div class="category_size {{ cat.display_text|slugify }}">
+                  <h5>{{ cat.display_text }}</h5>
+                    {% render_variations cat product %}
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="addtocart">
+          <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
+          <div id="cart">2 items $44</div>
+        </div>
+
+        </form>
+
+        {% endif %}  <!-- can_add_to_cart end  -->
+
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+{% endblock main %}
 
 {% block about %}
   {% if product %}
-    <div class="aboutcharity">
-        <span class="label">about the charity</span>
-        <h3><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h3>
-        <p>{{product.benefits.about|safe|truncatewords_html:30|striptags}} <a href="{% url nonprofit product.benefits.slug %}">more</a></p>
-    </div>
-    <div class="aboutartist">
+  <!-- Shirt Details -->
+  <div id="shirtdetails">
+    <div class="wrapper">
+    
+    <!-- About this Shirt -->
+    <div class="partners">
+
+      <!-- Featured Charity -->
+      <div class="charity">
+        <span class="label">featured nonprofit</span>
+        <h2><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h2>
+        
+        <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.large_image %}{{product.benefits.large_image.url}}{% else %} {% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}{% endif %}" alt="{{product.benefits.name}}"></a></div>
+        <!-- TODO kevin can we make this the alternate logo image if there is one? also, if there isn't a logo can we revert back to the h2 somehow? add an if to the .charity div so it knows if there's an image? -->
+
+        <p><span class="truncate_50">{{product.benefits.about|safe|striptags}}</span> <a href="{% url nonprofit product.benefits.slug %}" class="morelink">more&#8230;</a></p> 
+      </div>
+
+      <!-- Artist -->
+      <div class="artist">
         <span class="label">about the artist</span>
-        <h3><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h3>
-        <p>{{product.artist.about|safe|truncatewords_html:30|striptags}} <a href="{% url artist product.artist.slug %}">more</a></p>
+        <h2><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h2>
+        {% if product.artist.image %}<div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{{product.artist.image.url}}" alt="{{product.artist.name}}"></a></div>{% endif %}
+        <p><span class="truncate_50">{{product.artist.about|safe|striptags}}</span> <a href="{% url artist product.artist.slug %}" class="morelink">more&#8230;</a></p>
+      </div>
+
     </div>
+
+    <!-- Comments -->
+    {% block fbcomments %}
+    <div id="comments">
+      <fb:comments href="http://{{ request.get_host }}/shirt/{{product.slug}}/" num_posts="5" width="600"></fb:comments>
+    </div>
+    {% endblock fbcomments %}
+
+    </div>
+  </div>
   {% endif %}
+
 {% endblock about %}

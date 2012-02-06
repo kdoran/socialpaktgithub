@@ -7,13 +7,14 @@
 {% endblock sharethis %}
 
 {% block main %}
+  <div class="wrapper">
     <div id="partnerblock">
-        <h2>SocialPakt Shirts</h2>
+        <h2>Past Causes</h2>
         <ul id="partnerlist" class="artist">
           {% for shirt in object_list %}
             <li class="partner artist">
               <a class="artistimage" href="{% url shirt shirt.slug %}"><img src="{{shirt.productphoto_set.all.1.photo.url}}" alt="{{shirt.title}}"></a>
-              <div id="description">
+              <div class="description">
                 <h3><a href="{% url shirt shirt.slug %}">{{shirt.title}}</a></h3>
                 <p>{{shirt.description|safe|truncatewords_html:30|striptags}} <a class="more" href="{% url shirt shirt.slug %}">Learn More</a></p>
               </div>
@@ -21,4 +22,9 @@
         {% endfor %}
         </ul>
     </div>
+  </div>
+
 {% endblock main %}
+
+{% block locations %}
+{% endblock locations %}
