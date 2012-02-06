@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
@@ -30,7 +31,7 @@
 
 </head>
 
-<body class="blank {% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %}{% endif %}>
+<body class="blank {% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
 
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
@@ -103,10 +104,12 @@
 </div>
 
 
-	<!-- Locations -->
-  {% load thumbnail %}
-	<div id="locations">
-	<div class="wrapper">
+{% block locations %}
+<!-- Locations -->
+
+{% load thumbnail %}
+  <div id="locations">
+  <div class="wrapper">
       {% for cat in product_categories %}
       <div class="location {{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
         <h3>{{ cat.display_text }}</h3>
@@ -132,7 +135,8 @@
       {% endfor %}
       
     </div>
-	</div>
+  </div>
+{% endblock locations%}
 
   <!-- SocialPakt sections -->
   <div id="socialpakt">
