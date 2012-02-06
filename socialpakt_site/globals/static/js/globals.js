@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	// Shim placeholder text as necessary for input elements
+	$(".copyright_year").text(new Date().getFullYear());
 	if(!Modernizr.input.placeholder){
 		$("input").each(function(){
 			if($(this).val()=="" && $(this).attr("placeholder")!=""){
