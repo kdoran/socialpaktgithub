@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
@@ -30,7 +31,7 @@
 
 </head>
 
-<body class="blank {% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% if product.background_color %} style="background-color({{ product.background_color }})"{% endif %}{% endif %}>
+<body class="blank {% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
 
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
@@ -103,36 +104,8 @@
 </div>
 
 
-	<!-- Locations -->
-  {% load thumbnail %}
-	<div id="locations">
-	<div class="wrapper">
-      {% for cat in product_categories %}
-      <div class="location {{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
-        <h3>{{ cat.display_text }}</h3>
-        {% for prod in cat.product_set.all|slice:":1" %}
-          <div class="smallshirt">
-            {% for photo in prod.productphoto_set.all %}
-              {% thumbnail photo.photo "245" format="PNG" as im %}
-                  <img src="{{ im.url }}" >
-              {% endthumbnail %}
-            {% endfor %}
-          </div>
-          <h4 class="charityname">{{ prod.benefits.name }}</h4>
-            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto sharpie">go to</span>
-            {% for link in prod.benefits.partnerlink_set.all %}
-              {% if link.link_class == "homepage" %}
-                <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
-              {% endif %}
-            {% endfor %}
-            </a>
-            <p><span class="truncate_28">{{prod.benefits.about|safe|striptags}}</span> <a href="{% if prod.benefits.slug %}{% url nonprofit prod.benefits.slug %} {% endif %}" class="sharpie morelink">more&#8230;</a></p>
-         {% endfor %}
-      </div>
-      {% endfor %}
-      
-    </div>
-	</div>
+{% block locations %}
+{% endblock locations%}
 
   <!-- SocialPakt sections -->
   <div id="socialpakt">
