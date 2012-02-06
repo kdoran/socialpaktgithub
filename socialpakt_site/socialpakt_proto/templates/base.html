@@ -115,7 +115,7 @@
         <h3>{{ cat.display_text }}</h3>
         {% for prod in cat.product_set.all|slice:":1" %}
           <div class="smallshirt">
-            {% for photo in prod.productphoto_set.all %}
+            {% for photo in prod.productphoto_set.all|slice:":1" %}
               {% thumbnail photo.photo "245" format="PNG" as im %}
                   <img src="{{ im.url }}" >
               {% endthumbnail %}
