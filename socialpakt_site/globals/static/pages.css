@@ -1,0 +1,59 @@
+/* ---------- LIST AND STATIC PAGES ---------------- */
+/* ------------------------------------------------- */
+
+/* TODO change this to just static when we make the blank class dynamic */
+
+#partnerblock {width: 1200px; margin: 0 auto; padding-bottom: 80px;} /* TODO add wrapper class */
+	#partnerblock:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+	ul.partnerlist {margin: 0; padding: 0;}
+		li.partner {list-style-type: none; display: block; clear: both; padding: 30px 0; border-bottom: 1px solid rgb(198, 235, 230);}
+			li.partner:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+			li.partner.artist {}
+			li.partner.nonprofit {}
+			/* TODO add causes, because the causes page is using the artist class here */
+
+			.artistimage, .nonprofitimage {display: block; width: 250px; float: left; margin-right: 50px;}
+			.artistimage img, .nonprofitimage img {width: 100%; border: 0; background-color: rgb(119, 51, 116); text-indent: -9999em; display: block;}
+
+			.description {width: 800px; float: left;}
+
+
+
+
+    /* ARTIST PAGE IMAGES */
+    .artistpage #sidebar {float: left; width: 350px; padding-top: 30px;}
+        /* image */
+        .artistpage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; border: 10px solid #53a9b8;}
+            .artistpage .partnerimage img {margin-bottom: -10px; width: 100%;}
+
+    /* CHARITY PAGE IMAGES */
+    .npopage #sidebar {float: left; width: 400px; padding-top: 30px;}
+        /* image */
+        .npopage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; }
+            .npopage .partnerimage img {margin-bottom: -5px; width: 100%;}
+
+
+        /* LINKS -- both pages */
+        .partnerpage #sidebar ul {list-style-type: none; margin: 0; padding: 0;}
+        .partnerpage #sidebar h3 {color: #999; text-transform: uppercase; font-size: 12px; font-weight: normal;}
+        .partnerpage #sidebar .partnerlinks {margin: 30px 0; font-size: 32px;}
+            .partnerpage #sidebar .partnerlinks li {text-transform: uppercase; font-weight: 200; display: inline-block; margin-left: -8px;}
+            .partnerpage #sidebar .partnerlinks li a {padding: 2px 22px 2px 5px; color: rgb(83, 169, 184);}
+            .partnerpage #sidebar .partnerlinks li a:hover {color: #fff; text-decoration: none; background-color: rgb(83, 169, 184);}
+            .partnerpage #sidebar .partnerlinks .divider {font-weight: 800; margin-left: -27px; color: rgb(36, 105, 117);}
+            
+        .partnerpage #sidebar .tshirtlinks {}
+            .partnerpage #sidebar .tshirtlinks li {font-size: 24px; font-weight: 600;}
+                .partnerpage #sidebar .tshirtlinks li div.shirtdetails{clear:both;}
+                    .partnerpage #sidebar .tshirtlinks li div.shirtlink {margin-left:110px;}
+                    .partnerpage #sidebar .tshirtlinks li div.shirtpicture {float:left;}
+
+
+    /* ABOUT */
+    .partnerpage #description {float: right; width: 670px; font-size: 14px; line-height: 1.8em; font-weight: 400;}
+        .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117);}
+        .partnerpage #description p:first-child::first-line {font-weight: bold;}
+        .partnerpage #description h3 {clear: both; text-transform: uppercase; color: #471F45; font-size: 24px; margin-top: 40px;}
+
+        
