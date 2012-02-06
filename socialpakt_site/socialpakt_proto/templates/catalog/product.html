@@ -233,7 +233,7 @@
       <div class="artist">
         <span class="label">about the artist</span>
         <h2><a href="{% url artist product.artist.slug %}">{{product.artist.name}}</a></h2>
-        <div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{% if product.artist.image %}{{product.artist.image.url}}{% endif %}" alt="{{product.artist.name}}"></a></div>
+        {% if product.artist.image %}<div class="artistphoto"><a href="{% url artist product.artist.slug %}"><img src="{{product.artist.image.url}}" alt="{{product.artist.name}}"></a></div>{% endif %}
         <p><span class="truncate_50">{{product.artist.about|safe|striptags}}</span> <a href="{% url artist product.artist.slug %}" class="morelink">more&#8230;</a></p>
       </div>
 
