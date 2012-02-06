@@ -3,10 +3,12 @@
 /* what happens if no shirt is defined? if product or bg images are missing? */
 
 /* if no bg photo or color is defined */
-body.blank {background-color: #053745; background-image: url(images/shirt_fallback_texture.png);}
+body.static {background: rgb(255, 255, 255);} 
+body {background-color: #053745; background-image: url(images/shirt_fallback_texture.png);}
 
 	#product_coming {}
+		#product_coming:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 		#product_coming h1 {text-indent: -9999em; background: url(images/blank_sorry.png) no-repeat center right; width: 660px; height: 170px; float: left;}
-		#product_coming h3, #product_coming p {width: 435px; float: right; margin-left: 35px; color: rgb(255, 255, 255);}
+		#product_coming h3, #product_coming p {width: 435px; float: right; margin-left: 35px; color: rgb(26, 106, 127);}
 		#product_coming h3 {padding-top: 60px; margin-bottom: 0;}
 		#product_coming p {margin: 10px 0;}

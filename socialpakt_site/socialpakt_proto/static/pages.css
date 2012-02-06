@@ -1,7 +1,6 @@
 /* ---------- LIST AND STATIC PAGES ---------------- */
 /* ------------------------------------------------- */
 
-body.blank.static {background: rgb(255, 255, 255) !important;} 
 /* TODO change this to just static when we make the blank class dynamic */
 
 #partnerblock {width: 1200px; margin: 0 auto; padding-bottom: 80px;} /* TODO add wrapper class */

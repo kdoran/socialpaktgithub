@@ -31,7 +31,7 @@
 
 </head>
 
-<body class="blank {% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
+<body class="{% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
 
     {% block header %}
   <!-- Header - toggle expanded/collapsed class to show/hide information - needs to be location aware -->
