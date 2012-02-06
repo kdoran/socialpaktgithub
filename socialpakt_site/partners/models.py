@@ -12,6 +12,7 @@ class Partner(models.Model):
     about = models.TextField()
 
     image = models.ImageField(blank=True, null=True, upload_to="partner_photos/")
+    large_image = models.ImageField(blank=True, null=True, upload_to="partner_photos/")
 
     def get_active_shirts(self):
         if self.partner_type == "ART":

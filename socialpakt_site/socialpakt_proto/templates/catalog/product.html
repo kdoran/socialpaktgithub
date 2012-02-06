@@ -223,7 +223,7 @@
         <span class="label">featured nonprofit</span>
         <h2><a href="{% url nonprofit product.benefits.slug %}">{{product.benefits.name}}</a></h2>
         
-        <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"></a></div>
+        <div class="charitylogo"><a href="{% url nonprofit product.benefits.slug %}"><img src="{% if product.benefits.large_image %}{{product.benefits.large_image.url}}{% else %} {% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}{% endif %}" alt="{{product.benefits.name}}"></a></div>
         <!-- TODO kevin can we make this the alternate logo image if there is one? also, if there isn't a logo can we revert back to the h2 somehow? add an if to the .charity div so it knows if there's an image? -->
 
         <p><span class="truncate_50">{{product.benefits.about|safe|striptags}}</span> <a href="{% url nonprofit product.benefits.slug %}" class="morelink">more&#8230;</a></p> 
