@@ -102,12 +102,12 @@
 
 
          .addtocart {margin-top: 60px;}
-	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; line-height: 2;}
+	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; padding: 15px 0;}
 
 	         .addtocart input.disabled {background: url(images/addtocart_disabled.png) no-repeat center center, url(images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
 	         .addtocart input {background: url(images/addtocart.png) no-repeat center center, url(images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
 
-	         .addtocart #cart {text-align: center;}
+	         .addtocart #cart {text-align: center; display: none;} /* TODO */
 
 
 #shirtdetails {background: rgb(204, 204, 204) url(images/details_texture.png); padding: 60px 0;}
