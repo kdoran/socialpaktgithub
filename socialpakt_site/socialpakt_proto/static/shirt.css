@@ -121,7 +121,8 @@
 		.partners .charity {border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 40px; margin-bottom: 40px;}
 			.partners .charity .label {display: block; text-indent: -9999em; background: url(images/featurednonprofit.png) no-repeat;}
 			.partners .charity h2 {display: none;}
-			.partners .charity .charitylogo {}
+			.partners .charity .charitylogo {max-width: 670px;}
+				.partners .charity .charitylogo img {max-width: 100%;}
 
 		.partners .artist {}
 			.partners .artist .label {display: block; text-indent: -9999em; background: url(images/abouttheartist.png) no-repeat;}
