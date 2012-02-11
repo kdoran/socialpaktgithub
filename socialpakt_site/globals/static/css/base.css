@@ -1,14 +1,13 @@
 /* ---------- IMPORTS ------------------------------ */
 /* ------------------------------------------------- */
-  @import url("header.css");
-  @import url("shirt.css");
-  @import url("locations.css");
-  @import url("socialpakt.css");
-  @import url("footer.css");
-  @import url("pages.css");
-  @import url("css3.css");
   @import url("blank.css");
-  /* note, these files may not exist yet. we should remove the ones we don't create; this is a list of what i expect us to have. */
+  @import url("css3.css");
+  @import url("footer.css");
+  @import url("header.css");
+  @import url("locations.css");
+  @import url("pages.css");
+  @import url("socialpakt.css");
+  @import url("shirt.css");
 
 /* ---------- GLOBAL TEXT AND LINK STYLES ---------- */
 /* ------------------------------------------------- */

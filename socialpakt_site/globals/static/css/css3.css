@@ -1,342 +1,172 @@
-/* CSS3 STYLES */
+/* ---------- CSS3 & ENHANCEMENT ------------------- */
+/* ------------------------------------------------- */
 
 /* TEXT LINK TRANSITIONS */
 a {
-    -webkit-transition: opacity .5s ease-in, color .5s ease-in;
-    -moz-transition: opacity .5s ease-in, color .5s ease-in;
-    -o-transition: opacity .5s ease-in, color .5s ease-in;
-    transition: opacity .5s ease-in, color .5s ease-in;
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
     }
 
+/* dollar sign text shadow */
+.dollar {
+	text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);
+	filter: dropshadow(color=#000000, offx=1, offy=0);
+}
 
-/* HEADER MASKS */
-h1 {
-    -webkit-mask-image: url(../images/mask.png);
-    -o-mask-image: url(../images/mask.png);
-    -moz-mask-image: url(../images/mask.png);
-    mask-image: url(../images/mask.png);
-    }
-
-
-/* CSS3 GRADIENTS HEADER AND FOOTER */
-.backgroundgradient.header {
-    /* Internet Explorer */
-    *background:none;
-    background:none\0/;
-    filter:progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorstr=#ffb1d48a,endColorstr=#ff92d4da);
-    /* Recent browsers */
-    background-image:-webkit-gradient(linear,left top,right top,from(rgba(177,212,138,1)), to(rgba(146,212,218,1)));
-    background-image:-webkit-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
-    background-image:-moz-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
-    background-image:-o-linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
-    background-image:linear-gradient(left, rgba(177,212,138,1), rgba(146,212,218,1));
-    }
-
-.backgroundgradient.footer {
-    /* Internet Explorer */
-    *background: none;
-    background: none\0/;
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#ffdaaab5, endColorstr=#ff998fcd);
-    /* Recent browsers */
-    background-image: -webkit-gradient(linear, left top, right top,from(rgba(218,170,181,1)),to(rgba(153,143,205,1)));
-    background-image: -webkit-linear-gradient(left, rgba(218,170,181,1), rgba(153,143,205,1));
-    background-image: -moz-linear-gradient(left, rgba(218,170,181,1), rgba(153,143,205,1));
-    background-image: -o-linear-gradient(left, rgba(218,170,181,1), rgba(153,143,205,1));
-    background-image: linear-gradient(left, rgba(218,170,181,1), rgba(153,143,205,1));
-    background-repeat: repeat-x;
-    background-position: 0 -27px;
-    }
+/* super-light textshadow on the following text items: */
+/* text-shadow: 1px 0px 0px rgba(0, 0, 0, .3); */
+.helper,
+.price .tagline,
+.sizes h5,
+.location h3 {text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);}
 
 
 
+/* Header location nav hover inset shadow */
+#header ul.locationnav li a:hover {
+	-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+}
 
-/* CART TAB */
-#shoppingcart a {
-    -webkit-box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,.2);
-    -moz-box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,.2);
-    box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,.2);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=50);
-    opacity: .5;
-    }
-
-        #shoppingcart a:hover, #shoppingcart a:active {
-         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-        filter: alpha(opacity=100);
-        opacity: 1;   
-        }
+#header ul.locationnav li a {
+	-webkit-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    -moz-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    -o-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+    transition: box-shadow .2s ease-in, background-color .2s ease-in;
+}
 
 
-/* DONATIONS */
-.donated {
-    -webkit-transform: rotate(-2deg);
-     -moz-transform: rotate(-2deg);
-     transform: rotate(-2deg);
-    }
-    .donated .line2, .donated .line3 {
-        text-shadow: 1px 1px 1px #246975;
-        }
+/* Shirt */
+
+/* Circle and dropshadow on Charity logo in Shirt section */
+#charityflyout .charitylogo {
+	border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+}
+
+	/* rotated logo image */
+	.charitylogo .logoimage {
+		-moz-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		-o-transform: rotate(-4deg);
+		-ms-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+
+	/* flyout dropshadow */
+	#charityflyout .charityinfo {
+		-webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+		-moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+		box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+	}
+
+		/* Goto link rotation */
+		#charityflyout .charityinfo .goto {
+			-moz-transform: rotate(4deg);
+			-webkit-transform: rotate(4deg);
+			-o-transform: rotate(4deg);
+			-ms-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+
+/* Donation amount Why link rotation */
+.goals .amountdonated .why {
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
 
 
-/* SHIRT IMAGE */
-.shirtimage.thumbnail:after {
-    position: absolute; top: 40%; left: 30%;
-    content: "+"; display: block; color: #fff;
-    font-size: 72px; font-weight: 600;
-    text-shadow: 1px 1px 1px #333;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    filter: alpha(opacity=60);
-    opacity: .6;
-    }
+/* why link tooltip */
+#amountdonated_helper p {
+	-webkit-box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
+	box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
+}
 
-    .shirtimage.thumbnail img {
-        -webkit-transition: opacity .2s ease-in;
-        -moz-transition: opacity .2s ease-in;
-        -o-transition: opacity .2s ease-in;
-        transition: opacity .2s ease-in;
-        }
-
-
-/* PURCHASING SIZES */
-.size {
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    }
-    .size:hover {
-        -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.2);
-        -moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.2);
-        box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.2);
-        }
-    
-    .size.selected {
-        -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.5);
-        -moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.5);
-        box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,.5);
-        }
-
-    .size {
-        -webkit-transition: all .1s ease-in;
-        -moz-transition: all .1s ease-in;
-        -o-transition: all .1s ease-in;
-        transition: all .1s ease-in;
-        }
+/* Add to Cart text shadow */
+.addtocart input.disabled {text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);}
+.addtocart input {text-shadow: 2px 0 4px rgba(136, 15, 62, .75);}
 
 
 
-
-/* ADD TO CART BUTTON */
-input#cartbutton {
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-
-    -webkit-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5);
-    -moz-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5);
-    box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5);
-
-    background-image: url(../images/texture_button.png);
-    }
+/* Location inset shadow and gradient */
+#locations {
+	-webkit-box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+	-moz-box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+	box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+}
 
 
-    input#cartbutton:hover,
-    input#cartbutton:focus {
-        -webkit-box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5);
-        -moz-box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5);
-        box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5);
-        }
-
-    input#cartbutton.disabled {
-        -webkit-box-shadow: inset 0px 0px 17px 2px rgba(0,0,0,.3);
-        -moz-box-shadow: inset 0px 0px 17px 2px rgba(0,0,0,.3);
-        box-shadow: inset 0px 0px 17px 2px rgba(0,0,0,.3);
-        }
-
-    input#cartbutton {
-        -webkit-transition: all .5s ease-in;
-        -moz-transition: all .5s ease-in;
-        -o-transition: all .5s ease-in;
-        transition: all .5s ease-in;
-        }
-
-
-
-
-
-/* COMMENTS HEADER */
-#comments h3 {
-    -webkit-mask-image: url(../images/mask.png);
-    -o-mask-image: url(../images/mask.png);
-    -moz-mask-image: url(../images/mask.png);
-    mask-image: url(../images/mask.png);
-    }
+/* Location Shirt rotations */
+.location.newyork .smallshirt {
+	-moz-transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+	-o-transform: rotate(4deg);
+	-ms-transform: rotate(4deg);
+	transform: rotate(4deg);
+}
+			
+.location.california .smallshirt {
+	/* no rotation here */
+}
+			
+.location.canada .smallshirt {
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
+			
+.location.everywhere .smallshirt {
+	-moz-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
 
 
-/* SOCIAL LINKS TRANSITIONS */
+/* Goto link rotation */
+.location .goto {
+	-moz-transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+	-o-transform: rotate(4deg);
+	-ms-transform: rotate(4deg);
+	transform: rotate(4deg);
+}
+
+
+/* Mission */
+#mission a img {
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	transition: opacity .5s linear;}
+
+
+/* Footer */
+
+
+/* mailinglist input focus */
+#mailinglist input:focus {
+	-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+}
+
+
 .sociallinks li {
-    -webkit-transition: opacity .2s ease-in;
-    -moz-transition: opacity .2s ease-in;
-    -o-transition: opacity .2s ease-in;
-    transition: opacity .2s ease-in;
-    }
-
-
-/* CONTEST CALLOUT */
-.contestcallout h2 {
-    text-shadow: 1px 3px 2px rgba(255,255,255,.5);
-    }
-
-
-/* ABOUT US HEADER */
-.aboutus .line1 {
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    display: inline-block;
-    }
-
-
-/* NEWSLETTER */
-input.homepage-submit {
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    transition: all .5s ease-in;
-    }
-
-
-/* ARTIST AND PARTNER PAGES */
-
-#partnerblock h2 {
-    -webkit-mask-image: url(../images/mask.png);
-    -o-mask-image: url(../images/mask.png); 
-    -moz-mask-image: url(../images/mask.png);
-    mask-image: url(../images/mask.png);
-    }
-
-.partnerpage #sidebar .partnerlinks li a {
-    background-image: url(../images/texture_button.png);
-    background-position: center center;
-    }
-
-.artistpage .partnerimage {
-    position: relative;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    }
-
-
-
-
-.artistpage .partnerimage .overlay {
-    position: absolute; top:0; left: 0; width: 100%; height: 100%;
-    
-    -webkit-box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
-    -moz-box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 150px rgba(0,0,0,.2), inset 0 0 3px 1px rgba(0,0,0,.5);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/* CART PAGES */
-.fc_fieldset_container h2 {
-    -webkit-mask-image: url(../images/mask.png);
-    -o-mask-image: url(../images/mask.png);
-    -moz-mask-image: url(../images/mask.png);
-    mask-image: url(../images/mask.png);
-    }
-
-#fc_checkout_container input.fc_text {
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    
-    border: 1px solid rgba(36, 105, 117, .5);
-    
-    -webkit-box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .3);
-    -moz-box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .3);
-    box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .3);
-}
-
-        #fc_checkout_container input.fc_text:focus {
-            border-color: rgba(36, 105, 117, 1);
-            -webkit-box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .75);
-            -moz-box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .75);
-            box-shadow: 0 0 0 3px rgba(83, 169, 184, .5), inset 0 0 9px rgba(83, 169, 184, .75);
-            }
-
-    .fc_row_error input {
-        border-color: rgba(124, 0, 0, 1) !important;
-
-        -webkit-box-shadow: 0 0 0 3px rgba(124, 0, 0, .5), inset 0 0 9px rgba(124, 0, 0, .3) !important;
-        -moz-box-shadow: 0 0 0 3px rgba(124, 0, 0, .5), inset 0 0 9px rgba(124, 0, 0, .3) !important;
-        box-shadow: 0 0 0 3px rgba(124, 0, 0, .5), inset 0 0 9px rgba(124, 0, 0, .3) !important;
-
-        color: #333 !important;
-        }
-
-
-#fc_complete_order_button_container button {
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-
-    -webkit-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-    -moz-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-    box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-
-    background-image: url(../images/texture_button.png);
-}
-
-#fc_complete_order_button_container button:hover, #fc_complete_order_button_container button:focus {
-    -webkit-box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5) !important;
-    -moz-box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5) !important;
-    box-shadow: inset 0px 0px 17px 2px rgba(101,82,146,.5) !important;
-}
-
-#fc_complete_order_button_container button {
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    transition: all .5s ease-in;
-}
-
-#fc_cart_controls_top .fc_cart_update, #fc_cart_controls_top .fc_cart_checkout, #fc_cart_controls_bottom .fc_cart_update, #fc_cart_controls_bottom .fc_cart_checkout {
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    transition: all .5s ease-in;
-
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-    -webkit-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-    -moz-box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-    box-shadow: inset 0px 0px 17px 2px rgba(28,79,84,.5) !important;
-
-    background-image: url(../images/texture_button.png);
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	transition: opacity .5s linear;
 }

@@ -8,7 +8,7 @@
 #featuredshirt {}
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#featuredshirt .wrapper {background: url('images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 45px;} /* black underlay for shirtactions to be read more easily */
+	#featuredshirt .wrapper {background: url('../images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 45px;} /* black underlay for shirtactions to be read more easily */
 
 
 	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px; overflow: hidden;}
@@ -30,7 +30,7 @@
 					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
 
 				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0; width: 150px;}
-					ul.charitysociallinks li a {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('images/sociallinks.png') no-repeat;}
+					ul.charitysociallinks li a {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('../images/sociallinks.png') no-repeat;}
 						ul.charitysociallinks li.facebook a {background-position: 0 0;}
 							ul.charitysociallinks li.facebook a:hover {background-position: 0 -40px;}
 						ul.charitysociallinks li.twitter a {background-position: -48px 0;}
@@ -67,14 +67,14 @@
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 445px; height: 52px; background-color: rgb(69, 28, 67);}
-					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('images/diagonal_pattern.png');}
+					.goals #progressbar .percentage {position: relative; width: 52%; height: 52px; background: rgb(119, 51, 116) url('../images/diagonal_pattern.png');}
 					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
 			.goals .amountdonated {margin: 10px 0 0 0; position: relative;}
-				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(images/why.png) no-repeat; text-indent: -9999em;}
+				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(../images/why.png) no-repeat; text-indent: -9999em;}
 					.goals .amountdonated:hover .why {opacity: 1;}
 
-				#amountdonated_helper {width: 429px; background: url(images/tooltip_arrow.png) no-repeat right center; position: absolute; left: -423px; top: -91px; z-index: 10;}
+				#amountdonated_helper {width: 429px; background: url(../images/tooltip_arrow.png) no-repeat right center; position: absolute; left: -423px; top: -91px; z-index: 10;}
 				#amountdonated_helper p {width: 375px; background: rgba(255, 255, 255, .9); color: rgb(0, 43, 57); padding: 20px;}
 					#amountdonated_helper .helper {color: rgb(0, 43, 57); margin: 0;}
 
@@ -86,10 +86,10 @@
 			.sizes .category_size {float: left;}
 				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
 
-				.sizes .category_size.mens h5 {text-indent: -9999em; background: url(images/sizes_guys.png) no-repeat left bottom;}
-				.sizes .category_size.womens h5 {text-indent: -9999em; background: url(images/sizes_ladies.png) no-repeat left top;}
-				.sizes .category_size.kids h5 {text-indent: -9999em; background: url(images/sizes_kids.png) no-repeat left top;}
-				.sizes .category_size.dogs h5 {text-indent: -9999em; background: url(images/sizes_puppies.png) no-repeat left bottom;}
+				.sizes .category_size.mens h5 {text-indent: -9999em; background: url(../images/sizes_guys.png) no-repeat left bottom;}
+				.sizes .category_size.womens h5 {text-indent: -9999em; background: url(../images/sizes_ladies.png) no-repeat left top;}
+				.sizes .category_size.kids h5 {text-indent: -9999em; background: url(../images/sizes_kids.png) no-repeat left top;}
+				.sizes .category_size.dogs h5 {text-indent: -9999em; background: url(../images/sizes_puppies.png) no-repeat left bottom;}
 
 			.sizes select {}
 			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; font-weight: 900; cursor: pointer;}
@@ -104,13 +104,13 @@
          .addtocart {margin-top: 60px;}
 	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; padding: 15px 0;}
 
-	         .addtocart input.disabled {background: url(images/addtocart_disabled.png) no-repeat center center, url(images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
-	         .addtocart input {background: url(images/addtocart.png) no-repeat center center, url(images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
+	         .addtocart input.disabled {background: url(../images/addtocart_disabled.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
+	         .addtocart input {background: url(../images/addtocart.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
 
 	         .addtocart #cart {text-align: center; display: none;} /* TODO */
 
 
-#shirtdetails {background: rgb(204, 204, 204) url(images/details_texture.png); padding: 60px 0;}
+#shirtdetails {background: rgb(204, 204, 204) url(../images/details_texture.png); padding: 60px 0;}
 	#shirtdetails:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#shirtdetails .partners {max-width: 700px; float: left;}
@@ -119,13 +119,13 @@
 		.partners h2 {margin-top: 5px;}
 
 		.partners .charity {border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 40px; margin-bottom: 40px;}
-			.partners .charity .label {display: block; text-indent: -9999em; background: url(images/featurednonprofit.png) no-repeat;}
+			.partners .charity .label {display: block; text-indent: -9999em; background: url(../images/featurednonprofit.png) no-repeat;}
 			.partners .charity h2 {display: none;}
 			.partners .charity .charitylogo {max-width: 670px;}
 				.partners .charity .charitylogo img {max-width: 100%;}
 
 		.partners .artist {}
-			.partners .artist .label {display: block; text-indent: -9999em; background: url(images/abouttheartist.png) no-repeat;}
+			.partners .artist .label {display: block; text-indent: -9999em; background: url(../images/abouttheartist.png) no-repeat;}
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
