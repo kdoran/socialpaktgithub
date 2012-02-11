@@ -1,9 +1,0 @@
-<div class="select">
-	{% for variation in variations %}
-		{% if not product.has_inventory %}
-			<div id="{{ variation.description }}" class="size stock-1 sizeselect">{{ variation.display_text }}</div>
-		{% endif %}
-	{% endfor %}
-</div>
-
-
