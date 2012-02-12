@@ -15,10 +15,6 @@
 
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background: rgb(145, 199, 121) url("../images/header_gradient_fallback.png") repeat-y;
-
-		/* Internet Explorer 6-9 Filters -- only one gradient and no texture */
-	    background:none\0/;
-	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
 	   
    		/* IE 10 */
 		background:
