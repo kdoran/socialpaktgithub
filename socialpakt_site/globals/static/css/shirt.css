@@ -130,7 +130,6 @@
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
-	/* #shirtdetails #comments {width: 450px; float: right; margin-left: 20px; padding-top: 20px;} */
 	#shirtdetails #comments {}
 
 
@@ -150,12 +149,12 @@ body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat
 @media screen and (max-width: 1200px) {
 	#shirt {width: 700px; margin-left: 0;}
 	#shirtactions {margin: 40px 20px 0 0;}
+	#shirtdetails {padding: 60px 30px;}
 }
 
 @media screen and (max-width: 1170px) {
 	#shirt {width: 600px;}
 	#featuredshirt .wrapper {background-size: 75%;}
-	#shirtdetails {padding: 60px 40px;}
 }
 
 @media screen and (max-width: 1070px) {
@@ -178,7 +177,6 @@ body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat
 @media screen and (max-width: 770px) {
 	#shirt {float: none; margin: 0 auto; width: 90%;}
 	#shirtactions {max-width: 445px; float: none; margin: 0 auto;}
-	#shirtdetails {padding: 60px 40px;}
 	#featuredshirt .wrapper {background-position: center bottom;}
 	#charityflyout {display: none;}
 }

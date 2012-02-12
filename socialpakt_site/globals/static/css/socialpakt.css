@@ -64,3 +64,34 @@
 		#socialpakt .aboutus .shareashirt h4 {display: block; text-indent: -9999em; background: url(../images/mission_shareashirt.png) no-repeat; width: 232px; height: 50px;}
 
 		#socialpakt .aboutus .wearyourshirt h4 {display: block; text-indent: -9999em; background: url(../images/mission_wearyourshirt.png) no-repeat; width: 285px; height: 50px;}
+
+
+
+
+
+
+/* ---------- RESPONSIVE STATES -------------------- */
+/* ------------------------------------------------- */
+
+@media screen and (max-width: 1220px) {
+	#locations .location.newyork {margin-left: 20px;}	
+}
+
+@media screen and (max-width: 1190px) {
+	#locations .location {width: 270px;}	
+}
+
+@media screen and (max-width: 1110px) {
+	#locations .location {width: 245px;}	
+}
+
+@media screen and (max-width: 1000px) {
+	#locations .location {width: 290px; min-height: inherit;}
+	.location.selected {background: none;}	
+	#locations .location.california {clear: both; margin-left: 20px;}
+}
+
+@media screen and (max-width: 590px) {
+	#locations .location {width: 75%; border: 1px solid red; float: none; clear: both; margin: 0 auto !important;}
+	.location h4, .location p {width: auto;}
+}

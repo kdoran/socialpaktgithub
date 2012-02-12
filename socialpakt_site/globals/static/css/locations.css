@@ -1,14 +1,11 @@
 /* ---------- LOCATIONS ---------------------------- */
 /* ------------------------------------------------- */
 
-#locations {background-color: rgb(69, 28, 67); background-image: url('../images/diagonal_pattern.png'), url('../images/locations_gradient.png'); padding: 50px 0; color: rgb(255, 255, 255); margin: 0 auto;} /* TODO move multiple bg images to css3? test!!! */
+#locations {background-color: rgb(69, 28, 67); background-image: url('../images/diagonal_pattern.png'), url('../images/locations_gradient.png'); padding: 50px 0; color: rgb(255, 255, 255); margin: 0 auto;}
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#locations .location {width: 290px; min-height: 500px; float: left; border: 1px solid #999;}
-		#locations .location:last-child {margin-right: 0;}
-		#locations .location:first-child {margin-left: 20px;}
-
-
+	#locations .location {width: 290px; min-height: 500px; float: left; vertical-align: top;}
+	
 		/* Location Titles */
 		.location h3 {text-transform: uppercase; font-size: 40px; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px;} /* TODO better image or this is OK? */
 
@@ -24,6 +21,7 @@
 				.location.canada.selected h3,
 				.location.canada:hover h3 {background-position: -452px -40px;}
 			
+			.location.everywhere {margin-right: 0;}
 			.location.everywhere h3 {background-position: -635px 0; width: 200px;}
 				.location.everywhere.selected h3,
 				.location.everywhere:hover h3 {background-position: -635px -40px;}
@@ -48,7 +46,25 @@
 /* ---------- RESPONSIVE STATES -------------------- */
 /* ------------------------------------------------- */
 
-@media screen and (max-width: 1150px) {
-	#locations .wrapper {max-width: 1000px;}
-	.location.california {clear: both;}
+@media screen and (max-width: 1220px) {
+	#locations .location.newyork {margin-left: 20px;}	
+}
+
+@media screen and (max-width: 1190px) {
+	#locations .location {width: 270px;}	
+}
+
+@media screen and (max-width: 1110px) {
+	#locations .location {width: 245px;}	
+}
+
+@media screen and (max-width: 1000px) {
+	#locations .location {width: 290px; min-height: inherit;}
+	.location.selected {background: none;}	
+	#locations .location.california {clear: both; margin-left: 20px;}
+}
+
+@media screen and (max-width: 590px) {
+	#locations .location {width: 75%; border: 1px solid red; float: none; clear: both; margin: 0 auto !important;}
+	.location h4, .location p {width: auto;}
 }
