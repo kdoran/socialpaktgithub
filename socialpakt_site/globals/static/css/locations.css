@@ -1,11 +1,12 @@
 /* ---------- LOCATIONS ---------------------------- */
 /* ------------------------------------------------- */
 
-#locations {background-color: rgb(69, 28, 67); background-image: url('../images/diagonal_pattern.png'), url('../images/locations_gradient.png'); padding: 50px 0; color: rgb(255, 255, 255);} /* TODO move multiple bg images to css3? test!!! */
+#locations {background-color: rgb(69, 28, 67); background-image: url('../images/diagonal_pattern.png'), url('../images/locations_gradient.png'); padding: 50px 0; color: rgb(255, 255, 255); margin: 0 auto;} /* TODO move multiple bg images to css3? test!!! */
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#locations .location {width: 290px; min-height: 500px; float: left;} /* TODO browser test */
+	#locations .location {width: 290px; min-height: 500px; float: left; border: 1px solid #999;}
 		#locations .location:last-child {margin-right: 0;}
+		#locations .location:first-child {margin-left: 20px;}
 
 
 		/* Location Titles */
@@ -38,3 +39,16 @@
 			.location .charitylink .goto {display: inline-block; vertical-align: middle; font-size: 9px; text-transform: lowercase; color: rgba(255, 255, 255, .5); display: none;} /* TODO hide until we can remove the URL because it's breaking */
 
 		.location p {width: 250px;}
+
+
+
+
+
+
+/* ---------- RESPONSIVE STATES -------------------- */
+/* ------------------------------------------------- */
+
+@media screen and (max-width: 1150px) {
+	#locations .wrapper {max-width: 1000px;}
+	.location.california {clear: both;}
+}

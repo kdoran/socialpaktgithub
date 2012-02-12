@@ -11,9 +11,10 @@
 	#featuredshirt .wrapper {background: url('../images/shirtactions_black_underlay.png') no-repeat 250px 0; padding-top: 45px;} /* black underlay for shirtactions to be read more easily */
 
 
-	#shirt {position: relative; max-width: 800px; float: left; margin-left: -80px; overflow: hidden;}
+	#shirt {position: relative; width: 800px; float: left; margin-left: -80px; overflow: hidden;}
 
-		#shirtimage {max-height: 755px; overflow: hidden;} /* TODO test and scale */
+		#shirtimage {height: 755px; overflow: hidden;} /* TODO test and scale */
+		#shirtimage img {width: 100%;}
 
 		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: rgb(255, 255, 255); text-decoration: none;}
@@ -130,7 +131,7 @@
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
 	/* #shirtdetails #comments {width: 450px; float: right; margin-left: 20px; padding-top: 20px;} */
-	#shirtdetails #comments {display: none;}
+	#shirtdetails #comments {}
 
 
 
@@ -138,3 +139,46 @@
 /* ------------------------------------------------- */
 
 body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat;}
+
+
+
+
+
+/* ---------- RESPONSIVE STATES -------------------- */
+/* ------------------------------------------------- */
+
+@media screen and (max-width: 1200px) {
+	#shirt {width: 700px; margin-left: 0;}
+	#shirtactions {margin: 40px 20px 0 0;}
+}
+
+@media screen and (max-width: 1170px) {
+	#shirt {width: 600px;}
+	#featuredshirt .wrapper {background-size: 75%;}
+	#shirtdetails {padding: 60px 40px;}
+}
+
+@media screen and (max-width: 1070px) {
+	/* #shirtactions {max-width: 350px;} */
+	#shirt {width: 500px;}
+}
+
+@media screen and (max-width: 995px) {
+	#shirtactions {max-width: 400px;}
+}
+
+@media screen and (max-width: 920px) {
+	#shirt {width: 450px;}
+}
+
+@media screen and (max-width: 875px) {
+	#shirtactions {max-width: 300px;}
+}
+
+@media screen and (max-width: 770px) {
+	#shirt {float: none; margin: 0 auto; width: 90%;}
+	#shirtactions {max-width: 445px; float: none; margin: 0 auto;}
+	#shirtdetails {padding: 60px 40px;}
+	#featuredshirt .wrapper {background-position: center bottom;}
+	#charityflyout {display: none;}
+}
