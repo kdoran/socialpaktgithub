@@ -134,14 +134,14 @@
             {% endfor %}
           </div>
           <h4 class="charityname">{{ prod.benefits.name }}</h4>
-            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto sharpie">go to</span>
+            <a class="charitylink" href={% url nonprofit prod.benefits.slug %}><span class="goto">go to</span>
             {% for link in prod.benefits.partnerlink_set.all %}
               {% if link.link_class == "homepage" %}
                 <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
               {% endif %}
             {% endfor %}
             </a>
-            <p><span class="truncate_28">{{prod.benefits.about|safe|striptags}}</span> <a href="{% if prod.benefits.slug %}{% url nonprofit prod.benefits.slug %} {% endif %}" class="sharpie morelink">more&#8230;</a></p>
+            <p><span class="truncate_28">{{prod.benefits.about|safe|striptags}}</span> <a href="{% if prod.benefits.slug %}{% url nonprofit prod.benefits.slug %} {% endif %}" class="morelink">more&#8230;</a></p>
         {% endif %}
         {% endfor %}
       </div>
@@ -214,7 +214,7 @@
       <div id="mailinglist">
           <form id="emailform" method="post" action="."> 
             {% csrf_token %}
-            <h3 class="newslettertitle sharpie">Be the first to know about our new shirts!</h3>
+            <h3 class="newslettertitle">Be the first to know about our new shirts!</h3>
             <label for="home_email_address">Sign up for our mailing list!</label>
             <input class="homepage-email" type="email" id="home_email_address" placeholder="type your email address in here!" name="email" maxlength="75" value="{{form.email.value|default:''}}"/> <input type="submit" class="homepage-submit" value="Sign Me Up!" />
             {{ form.email.errors }}
