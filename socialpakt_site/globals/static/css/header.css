@@ -59,9 +59,11 @@
 
 
 
-	#header .logo {float: left; margin-left: 20px;}
+	#header .logo {float: left; margin: 0 20px;}
 		#header .logo h1 {margin: 0;}
 		#header .logo h1 a {display: block; height: 67px; width: 227px; margin: 15px 0 0 0; text-indent: -9999em; background: url("../images/socialpaktlogo.png") no-repeat;}
+
+	#header .like {float: left; padding-top: 35px;}
 
 
 	#header ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;}
@@ -71,7 +73,7 @@
 			.ie9 #header li {font-size: 12px;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; margin-left: 35px; color: rgb(255, 255, 255); font-size: 14px; width: 325px;}
+	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); font-size: 14px; width: 325px;}
 		#header ul.minornav li {margin-right: 3%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
