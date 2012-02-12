@@ -3,10 +3,7 @@
 .project
 .pydevproject
 .DS_Store
-<<<<<<< Updated upstream
 static/images/uploads
 upload_images
 socialpakt_proto/static/images/uploads/
-=======
-settings.py
->>>>>>> Stashed changes
+globals/static/images/uploads/
