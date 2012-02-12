@@ -31,9 +31,10 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
                 cat = ProductCategory.objects.filter(slug=kwargs['category'])[0]
             else:
                 cat = ProductCategory.objects.all().order_by('?')[0]
-                
-            # go find a product to display
-            products = Product.objects.filter(active=True, category=cat).order_by('-date_expires')
+            products = Product.objects.filter(active=True, category=cat, featured=True)
+            if not products:
+                # go find a product to display
+                products = Product.objects.filter(active=True, category=cat).order_by('-date_expires')
             product = products[:1]
             product = product[0] if len(products) else None # need to refactor this
 

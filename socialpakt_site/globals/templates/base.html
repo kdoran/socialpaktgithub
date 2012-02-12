@@ -113,7 +113,8 @@
       {% for cat in product_categories %}
       <div class="location {{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
         <h3>{{ cat.display_text }}</h3>
-        {% for prod in cat.product_set.all|slice:":1" %}
+        {% for prod in cat.product_set.all %}
+        {% if prod.featured %}
           <div class="smallshirt">
             {% for photo in prod.productphoto_set.all|slice:":1" %}
               {% thumbnail photo.photo "245" format="PNG" as im %}
@@ -130,7 +131,8 @@
             {% endfor %}
             </a>
             <p><span class="truncate_28">{{prod.benefits.about|safe|striptags}}</span> <a href="{% if prod.benefits.slug %}{% url nonprofit prod.benefits.slug %} {% endif %}" class="sharpie morelink">more&#8230;</a></p>
-         {% endfor %}
+        {% endif %}
+        {% endfor %}
       </div>
       {% endfor %}
       

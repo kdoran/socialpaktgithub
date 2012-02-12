@@ -11,7 +11,7 @@ class VariationAdminInline(admin.StackedInline):
     extra = 8
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'active','date_expires','price')
+    list_display = ('slug', 'title', 'category', 'featured', 'active','date_expires','price')
     inlines = (PhotoAdminInline,VariationAdminInline)
 
 admin.site.register(Product, ProductAdmin)

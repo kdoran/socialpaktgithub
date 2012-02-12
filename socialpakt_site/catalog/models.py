@@ -25,6 +25,7 @@ class Product(models.Model):
 	"""Model representing a tshirt for SocialPakt"""
 
 	category = models.ForeignKey(ProductCategory, null=True)
+	featured = models.BooleanField(default=False)
 	available_variations = models.ManyToManyField(VariationCategory, null=True)
 	background_photo = models.ImageField(upload_to="product_photos/", null=True, blank=True)
 
@@ -55,6 +56,17 @@ class Product(models.Model):
 
 	def distance_to_goal(self):
 		return self.total_raised() / self.goal * 100.0
+
+	# mark other products for this cat
+	# not sure if there's a better way to do this
+	# http://stackoverflow.com/questions/9237003/one-to-one-and-one-to-many-modeling
+	def save(self, *args, **kwargs):
+		if (self.featured):
+			for product in Product.objects.filter(category=self.category):
+				product.featured = False
+				product.save()
+			self.featured = True
+		super(Product, self).save(*args, **kwargs)
 
 	def __str__(self):
 		return self.slug
