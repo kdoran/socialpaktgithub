@@ -15,6 +15,7 @@
 
 		#shirtimage {height: 700px; overflow: hidden;} /* TODO test and scale */
 		#shirtimage img {width: 100%;}
+		#shirtimage a {display: none;}
 
 		#toggle {position: absolute; bottom: 50px; right: 0; text-transform: uppercase; font-weight: bold; font-size: 11px;}
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: rgb(255, 255, 255); text-decoration: none;}
@@ -80,12 +81,12 @@
 					#amountdonated_helper .helper {color: rgb(0, 43, 57); margin: 0;}
 
 
-		.sizes {margin-top: 60px;}
+		.sizes {}
 			.sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-			.sizes h5 {margin: 0 0 5px 0;}
+			.sizes h5 {margin: 20px 0 5px 0;}
 
-			.sizes .category_size {float: left;}
-				.sizes .category_size:nth-child(2) {float: right;} /* TODO browser test - second category aligns right */
+			.sizes .category_size {float: left; margin-right: 20px;}
+				.sizes .category_size:nth-child(2) {margin-right: 0;}
 
 				.sizes .category_size.mens h5 {text-indent: -9999em; background: url(../images/sizes_guys.png) no-repeat left bottom;}
 				.sizes .category_size.womens h5 {text-indent: -9999em; background: url(../images/sizes_ladies.png) no-repeat left top;}
@@ -93,7 +94,7 @@
 				.sizes .category_size.dogs h5 {text-indent: -9999em; background: url(../images/sizes_puppies.png) no-repeat left bottom;}
 
 			.sizes select {}
-			.sizes .sizeselect {display: block; float: left; height: 33px; width: 33px; margin-right: 20px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; font-weight: 900; cursor: pointer;}
+			.sizes .sizeselect {display: block; float: left; margin-right: 9px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; padding: 0 10px; font-weight: 900; font-size: 16px; cursor: pointer;}
                     .sizeselect:hover {background-color: rgb(225, 225, 225); color: rgb(39, 101, 111);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
                 .sizeselect.selected {background-color: rgb(255, 255, 255); color: rgb(225, 22, 101);}
@@ -139,7 +140,9 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat;}
+body.weektwelvekenmarrescue {background-position: -320px 0; background-repeat: no-repeat;}
+body.weektenmakeapaktmakeadifference {background-position: 0 -220px; background-repeat: no-repeat;}
+body.bideaweestayawhile {background-position: right 0; background-repeat: no-repeat;}
 
 
 
