@@ -4,7 +4,6 @@
 .pydevproject
 .DS_Store
 <<<<<<< Updated upstream
-settings.py
 static/images/uploads
 upload_images
 socialpakt_proto/static/images/uploads/
