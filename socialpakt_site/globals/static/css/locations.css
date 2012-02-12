@@ -27,7 +27,7 @@
 				.location.everywhere:hover h3 {background-position: -635px -40px;}
 
 			/* Selected Location Glow */
-			.location.selected {background: url('../images/location_hover_glow.png') no-repeat;}
+			/* .location.selected {background: url('../images/location_hover_glow.png') no-repeat;} */
 
 
 
