@@ -65,6 +65,6 @@
 }
 
 @media screen and (max-width: 590px) {
-	#locations .location {width: 75%; border: 1px solid red; float: none; clear: both; margin: 0 auto !important;}
+	#locations .location {width: 75%;float: none; clear: both; margin: 0 auto !important;}
 	.location h4, .location p {width: auto;}
 }

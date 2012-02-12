@@ -43,9 +43,9 @@
 	}
 
 
-	#mission {text-align: center; margin-left: -63px; cursor: pointer;}
+	#mission {text-align: center; cursor: pointer; margin-left: -2%;}
 		#mission h1 {display: block; text-indent: -9999em; margin: 0;}
-		#mission a img {opacity: .75;}
+		#mission a img {opacity: .75; width: 100%;}
 		#mission a:hover img {opacity: 1;}
 
 	#socialpakt .aboutus {padding: 0 20px; margin-top: -10px;}
@@ -73,25 +73,31 @@
 /* ---------- RESPONSIVE STATES -------------------- */
 /* ------------------------------------------------- */
 
-@media screen and (max-width: 1220px) {
-	#locations .location.newyork {margin-left: 20px;}	
+/* TODO add new images for smaller than 600px */
+
+@media screen and (max-width: 970px) {
+	#socialpakt .aboutus .buyashirt h4,
+	#socialpakt .aboutus .shareashirt h4,
+	#socialpakt .aboutus .wearyourshirt h4 {background-size: 90%;}
 }
 
-@media screen and (max-width: 1190px) {
-	#locations .location {width: 270px;}	
+@media screen and (max-width: 880px) {
+	#socialpakt .aboutus .buyashirt h4,
+	#socialpakt .aboutus .shareashirt h4,
+	#socialpakt .aboutus .wearyourshirt h4 {background-size: 80%;}
 }
 
-@media screen and (max-width: 1110px) {
-	#locations .location {width: 245px;}	
-}
-
-@media screen and (max-width: 1000px) {
-	#locations .location {width: 290px; min-height: inherit;}
-	.location.selected {background: none;}	
-	#locations .location.california {clear: both; margin-left: 20px;}
+@media screen and (max-width: 770px) {
+	#socialpakt .aboutus .buyashirt h4,
+	#socialpakt .aboutus .shareashirt h4,
+	#socialpakt .aboutus .wearyourshirt h4 {background-size: 60%;}
 }
 
 @media screen and (max-width: 590px) {
-	#locations .location {width: 75%; border: 1px solid red; float: none; clear: both; margin: 0 auto !important;}
-	.location h4, .location p {width: auto;}
+	#socialpakt .aboutus .buyashirt h4,
+	#socialpakt .aboutus .shareashirt h4,
+	#socialpakt .aboutus .wearyourshirt h4 {background-size: auto;}
+	#socialpakt .aboutus .buyashirt,
+	#socialpakt .aboutus .shareashirt,
+	#socialpakt .aboutus .wearyourshirt {float: none; margin: 0 auto; width: 80%;}
 }

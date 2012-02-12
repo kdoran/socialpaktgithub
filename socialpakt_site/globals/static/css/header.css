@@ -116,7 +116,8 @@
 }
 
 @media screen and (max-width: 995px) {
-	#header ul.minornav {display: none;}
+	#header .bgimage {height: 113px;}
+	#header ul.minornav {float: right; padding-top: 0;}
 	/* #header ul.locationnav li a {background-size: 85%;} /* find a way to make this work?? */
 }
 

@@ -158,12 +158,24 @@ body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat
 }
 
 @media screen and (max-width: 1070px) {
-	/* #shirtactions {max-width: 350px;} */
 	#shirt {width: 500px;}
 }
 
 @media screen and (max-width: 995px) {
 	#shirtactions {max-width: 400px;}
+	.price .amount .dollar {font-size: 16px; padding-top: 5px;}
+	.price .amount .number {font-size: 70px;}
+	.price .tagline {font-size: 13px; padding-top: 8px;}
+	.price .daysremaining {margin-left: 13px; padding-top: 10px;}
+	.wf-active .daysremaining.helper, .wf-active .amountdonated .helper {font-size: 16px;}
+	.goals {padding-top: 0;}
+	.donated .number, .goal .number {font-size: 45px; line-height: 45px;}
+	.goals #progressbar	{width: 395px;}
+	.goals .progress {padding-top: 18px;}
+	.sizes .sizeselect {font-size: 14px; height: 28px; width: 28px;}
+	.sizes .category_size:nth-child(2) {float: left; margin-left: 40px;}
+	.addtocart {margin-top: 40px;}
+	.addtocart input {width: 385px;}
 }
 
 @media screen and (max-width: 920px) {
@@ -172,6 +184,15 @@ body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat
 
 @media screen and (max-width: 875px) {
 	#shirtactions {max-width: 300px;}
+	.price .tagline {line-height: 16px;}
+	.goals .goal {margin-right: 0;}
+	.goals .donated .helper, .goals .goal .helper {font-size: 14px;}
+	.goals #progressbar	{width: 310px;}
+	.sizes {margin-top: 10px;}
+	.sizes .category_size {float: none; clear: both;}
+	.sizes .category_size:nth-child(2) {float: none; margin-left: 0; padding-top: 30px;}
+	.addtocart {margin-top: 40px;}
+	.addtocart input {width: 305px;}
 }
 
 @media screen and (max-width: 770px) {
@@ -179,4 +200,15 @@ body.mayorsalliance {background-position: -320px 0; background-repeat: no-repeat
 	#shirtactions {max-width: 445px; float: none; margin: 0 auto;}
 	#featuredshirt .wrapper {background-position: center bottom;}
 	#charityflyout {display: none;}
+	.goals #progressbar	{width: 380px;}
+	.goals .goal {margin-right: 75px;}
+}
+
+@media screen and (max-width: 470px) {
+	.goals .donated {float: none;}
+	.goals .goal {float: none; margin-right: 0; clear: both; text-align: left;}
+	.goals .helper {display: inline; margin-left: 0;}
+	.goals .progress {display: none;}
+	.goals .amountdonated {display: none;}
+	#amountdonated_helper {display: none !important;}
 }
