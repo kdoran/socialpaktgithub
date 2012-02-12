@@ -27,42 +27,11 @@
           <h3>There's no shirt here right now!</h3>
           <p>Check back soon for a new one, and in the meantime, see what our other locations have to offer.</p>
         </div>
+        </div>
       {% else %}
 
       <!-- Shirt -->
       <div id="shirt" class="{{product.slug}}">
-
-          <!-- Charity -->
-          <div id="charityflyout">
-            
-            <!-- Charity Seal and Logo -->
-            <div class="charitylogo">
-              <div class="logoimage">
-                <img src="{% if product.benefits.image %}{{product.benefits.image.url}}{% endif %}" alt="{{product.benefits.name}}"/>
-              </div>
-            </div>
-
-            <!-- Charity Flyout - hidden til hover -->
-            <div id="charityinfo">
-              <div class="charitylink">
-                <h4>{{product.benefits.name}}</h4>
-                <span class="goto">go to</span>
-                {% for link in product.benefits.partnerlink_set.all %}
-                  {% if link.link_class == "homepage" %}
-                    <a href="{{ link.link }}" target="_blank" class="charity_logo">{{ link.link }}</a>
-                  {% endif %}
-                {% endfor %}
-              </div>
-              <ul class="charitysociallinks">
-                {% for link in product.benefits.partnerlink_set.all %}
-                  {% if link.link_class == "facebook" or link.link_class == "twitter" or link.link_class == "youtube" %}
-                    <li class="{{link.link_class}}"><a href="{{link.link}}">{{link.link_text}}</a></li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-
-          </div>
 
           <!-- Shirt Image -->
           <div id="shirtimage">
