@@ -13,7 +13,7 @@
         <ul id="partnerlist" class="nonprofit">
           {% for partner in object_list %}
             <li class="partner nonprofit">
-              <a class="nonprofitimage" href="{% url nonprofit partner.slug %}"><img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}"></a>
+              <a class="nonprofitimage" href="{% url nonprofit partner.slug %}"><img src="{% if partner.large_image %}{{partner.large_image.url}}{% else %} {% if partner.image %}{{partner.image.url}}{% endif %}{% endif %}" alt="{{partner.name}}"></a>
               <div class="description">
                 <h3><a href="{% url nonprofit partner.slug %}">{{partner.name}}</a></h3>
                 <p>{{partner.about|safe|truncatewords_html:30|striptags}} <a class="more" href="{% url nonprofit partner.slug %}">Learn More</a></p>
