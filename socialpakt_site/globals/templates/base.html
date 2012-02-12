@@ -123,7 +123,7 @@
   <div class="wrapper">
       {% for cat in product_categories %}
       <div class="location {{ cat.slug }} {% ifequal category|slugify cat.slug %}selected{% endifequal %}">
-        <h3>{{ cat.display_text }}</h3>
+        <h3><a href="{% url home_city cat.slug %}">{{ cat.display_text }}</a></h3>
         {% for prod in cat.product_set.all %}
         {% if prod.featured %}
           <div class="smallshirt">
