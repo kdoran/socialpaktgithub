@@ -59,24 +59,25 @@
 
 
 
-	#header .logo {float: left;}
+	#header .logo {float: left; margin-left: 20px;}
 		#header .logo h1 {margin: 0;}
 		#header .logo h1 a {display: block; height: 67px; width: 227px; margin: 15px 0 0 0; text-indent: -9999em; background: url("../images/socialpaktlogo.png") no-repeat;}
 
 
-	#header ul {list-style-type: none; margin: 0; padding: 0; width: 450px; overflow: hidden;}
+	#header ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;}
 		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
 			.wf-active #header li {font-weight: 400; font-size: 16px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
+			.ie9 #header li {font-size: 12px;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; margin-left: 35px; color: rgb(255, 255, 255); font-size: 14px;}
+	#header ul.minornav {float: left; padding-top: 33px; margin-left: 35px; color: rgb(255, 255, 255); font-size: 14px; width: 325px;}
 		#header ul.minornav li {margin-right: 3%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
 
 	/* Location Nav */
-	#header ul.locationnav {max-width: 465px; float: right;}		
+	#header ul.locationnav {float: right;}		
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
 		#header ul.locationnav li h3 {margin: 0;}
@@ -102,3 +103,54 @@
 	#header.collapsed .about {display: none;}
 
 #header.expanded {}
+
+
+
+
+/* ---------- RESPONSIVE STATES -------------------- */
+/* ------------------------------------------------- */
+
+@media screen and (max-width: 1050px) {
+	#header ul.minornav {max-width: 265px;}
+	#header ul.minornav li, .wf-active #header ul.minornav li {font-size: 13px;}
+}
+
+@media screen and (max-width: 995px) {
+	#header ul.minornav {display: none;}
+	/* #header ul.locationnav li a {background-size: 85%;} /* find a way to make this work?? */
+}
+
+@media screen and (max-width: 700px) {
+	#header .logo {padding-top: 10px;}
+	#header .logo h1 a {background-size: 75%;}
+	#header ul.locationnav li a {padding: 35px 5px 10px; background-position: -5px 0;}
+	#header ul.locationnav li a:hover {background-position: -5px -85px;}
+	#header ul.locationnav li.selected a {background-position: -5px -170px;}
+}
+
+@media screen and (max-width: 630px) {
+	#header .logo {padding-top: 15px; margin-left: 10px; width: 125px;}
+	#header .logo h1 a {background-size: 50%;}
+}
+
+@media screen and (max-width: 520px) {
+	#header .bgimage {height: 162px;}
+	#header .logo {margin: 0 auto; width: 250px; float: none; padding-top: 10px;}
+	#header .logo h1 a {margin-top: 0; background-size: 100%;}
+	#header ul.locationnav {float: none; margin: 0 auto; width: 400px;}
+	#header ul.minornav {display: none;}
+}
+
+@media screen and (max-width: 380px) {
+	#header .bgimage {height: 132px;}
+	#header ul.locationnav {float: none; margin: 0 auto; width: 100%; text-align: center;}
+	#header ul.locationnav li {float: none; display: inline-block;}
+	#header ul.locationnav li a {padding: 10px 1px 5px; background-position: -10px -15px;}
+		#header ul.locationnav li.newyork a {width: 70px; background-size: 90px;}
+		#header ul.locationnav li.california a {width: 90px; background-size: 108px;}
+		#header ul.locationnav li.canada a {width: 55px; background-size: 76px;}
+		#header ul.locationnav li.everywhere a {width: 90px; background-size: 108px;}
+	#header ul.locationnav li a:hover {background-position: -10px -86px;}
+	#header ul.locationnav li.selected a {background-position: -10px -162px;}
+
+}
