@@ -130,7 +130,8 @@
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
-	#shirtdetails #comments {}
+	#shirtdetails #comments {float: right; width: 450px;}
+		#comments .fb_iframe_widget iframe {width: 450px !important;}
 
 
 
