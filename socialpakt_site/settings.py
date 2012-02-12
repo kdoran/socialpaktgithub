@@ -156,7 +156,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'paypal.standard', 
     'paypal.pro',
-    'socialpakt_proto',
+    # 'socialpakt_proto',
     'social_auth',
     'south',
     'cart',
