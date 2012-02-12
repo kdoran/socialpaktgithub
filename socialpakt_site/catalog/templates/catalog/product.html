@@ -12,33 +12,6 @@
   <meta property="og:description" content="{{ product.description }}"/> 
 {% endblock fbmetadata %}
 
-{% block sharethis %}
-  <span  class='st_facebook_vcount' displayText='Facebook'
-    st_title = "{{ product.title }}"
-    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-    st_summary = "{{ product.description }}"
-  ></span>
-  <span  class='st_twitter_vcount' displayText='Tweet'
-    st_title = "{{ product.title }}"
-    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-    st_summary = "{{ product.description }}"
-  ></span>
-  <span  class='st_email_vcount' displayText='Email'
-    st_title = "{{ product.title }}"
-    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-    st_summary = "{{ product.description }}"
-  ></span>
-  <span  class='st_plusone_vcount' 
-  st_title = "{{ product.title }}"
-    st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-    st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-    st_summary = "{{ product.description }}"
-  ></span>
-{% endblock sharethis %}
-
 {% block localscripts %}
       <script src="{{ STATIC_URL }}js/lib/countdown.js"></script>
       <script src="{{ STATIC_URL }}js/catalog.js"></script>
@@ -115,7 +88,32 @@
 
           <!-- Sharing buttons -->
           <div id="sharing">
-            <!-- TODO Kevin we need to pull these in. you can copy the stuff from the old file but I want to change the Share It setup. not sure how best to do this. -->
+          {% block sharethis %}
+            <span  class='st_facebook_vcount' displayText='Facebook'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <span  class='st_twitter_vcount' displayText='Tweet'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <span  class='st_email_vcount' displayText='Email'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <span  class='st_plusone_vcount' 
+            st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+          {% endblock sharethis %}
           </div>
       </div>
 
