@@ -72,7 +72,7 @@
 					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
 			.goals .amountdonated {margin: 10px 0 0 0; position: relative;}
-				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(../images/why.png) no-repeat; text-indent: -9999em;}
+				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(../images/why.png) no-repeat; text-indent: -9999em; overflow: hidden;}
 					.goals .amountdonated:hover .why {opacity: 1;}
 
 				#amountdonated_helper {width: 429px; background: url(../images/tooltip_arrow.png) no-repeat right center; position: absolute; left: -423px; top: -91px; z-index: 10;}
