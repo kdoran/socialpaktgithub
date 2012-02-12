@@ -7,24 +7,24 @@
 	#locations .location {width: 290px; min-height: 500px; float: left; vertical-align: top;}
 	
 		/* Location Titles */
-		.location h3 {text-transform: uppercase; font-size: 40px; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px;} /* TODO better image or this is OK? */
+		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px;}
 
-			.location.newyork h3 {background-position: 0 0; width: 165px;}
-				.location.newyork.selected h3,
-				.location.newyork:hover h3 {background-position: 0 -40px;}
+			.location.newyork h3 a {background-position: 0 0; width: 165px;}
+				.location.newyork.selected h3 a,
+				.location.newyork:hover h3 a {background-position: 0 -40px;}
 			
-			.location.california h3 {background-position: -200px 0; width: 200px;}
-				.location.california.selected h3,
-				.location.california:hover h3 {background-position: -200px -40px;}
+			.location.california h3 a {background-position: -200px 0; width: 200px;}
+				.location.california.selected h3 a,
+				.location.california:hover h3 a {background-position: -200px -40px;}
 			
-			.location.canada h3 {background-position: -452px 0; width: 130px;}
-				.location.canada.selected h3,
-				.location.canada:hover h3 {background-position: -452px -40px;}
+			.location.canada h3 a {background-position: -452px 0; width: 130px;}
+				.location.canada.selected h3 a,
+				.location.canada:hover h3 a {background-position: -452px -40px;}
 			
 			.location.everywhere {margin-right: 0;}
-			.location.everywhere h3 {background-position: -635px 0; width: 200px;}
-				.location.everywhere.selected h3,
-				.location.everywhere:hover h3 {background-position: -635px -40px;}
+			.location.everywhere h3 a {background-position: -635px 0; width: 200px;}
+				.location.everywhere.selected h3 a,
+				.location.everywhere:hover h3 a {background-position: -635px -40px;}
 
 			/* Selected Location Glow */
 			/* .location.selected {background: url('../images/location_hover_glow.png') no-repeat;} */

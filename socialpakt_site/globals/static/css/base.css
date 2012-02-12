@@ -34,7 +34,7 @@ h5 {font-size: 22px; font-family: "proxima-nova-extra-condensed", 'Knockout', 'T
     
 a {color: rgb(255,108,0); text-decoration: none;}
 a:hover {color: rgb(201,23,93); text-decoration: none;}
-
+a img {border: 0;}
 
 .number {font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
 .dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
