@@ -21,7 +21,7 @@
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: rgb(255, 255, 255); text-decoration: none;}
 			#toggle .selected {display: none;}
 
-		#charityflyout {}
+		#charityflyout {display: none !important;}
 			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 140px; height: 140px; background-color: rgb(250, 250, 250); border: 1px solid rgb(221, 221, 221); cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
 				.charitylogo .logoimage {width: 70%; margin: 15%; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
 				.charitylogo .logoimage img {width: 100%;}
