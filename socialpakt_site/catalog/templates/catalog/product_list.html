@@ -13,7 +13,12 @@
         <ul id="partnerlist" class="artist">
           {% for shirt in object_list %}
             <li class="partner artist">
-              <a class="artistimage" href="{% url shirt shirt.slug %}"><img src="{{shirt.productphoto_set.all.1.photo.url}}" alt="{{shirt.title}}"></a>
+            {% load thumbnail %}
+          {% for photo in shirt.productphoto_set.all|slice:":1" %}
+            {% thumbnail photo.photo "245" format="PNG" as im %}
+                <a class="artistimage" href="{% url shirt shirt.slug %}"><img src="{{ im.url }}" alt="{{shirt.title}}"></a>
+            {% endthumbnail %}
+          {% endfor %}
               <div class="description">
                 <h3><a href="{% url shirt shirt.slug %}">{{shirt.title}}</a></h3>
                 <p>{{shirt.description|safe|truncatewords_html:30|striptags}} <a class="more" href="{% url shirt shirt.slug %}">Learn More</a></p>
