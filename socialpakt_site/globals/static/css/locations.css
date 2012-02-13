@@ -8,7 +8,7 @@
 		.ie8 #locations .location {zoom: 1; width: 245px;}
 	
 		/* Location Titles */
-		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px;}
+		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px; cursor: pointer;}
 
 			.location.newyork h3 a {background-position: 0 0; width: 165px;}
 				.location.newyork.selected h3 a,
