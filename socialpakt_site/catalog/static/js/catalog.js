@@ -65,6 +65,19 @@
 		// 	$(this_class).show();
 		// });
 
+		$(".charity_logo").each(function(){
+			var sub = $(this).text().split('/')[2];
+			if (sub){
+				var nakeddomain = sub.split("www.");
+				if (nakeddomain.length > 1){
+					$(this).text(nakeddomain[1]);
+				}
+				else {
+					$(this).text(nakeddomain[0]);
+				}
+			}
+		});
+
 		$("div.thumbnail").hover(
 			function(){
 				if ( hovering == false ) {
