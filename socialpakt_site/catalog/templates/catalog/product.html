@@ -54,36 +54,6 @@
               <a href="" class="mens selected">See Men's</a>
               <a href="" class="womens">See Women's</a>
             </div> -->
-
-          <!-- Sharing buttons -->
-          <div id="sharing">
-          {% block sharethis %}
-            <span  class='st_facebook_hcount' displayText='Facebook'
-              st_title = "{{ product.title }}"
-              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-              st_summary = "{{ product.description }}"
-            ></span>
-            <span  class='st_twitter_hcount' displayText='Tweet'
-              st_title = "{{ product.title }}"
-              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-              st_summary = "{{ product.description }}"
-            ></span>
-            <span  class='st_email_hcount' displayText='Email'
-              st_title = "{{ product.title }}"
-              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-              st_summary = "{{ product.description }}"
-            ></span>
-            <span  class='st_plusone_hcount' 
-            st_title = "{{ product.title }}"
-              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
-              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
-              st_summary = "{{ product.description }}"
-            ></span>
-          {% endblock sharethis %}
-          </div>
       </div>
 
       <!-- Shirt Actions -->
@@ -118,7 +88,7 @@
           </div>
           <div class="progress">
             <div id="progressbar">
-              <div class="percentage">
+              <div class="percentage" style="width:{{product.distance_to_goal|floatformat}}%;">
                 <span class="label"><span id="percentage_container">{{product.distance_to_goal|floatformat}}</span>%</span>
               </div>
             </div>
@@ -131,6 +101,35 @@
               <p><span class="helper">Why only $6?</span>
               $6 is the most we can give away and still afford to keep the lights on! We'd love to give away more, but to do so we'd have to compromise the quality of our shirts...and nobody wants a shirt with holes in it!</p>
             </div>
+          </div>
+          <!-- Sharing buttons -->
+          <div id="sharing">
+          {% block sharethis %}
+            <span  class='st_facebook_hcount' displayText='Facebook'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <span  class='st_twitter_hcount' displayText='Tweet'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <!-- <span  class='st_email_hcount' displayText='Email'
+              st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span>
+            <span  class='st_plusone_hcount' 
+            st_title = "{{ product.title }}"
+              st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
+              st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
+              st_summary = "{{ product.description }}"
+            ></span> -->
+          {% endblock sharethis %}
           </div>
         </div>
 

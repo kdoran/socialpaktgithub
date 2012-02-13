@@ -6,6 +6,14 @@
 
 	#locations .location {width: 290px; min-height: 500px; float: left; vertical-align: top;}
 		.ie8 #locations .location {zoom: 1; width: 245px;}
+
+		/* Location inset shadow and gradient */
+		#locations {
+			-webkit-box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+			-moz-box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+			box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
+		}
+
 	
 		/* Location Titles */
 		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px; cursor: pointer;}
@@ -36,9 +44,49 @@
 
 		.location .charitylink {display: block; font-size: 14px; color: rgb(201, 23, 93); text-transform: uppercase; line-height: 1.2;}
 			.location .charitylink .goto {display: inline-block; vertical-align: middle; font-size: 9px; text-transform: lowercase; color: rgba(255, 255, 255, .5); display: none;} /* TODO hide until we can remove the URL because it's breaking */
+						
+			/* Goto link rotation */
+			.location .goto {
+				-moz-transform: rotate(4deg);
+				-webkit-transform: rotate(4deg);
+				-o-transform: rotate(4deg);
+				-ms-transform: rotate(4deg);
+				transform: rotate(4deg);
+			}
+
 
 		.location p {width: 250px;}
 
+
+
+/* Location Shirt rotations */
+.location.newyork .smallshirt {
+	-moz-transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+	-o-transform: rotate(4deg);
+	-ms-transform: rotate(4deg);
+	transform: rotate(4deg);
+}
+			
+.location.california .smallshirt {
+	/* no rotation here */
+}
+			
+.location.canada .smallshirt {
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
+			
+.location.everywhere .smallshirt {
+	-moz-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
 
 
 

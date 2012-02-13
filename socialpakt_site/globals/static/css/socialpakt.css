@@ -44,6 +44,14 @@
 		#mission a img {opacity: .75; width: 100%;}
 		#mission a:hover img {opacity: 1;}
 
+		/* Mission */
+		#mission a img {
+			-webkit-transition: opacity .5s linear;
+			-moz-transition: opacity .5s linear;
+			-o-transition: opacity .5s linear;
+			transition: opacity .5s linear;}
+
+
 	#socialpakt .aboutus {padding: 0 20px; margin-top: -10px;}
 		#socialpakt .aboutus:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 		#socialpakt .aboutus h2 {margin-top: 0;}

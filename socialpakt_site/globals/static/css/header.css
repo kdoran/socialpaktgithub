@@ -15,7 +15,7 @@
 
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
 		background-color: rgb(145, 199, 121);
-		background-image: url("../images/header_gradient_fallback.png") repeat-y;
+		background-image: url("../images/header_gradient_fallback.png");
 	   
    		/* IE 10 */
 		background:
@@ -65,12 +65,13 @@
 
 	#header ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;}
 		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
+		#header li h3 {margin: 0;}
 			.wf-active #header li {font-weight: 400; font-size: 16px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
 			.ie9 #header li, .ie8 #header li {font-size: 12px;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); width: 325px;}
+	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); width: 275px;}
 		#header ul.minornav li {margin-right: 3%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
@@ -79,16 +80,26 @@
 	#header ul.locationnav {float: right;}		
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
-		#header ul.locationnav li h3 {margin: 0;}
-		#header ul.locationnav li a {display: block; padding: 35px 13px 10px 13px; text-indent: -9999em; height: 40px; background-repeat: no-repeat; background-position: 0 0;}
+		#header ul.locationnav li a {display: block; padding: 0 20px; height: 85px; line-height: 85px; color: rgb(255, 255, 255); font-family: "proxima-nova-extra-condensed"; font-weight: 400; text-shadow: 1px 1px 7px rgb(0, 58, 73);}
 			#header ul.locationnav li a:hover {background-color: rgba(0, 58, 73, .2); background-position: 0 -85px;}
 
-				#header ul.locationnav li.newyork a {background-image: url("../images/locationnav_newyork.png"); width: 80px;}
-				#header ul.locationnav li.california a {background-image: url("../images/locationnav_california.png"); width: 100px;}
-				#header ul.locationnav li.canada a {background-image: url("../images/locationnav_canada.png"); width: 65px;}
-				#header ul.locationnav li.everywhere a {background-image: url("../images/locationnav_everywhere.png"); width: 100px;}
+		#header ul.locationnav li.selected a {background-color: rgb(0, 58, 73); text-shadow: 1px 1px 7px rgb(0, 0, 0); cursor: default;}
 
-			#header ul.locationnav li.selected a {background-color: rgb(0, 58, 73); background-position: 0 -170px; cursor: default;} /* style for current category */
+
+		/* Header location nav hover inset shadow */
+		#header ul.locationnav li a:hover {
+			-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+			-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+			box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+		}
+
+		#header ul.locationnav li a {
+			-webkit-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+		    -moz-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+		    -o-transition: box-shadow .2s ease-in, background-color .2s ease-in;
+		    transition: box-shadow .2s ease-in, background-color .2s ease-in;
+		}
+
 
 
 

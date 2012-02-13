@@ -18,35 +18,36 @@
 	}
 
 	$(document).ready(function(){
-		// Set up the countdown timer
-		var expiresdate = $("#expiresdate").text();
-		$('#expiresdate').countdown({
-			ref_time: Date.parse(expiresdate),
-			format: '%d'
-		});
-		var daysleft = $('#expiresdate').text();
-		if (daysleft == 1){
-			$("#days").text("day");
-		}
-		$("#amountdonated").hover(
-			function(){$("#amountdonated_helper").fadeToggle();}
-		);
-		$("#charityflyout").hover(
-			function(){$("#charityinfo").fadeToggle();}
-			//function(){$("#charityinfo").show().animate({width: "545px"}, 200);},
-			//function(){$("#charityinfo").animate({width: "0"}, 200, function(){$(this).hide();});}
-		);
-		// Set up the photobrowser
-		$("div#shirt div.shirtimage.thumbnail").click(function(){
-			var cur_sel = $("div#shirt div.shirtimage.big");
-			var cur_sel_img = cur_sel.html();
-			cur_sel.html($(this).html());
-			$(this).html(cur_sel_img);
-			$("div.shirtimage.thumbnail").animate({width:"10%"});
-			$("div.shirtimage.big").animate({width:"81%"});
+			// Set up the countdown timer
+			var expiresdate = $("#expiresdate").text();
+			$("#expiresdate").countdown({
+				ref_time: Date.parse(expiresdate),
+				format: '%d'
+			});
+			var daysleft = $("#expiresdate").text();
+			if (daysleft == 1){
+				$("#days").text("day");
+			}
 
-			show_shirt_detail_link();
-		});
+			$("#amountdonated").hoverIntent({
+				over: makeTall, 
+				timeout: 500, 
+				out: makeShort
+			});
+		function makeTall(){$("#amountdonated_helper").fadeIn();}
+		function makeShort(){$("#amountdonated_helper").fadeOut();}
+
+			// Set up the photobrowser
+			$("div#shirt div.shirtimage.thumbnail").click(function(){
+				var cur_sel = $("div#shirt div.shirtimage.big");
+				var cur_sel_img = cur_sel.html();
+				cur_sel.html($(this).html());
+				$(this).html(cur_sel_img);
+				$("div.shirtimage.thumbnail").animate({width:"10%"});
+				$("div.shirtimage.big").animate({width:"81%"});
+
+				show_shirt_detail_link();
+			});
 
 		$("div#shirt div.shirtimage.big").click(function(){
 			show_shirt_detail();

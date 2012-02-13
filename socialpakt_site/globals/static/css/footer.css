@@ -29,6 +29,13 @@
 		#mailinglist .errorlist {display: none;}
 		#mailinglist p {clear: both; margin: 0; color: rgba(255, 255, 255, .5); font-style: italic;}
 
+		/* mailinglist input focus */
+		#mailinglist input:focus {
+			-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+			-moz-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+			box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .1);
+		}
+
 
 
 	.socialpaktlinks {clear: both; padding-top: 20px;}
@@ -50,6 +57,13 @@
 				.footernav li a:hover {color: rgba(255, 255, 255, 1);}
 			.wf-active .footernav li {font-weight: 400; font-size: 16px;}
 			.ie6 .footernav li, .ie7 .footernav li {display: inline; zoom: 1;} /* duplicate inline-block */
+
+			.sociallinks li {
+				-webkit-transition: opacity .5s linear;
+				-moz-transition: opacity .5s linear;
+				-o-transition: opacity .5s linear;
+				transition: opacity .5s linear;
+			}
 
 
 		.copyright {clear: both; color: rgb(255, 255, 255); font-size: 10px;}

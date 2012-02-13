@@ -1,19 +1,7 @@
-/* ---------- IMPORTS ------------------------------ */
-/* ------------------------------------------------- */
- /*  @import url("blank.css");
-  @import url("css3.css");
-  @import url("footer.css");
-  @import url("header.css");
-  @import url("locations.css");
-  @import url("pages.css");
-  @import url("socialpakt.css");
-  @import url("shirt.css"); */
-  
-
 /* ---------- GLOBAL TEXT AND LINK STYLES ---------- */
 /* ------------------------------------------------- */
 
-body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); /* background-color: rgb(247, 247, 247); */ color: rgb(51, 51, 51); font-family: Geneva, Verdana, Arial, sans-serif; font-size: 16px; line-height: 1.8em;}
+body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); color: rgb(51, 51, 51); font-family: Geneva, Verdana, Arial, sans-serif; font-size: 16px; line-height: 1.8em;}
   .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif; font-size: 14px;}
   .wf-active body {font-family: "proxima-nova", Proxima Nova, Geneva, Verdana, Arial, sans-serif;}
 
@@ -29,13 +17,28 @@ a {color: rgb(255,108,0); text-decoration: none;}
 a:hover {color: rgb(201,23,93); text-decoration: none;}
 a img {border: 0;}
 
+/* link transitions */
+a {
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
+    }
+
+
 .number {font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
-.dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
+.dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px; text-shadow: 1px 0px 0px rgba(0, 0, 0, .3); filter: dropshadow(color=#000000, offx=1, offy=0);}
 .helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: bold; font-size: 14px; color: rgba(255, 255, 255, .75);}
   .wf-active .helper {font-weight: 200; font-size: 20px;}
   .helper:hover {color: rgba(255, 255, 255, 1);}
 
-  /* TODO IE8 doesn't support rgba, specify fallback */
+/* super-light textshadow on the following text items: */
+.helper,
+.price .tagline,
+.sizes h5,
+.location h3 {text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);}
+
+
 
 /* ---------- THINGS WHAT ARE USEFUL --------------- */
 /* ------------------------------------------------- */
