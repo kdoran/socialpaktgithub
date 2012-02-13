@@ -109,7 +109,7 @@
 	         .addtocart input.disabled {background: url(../images/addtocart_disabled.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
 	         .addtocart input {background: url(../images/addtocart.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
 
-	         .addtocart #cart {text-align: center; display: none;} /* TODO */
+	         .addtocart #cart {text-align: center;}
 
 #sharing {position: absolute; bottom: 10px; left: 10px;}
 
