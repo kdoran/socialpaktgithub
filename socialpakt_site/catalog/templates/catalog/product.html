@@ -162,7 +162,10 @@
         
         <div class="addtocart">
           <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">
-          <div id="cart">2 items $44</div>
+          {% block cartnav %}
+          <div id="cart"><a href="http://socialpakt.foxycart.com/cart?cart=view">your cart</a></div>
+          {% endblock cartnav %}
+            
         </div>
 
         </form>

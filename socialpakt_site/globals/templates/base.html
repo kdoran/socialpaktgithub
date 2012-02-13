@@ -110,6 +110,10 @@
               <span  class='st_plusone_vcount' ></span>
     {% endblock sharethis %}
 
+    {% block cartnav %}
+
+    {% endblock cartnav %}
+
     {% endblock main %}
 
     {% block about %}
@@ -274,9 +278,33 @@
 
     {% endblock globaljs %}
 
+    {% block cartstuff %}
+      <!-- BEGIN FOXYCART FILES -->
+      <link rel="stylesheet" href="http://static.foxycart.com/scripts/colorbox/1.3.16/style1_fc/colorbox.css" type="text/css" media="screen" charset="utf-8" />
+      <script type="text/javascript" charset="utf-8">
+          var colorbox_width = "725px";
+          var colorbox_height = "700px";
+      </script>
+      <script src="http://cdn.foxycart.com/socialpakt/foxycart.complete.3.js" type="text/javascript" charset="utf-8"></script>
+      <!-- END FOXYCART FILES -->
+    {% endblock cartstuff %}
+
     {% block localscripts %}
 
     {% endblock localscripts %}
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26349421-1']);
+      _gaq.push(['_setDomainName', '.socialpakt.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 
 </body>
 </html>
