@@ -23,6 +23,8 @@
 			#mailinglist input:focus {outline: none;}
 		#mailinglist .homepage-submit {display: inline-block; width: auto; margin-left: -5px; background-color: rgba(231, 42, 117, .75); border: 0; color: rgb(255, 255, 255); text-transform: uppercase; cursor: pointer;}
 		#mailinglist .homepage-submit:hover {background-color: rgba(231, 42, 117, 1);}
+		.ie8 #mailinglist .homepage-submit,
+		.ie8 #mailinglist .homepage-submit:hover {background-color: rgb(231, 42, 117);}
 
 		#mailinglist .errorlist {display: none;}
 		#mailinglist p {clear: both; margin: 0; color: rgba(255, 255, 255, .5); font-style: italic;}

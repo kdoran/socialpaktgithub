@@ -5,6 +5,7 @@
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	#locations .location {width: 290px; min-height: 500px; float: left; vertical-align: top;}
+		.ie8 #locations .location {zoom: 1; width: 245px;}
 	
 		/* Location Titles */
 		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px;}

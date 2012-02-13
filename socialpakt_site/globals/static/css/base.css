@@ -14,7 +14,7 @@
 /* ------------------------------------------------- */
 
 body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); /* background-color: rgb(247, 247, 247); */ color: rgb(51, 51, 51); font-family: Geneva, Verdana, Arial, sans-serif; font-size: 16px; line-height: 1.8em;}
-  .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif;}
+  .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif; font-size: 14px;}
   .wf-active body {font-family: "proxima-nova", Proxima Nova, Geneva, Verdana, Arial, sans-serif;}
 
 h1, h2, h3, h4 {text-transform: uppercase; font-family: "proxima-nova", Geneva, Verdana, Arial, sans-serif; font-weight: 600; color: rgb(26, 106, 127); line-height: 1;}

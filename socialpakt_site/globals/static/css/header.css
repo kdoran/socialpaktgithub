@@ -14,7 +14,8 @@
 		opacity: .9;
 
 		/* Fallback Gradient BG Image and Color for browsers that don't support multiple BGs */
-		background: rgb(145, 199, 121) url("../images/header_gradient_fallback.png") repeat-y;
+		background-color: rgb(145, 199, 121);
+		background-image: url("../images/header_gradient_fallback.png") repeat-y;
 	   
    		/* IE 10 */
 		background:
@@ -66,10 +67,10 @@
 		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
 			.wf-active #header li {font-weight: 400; font-size: 16px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
-			.ie9 #header li {font-size: 12px;}
+			.ie9 #header li, .ie8 #header li {font-size: 12px;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); font-size: 14px; width: 325px;}
+	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); width: 325px;}
 		#header ul.minornav li {margin-right: 3%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
