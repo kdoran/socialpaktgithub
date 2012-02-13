@@ -95,25 +95,8 @@
 /* ---------- RESPONSIVE STATES -------------------- */
 /* ------------------------------------------------- */
 
-@media screen and (max-width: 1220px) {
-	#locations .location.newyork {margin-left: 20px;}	
-}
-
-@media screen and (max-width: 1190px) {
-	#locations .location {width: 270px;}	
-}
-
-@media screen and (max-width: 1110px) {
-	#locations .location {width: 245px;}	
-}
-
-@media screen and (max-width: 1000px) {
-	#locations .location {width: 290px; min-height: inherit;}
-	.location.selected {background: none;}	
-	#locations .location.california {clear: both; margin-left: 20px;}
-}
-
-@media screen and (max-width: 590px) {
-	#locations .location {width: 75%;float: none; clear: both; margin: 0 auto !important;}
-	.location h4, .location p {width: auto;}
+@media screen and (max-width: 500px) {
+	#locations .location {width: 75%; float: none; clear: both; margin: 0 auto !important;}
+	.location h4 {width: auto;}
+	.location p {display: none;}
 }

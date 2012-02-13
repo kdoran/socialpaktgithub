@@ -97,11 +97,8 @@
 	#socialpakt .aboutus .wearyourshirt h4 {background-size: 60%;}
 }
 
-@media screen and (max-width: 590px) {
-	#socialpakt .aboutus .buyashirt h4,
-	#socialpakt .aboutus .shareashirt h4,
-	#socialpakt .aboutus .wearyourshirt h4 {background-size: auto;}
+@media screen and (max-width: 500px) {
 	#socialpakt .aboutus .buyashirt,
 	#socialpakt .aboutus .shareashirt,
-	#socialpakt .aboutus .wearyourshirt {float: none; margin: 0 auto; width: 80%;}
+	#socialpakt .aboutus .wearyourshirt {display: none;}
 }

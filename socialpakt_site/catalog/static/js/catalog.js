@@ -34,8 +34,8 @@
 				timeout: 500, 
 				out: makeShort
 			});
-		function makeTall(){$("#amountdonated_helper").fadeIn();}
-		function makeShort(){$("#amountdonated_helper").fadeOut();}
+			function makeTall(){$("#amountdonated_helper").fadeIn();}
+			function makeShort(){$("#amountdonated_helper").fadeOut();}
 
 			// Set up the photobrowser
 			$("div#shirt div.shirtimage.thumbnail").click(function(){

@@ -9,7 +9,7 @@
 	#featuredshirt:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 
-	#shirt {position: relative; width: 730px; float: left; overflow: hidden;}
+	#shirt {position: relative; width: 60%; margin-left: -5%; float: left; overflow: hidden;}
 
 		#shirtimage {height: 700px; overflow: hidden;} /* TODO test and scale */
 		#shirtimage img {width: 100%;}
@@ -19,28 +19,8 @@
 			#toggle a, #toggle a:active, #toggle a:hover, #toggle a:focus {color: rgb(255, 255, 255); text-decoration: none;}
 			#toggle .selected {display: none;}
 
-		#charityflyout {display: none !important;}
-			#charityflyout .charitylogo {position: absolute; top: 335px; left: 18px; z-index: 10; width: 140px; height: 140px; background-color: rgb(250, 250, 250); border: 1px solid rgb(221, 221, 221); cursor: pointer;} /* TODO set bg color to be settable in the admin panel so that if they provide a logo on a different color bg */
-				.charitylogo .logoimage {width: 70%; margin: 15%; overflow: hidden;} /* TODO how do we force the spacing and sizing here? */
-				.charitylogo .logoimage img {width: 100%;}
-			
-			#charityflyout #charityinfo {display: none; width: 500px; position: absolute; top: 360px; left: 97px; z-index: 5; height: 70px; overflow: hidden; padding: 10px 0 10px 90px; background-color: rgba(255, 255, 255, .9);}
-				#charityflyout #charityinfo .charitylink {margin: 0; float: left;}
-					#charityflyout #charityinfo h4 {margin: 8px 0 0 0;}
-					#charityflyout #charityinfo .charitylink .goto {display: inline-block; vertical-align: top; font-size: 9px; color: rgb(85, 85, 85);}
 
-				ul.charitysociallinks {list-style-type: none; float: right; margin: 20px 20px 0 0; padding: 0; width: 150px;}
-					ul.charitysociallinks li a {display: block; float: left; width: 33px; height: 33px; margin-right: 12px; overflow: hidden; text-indent: -9999em; background: url('../images/sociallinks.png') no-repeat;}
-						ul.charitysociallinks li.facebook a {background-position: 0 0;}
-							ul.charitysociallinks li.facebook a:hover {background-position: 0 -40px;}
-						ul.charitysociallinks li.twitter a {background-position: -48px 0;}
-							ul.charitysociallinks li.twitter a:hover {background-position: -48px -40px;}
-						ul.charitysociallinks li.youtube a {background-position: -97px 0;}
-							ul.charitysociallinks li.youtube a:hover {background-position: -97px -40px;}
-				
-
-
-	#shirtactions {max-width: 450px; float: right; margin: 40px 0 0 20px;}
+	#shirtactions {width: 450px; float: right; margin-top: 40px;}
 		.price, .goals, .sizes, .addtocart {margin-bottom: 20px; color: rgb(255, 255, 255);}
 
 		.price {}
@@ -50,6 +30,8 @@
 			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 18px; line-height: 1.4;}
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
+				.price .daysremaining.helper,
+				.price .daysremaining.helper:hover {color: rgba(255, 255, 255, .75);}
 
 		.goals {clear: both; padding-top: 40px;}
 			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
@@ -76,11 +58,11 @@
 
 
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
-				.goals #progressbar {width: 445px; height: 52px; background-color: rgb(69, 28, 67);}
+				.goals #progressbar {width: 100%; height: 52px; background-color: rgb(69, 28, 67);}
 					.goals #progressbar .percentage {position: relative; height: 52px; background: rgb(119, 51, 116) url('../images/diagonal_pattern.png');}
 					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
 			
-			.goals .amountdonated {margin: 10px 0 0 0; position: relative; float: left;}
+			.goals .amountdonated {margin: 10px 0 0 0; position: relative; float: left; cursor: pointer;}
 				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(../images/why.png) no-repeat; text-indent: -9999em; overflow: hidden;}
 					.goals .amountdonated:hover .why {opacity: 1;}
 
@@ -98,12 +80,12 @@
 		
 		#sharing {float: right; padding-top: 4px;}
 
-		.sizes {clear: both; margin-top: 20px;}
+		.sizes {clear: both; padding-top: 20px;}
 			.sizes:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 			.sizes h5 {margin: 20px 0 5px 0;}
 
 			.sizes .category_size {float: left; margin-right: 20px;}
-				.sizes .category_size:nth-child(2) {margin-right: 0;}
+				.sizes .category_size:nth-child(2) {margin-right: 0; float: right;}
 
 				.sizes .category_size.mens h5 {text-indent: -9999em; background: url(../images/sizes_guys.png) no-repeat left bottom;}
 				.sizes .category_size.womens h5 {text-indent: -9999em; background: url(../images/sizes_ladies.png) no-repeat left top;}
@@ -121,7 +103,7 @@
 
 
          .addtocart {margin-top: 60px;}
-	         .addtocart input {width: 445px; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; padding: 15px 0;}
+	         .addtocart input {width: 100%; border: 0; color: rgb(255, 255, 255); text-transform: uppercase; font-size: 35px; padding: 15px 0;}
 
 	         .addtocart input.disabled {background: url(../images/addtocart_disabled.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
 	         .addtocart input {background: url(../images/addtocart.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
@@ -161,7 +143,7 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.weektwelvekenmarrescue, body.kenmarrescue {background-position: 50% 0; background-repeat: no-repeat;}
+body.weektwelvekenmarrescue, body.kenmarrescue {background-position: 60% -10px; background-repeat: no-repeat;}
 body.weektenmakeapaktmakeadifference {background-position: 0 -220px; background-repeat: no-repeat;}
 body.bideaweestayawhile {background-position: right 0; background-repeat: no-repeat;}
 body.weektwelvemayorsalliance {background-position: 50% 0; background-repeat: no-repeat;}
@@ -172,73 +154,52 @@ body.weektwelvemayorsalliance {background-position: 50% 0; background-repeat: no
 /* ---------- RESPONSIVE STATES -------------------- */
 /* ------------------------------------------------- */
 
-@media screen and (max-width: 1200px) {
-	#shirt {width: 700px; margin-left: 0;}
-	#shirtactions {margin: 40px 20px 0 0;}
-	#shirtdetails {padding: 60px 30px;}
+
+@media screen and (max-width: 1210px) {
+	#shirtactions {margin-right: 20px;}
 }
 
-@media screen and (max-width: 1170px) {
-	#shirt {width: 600px;}
-	#featuredshirt .wrapper {background-size: 75%; padding-top: 20px;}
-	#sharing {left: 40px; bottom: 20px;}
-}
-
-@media screen and (max-width: 1070px) {
-	#shirt {width: 500px;}
+@media screen and (max-width: 1080px) {
 	#shirtdetails .partners {width: 45%;}
+	#shirtdetails {padding: 60px 0 60px 40px;}
+	#shirt {width: 55%; margin-left: -2%;}
 }
 
-@media screen and (max-width: 995px) {
-	#shirtactions {max-width: 400px;}
-	.price .amount .dollar {font-size: 16px; padding-top: 5px;}
-	.price .amount .number {font-size: 70px;}
-	.price .tagline {font-size: 13px; padding-top: 8px;}
-	.price .daysremaining {margin-left: 13px; padding-top: 10px;}
-	.wf-active .daysremaining.helper, .wf-active .amountdonated .helper {font-size: 16px;}
-	.goals {padding-top: 0;}
-	.donated .number, .goal .number {font-size: 45px; line-height: 45px;}
-	.goals #progressbar	{width: 395px;}
-	.goals .progress {padding-top: 18px;}
-	.addtocart {margin-top: 40px;}
-	.addtocart input {width: 385px;}
+/* breakpoint where header like button vanishes */
+@media screen and (max-width: 990px) {
+	#shirt {width: 48%; margin-left: 0;}
+	#shirtactions {width: 415px;}
+	.goals {padding-top: 10px;}
 }
 
-@media screen and (max-width: 920px) {
-	#shirt {width: 450px;}
-}
-
-@media screen and (max-width: 875px) {
-	#shirtactions {max-width: 340px;}
-	#featuredshirt .wrapper {background: none;}
-	.price .tagline {line-height: 16px;}
-	.goals .goal {margin-right: 40px;}
-	.goals .donated .helper, .goals .goal .helper {font-size: 14px;}
-	.goals #progressbar	{width: 310px;}
-	.sizes {margin-top: 10px;}
-	.sizes .category_size {float: none; clear: both;}
-	.sizes .category_size:nth-child(2) {float: none; margin-left: 0; padding-top: 30px;}
-	.addtocart {margin-top: 40px;}
-	.addtocart input {width: 305px;}
+/* go to stacked layout */
+@media screen and (max-width: 880px) {
+	#shirt {width: 80%; margin: 0 auto; float: none;}
+	#shirtimage {height: auto;}
+	#shirtactions {clear: both; float: none; margin: 20px auto 0; width: 60%;}
+	.price .tagline {font-size: 28px; line-height: 1.3;}
+	#amountdonated_helper {left: 60px; background: none;}
 	#shirtdetails .partners {width: auto; float: none;}
-	#shirtdetails #comments {float: none; clear: both; padding-top: 40px;}
+	#shirtdetails {padding: 60px 40px;}
+	#shirtdetails #comments {clear: both; float: none; margin: 0 auto; padding-top: 40px;}
 }
 
-@media screen and (max-width: 800px) {
-	body {background-image: url(../images/shirt_fallback_texture.png) !important; background-repeat: repeat !important;}
-	#sharing {position: static; margin: 20px auto; width: 400px;}
-	#shirt {float: none; margin: 0 auto; width: 90%;}
-	#shirtactions {max-width: 445px; float: none; margin: 0 auto;}
-	.goals #progressbar	{width: 380px;}
-	.goals .goal {margin-right: 75px;}
-	.goals .amountdonated {display: none;}
-	#amountdonated_helper {display: none !important;}
+@media screen and (max-width: 780px) {
+	#shirtactions {width: 80%;}
 }
 
-@media screen and (max-width: 470px) {
-	.goals .donated {float: none;}
-	.goals .goal {float: none; margin-right: 0; clear: both; text-align: left;}
-	.goals .helper {display: inline; margin-left: 0;}
-	.goals .progress {display: none;}
+@media screen and (max-width: 500px) {
+	#shirt {width: 95%;}
+	#shirtactions {width: 95%;}
+	.price .tagline {font-size: 24px; line-height: 1;}
+	.goals .donated {float: none; width: auto;}
+	.goals .donated .helper {display: inline;}
+	.goals .goal,
+	.goals .goal .helper,
+	.goals .progress,
+	.goals .amountdonated,
+	#sharing, /* does sharing work on iphone? */
 	#shirtdetails #comments {display: none;}
+	.sizes {padding-top: 0;}
+	.addtocart {margin-top: 30px;}
 }

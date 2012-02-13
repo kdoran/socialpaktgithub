@@ -73,6 +73,7 @@
 	/* Minor Nav Links */
 	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); width: 275px;}
 		#header ul.minornav li {margin-right: 3%;}
+		#header ul.minornav li:last-child {margin-right: 0;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
 
@@ -120,58 +121,27 @@
 /* ---------- RESPONSIVE STATES -------------------- */
 /* ------------------------------------------------- */
 
-@media screen and (max-width: 1050px) {
-	#header ul.minornav {max-width: 265px;}
-	#header ul.minornav li, .wf-active #header ul.minornav li {font-size: 13px;}
-}
-
-@media screen and (max-width: 1150px) {
-	#header ul.minornav {max-width: 220px;}
-	#header ul.minornav li, .wf-active #header ul.minornav li {font-size: 12px;}
-	/* #header ul.minornav {float: right; padding-top: 0;} */
-	/* #header ul.locationnav li a {background-size: 85%;} /* find a way to make this work?? */
-}
-
-@media screen and (max-width: 1045px) {
-	#header .logo {padding-top: 10px; width: 160px;}
+@media screen and (max-width: 1110px) {
+	#header ul.minornav {width: 210px;}
+	#header ul.minornav li {font-size: 13px;}
+	#header .logo {padding-top: 10px; width: 175px;}
 	#header .logo h1 a {background-size: 75%; height: 60px;}
 }
 
-@media screen and (max-width: 970px) {
+
+@media screen and (max-width: 990px) {
 	#header .like {display: none;}
 }
 
 @media screen and (max-width: 880px) {
-	#header ul.locationnav li a {padding: 35px 5px 10px; background-position: -5px 0;}
-	#header ul.locationnav li a:hover {background-position: -5px -85px;}
-	#header ul.locationnav li.selected a {background-position: -5px -170px;}
+	#header .bgimage {height: 170px;}
+	#header ul.minornav {float: right; margin-right: 20px;}
+	#header ul.locationnav {clear: both; float: none; margin: 0 auto; width: 455px;}
+}
+
+@media screen and (max-width: 440px) {
+	#header .logo {float: none; margin: 0 auto;}
+	#header ul.locationnav {width: 320px; height: 40px;}
+	#header ul.locationnav li a {font-size: 19px; padding: 0 10px; line-height: 40px;}
 	#header ul.minornav {display: none;}
-}
-
-@media screen and (max-width: 630px) {
-	#header .logo {padding-top: 15px; margin-left: 10px; width: 125px;}
-	#header .logo h1 a {background-size: 50%;}
-}
-
-@media screen and (max-width: 540px) {
-	#header .bgimage {height: 162px;}
-	#header .logo {margin: 0 auto; float: none; width: 250px; padding-top: 10px;}
-	#header .logo h1 a {margin-top: 0; width: 250px; background-size: 100%;}
-	#header ul.locationnav {float: none; margin: 0 auto; width: 400px;}
-	#header ul.minornav {display: none;}
-}
-
-@media screen and (max-width: 380px) {
-	#header .bgimage {height: 132px;}
-	#header .logo, #header .logo h1 a {width: 200px;}
-	#header ul.locationnav {float: none; margin: 0 auto; width: 100%; text-align: center;}
-	#header ul.locationnav li {float: none; display: inline-block;}
-	#header ul.locationnav li a {padding: 10px 1px 5px; background-position: -10px -15px;}
-		#header ul.locationnav li.newyork a {width: 65px; background-size: 80px;}
-		#header ul.locationnav li.california a {width: 85px; background-size: 68px;}
-		#header ul.locationnav li.canada a {width: 50px; background-size: 68px;}
-		#header ul.locationnav li.everywhere a {width: 85px; background-size: 95px;}
-	#header ul.locationnav li a:hover {background-position: -10px -86px;}
-	#header ul.locationnav li.selected a {background-position: -10px -162px;}
-
 }
