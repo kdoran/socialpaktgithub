@@ -57,13 +57,13 @@
 			return false;
 		});
 
-		//thumbnail click swaps main photo
-		$('.photo_thumbnail').click(function(){
-			var this_class = "." + $(this).attr("class").split(" ")[0];
-			$(".photo_large").hide();
-			//class of thumbnail is class of large photo
-			$(this_class).show();
-		});
+		// //thumbnail click swaps main photo
+		// $('.photo_thumbnail').click(function(){
+		// 	var this_class = "." + $(this).attr("class").split(" ")[0];
+		// 	$(".photo_large").hide();
+		// 	//class of thumbnail is class of large photo
+		// 	$(this_class).show();
+		// });
 
 		$("div.thumbnail").hover(
 			function(){
