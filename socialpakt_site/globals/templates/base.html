@@ -38,7 +38,6 @@
       })(); 
 </script>
 <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-<script src="{{ STATIC_URL }}js/lib/respond.min.js"></script>
 </head>
 
 <body class="{% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
@@ -255,6 +254,7 @@
 
 
     <script src="{{ STATIC_URL }}js/globals.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/respond.min.js"></script>
 
     {% block fbscripts %}
       <div id="fb-root"></div>
