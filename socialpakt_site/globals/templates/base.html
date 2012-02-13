@@ -12,7 +12,16 @@
   {% block fbmetadata %}
   {% endblock fbmetadata %}
   <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/blank.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/css3.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/footer.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/header.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/locations.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/pages.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/socialpakt.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/shirt.css" type="text/css" media="screen" charset="utf-8" />
   
+
   <script src="{{ STATIC_URL }}js/lib/modernizr-2.0.6.js"></script>
   <script type="text/javascript">
       (function() {
@@ -29,7 +38,7 @@
       })(); 
 </script>
 <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-<script src="{{ STATIC_URL }}js/lib/css3-mediaqueries.js"></script>
+<script src="{{ STATIC_URL }}js/lib/respond.min.js"></script>
 </head>
 
 <body class="{% if product %}{{product.slug}}{% else %}static{% endif %}"{% if product.background_photo %} style="background-image:url({{ product.background_photo.url }})"{% else %}{% endif %}>
