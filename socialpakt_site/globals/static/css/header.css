@@ -113,18 +113,27 @@
 	#header ul.minornav li, .wf-active #header ul.minornav li {font-size: 13px;}
 }
 
-@media screen and (max-width: 995px) {
-	#header .bgimage {height: 113px;}
-	#header ul.minornav {float: right; padding-top: 0;}
+@media screen and (max-width: 1150px) {
+	#header ul.minornav {max-width: 220px;}
+	#header ul.minornav li, .wf-active #header ul.minornav li {font-size: 12px;}
+	/* #header ul.minornav {float: right; padding-top: 0;} */
 	/* #header ul.locationnav li a {background-size: 85%;} /* find a way to make this work?? */
 }
 
-@media screen and (max-width: 700px) {
-	#header .logo {padding-top: 10px;}
-	#header .logo h1 a {background-size: 75%;}
+@media screen and (max-width: 1045px) {
+	#header .logo {padding-top: 10px; max-width: 160px;}
+	#header .logo h1 a {background-size: 75%; height: 60px;}
+}
+
+@media screen and (max-width: 970px) {
+	#header .like {display: none;}
+}
+
+@media screen and (max-width: 880px) {
 	#header ul.locationnav li a {padding: 35px 5px 10px; background-position: -5px 0;}
 	#header ul.locationnav li a:hover {background-position: -5px -85px;}
 	#header ul.locationnav li.selected a {background-position: -5px -170px;}
+	#header ul.minornav {display: none;}
 }
 
 @media screen and (max-width: 630px) {
@@ -132,7 +141,7 @@
 	#header .logo h1 a {background-size: 50%;}
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 540px) {
 	#header .bgimage {height: 162px;}
 	#header .logo {margin: 0 auto; width: 250px; float: none; padding-top: 10px;}
 	#header .logo h1 a {margin-top: 0; background-size: 100%;}

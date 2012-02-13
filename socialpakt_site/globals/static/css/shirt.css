@@ -111,12 +111,14 @@
 
 	         .addtocart #cart {text-align: center; display: none;} /* TODO */
 
-#sharing {position: absolute; bottom: 10px; left: 0;}
+#sharing {position: absolute; bottom: 10px; left: 10px;}
 
 #shirtdetails {background: rgb(204, 204, 204) url(../images/details_texture.png); padding: 60px 0;}
 	#shirtdetails:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#shirtdetails .partners {max-width: 700px; float: left;}
+	#shirtdetails #comments {float: right;}
+
+	#shirtdetails .partners {width: 55%; float: left;}
 		
 		.partners .label {color: rgb(255, 138, 52); font-size: 11px; text-transform: lowercase;}
 		.partners h2 {margin-top: 5px;}
@@ -132,8 +134,6 @@
 			.partners .artist .artistphoto {width: 135px; height: 135px; float: left; margin-right: 20px; margin-top: 8px; border: 1px solid rgb(210, 210, 210); overflow: hidden;}
 				.partners .artist .artistphoto img {width: 150%; margin-left: -15px; margin-top: -20px;} /* TODO this margining isn't going to work for all photos, what to do here? create thumbnail? */
 
-	#shirtdetails #comments {float: right; width: 450px;}
-		#comments .fb_iframe_widget iframe {width: 450px !important;}
 
 
 
@@ -159,11 +159,13 @@ body.bideaweestayawhile {background-position: right 0; background-repeat: no-rep
 
 @media screen and (max-width: 1170px) {
 	#shirt {width: 600px;}
-	#featuredshirt .wrapper {background-size: 75%;}
+	#featuredshirt .wrapper {background-size: 75%; padding-top: 20px;}
+	#sharing {left: 40px; bottom: 20px;}
 }
 
 @media screen and (max-width: 1070px) {
 	#shirt {width: 500px;}
+	#shirtdetails .partners {width: 45%;}
 }
 
 @media screen and (max-width: 995px) {
@@ -177,8 +179,6 @@ body.bideaweestayawhile {background-position: right 0; background-repeat: no-rep
 	.donated .number, .goal .number {font-size: 45px; line-height: 45px;}
 	.goals #progressbar	{width: 395px;}
 	.goals .progress {padding-top: 18px;}
-	.sizes .sizeselect {font-size: 14px; height: 28px; width: 28px;}
-	.sizes .category_size:nth-child(2) {float: left; margin-left: 40px;}
 	.addtocart {margin-top: 40px;}
 	.addtocart input {width: 385px;}
 }
@@ -188,9 +188,10 @@ body.bideaweestayawhile {background-position: right 0; background-repeat: no-rep
 }
 
 @media screen and (max-width: 875px) {
-	#shirtactions {max-width: 300px;}
+	#shirtactions {max-width: 340px;}
+	#featuredshirt .wrapper {background: none;}
 	.price .tagline {line-height: 16px;}
-	.goals .goal {margin-right: 0;}
+	.goals .goal {margin-right: 40px;}
 	.goals .donated .helper, .goals .goal .helper {font-size: 14px;}
 	.goals #progressbar	{width: 310px;}
 	.sizes {margin-top: 10px;}
@@ -198,15 +199,19 @@ body.bideaweestayawhile {background-position: right 0; background-repeat: no-rep
 	.sizes .category_size:nth-child(2) {float: none; margin-left: 0; padding-top: 30px;}
 	.addtocart {margin-top: 40px;}
 	.addtocart input {width: 305px;}
+	#shirtdetails .partners {width: auto; float: none;}
+	#shirtdetails #comments {float: none; clear: both; padding-top: 40px;}
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
+	body {background-image: url(../images/shirt_fallback_texture.png) !important; background-repeat: repeat !important;}
+	#sharing {position: static; margin: 20px auto; width: 400px;}
 	#shirt {float: none; margin: 0 auto; width: 90%;}
 	#shirtactions {max-width: 445px; float: none; margin: 0 auto;}
-	#featuredshirt .wrapper {background-position: center bottom;}
-	#charityflyout {display: none;}
 	.goals #progressbar	{width: 380px;}
 	.goals .goal {margin-right: 75px;}
+	.goals .amountdonated {display: none;}
+	#amountdonated_helper {display: none !important;}
 }
 
 @media screen and (max-width: 470px) {
@@ -214,6 +219,5 @@ body.bideaweestayawhile {background-position: right 0; background-repeat: no-rep
 	.goals .goal {float: none; margin-right: 0; clear: both; text-align: left;}
 	.goals .helper {display: inline; margin-left: 0;}
 	.goals .progress {display: none;}
-	.goals .amountdonated {display: none;}
-	#amountdonated_helper {display: none !important;}
+	#shirtdetails #comments {display: none;}
 }

@@ -17,13 +17,6 @@ body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); /* backgro
   .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif;}
   .wf-active body {font-family: "proxima-nova", Proxima Nova, Geneva, Verdana, Arial, sans-serif;}
 
-
-/* Typekit */
-/* font-family: "proxima-nova"; */ /* sizes 400, 600 + italic */
-/* font-family: "museo-slab"; */ /* for numbers only */
-/* font-family: "proxima-nova-extra-condensed"; */ /* use as a replacement for knockout, sizes 300, 400, 700, not italic */
-
-
 h1, h2, h3, h4 {text-transform: uppercase; font-family: "proxima-nova", Geneva, Verdana, Arial, sans-serif; font-weight: 600; color: rgb(26, 106, 127); line-height: 1;}
 h1 {font-size: 60px;}
 h2 {font-size: 40px;}
@@ -39,7 +32,7 @@ a img {border: 0;}
 .number {font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
 .dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px;}
 .helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: bold; font-size: 14px; color: rgba(255, 255, 255, .75);}
-  .wf-active .helper {font-weight: 300; font-size: 20px;}
+  .wf-active .helper {font-weight: 200; font-size: 20px;}
   .helper:hover {color: rgba(255, 255, 255, 1);}
 
   /* TODO IE8 doesn't support rgba, specify fallback */
