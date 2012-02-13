@@ -73,7 +73,7 @@
 }
 
 @media screen and (max-width: 1060px) {
-	.sociallinks li {width: 40px; height: 40px;}
+	.sociallinks li a {width: 40px; height: 40px;}
 	.footernav {margin-top: 22px;}
 }
 
@@ -85,7 +85,7 @@
 
 @media screen and (max-width: 960px) {
 	.socialpaktlinks .logo_large {width: 200px;}
-	.sociallinks li {width: 30px; height: 30px;}
+	.sociallinks li a {width: 30px; height: 30px;}
 }
 
 @media screen and (max-width: 840px) {
