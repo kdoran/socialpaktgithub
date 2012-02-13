@@ -140,7 +140,7 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.weektwelvekenmarrescue {background-position: -320px 0; background-repeat: no-repeat;}
+body.weektwelvekenmarrescue, body.kenmarrescue {background-position: -320px 0; background-repeat: no-repeat;}
 body.weektenmakeapaktmakeadifference {background-position: 0 -220px; background-repeat: no-repeat;}
 body.bideaweestayawhile {background-position: right 0; background-repeat: no-repeat;}
 
