@@ -227,6 +227,14 @@
             <li class="youtube"><a href="http://www.youtube.com/user/SocialPakt">YouTube</a></li>
         </ul>
 
+        <ul class="footernav minornav">
+          <li><a href="{% url shirts %}">Causes</a></li>
+          <li><a href="{% url npos %}">Nonprofits</a></li>
+          <li><a href="{% url artists %}">Artists</a></li>
+          <li><a href="/aboutus/">About SocialPakt</a></li>
+          <li><a href="http://blog.socialpakt.com">Blog</a></li>
+        </ul>
+
         <ul class="footernav">
             <li><a href="/sizingchart">Sizing Chart</a></li>
             <li><a href="/press/">Press</a></li>
@@ -256,8 +264,7 @@
 
 
     <script src="{{ STATIC_URL }}js/globals.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/respond.min.js"></script>
-    <script src="{{ STATIC_URL }}js/lib/jquery.hoverIntent.minified.js"></script>
+    <script src="{{ STATIC_URL }}js/lib/css3-mediaqueries.js"></script>
     
 
     {% block fbscripts %}

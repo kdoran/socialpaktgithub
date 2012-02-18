@@ -4,7 +4,7 @@
 #locations {background-color: rgb(69, 28, 67); background-image: url('../images/diagonal_pattern.png'), url('../images/locations_gradient.png'); padding: 50px 0; color: rgb(255, 255, 255); margin: 0 auto;}
 	#locations:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
-	#locations .location {width: 290px; min-height: 500px; float: left; vertical-align: top;}
+	#locations .location {width: 22%; margin-right: 1%; min-height: 500px; float: left; vertical-align: top;}
 		.ie8 #locations .location {zoom: 1; width: 245px;}
 
 		/* Location inset shadow and gradient */
@@ -17,6 +17,8 @@
 	
 		/* Location Titles */
 		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px; cursor: pointer;}
+
+			.location.newyork {margin-left: 3%;}
 
 			.location.newyork h3 a {background-position: 0 0; width: 165px;}
 				.location.newyork.selected h3 a,
@@ -55,7 +57,7 @@
 			}
 
 
-		.location p {width: 250px;}
+		.location p {}
 
 
 

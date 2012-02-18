@@ -54,11 +54,16 @@
 	    	linear-gradient(left, rgba(177, 212, 138, 1), rgba(146, 212, 218, 1));
 	}
 
+	.ie9 #header .bgimage,
+	.ie8 #header .bgimage,
+	.ie7 #header .bgimage {opacity: 1;}
 
 
 	#header .logo {float: left; margin: 0 20px;}
 		#header .logo h1 {margin: 0;}
 		#header .logo h1 a {display: block; height: 67px; width: 227px; margin: 15px 0 0 0; text-indent: -9999em; background: url("../images/socialpaktlogo.png") no-repeat;}
+
+		.ie9 #header .logo {margin-right: 5px;}
 
 	#header .like {float: left; padding-top: 35px;}
 
@@ -76,6 +81,8 @@
 		#header ul.minornav li:last-child {margin-right: 0;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
+
+		.ie9 #header ul.minornav {margin-left: 0;}
 
 	/* Location Nav */
 	#header ul.locationnav {float: right;}		
@@ -126,6 +133,7 @@
 	#header ul.minornav li {font-size: 13px;}
 	#header .logo {padding-top: 10px; width: 175px;}
 	#header .logo h1 a {background-size: 75%; height: 60px;}
+	#header .like {}
 }
 
 

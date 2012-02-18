@@ -209,3 +209,14 @@ body.weektwelvemayorsalliance {background-position: 50% 0; background-repeat: no
 	.sizes {padding-top: 0;}
 	.addtocart {margin-top: 30px;}
 }
+
+@media screen and (max-width: 320px) {
+	#shirtactions {width: 85%;}
+	.price .amount {display: inline; float: none;}
+	.price .amount .dollar {display: inline; font-size: 22px; padding: 0;}
+	.price .amount .number {display: inline; font-size: 32px; padding: 0;}
+	.price .tagline {display: inline; float: none; width: auto; margin: 0;}
+	.donated .number, .goal .number {font-size: 45px; line-height: auto;}
+	.goals .donated .helper {margin: 0;}
+	.sizes {width: 88%; margin: 0 auto;}
+}
