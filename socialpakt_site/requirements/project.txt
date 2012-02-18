@@ -5,3 +5,4 @@ django-social-auth
 south
 PIL
 sorl-thumbnail
+django_compressor
