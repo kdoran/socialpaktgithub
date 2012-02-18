@@ -70,8 +70,9 @@
 
 	#header ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;}
 		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
+		.ie8 #header li, .ie9 #header li {font-family: "proxima-nova-extra-condensed-n3", Verdana, Tahoma, Arial; font-size: 10px;}
 		#header li h3 {margin: 0;}
-			.wf-active #header li {font-weight: 400; font-size: 16px;}
+			.wf-active #header li {font-weight: 300; font-size: 16px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
 			.ie9 #header li, .ie8 #header li {font-size: 12px;}
 
@@ -90,6 +91,9 @@
 
 		#header ul.locationnav li a {display: block; padding: 0 20px; height: 85px; line-height: 85px; color: rgb(255, 255, 255); font-family: "proxima-nova-extra-condensed"; font-weight: 400; text-shadow: 1px 1px 7px rgb(0, 58, 73);}
 			#header ul.locationnav li a:hover {background-color: rgba(0, 58, 73, .2); background-position: 0 -85px;}
+			.no-rgba #header ul.locationnav li a:hover {background-color: rgb(0, 58, 73);}
+
+			.ie8 #header ul.locationnav li a {font-size: 14px;}
 
 		#header ul.locationnav li.selected a {background-color: rgb(0, 58, 73); text-shadow: 1px 1px 7px rgb(0, 0, 0); cursor: default;}
 

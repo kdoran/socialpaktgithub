@@ -4,6 +4,7 @@
 body {margin: 0; padding: 0; border-top: 3px solid rgb(29, 116, 138); color: rgb(51, 51, 51); font-family: Geneva, Verdana, Arial, sans-serif; font-size: 16px; line-height: 1.8em;}
   .wf-inactive body {font-family: Geneva, Verdana, Arial, sans-serif; font-size: 14px;}
   .wf-active body {font-family: "proxima-nova", Proxima Nova, Geneva, Verdana, Arial, sans-serif;}
+  .ie8 body, .ie8 body {font-family: "proxima-nova-n4", Verdana, Tahoma, Arial;}
 
 h1, h2, h3, h4 {text-transform: uppercase; font-family: "proxima-nova", Geneva, Verdana, Arial, sans-serif; font-weight: 600; color: rgb(26, 106, 127); line-height: 1;}
 h1 {font-size: 60px;}
@@ -29,6 +30,7 @@ a {
 .number {font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 700;}
 .dollar {font-family: "museo-slab", Geneva, Verdana, Arial, sans-serif; font-weight: 100; font-size: 30px; display: inline-block; vertical-align: top; padding-top: 3px; text-shadow: 1px 0px 0px rgba(0, 0, 0, .3);}
 .helper {text-transform: uppercase; font-family: "proxima-nova-extra-condensed", 'Knockout', 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: bold; font-size: 14px; color: rgba(255, 255, 255, .75);}
+  .no-rgba {color: rgb(255,255,255);}
   .wf-active .helper {font-weight: 200; font-size: 20px;}
   .helper:hover {color: rgba(255, 255, 255, 1);}
 

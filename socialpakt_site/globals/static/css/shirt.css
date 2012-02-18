@@ -28,6 +28,7 @@
 				.price .amount .dollar {}
 				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
 			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 18px; line-height: 1.4;}
+				.ie8 .price .tagline {width: 60%;}
 			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. */
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 				.price .daysremaining.helper,
@@ -95,6 +96,7 @@
 			.sizes select {}
 			.sizes .sizeselect {display: block; float: left; margin-right: 9px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; padding: 0 10px; font-weight: 900; font-size: 16px; cursor: pointer;}
                     .sizeselect:hover {background-color: rgb(225, 225, 225); color: rgb(39, 101, 111);}
+                    .no-rgba .sizeselect {background-color: rgb(228, 228, 228);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
                 .sizeselect.selected {background-color: rgb(255, 255, 255); color: rgb(225, 22, 101);}
                 .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;} /* TODO add hover saying "out of stock" */
