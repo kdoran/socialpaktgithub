@@ -35,8 +35,8 @@ urlpatterns = patterns('',
 
 
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^$', CatalogHomeView.as_view(), name='home', ),
-    url(r'^$', TemplateView.as_view(template_name="maintenance.html"), name='maintenance', ),
+    url(r'^$', CatalogHomeView.as_view(), name='home', ),
+    # url(r'^$', TemplateView.as_view(template_name="maintenance.html"), name='maintenance', ),
     url(r'^city/(?P<category>\w+)/$', CatalogHomeView.as_view(), name='home_city' ),
     url(r'^shirt/(?P<slug>\w+)/$', CatalogHomeView.as_view(), name='shirt', ),
     url(r'^artist/(?P<slug>\w+)/$', 

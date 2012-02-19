@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 from partners.models import Partner
 
@@ -65,6 +66,10 @@ class Product(models.Model):
 
 	def distance_to_goal(self):
 		return self.total_raised() / self.goal * 100.0
+	
+	def days_left(self):
+		delta = self.date_expires - datetime.datetime.today()
+		return delta.days + 1
 
 	# mark other products for this cat
 	# not sure if there's a better way to do this

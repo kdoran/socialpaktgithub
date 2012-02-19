@@ -20,11 +20,8 @@
 	$(document).ready(function(){
 			// Set up the countdown timer
 			var expiresdate = $("#expiresdate").text();
-			$("#expiresdate").countdown({
-				ref_time: Date.parse(expiresdate),
-				format: '%d'
-			});
-			var daysleft = $("#expiresdate").text();
+			
+			var daysleft = expiresdate;
 			if (daysleft == 1){
 				$("#days").text("day");
 			}
