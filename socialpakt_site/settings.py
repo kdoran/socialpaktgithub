@@ -75,6 +75,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -167,6 +168,7 @@ INSTALLED_APPS = (
     'splash',
     'orders',
     'sorl.thumbnail',
+    'compressor',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -180,6 +182,8 @@ PAYPAL_WPP_PASSWORD = "1312669733"
 PAYPAL_WPP_SIGNATURE = "AamqpsltJ37ivz.f9TQpoEQFWXzrATJshZ.CeDL9Y01xYbA9HOwQrtfr"
 
 FOXYCART_DATAFEED_KEY = "tGvpu4ljy4eTpECt9jfvkKKN5kcbwLCTiX8CVjMpiV8xqAQpPWNZBtHwHKB8"
+
+COMPRESS_ENABLED = True
 
 try:
     from local_settings import *

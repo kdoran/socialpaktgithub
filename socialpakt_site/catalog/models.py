@@ -11,6 +11,15 @@ class ProductCategory(models.Model):
 	def __str__(self):
 		return self.slug
 
+class HomeCategory(models.Model):
+
+	slug = models.SlugField(max_length=255, db_index=True)
+	display_text = models.CharField(max_length=255)
+	category = models.ForeignKey(ProductCategory, null=True)
+
+	def __str__(self):
+		return self.slug
+
 class VariationCategory(models.Model):
 	
 	slug = models.SlugField(max_length=255, db_index=True)
