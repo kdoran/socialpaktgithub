@@ -29,12 +29,13 @@
             {% endif %}
           </div>
 
-
+          <div class="like">
           {% if partner.partner_type == "ART" %}
           <fb:like href="http://{{ request.get_host }}{% url artist partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like> 
         {% else %}
           <fb:like href="http://{{ request.get_host }}{% url nonprofit partner.slug %}" send="true" width="450" show_faces="true" font=""></fb:like>  
         {% endif %}
+        </div>
 
 
           
