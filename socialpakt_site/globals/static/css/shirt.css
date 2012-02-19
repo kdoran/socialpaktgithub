@@ -99,7 +99,7 @@
                     .no-rgba .sizeselect {background-color: rgb(228, 228, 228);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
                 .sizeselect.selected {background-color: rgb(255, 255, 255); color: rgb(225, 22, 101);}
-                .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;} /* TODO add hover saying "out of stock" */
+                .sizeselect.stock0, .sizeselect.stock0:hover {opacity: .2;}
 
                 #shirt_select {display: none;} /* hide select box of sizes */
 
