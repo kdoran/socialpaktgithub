@@ -24,7 +24,9 @@
         <div id="sidebar">
           <div class="partnerimage">
             <div class="overlay"></div>
-            <img src="{% if partner.image %}{{partner.image.url}}{% endif %}" alt="{{partner.name}}">
+            {% if partner.image %}
+            <img src="{{partner.image.url}}" alt="{{partner.name}}">
+            {% endif %}
           </div>
 
           <div class="like">
