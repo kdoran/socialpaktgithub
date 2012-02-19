@@ -69,27 +69,33 @@
 
 
 	#header ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden;}
-		#header li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
-		.ie8 #header li, .ie9 #header li {font-family: "proxima-nova-extra-condensed-n3", Verdana, Tahoma, Arial; font-size: 10px;}
-		#header li h3 {margin: 0;}
-			.wf-active #header li {font-weight: 300; font-size: 16px;}
+		#header li, #header li h3 {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", "proxima-nova", Arial, sans-serif; font-size: 14px; font-weight: normal;}
+			#header li {font-size: 10px;}
+			.wf-active #header li {font-weight: 200; font-size: 16px;}
+			.wf-active #header li h3 {font-size: 24px;}
+		
+		.ie8 #header li, .ie9 #header li {font-family: "proxima-nova-extra-condensed-n3", "proxima-nova", Arial, sans-serif; font-size: 12px;}
 			.ie6 #header li, .ie7 #header li {display: inline; zoom: 1;} /* duplicate inline-block */
-			.ie9 #header li, .ie8 #header li {font-size: 12px;}
+
+			#header li h3 {margin: 0;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; margin-left: 10px; color: rgb(255, 255, 255); width: 275px;}
-		#header ul.minornav li {margin-right: 3%;}
+	#header ul.minornav {float: left; padding-top: 33px; color: rgb(255, 255, 255); width: 325px;}
+		#header ul.minornav li {margin-right: 4px;}
 		#header ul.minornav li:last-child {margin-right: 0;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
 
 		.ie9 #header ul.minornav {margin-left: 0;}
+		.wf-active #header ul.minornav {width: 275px; margin-left: 10px;}
+		.wf-active #header ul.minornav li {margin-right: 3%;}
+
 
 	/* Location Nav */
 	#header ul.locationnav {float: right;}		
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
-		#header ul.locationnav li a {display: block; padding: 0 20px; height: 85px; line-height: 85px; color: rgb(255, 255, 255); font-family: "proxima-nova-extra-condensed"; font-weight: 400; text-shadow: 1px 1px 7px rgb(0, 58, 73);}
+		#header ul.locationnav li a {display: block; padding: 0 20px; height: 85px; line-height: 85px; color: rgb(255, 255, 255); text-shadow: 1px 1px 7px rgb(0, 58, 73);}
 			#header ul.locationnav li a:hover {background-color: rgba(0, 58, 73, .2); background-position: 0 -85px;}
 			.no-rgba #header ul.locationnav li a:hover {background-color: rgb(0, 58, 73);}
 

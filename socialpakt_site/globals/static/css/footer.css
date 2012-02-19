@@ -20,7 +20,7 @@
 		h3.newslettertitle {text-indent: -9999em; background: url(../images/mailinglist.png) no-repeat; padding-bottom: 10px; float: left; width: 670px;}
 		#mailinglist label {display: block; float: left; color: rgb(255, 255, 255); padding-top: 33px; text-transform: uppercase; font-size: 20px; font-weight: 600;}
 
-		#mailinglist input {display: inline-block; width: 78%; border: 0; padding: 25px 15px; font-size: 32px; font-weight: normal; font-family: "proxima-nova"; color: rgb(0, 43, 57);}
+		#mailinglist input {display: inline-block; width: 78%; border: 0; padding: 25px 15px; font-size: 32px; font-weight: normal; font-family: "proxima-nova", Helvetica, Arial, sans-serif; color: rgb(0, 43, 57);}
 			#mailinglist input:focus {outline: none;}
 		#mailinglist .homepage-submit {display: inline-block; width: auto; margin-left: -5px; background-color: rgba(231, 42, 117, .75); border: 0; color: rgb(255, 255, 255); text-transform: uppercase; cursor: pointer;}
 			.no-rgba #mailinglist .homepage-submit, .no-rgba #mailinglist .homepage-submit:hover, .no-rgba #mailinglist .homepage-submit:active, .no-rgba #mailinglist .homepage-submit:focus {background-color: rgb(231, 42, 117);}
@@ -53,7 +53,7 @@
 			.sociallinks li.youtube a {background: url(../images/sharing_youtube.png) no-repeat;}
 
 		.footernav {width: 440px; float: right; margin-top: 40px;}
-			.footernav li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 14px;}
+			.footernav li {display: block; float: left; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", "proxima-nova", Arial, sans-serif; font-size: 14px;}
 				.footernav li a {color: rgba(255, 255, 255, .75);}
 				.footernav li a:hover {color: rgba(255, 255, 255, 1);}
 				.no-rgba .footernav li a, .no-rgba .footernav li a:hover {color: rgb(255, 255, 255);}

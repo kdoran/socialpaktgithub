@@ -14,32 +14,13 @@
 			box-shadow: inset 0 12px 11px -8px rgb(0, 0, 0), inset 0 -12px 11px -8px rgb(0, 0, 0);
 		}
 
-	
-		/* Location Titles */
-		.location h3 a {display: block; text-indent: -9999em; background: url('../images/locations_sprite.png') no-repeat; height: 30px; cursor: pointer;}
+		.location h3 a {display: block; background: url("../images/locations_pin.png") no-repeat; padding-left: 28px; color: rgb(255, 255, 255); color: rgba(255, 255, 255, .75); padding-bottom: 3px; text-transform: uppercase; font-family: "proxima-nova-extra-condensed", Trebuchet MS, Arial, sans-serif; font-size: 24px; line-height: .9;}
+			.location h3 a:hover {background-position: 0 -40px; color: rgb(255, 255, 255);}
 
-			.location.newyork {margin-left: 3%;}
+			.ie8 .location h3 a, .ie9 .location h3 a {font-family: "proxima-nova-extra-condensed-n3", Arial, sans-serif;}
+			.wf-active .location h3 a {font-weight: 300; font-size: 32px;}
 
-			.location.newyork h3 a {background-position: 0 0; width: 165px;}
-				.location.newyork.selected h3 a,
-				.location.newyork:hover h3 a {background-position: 0 -40px;}
-			
-			.location.california h3 a {background-position: -200px 0; width: 200px;}
-				.location.california.selected h3 a,
-				.location.california:hover h3 a {background-position: -200px -40px;}
-			
-			.location.canada h3 a {background-position: -452px 0; width: 130px;}
-				.location.canada.selected h3 a,
-				.location.canada:hover h3 a {background-position: -452px -40px;}
-			
-			.location.everywhere {margin-right: 0;}
-			.location.everywhere h3 a {background-position: -635px 0; width: 200px;}
-				.location.everywhere.selected h3 a,
-				.location.everywhere:hover h3 a {background-position: -635px -40px;}
-
-			/* Selected Location Glow */
-			/* .location.selected {background: url('../images/location_hover_glow.png') no-repeat;} */
-
+			.location.selected h3 a {color: rgb(255, 255, 255); cursor: default;}
 
 
 		.location h4 {color: rgb(255, 255, 255); margin: 10px 0 5px 0; line-height: 1.2; width: 240px;} /* width for better text wrapping */

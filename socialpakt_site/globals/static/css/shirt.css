@@ -29,13 +29,14 @@
 				.price .amount .number {display: inline-block; font-size: 100px; padding-top: 23px;}
 			.price .tagline {float: left; width: 67%; margin-left: 10px; font-size: 18px; line-height: 1.4;}
 				.ie8 .price .tagline {width: 60%;}
-			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;} /* TODO kevin build in a tag if it's featured price or not purchaseable after feature price, so we can change text. */
+			.price .daysremaining {clear: both; margin-left: 18px; padding-top: 20px;}
+				.wf-inactive {line-height: 1.2;}
 				.price .daysremaining #expiresdate {font-weight: 700;} /* TODO can we make this not have a 0 in front of single digit numbers? */
 				.price .daysremaining.helper,
 				.price .daysremaining.helper:hover {color: rgba(255, 255, 255, .75);}
 
 		.goals {clear: both; padding-top: 40px;}
-			.goals .donated, .goals .goal {width: 40%; position: relative; z-index: 10;}
+			.goals .donated, .goals .goal {width: 42%; position: relative; z-index: 10;}
 				.donated .number, .goal .number {font-size: 75px; line-height: 60px;}
 				.goals .helper {display: block; margin-left: 18px; margin-top: -4px;}
 				.goals .dollar {font-size: 20px;}
@@ -61,7 +62,7 @@
 			.goals .progress {padding-top: 35px; position: relative; z-index: 1;}
 				.goals #progressbar {width: 100%; height: 52px; background-color: rgb(69, 28, 67);}
 					.goals #progressbar .percentage {position: relative; height: 52px; background: rgb(119, 51, 116) url('../images/diagonal_pattern.png');}
-					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", 'TradeGothic', Trade Gothic, Trebuchet MS, Arial, sans-serif; font-weight: 600;}
+					.goals #progressbar .percentage .label {position: absolute; top: 30%; right: 8px; opacity: .2; font-family: "proxima-nova-extra-condensed", "proxima-nova", Arial, sans-serif; font-weight: 600;}
 			
 			.goals .amountdonated {margin: 10px 0 0 0; position: relative; float: left; cursor: pointer;}
 				.goals .amountdonated .why {display: inline-block; margin-left: 5px; width: 28px; height: 15px; opacity: .75; background: url(../images/why.png) no-repeat; text-indent: -9999em; overflow: hidden;}
@@ -94,7 +95,8 @@
 				.sizes .category_size.dogs h5 {text-indent: -9999em; background: url(../images/sizes_puppies.png) no-repeat left bottom;}
 
 			.sizes select {}
-			.sizes .sizeselect {display: block; float: left; margin-right: 9px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; padding: 0 10px; font-weight: 900; font-size: 16px; cursor: pointer;}
+			.sizes .sizeselect {display: block; float: left; margin-right: 9px; background-color: rgba(228, 228, 228, .75); color: rgb(0, 58, 73); text-transform: uppercase; text-align: center; line-height: 200%; padding: 0 10px; font-weight: 900; font-size: 14px; cursor: pointer;}
+					.wf-active .sizes .sizeselect {font-size: 16px;}
                     .sizeselect:hover {background-color: rgb(225, 225, 225); color: rgb(39, 101, 111);}
                     .no-rgba .sizeselect {background-color: rgb(228, 228, 228);}
                 .sizeselect.sizeselect:last-child {margin-right: 0;}
