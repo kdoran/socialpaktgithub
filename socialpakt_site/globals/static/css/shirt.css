@@ -72,6 +72,8 @@
 				#amountdonated_helper p {width: 375px; background: rgba(255, 255, 255, .9); color: rgb(0, 43, 57); padding: 20px;}
 					#amountdonated_helper .helper {color: rgb(0, 43, 57); margin: 0;}
 
+					.ie7 #amountdonated_helper p, .ie8 #amountdonated_helper p {background: rgb(255, 255, 255);}
+
 					/* why link tooltip */
 					#amountdonated_helper p {
 						-webkit-box-shadow: -9px 1px 15px 3px rgba(0, 0, 0, .3);
@@ -114,7 +116,7 @@
 
 	         .ie7 .addtocart input, .ie8 .addtocart input {text-indent: 0;}
 	         .ie7 .addtocart input.disabled, .ie8 .addtocart input.disabled {background: rgb(228, 228, 228);}
-	         .ie7 .addtocart input, .ie8 .addtocart input {background: rgb(201, 23, 93); color: rgb(201, 23, 93);size}
+	         .ie7 .addtocart input, .ie8 .addtocart input {background: rgb(201, 23, 93); color: rgb(255, 255, 255); text-indent: 0;}
 
 	         /* Add to Cart text shadow */
 			.addtocart input.disabled {text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);}
