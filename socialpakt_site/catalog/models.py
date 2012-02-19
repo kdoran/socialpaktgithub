@@ -15,7 +15,7 @@ class HomeCategory(models.Model):
 
 	slug = models.SlugField(max_length=255, db_index=True)
 	display_text = models.CharField(max_length=255)
-	category = models.ForeignKey(ProductCategory, null=True)
+	category = models.ForeignKey(ProductCategory, null=True, blank=True)
 
 	def __str__(self):
 		return self.slug
