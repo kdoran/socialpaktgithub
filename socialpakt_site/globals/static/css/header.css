@@ -80,21 +80,22 @@
 			#header li h3 {margin: 0;}
 
 	/* Minor Nav Links */
-	#header ul.minornav {float: left; padding-top: 33px; color: rgb(255, 255, 255); width: 325px;}
-		#header ul.minornav li {margin-right: 4px;}
-		#header ul.minornav li:last-child {margin-right: 0;}
+	#header ul.minornav {float: left; padding-top: 33px; color: rgb(255, 255, 255); width: 23%;}
 		#header ul.minornav li a {color: rgb(26, 106, 127);}
 		#header ul.minornav li a:hover {color: rgb(0, 43, 57);}
 
 		.ie9 #header ul.minornav {margin-left: 0;}
-		.wf-active #header ul.minornav {width: 275px; margin-left: 10px;}
+
 		.wf-active #header ul.minornav li {margin-right: 3%;}
+		#header ul.minornav li {margin-right: 4px;}
+		#header ul.minornav li:last-child {margin-right: 0;}
 
 
 	/* Location Nav */
 	#header ul.locationnav {float: right;}		
 		#header ul.locationnav li.currentcatli {display: none;} /* duplicated current category in markup */
 
+		#header ul.locationnav li {cursor: pointer;}
 		#header ul.locationnav li a {display: block; padding: 0 20px; height: 85px; line-height: 85px; color: rgb(255, 255, 255); text-shadow: 1px 1px 7px rgb(0, 58, 73);}
 			#header ul.locationnav li a:hover {background-color: rgba(0, 58, 73, .2); background-position: 0 -85px;}
 			.no-rgba #header ul.locationnav li a:hover {background-color: rgb(0, 58, 73);}
@@ -139,7 +140,6 @@
 /* ------------------------------------------------- */
 
 @media screen and (max-width: 1110px) {
-	#header ul.minornav {width: 210px;}
 	#header ul.minornav li {font-size: 13px;}
 	#header .logo {padding-top: 10px; width: 175px;}
 	#header .logo h1 a {background-size: 75%; height: 60px;}
@@ -149,11 +149,12 @@
 
 @media screen and (max-width: 990px) {
 	#header .like {display: none;}
+	#header ul.locationnav li h3 {font-size: 20px;}
 }
 
 @media screen and (max-width: 880px) {
 	#header .bgimage {height: 170px;}
-	#header ul.minornav {float: right; margin-right: 20px;}
+	#header ul.minornav {float: right; width: 210px; margin-right: 20px;}
 	#header ul.locationnav {clear: both; float: none; margin: 0 auto; width: 455px;}
 }
 

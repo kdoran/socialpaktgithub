@@ -47,7 +47,7 @@
 		.sociallinks {float: left; margin-left: 25px; padding-top: 30px;}
 			.sociallinks li a {opacity: .75; background-size: 98%; display: block; width: 57px; height: 55px; text-indent: -9999em;}
 				.sociallinks li a:hover {opacity: 1;}
-				.ie8 .sociallinks li {width: 57px; height: 55px;}
+				.ie7 .sociallinks li, .ie8 .sociallinks li {width: 57px; height: 55px;}
 			.sociallinks li.facebook a {background: url(../images/sharing_facebook.png) no-repeat;}
 			.sociallinks li.twitter a {background: url(../images/sharing_twitter.png) no-repeat;}
 			.sociallinks li.youtube a {background: url(../images/sharing_youtube.png) no-repeat;}

@@ -112,6 +112,10 @@
 	         .addtocart input.disabled {background: url(../images/addtocart_disabled.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center top, rgba(228, 228, 228, .5); color: rgb(218, 218, 218); text-indent: -9999em; cursor: default;} /* disabled/no size selected state */
 	         .addtocart input {background: url(../images/addtocart.png) no-repeat center center, url(../images/addtocart_texture.png) no-repeat center bottom, rgb(201, 23, 93); color: rgb(201, 23, 93); text-indent: -9999em; cursor: pointer;}
 
+	         .ie7 .addtocart input, .ie8 .addtocart input {text-indent: 0;}
+	         .ie6 .addtocart input.disabled, .ie7 .addtocart input.disabled {background: rgb(228, 228, 228);}
+	         .ie6 .addtocart input, .ie7 .addtocart input {background: rgb(201, 23, 93);}
+
 	         /* Add to Cart text shadow */
 			.addtocart input.disabled {text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);}
 			.addtocart input {text-shadow: 2px 0 4px rgba(136, 15, 62, .75);}

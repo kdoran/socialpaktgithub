@@ -2,8 +2,9 @@
 /* ------------------------------------------------- */
 .static h1 {margin-left: 15px;}
 
+.static #main .wrapper {max-width: 1200px; padding: 0 20px 80px 20px;}
 
-#partnerblock {width: 1200px; margin: 0 auto; padding-bottom: 80px;} /* TODO add wrapper class */
+#partnerblock {max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px;}
 	#partnerblock:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 
 	ul#partnerlist {margin: 0; padding: 0;}
@@ -22,21 +23,21 @@
 
 
 
-			.description {width: 800px; float: left;}
+			.description {float: left; width: 60%;}
 
 
 
 
     /* ARTIST PAGE IMAGES */
-    .artistpage #sidebar {float: left; width: 350px; padding-top: 30px;}
+    .artistpage #sidebar {float: left; width: 30%; padding-top: 30px;}
         /* image */
-        .artistpage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; border: 10px solid #53a9b8;}
+        .artistpage .partnerimage {display: block; overflow: hidden; width: 100%; margin-bottom: 50px; border: 10px solid #53a9b8;}
             .artistpage .partnerimage img {margin-bottom: -10px; width: 100%;}
 
     /* CHARITY PAGE IMAGES */
-    .npopage #sidebar {float: left; width: 400px; padding-top: 30px;}
+    .npopage #sidebar {float: left; width: 30%; padding-top: 30px;}
         /* image */
-        .npopage .partnerimage {display: block; overflow: hidden; width: 350px; margin-bottom: 50px; }
+        .npopage .partnerimage {display: block; overflow: hidden; width: 100%; margin-bottom: 50px; }
             .npopage .partnerimage img {margin-bottom: -5px; width: 100%;}
 
 
@@ -57,11 +58,14 @@
 
 
     /* ABOUT */
-    .partnerpage #description {float: right; width: 670px; font-size: 14px; line-height: 1.8em; font-weight: 400;}
+    .partnerpage #description {float: right; width: 60%; font-size: 14px; line-height: 1.8em; font-weight: 400;}
         .partnerpage #description p:first-child {font-size: 20px; line-height: 36px; color: rgb(36, 105, 117);}
         .partnerpage #description p:first-child::first-line {font-weight: bold;}
         .partnerpage #description h3 {clear: both; text-transform: uppercase; color: #471F45; font-size: 24px; margin-top: 40px;}
 
+
+/* ABOUT US */
+.aboutus {margin: 0 15px;}
 
 /* SIZING CHART */
 .sizecharts {margin: 0 15px;}
@@ -79,3 +83,27 @@
 
 /* WARRANTY & RETURNS */
 .warrantyreturns {margin: 0 15px;}
+
+
+
+
+
+/* ---------- RESPONSIVE STATES -------------------- */
+/* ------------------------------------------------- */
+
+@media screen and (max-width: 900px) {
+    .description {width: auto;}
+}
+
+
+@media screen and (max-width: 830px) {
+    .description {width: auto;}
+}
+
+@media screen and (max-width: 700px) {
+    .artistpage #sidebar, .npopage #sidebar, .partnerpage #description {width: 90%; float: none;}
+}
+
+@media screen and (max-width: 440px) {
+    body.static #header .bgimage {height: 130px;}
+}
