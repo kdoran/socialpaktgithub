@@ -31,7 +31,10 @@ class CatalogHomeView(ModelFormMixin, ProcessFormView, TemplateView):
                 cat = ProductCategory.objects.filter(slug=kwargs['category'])[0]
             else:
                 # cat = ProductCategory.objects.all().order_by('?')[0]
-                cat = HomeCategory.objects.all()[0].category
+                if (HomeCategory.objects.all()[0].category == None):
+                    cat = ProductCategory.objects.all().order_by('?')[0]
+                else:
+                    cat = HomeCategory.objects.all()[0].category
             products = Product.objects.filter(active=True, category=cat, featured=True)
             if not products:
                 # go find a product to display
