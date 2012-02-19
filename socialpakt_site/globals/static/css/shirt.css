@@ -145,10 +145,10 @@
 /* ---------- SHIRT BG IMAGE OVERRIDES ------------- */
 /* ------------------------------------------------- */
 
-body.weektwelvekenmarrescue, body.kenmarrescue {background-position: 60% -10px; background-repeat: no-repeat;}
-body.weektenmakeapaktmakeadifference {background-position: 0 -220px; background-repeat: no-repeat;}
-body.bideaweestayawhile {background-position: right 0; background-repeat: no-repeat;}
-body.weektwelvemayorsalliance {background-position: 50% 0; background-repeat: no-repeat;}
+.weektwelvekenmarrescue, .kenmarrescue {background-position: 60% -10px; background-repeat: no-repeat;}
+.weektenmakeapaktmakeadifference {background-position: 0 -220px; background-repeat: no-repeat;}
+.bideaweestayawhile {background-position: right 0; background-repeat: no-repeat;}
+.weektwelvemayorsalliance {background-position: 50% 0; background-repeat: no-repeat;}
 
 
 
