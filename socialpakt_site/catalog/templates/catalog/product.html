@@ -139,12 +139,17 @@
         <form action="https://socialpakt.foxycart.com/cart" method="post">
             <input type="hidden" name="name" value="{{product.cart_title}}" />
             <input type="hidden" name="code" value="{{product.slug}}" />
-            <input type="hidden" name="price" value="{{product.price}}" />
+            <input type="hidden" id="price" name="price" value="{{product.price}}" />
             <input type="hidden" name="quantity" value="1">
             <select id="shirt_select" name="shirt">
                 {% for v in product.productvariation_set.all %}
                   {% if v.inventory > 0 or not product.has_inventory %}
-                    <option value="{{v.description}}">{{v.description}}</option>
+                    <!-- <option class="" value="{{v.description}}">{{v.description}}</option> -->
+                    {% if v.price_override > -1 %}
+                    <option class="{{v.price_override}}" value="{{v.description}}">{{v.description}}</option>
+                    {% else %}
+                    <option class="{{product.price}}" value="{{v.description}}">{{v.description}}</option>
+                    {% endif %}
                   {% endif %}
                 {% endfor %}
             </select>

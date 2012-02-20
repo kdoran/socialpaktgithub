@@ -94,6 +94,7 @@
 		// Set up the size selector
 		$("div.size").click(function(){
 			$("#shirt_select").attr("value", $(this).attr("id"));
+			$("#price").val($("#shirt_select option:selected").attr("class"));
 			$("div.size.selected").removeClass("selected");
 			$(this).addClass("selected");
 			$("#cartbutton").removeAttr("disabled").removeClass("disabled");

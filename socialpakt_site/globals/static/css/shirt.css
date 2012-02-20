@@ -11,7 +11,7 @@
 
 	#shirt {position: relative; width: 60%; margin-left: -5%; float: left; overflow: hidden;}
 
-		#shirtimage {height: 700px; overflow: hidden;} /* TODO test and scale */
+		#shirtimage {height: 650px; overflow: hidden;} /* TODO test and scale */
 		#shirtimage img {width: 100%;}
 		#shirtimage a {display: none;}
 
