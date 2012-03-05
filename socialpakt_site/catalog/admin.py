@@ -11,7 +11,11 @@ class VariationAdminInline(admin.StackedInline):
     extra = 8
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'category', 'featured', 'active','date_expires','price')
+    def order_url(self, obj):
+        return '<a target="_blank" href="%s%s">%s</a>' % ('http://www.socialpakt.com/order/list/', obj.slug, obj.slug)
+    list_display = ('slug', 'title', 'category', 'featured', 'active','date_expires','price', 'order_url')
+    order_url.allow_tags = True
+    order_url.short_description = 'Order list'
     inlines = (PhotoAdminInline,VariationAdminInline)
 
 admin.site.register(Product, ProductAdmin)
