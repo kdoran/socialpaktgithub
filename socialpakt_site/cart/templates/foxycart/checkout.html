@@ -48,6 +48,31 @@
 			shippingCost = {
 				DEFAULT: 2,
 			};
+			break;
+			case "GB":
+			shippingCost = {
+				DEFAULT: 3.5,
+			};
+			break;
+			case "MX":
+			shippingCost = {
+				DEFAULT: 3.5,
+			};
+			break;
+			case "AU":
+			shippingCost = {
+				DEFAULT: 3.5,
+			};
+			break;
+			case "DK":
+			shippingCost = {
+				DEFAULT: 3.5,
+			};
+			break;
+			case "SE":
+			shippingCost = {
+				DEFAULT: 3.5,
+			};
 		}
 
 		// Check each category and calculate shipping cost
@@ -71,7 +96,7 @@
 	$(document).ready(function(){
 		var countries = [], locations = [];
 		for (var i = 0; i < FC.locations.config.locations.length; i++) {
-			if (FC.locations.config.locations[ i ].cc2 == "US" || FC.locations.config.locations[ i ].cc2 == "CA") {
+			if (FC.locations.config.locations[ i ].cc2 == "US" || FC.locations.config.locations[ i ].cc2 == "CA" || FC.locations.config.locations[ i ].cc2 == "GB" || FC.locations.config.locations[ i ].cc2 == "MX" || FC.locations.config.locations[ i ].cc2 == "AU" || FC.locations.config.locations[ i ].cc2 == "DK" || FC.locations.config.locations[ i ].cc2 == "SE") {
 				locations.push(FC.locations.config.locations[ i ]);
 				countries.push(FC.locations.config.countries[ i ]);
 			}
