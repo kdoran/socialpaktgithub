@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{% block sharethis %}
-	
-{% endblock sharethis %}
-
 {% block cartnav %}
 	
 {% endblock cartnav %}
@@ -18,16 +14,10 @@
 
 {% block bodyclass %}fcart checkout{% endblock bodyclass %}
 
-{% block globaljs %}
-	
-{% endblock globaljs %}
-
-{% block localcss %}
-	<link rel="stylesheet" href="https://^^store_domain^^/themes/text/styles.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/foxystyles.css">
-{% endblock localcss %}
 
 {% block localscripts %}
+<link rel="stylesheet" href="http://socialpakt.foxycart.com/themes/text/styles.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://www.socialpakt.com/site_media/static/css/foxystyles.css">
 <script type="text/javascript" charset="utf-8">
 	function updateMyShippingCost() {
 
@@ -94,9 +84,21 @@
 	}
 
 	$(document).ready(function(){
+		$(".charity_logo").each(function(){
+			var sub = $(this).text().split('/')[2];
+			if (sub){
+				var nakeddomain = sub.split("www.");
+				if (nakeddomain.length > 1){
+					$(this).text(nakeddomain[1]);
+				}
+				else {
+					$(this).text(nakeddomain[0]);
+				}
+			}
+		});
 		var countries = [], locations = [];
 		for (var i = 0; i < FC.locations.config.locations.length; i++) {
-			if (FC.locations.config.locations[ i ].cc2 == "US" || FC.locations.config.locations[ i ].cc2 == "CA" || FC.locations.config.locations[ i ].cc2 == "GB" || FC.locations.config.locations[ i ].cc2 == "MX" || FC.locations.config.locations[ i ].cc2 == "AU" || FC.locations.config.locations[ i ].cc2 == "DK" || FC.locations.config.locations[ i ].cc2 == "SE") {
+			if (FC.locations.config.locations[ i ].cc2 == "US" || FC.locations.config.locations[ i ].cc2 == "CA") {
 				locations.push(FC.locations.config.locations[ i ]);
 				countries.push(FC.locations.config.countries[ i ]);
 			}
