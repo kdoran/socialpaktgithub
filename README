@@ -1,0 +1,12 @@
+Setup: 
+
+1. Install postgres
+2. Install python libraries in requirements.txt (sudo pip install <package-name>)
+3. Ignore any local settings file changes (probably a better way to do this): git update-index --assume-unchanged settings.py
+4. Create postgres database, user, and password in pgadmin (or on command line)
+5. python manage.py syncdb --migrate
+6. python manage.py runserver
+7. Go to the /admin and add the same product categories that are on www.socialpakt.com/admin
+8. Same with product variations (mens, womens)
+9. Same with a home category
+10. Same with some example products
