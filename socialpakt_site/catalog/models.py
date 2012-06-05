@@ -59,6 +59,9 @@ class Product(models.Model):
 	goal = models.FloatField(default=1200.0)
 	total_sold = models.IntegerField(default=0)
 
+	# share this uses about 36 chars
+	tweet = models.CharField(max_length=100, default="", blank=True)
+
 	votes = models.IntegerField(default=0)
 
 	def total_raised(self):

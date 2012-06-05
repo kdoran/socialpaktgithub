@@ -112,7 +112,7 @@
               st_summary = "{{ product.description }}"
             ></span>
             <span  class='st_twitter_hcount' displayText='Tweet'
-              st_title = "{{ product.title }}"
+              st_title = "{% if product.tweet %}{{ product.tweet }}{% else %}{{ product.title }}{% endif %}"
               st_url = "http://{{ request.get_host }}/shirt/{{ product.slug }}/"
               st_image = "http://{{ request.get_host }}{{ product.productphoto_set.all.0.photo.url }}"
               st_summary = "{{ product.description }}"
