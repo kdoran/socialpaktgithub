@@ -50,17 +50,20 @@ class Product(models.Model):
 
 	for_sale = models.BooleanField(default=True)
 	has_inventory = models.BooleanField(default=False)
+	estimated_ship_date = models.DateField(db_index=True, default=datetime.datetime.today())
 
 	artist = models.ForeignKey(Partner, related_name="artist_on_set")
 	benefits = models.ForeignKey(Partner, related_name="benefits_from_set")
 
 	price = models.FloatField()
 	donation_amount = models.FloatField(default=6.0)
+	artist_donating = models.BooleanField(default=False)
 	goal = models.FloatField(default=1200.0)
 	total_sold = models.IntegerField(default=0)
 
 	# share this uses about 36 chars
-	tweet = models.CharField(max_length=100, default="", blank=True)
+	# appending @socialpakt uses 11 characters
+	tweet = models.CharField(max_length=90, default="", blank=True)
 
 	votes = models.IntegerField(default=0)
 
