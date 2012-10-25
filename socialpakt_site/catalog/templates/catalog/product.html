@@ -167,12 +167,23 @@
         <!-- Sizes -->
         <div class="sizes">
             {% for cat in product.available_variations.all %}
-                <div class="category_size {{ cat.display_text|slugify }}">
+                <div class="category_size">
                   <h5>{{ cat.display_text }}</h5>
                     {% render_variations cat product %}
                 </div>
             {% endfor %}
         </div>
+
+        {% if product.benefit_choices.all %}
+          <label class="helper" for="benefit_select">Choose a beneficiary:</label>
+          <select id="benefit_select" name="benefits">
+              {% for v in product.benefit_choices.all %}
+                  <option value="{{v.slug}}">{{v.name}}</option>
+              {% endfor %}
+          </select>
+        {% else %}
+          <input type="hidden" id="benefit_select" name="benefits" value="{{product.benefits.slug}}" />
+        {% endif %}
         
         <div class="addtocart">
           <input class="disabled" disabled="true" type="submit" name="add to cart" value="Add to Cart" id="cartbutton">

@@ -54,6 +54,7 @@ class Product(models.Model):
 
 	artist = models.ForeignKey(Partner, related_name="artist_on_set")
 	benefits = models.ForeignKey(Partner, related_name="benefits_from_set")
+	benefit_choices = models.ManyToManyField(Partner, related_name="benefit_choice_from_set", null=True)
 
 	price = models.FloatField()
 	donation_amount = models.FloatField(default=6.0)
