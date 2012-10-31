@@ -1,9 +1,1 @@
-*.pyc
-.svn
-.project
-.pydevproject
-.DS_Store
-static/images/uploads
-upload_images
-socialpakt_proto/static/images/uploads/
-globals/static/images/uploads/
+/media_files/
